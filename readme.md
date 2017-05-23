@@ -2,6 +2,10 @@
 
 ## TO DO
 
+workflow email
+
+- See https://github.com/paallaire/Email-workflow
+
 SVG
 
 - https://sarasoueidan.com/blog/icon-fonts-to-svg/ ( Using font-blast )
