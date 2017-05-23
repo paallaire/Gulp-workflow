@@ -36,8 +36,12 @@ var onError = function (err) {
     this.emit('end');
 };
 
+// Type ( craftcms, wordpress or static )
+var gulpSetup = 'static';
+
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('assets/manifest.json');
+
 
 // `path` - Paths to base asset directories. With trailing slashes.
 // - `path.source` - Path to the source files. Default: `assets/`
@@ -81,9 +85,7 @@ var enabled = {
     // twigjs 
     twigjs: true,
     // PostCss Lost
-    lost: true,
-    // Type ( craftcms, wordpress or static )
-    type: 'static'
+    lost: true
 };
 
 // Path to the compiled assets manifest in the dist directory
@@ -279,11 +281,11 @@ gulp.task('clean', require('del').bind(null, ["public", "build"]));
 // See: http://www.browsersync.io
 gulp.task('watch', function () {
 
-    console.log('Mode Watch :', enabled.type );
+    console.log('Mode Watch :', gulpSetup);
     console.log('--------------------------------------');
 
     // craftcms
-    if (enabled.type === 'craftcms') {
+    if (gulpSetup === 'craftcms') {
 
         browserSync.init({
             files: ['craft/templates/**/*.twig'],
@@ -292,10 +294,10 @@ gulp.task('watch', function () {
 
     }
     // wordpress
-    else if (enabled.type === 'wordpress') {
+    else if (gulpSetup === 'wordpress') {
     }
     // static
-    else if (enabled.type === 'static') {
+    else if (gulpSetup === 'static' ) {
 
         browserSync.init({
             server: {
@@ -328,7 +330,7 @@ gulp.task('watch', function () {
 gulp.task('build', function (callback) {
 
     // craftcms
-    if (enabled.type === 'craftcms') {
+    if (gulpSetup === 'craftcms') {
 
         runSequence('styles',
             'scripts',
@@ -337,11 +339,11 @@ gulp.task('build', function (callback) {
 
     }
     // wordpress
-    else if (enabled.type === 'wordpress') {
+    else if (gulpSetup === 'wordpress') {
         console.log('wordpress');
     }
     // static
-    else if (enabled.type === 'static') {
+    else if (gulpSetup === 'static') {
 
         runSequence('styles',
             'scripts',
@@ -391,3 +393,4 @@ gulp.task('twig-watch', ['twig'], function (done) {
     browserSync.reload();
     done();
 });
+
