@@ -1,4 +1,6 @@
-# TO DO
+# Base
+
+## TO DO
 
 SVG
 
@@ -6,13 +8,11 @@ SVG
 - https://github.com/jkphl/gulp-svg-sprite#basic-example
 - https://github.com/jonathantneal/svg4everybody
 
-# Installation 
+## Installation 
 
-npm install
-bower install
-gulp
+npm install && bower install && gulp
 
-# Projet architecture
+## Projet architecture
 
 root/ 
 
@@ -23,7 +23,7 @@ root/
 - public/ # Distribution files are automatically generated here, this is where you check your work in a browser.
 
   ​
-# SASS architecture
+## SASS architecture
 
 styles/ 
 
@@ -93,7 +93,7 @@ styles/
 
 - main.scss             # primary Sass file 
 
-  ​
+----------------------------------------------------------------------
 
 **Settings** – used with preprocessors and contain font, colors definitions, etc.
 
