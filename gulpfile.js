@@ -312,7 +312,7 @@ gulp.task('watch', function () {
             reloadDelay: 1000
         });
 
-        gulp.watch([path.source + 'twig/**/*'], ['twig-watch']);
+        gulp.watch(['twig/**/*'], ['twig-watch']);
 
     }
 
