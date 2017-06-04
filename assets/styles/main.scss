@@ -2,27 +2,43 @@
 // 1.settings
 ///////////////////////////////////////////
 @import '1.settings/variables';
+@import '1.settings/include-media';
+@import '1.settings/lost';
+@import '1.settings/hamburger';
 @import 'icomoon/variables';
 @import 'icomoon/style';
 
-// 2.tools
+// 2.tools - functions
 ///////////////////////////////////////////
-@import '2.tools/mixins/pseudo';
-@import '2.tools/mixins/center-block';
-@import '2.tools/mixins/clearfix';
-@import '2.tools/mixins/input-placeholder';
-@import '2.tools/mixins/responsive-ratio';
-@import '2.tools/mixins/text-truncate';
-@import '2.tools/mixins/triangle';
-@import '2.tools/mixins/embed';
-@import '2.tools/mixins/mobile';
-@import '2.tools/mixins/link';
-@import '2.tools/mixins/typography';
-@import '2.tools/mixins/icons';
-@import '2.tools/mixins/wysiwyg';
+@import '2.tools/functions/map';
+
+// 2.tools - mixins
+///////////////////////////////////////////
 @import '10.vendors/include-media';
+
+// General
+@import '2.tools/mixins/typography';
 @import '2.tools/mixins/transition';
-@import '2.tools/mixins/overlay';
+
+// Helpers
+@import '2.tools/mixins/helpers/pseudo';
+@import '2.tools/mixins/helpers/center-block';
+@import '2.tools/mixins/helpers/clearfix';
+@import '2.tools/mixins/helpers/input-placeholder';
+@import '2.tools/mixins/helpers/responsive-ratio';
+@import '2.tools/mixins/helpers/text-truncate';
+@import '2.tools/mixins/helpers/triangle';
+@import '2.tools/mixins/helpers/embed';
+@import '2.tools/mixins/helpers/mobile';
+
+// Elemetns
+@import '2.tools/mixins/elements/btn';
+@import '2.tools/mixins/elements/links';
+@import '2.tools/mixins/elements/wysiwyg';
+@import '2.tools/mixins/elements/icons';
+
+// Components
+@import '2.tools/mixins/components/overlay';
 
 // 3.base
 ///////////////////////////////////////////
@@ -57,25 +73,25 @@
 @import '7.layout/content';
 @import '7.layout/footer';
 
-// 8.themes
+// 8.pages
 ///////////////////////////////////////////
-@import '8.themes/light';
-@import '8.themes/dark';
+@import '8.pages/404';
 
-// 9.utils
+// 9.themes
 ///////////////////////////////////////////
-@import '9.utils/mq-status';
-@import '9.utils/mq-visibility';
+@import '9.themes/light';
+@import '9.themes/dark';
 
-// 10.vendors
+// 10.utils
 ///////////////////////////////////////////
-@import '10.vendors/hamburgers/hamburgers';
-@import '10.vendors/lazysizes';
-@import '10.vendors/aos/aos';
+@import '10.utils/mq-status';
+@import '10.utils/mq-visibility';
 
-// 11.pages
+// 11.vendors
 ///////////////////////////////////////////
-@import '11.pages/404';
+@import '11.vendors/hamburgers/hamburgers';
+@import '11.vendors/lazysizes';
+@import '11.vendors/aos/aos';
 
 // Shame
 ///////////////////////////////////////////

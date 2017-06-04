@@ -6,23 +6,23 @@
 /////////////////////////////
 $modal : ".c-modal";
 
-$modal-zindex : 1010 !default;
-$modal-max-width : 600px !default;
-$modal-padding-vertical : 40px !default;
-$modal-padding-horizontal : 15px !default;
-$modal-btn-outside-width : 50px !default;
-$modal-btn-color : #fff !default;
-$modal-btn-bg-color : #000 !default;
-$modal-content-padding : 30px !default;
-$modal-content-bg-color : #fff !default;
+$modal-zindex:            1010 !default;
+$modal-max-width:         600px !default;
+$modal-padding-y:         40px !default;
+$modal-padding-x:         15px !default;
+$modal-btn-outside-width: 50px !default;
+$modal-btn-color:         #fff !default;
+$modal-btn-bg-color:      #000 !default;
+$modal-content-padding:   30px !default;
+$modal-content-bg-color:  #fff !default;
 
 #{$modal} {
   @include c-overlay();
 
-  padding-top: $modal-padding-vertical;
-  padding-right: $modal-padding-horizontal + $modal-btn-outside-width;
-  padding-bottom: $modal-padding-vertical;
-  padding-left: $modal-padding-horizontal + $modal-btn-outside-width;
+  padding-top: $modal-padding-y;
+  padding-right: $modal-padding-x + $modal-btn-outside-width;
+  padding-bottom: $modal-padding-y;
+  padding-left: $modal-padding-x + $modal-btn-outside-width;
 
   position: fixed;
   z-index: $modal-zindex;
@@ -38,7 +38,7 @@ $modal-content-bg-color : #fff !default;
 
 #{$modal}-content {
   max-width: $modal-max-width;
-  max-height: calc( 100vh - #{$modal-padding-vertical}*2 );
+  max-height: calc( 100vh - #{$modal-padding-y}*2 );
   margin: 0 auto;
   padding: $modal-content-padding;
 

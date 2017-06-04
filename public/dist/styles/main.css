@@ -995,16 +995,13 @@ button.swiper-pagination-bullet {
    #FOLDER
    ========================================================================== */
 /* ==========================================================================
-   #LOST
-   ========================================================================== */
-/* ==========================================================================
    #TYPOGRAPHY
    ========================================================================== */
 /* ==========================================================================
    #COLORS
    ========================================================================== */
 /* ==========================================================================
-   #THEME
+   #THEMES
    ========================================================================== */
 /* ==========================================================================
    #FORM
@@ -1019,15 +1016,18 @@ button.swiper-pagination-bullet {
    #Z-INDEX
    ========================================================================== */
 /* ==========================================================================
-   #hamburger
+   #include-media
    ========================================================================== */
 /* ==========================================================================
-   #aos animation scroll
+   #LOST
+   ========================================================================== */
+/* ==========================================================================
+   #hamburger
    ========================================================================== */
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?bwxrep");
-  src: url("../fonts/icomoon.eot?bwxrep#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?bwxrep") format("truetype"), url("../fonts/icomoon.woff?bwxrep") format("woff"), url("../fonts/icomoon.svg?bwxrep#icomoon") format("svg");
+  src: url("../fonts//icomoon.eot?bwxrep");
+  src: url("../fonts//icomoon.eot?bwxrep#iefix") format("embedded-opentype"), url("../fonts//icomoon.ttf?bwxrep") format("truetype"), url("../fonts//icomoon.woff?bwxrep") format("woff"), url("../fonts//icomoon.svg?bwxrep#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1091,6 +1091,12 @@ div { @include responsive-ratio(16,9); }
 */
 /* ==========================================================================
    #TEXT-TRUNCATE
+   ========================================================================== */
+/* ==========================================================================
+   #btn-reset
+   ========================================================================== */
+/* ==========================================================================
+   #btn-reset
    ========================================================================== */
 .c-wysiwyg ol, .c-wysiwyg ul {
   padding-left: 1em; }
@@ -1675,44 +1681,43 @@ body {
 .o-container-max {
   margin-right: auto;
   margin-left: auto;
-  display: block;
-  max-width: 1440px; }
+  display: block; }
 
 .o-container-big {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 1100px; }
+  max-width: 40px; }
 
 .o-container-large {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 960px; }
+  max-width: 24px; }
 
 .o-container-medium {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 900px; }
+  max-width: 16px; }
 
 .o-container-tiny {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 600px; }
+  max-width: 10px; }
 
 .o-container-small {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 700px; }
+  max-width: 12px; }
 
 .o-container-mini {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  max-width: 320px; }
+  max-width: 8px; }
 
 /* ==========================================================================
    #GRID
@@ -2628,7 +2633,7 @@ body {
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin .hamburger-inner::before {
-    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -2643,7 +2648,7 @@ body {
   .hamburger--spin.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
   .hamburger--spin.is-active .hamburger-inner::after {
     bottom: 0;
     -webkit-transform: rotate(-90deg);
@@ -2660,7 +2665,7 @@ body {
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -2675,7 +2680,7 @@ body {
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     -webkit-transform: rotate(90deg);
@@ -2692,7 +2697,7 @@ body {
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--squeeze .hamburger-inner::before {
-    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
   .hamburger--squeeze .hamburger-inner::after {
     transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -2707,7 +2712,7 @@ body {
   .hamburger--squeeze.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after {
     bottom: 0;
     -webkit-transform: rotate(-90deg);
@@ -3352,44 +3357,44 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
             transform: translate(0, 0); }
 
 [data-aos='fade-up'] {
-  -webkit-transform: translate(0, 20px);
-      -ms-transform: translate(0, 20px);
-          transform: translate(0, 20px); }
+  -webkit-transform: translate(0, 100px);
+      -ms-transform: translate(0, 100px);
+          transform: translate(0, 100px); }
 
 [data-aos='fade-down'] {
-  -webkit-transform: translate(0, -20px);
-      -ms-transform: translate(0, -20px);
-          transform: translate(0, -20px); }
+  -webkit-transform: translate(0, -100px);
+      -ms-transform: translate(0, -100px);
+          transform: translate(0, -100px); }
 
 [data-aos='fade-right'] {
-  -webkit-transform: translate(-20px, 0);
-      -ms-transform: translate(-20px, 0);
-          transform: translate(-20px, 0); }
+  -webkit-transform: translate(-100px, 0);
+      -ms-transform: translate(-100px, 0);
+          transform: translate(-100px, 0); }
 
 [data-aos='fade-left'] {
-  -webkit-transform: translate(20px, 0);
-      -ms-transform: translate(20px, 0);
-          transform: translate(20px, 0); }
+  -webkit-transform: translate(100px, 0);
+      -ms-transform: translate(100px, 0);
+          transform: translate(100px, 0); }
 
 [data-aos='fade-up-right'] {
-  -webkit-transform: translate(-20px, 20px);
-      -ms-transform: translate(-20px, 20px);
-          transform: translate(-20px, 20px); }
+  -webkit-transform: translate(-100px, 100px);
+      -ms-transform: translate(-100px, 100px);
+          transform: translate(-100px, 100px); }
 
 [data-aos='fade-up-left'] {
-  -webkit-transform: translate(20px, 20px);
-      -ms-transform: translate(20px, 20px);
-          transform: translate(20px, 20px); }
+  -webkit-transform: translate(100px, 100px);
+      -ms-transform: translate(100px, 100px);
+          transform: translate(100px, 100px); }
 
 [data-aos='fade-down-right'] {
-  -webkit-transform: translate(-20px, -20px);
-      -ms-transform: translate(-20px, -20px);
-          transform: translate(-20px, -20px); }
+  -webkit-transform: translate(-100px, -100px);
+      -ms-transform: translate(-100px, -100px);
+          transform: translate(-100px, -100px); }
 
 [data-aos='fade-down-left'] {
-  -webkit-transform: translate(20px, -20px);
-      -ms-transform: translate(20px, -20px);
-          transform: translate(20px, -20px); }
+  -webkit-transform: translate(100px, -100px);
+      -ms-transform: translate(100px, -100px);
+          transform: translate(100px, -100px); }
 
 /**
  * Zoom animations:
@@ -3413,24 +3418,24 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
           transform: scale(0.6); }
 
 [data-aos='zoom-in-up'] {
-  -webkit-transform: translate(0, 20px) scale(0.6);
-      -ms-transform: translate(0, 20px) scale(0.6);
-          transform: translate(0, 20px) scale(0.6); }
+  -webkit-transform: translate(0, 100px) scale(0.6);
+      -ms-transform: translate(0, 100px) scale(0.6);
+          transform: translate(0, 100px) scale(0.6); }
 
 [data-aos='zoom-in-down'] {
-  -webkit-transform: translate(0, -20px) scale(0.6);
-      -ms-transform: translate(0, -20px) scale(0.6);
-          transform: translate(0, -20px) scale(0.6); }
+  -webkit-transform: translate(0, -100px) scale(0.6);
+      -ms-transform: translate(0, -100px) scale(0.6);
+          transform: translate(0, -100px) scale(0.6); }
 
 [data-aos='zoom-in-right'] {
-  -webkit-transform: translate(-20px, 0) scale(0.6);
-      -ms-transform: translate(-20px, 0) scale(0.6);
-          transform: translate(-20px, 0) scale(0.6); }
+  -webkit-transform: translate(-100px, 0) scale(0.6);
+      -ms-transform: translate(-100px, 0) scale(0.6);
+          transform: translate(-100px, 0) scale(0.6); }
 
 [data-aos='zoom-in-left'] {
-  -webkit-transform: translate(20px, 0) scale(0.6);
-      -ms-transform: translate(20px, 0) scale(0.6);
-          transform: translate(20px, 0) scale(0.6); }
+  -webkit-transform: translate(100px, 0) scale(0.6);
+      -ms-transform: translate(100px, 0) scale(0.6);
+          transform: translate(100px, 0) scale(0.6); }
 
 [data-aos='zoom-out'] {
   -webkit-transform: scale(1.2);
@@ -3438,24 +3443,24 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
           transform: scale(1.2); }
 
 [data-aos='zoom-out-up'] {
-  -webkit-transform: translate(0, 20px) scale(1.2);
-      -ms-transform: translate(0, 20px) scale(1.2);
-          transform: translate(0, 20px) scale(1.2); }
+  -webkit-transform: translate(0, 100px) scale(1.2);
+      -ms-transform: translate(0, 100px) scale(1.2);
+          transform: translate(0, 100px) scale(1.2); }
 
 [data-aos='zoom-out-down'] {
-  -webkit-transform: translate(0, -20px) scale(1.2);
-      -ms-transform: translate(0, -20px) scale(1.2);
-          transform: translate(0, -20px) scale(1.2); }
+  -webkit-transform: translate(0, -100px) scale(1.2);
+      -ms-transform: translate(0, -100px) scale(1.2);
+          transform: translate(0, -100px) scale(1.2); }
 
 [data-aos='zoom-out-right'] {
-  -webkit-transform: translate(-20px, 0) scale(1.2);
-      -ms-transform: translate(-20px, 0) scale(1.2);
-          transform: translate(-20px, 0) scale(1.2); }
+  -webkit-transform: translate(-100px, 0) scale(1.2);
+      -ms-transform: translate(-100px, 0) scale(1.2);
+          transform: translate(-100px, 0) scale(1.2); }
 
 [data-aos='zoom-out-left'] {
-  -webkit-transform: translate(20px, 0) scale(1.2);
-      -ms-transform: translate(20px, 0) scale(1.2);
-          transform: translate(20px, 0) scale(1.2); }
+  -webkit-transform: translate(100px, 0) scale(1.2);
+      -ms-transform: translate(100px, 0) scale(1.2);
+          transform: translate(100px, 0) scale(1.2); }
 
 /**
  * Slide animations
