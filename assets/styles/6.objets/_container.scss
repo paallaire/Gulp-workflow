@@ -1,0 +1,69 @@
+/* ==========================================================================
+   #CONTAINER
+   ========================================================================== */
+
+// Variables
+/////////////////////////////
+$container : '.o-container';
+
+#{$container} {
+  @include center-block();
+  @include padding-mobile();
+
+}
+
+#{$container}-full {
+  @include center-block();
+
+}
+
+#{$container}-max {
+  @include center-block();
+
+  max-width: container('max');
+
+}
+
+#{$container}-big {
+  @include center-block();
+
+  max-width: container('big');
+
+}
+
+#{$container}-large {
+  @include center-block();
+
+  max-width: container('large');
+
+}
+
+#{$container}-medium {
+  @include center-block();
+
+  max-width: container('medium');
+
+}
+
+#{$container}-tiny {
+  @include center-block();
+
+  max-width: container('tiny');
+
+}
+
+#{$container}-small {
+  @include center-block();
+
+  max-width: container('small');
+
+}
+
+#{$container}-mini {
+  @include center-block();
+
+  max-width: container('mini');
+
+}
+
+

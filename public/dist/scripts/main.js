@@ -19521,867 +19521,560 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   return bowser
 });
 
-/////    /////    /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-/////             /////    /////
-/////             /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-         /////    /////
-         /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-/////    /////    /////    /////
-
-/**
- * ScrollReveal
- * ------------
- * Version : 3.3.4
- * Website : scrollrevealjs.org
- * Repo    : github.com/jlmakes/scrollreveal.js
- * Author  : Julian Lloyd (@jlmakes)
+!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.AOS=t():e.AOS=t()}(this,function(){return function(e){function t(n){if(o[n])return o[n].exports;var i=o[n]={exports:{},id:n,loaded:!1};return e[n].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var o={};return t.m=e,t.c=o,t.p="dist/",t(0)}([function(e,t,o){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n])}return e},a=o(1),r=(n(a),o(5)),c=n(r),u=o(6),s=n(u),d=o(7),f=n(d),l=o(8),m=n(l),p=o(9),b=n(p),v=o(10),g=n(v),y=o(13),w=n(y),h=[],k=!1,x=document.all&&!window.atob,j={offset:120,delay:0,easing:"ease",duration:400,disable:!1,once:!1,startEvent:"DOMContentLoaded"},O=function(){var e=arguments.length<=0||void 0===arguments[0]?!1:arguments[0];return e&&(k=!0),k?(h=(0,g["default"])(h,j),(0,b["default"])(h,j.once),h):void 0},_=function(){h=(0,w["default"])(),O()},z=function(){h.forEach(function(e,t){e.node.removeAttribute("data-aos"),e.node.removeAttribute("data-aos-easing"),e.node.removeAttribute("data-aos-duration"),e.node.removeAttribute("data-aos-delay")})},A=function(e){return e===!0||"mobile"===e&&m["default"].mobile()||"phone"===e&&m["default"].phone()||"tablet"===e&&m["default"].tablet()||"function"==typeof e&&e()===!0},E=function(e){return j=i(j,e),h=(0,w["default"])(),A(j.disable)||x?z():(document.querySelector("body").setAttribute("data-aos-easing",j.easing),document.querySelector("body").setAttribute("data-aos-duration",j.duration),document.querySelector("body").setAttribute("data-aos-delay",j.delay),"DOMContentLoaded"===j.startEvent&&["complete","interactive"].indexOf(document.readyState)>-1?O(!0):"load"===j.startEvent?window.addEventListener(j.startEvent,function(){O(!0)}):document.addEventListener(j.startEvent,function(){O(!0)}),window.addEventListener("resize",(0,s["default"])(O,50,!0)),window.addEventListener("orientationchange",(0,s["default"])(O,50,!0)),window.addEventListener("scroll",(0,c["default"])(function(){(0,b["default"])(h,j.once)},99)),document.addEventListener("DOMNodeRemoved",function(e){var t=e.target;t&&1===t.nodeType&&t.hasAttribute&&t.hasAttribute("data-aos")&&(0,s["default"])(_,50,!0)}),(0,f["default"])("[data-aos]",_),h)};e.exports={init:E,refresh:O,refreshHard:_}},function(e,t){},,,,function(e,t,o){"use strict";function n(e,t,o){var n=!0,a=!0;if("function"!=typeof e)throw new TypeError(c);return i(o)&&(n="leading"in o?!!o.leading:n,a="trailing"in o?!!o.trailing:a),r(e,t,{leading:n,maxWait:t,trailing:a})}function i(e){var t="undefined"==typeof e?"undefined":a(e);return!!e&&("object"==t||"function"==t)}var a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e},r=o(6),c="Expected a function";e.exports=n},function(e,t){"use strict";function o(e,t,o){function n(t){var o=b,n=v;return b=v=void 0,O=t,y=e.apply(n,o)}function a(e){return O=e,w=setTimeout(d,t),_?n(e):y}function r(e){var o=e-h,n=e-O,i=t-o;return z?x(i,g-n):i}function u(e){var o=e-h,n=e-O;return!h||o>=t||0>o||z&&n>=g}function d(){var e=j();return u(e)?f(e):void(w=setTimeout(d,r(e)))}function f(e){return clearTimeout(w),w=void 0,A&&b?n(e):(b=v=void 0,y)}function l(){void 0!==w&&clearTimeout(w),h=O=0,b=v=w=void 0}function m(){return void 0===w?y:f(j())}function p(){var e=j(),o=u(e);if(b=arguments,v=this,h=e,o){if(void 0===w)return a(h);if(z)return clearTimeout(w),w=setTimeout(d,t),n(h)}return void 0===w&&(w=setTimeout(d,t)),y}var b,v,g,y,w,h=0,O=0,_=!1,z=!1,A=!0;if("function"!=typeof e)throw new TypeError(s);return t=c(t)||0,i(o)&&(_=!!o.leading,z="maxWait"in o,g=z?k(c(o.maxWait)||0,t):g,A="trailing"in o?!!o.trailing:A),p.cancel=l,p.flush=m,p}function n(e){var t=i(e)?h.call(e):"";return t==f||t==l}function i(e){var t="undefined"==typeof e?"undefined":u(e);return!!e&&("object"==t||"function"==t)}function a(e){return!!e&&"object"==("undefined"==typeof e?"undefined":u(e))}function r(e){return"symbol"==("undefined"==typeof e?"undefined":u(e))||a(e)&&h.call(e)==m}function c(e){if("number"==typeof e)return e;if(r(e))return d;if(i(e)){var t=n(e.valueOf)?e.valueOf():e;e=i(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(p,"");var o=v.test(e);return o||g.test(e)?y(e.slice(2),o?2:8):b.test(e)?d:+e}var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e},s="Expected a function",d=NaN,f="[object Function]",l="[object GeneratorFunction]",m="[object Symbol]",p=/^\s+|\s+$/g,b=/^[-+]0x[0-9a-f]+$/i,v=/^0b[01]+$/i,g=/^0o[0-7]+$/i,y=parseInt,w=Object.prototype,h=w.toString,k=Math.max,x=Math.min,j=Date.now;e.exports=o},function(e,t){"use strict";function o(e,t){r.push({selector:e,fn:t}),!c&&a&&(c=new a(n),c.observe(i.documentElement,{childList:!0,subtree:!0,removedNodes:!0})),n()}function n(){for(var e,t,o=0,n=r.length;n>o;o++){e=r[o],t=i.querySelectorAll(e.selector);for(var a,c=0,u=t.length;u>c;c++)a=t[c],a.ready||(a.ready=!0,e.fn.call(a,a))}}Object.defineProperty(t,"__esModule",{value:!0});var i=window.document,a=window.MutationObserver||window.WebKitMutationObserver,r=[],c=void 0;t["default"]=o},function(e,t){"use strict";function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var n=function(){function e(e,t){for(var o=0;o<t.length;o++){var n=t[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),i=function(){function e(){o(this,e)}return n(e,[{key:"phone",value:function(){var e=!1;return function(t){(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(t)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(t.substr(0,4)))&&(e=!0)}(navigator.userAgent||navigator.vendor||window.opera),e}},{key:"mobile",value:function(){var e=!1;return function(t){(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(t)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(t.substr(0,4)))&&(e=!0)}(navigator.userAgent||navigator.vendor||window.opera),e}},{key:"tablet",value:function(){return this.mobile()&&!this.phone()}}]),e}();t["default"]=new i},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(e,t,o){var n=e.node.getAttribute("data-aos-once");t>e.position?e.node.classList.add("aos-animate"):"undefined"!=typeof n&&("false"===n||!o&&"true"!==n)&&e.node.classList.remove("aos-animate")},n=function(e,t){var n=window.pageYOffset,i=window.innerHeight;e.forEach(function(e,a){o(e,i+n,t)})};t["default"]=n},function(e,t,o){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var i=o(11),a=n(i),r=function(e,t){return e.forEach(function(e,o){e.node.classList.add("aos-init"),e.position=(0,a["default"])(e.node,t.offset)}),e};t["default"]=r},function(e,t,o){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var i=o(12),a=n(i),r=function(e,t){var o=0,n=0,i=window.innerHeight,r={offset:e.getAttribute("data-aos-offset"),anchor:e.getAttribute("data-aos-anchor"),anchorPlacement:e.getAttribute("data-aos-anchor-placement")};switch(r.offset&&!isNaN(r.offset)&&(n=parseInt(r.offset)),r.anchor&&document.querySelectorAll(r.anchor)&&(e=document.querySelectorAll(r.anchor)[0]),o=(0,a["default"])(e).top,r.anchorPlacement){case"top-bottom":break;case"center-bottom":o+=e.offsetHeight/2;break;case"bottom-bottom":o+=e.offsetHeight;break;case"top-center":o+=i/2;break;case"bottom-center":o+=i/2+e.offsetHeight;break;case"center-center":o+=i/2+e.offsetHeight/2;break;case"top-top":o+=i;break;case"bottom-top":o+=e.offsetHeight+i;break;case"center-top":o+=e.offsetHeight/2+i}return r.anchorPlacement||r.offset||isNaN(t)||(n=t),o+n};t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(e){for(var t=0,o=0;e&&!isNaN(e.offsetLeft)&&!isNaN(e.offsetTop);)t+=e.offsetLeft-("BODY"!=e.tagName?e.scrollLeft:0),o+=e.offsetTop-("BODY"!=e.tagName?e.scrollTop:0),e=e.offsetParent;return{top:o,left:t}};t["default"]=o},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(e){e=e||document.querySelectorAll("[data-aos]");var t=[];return[].forEach.call(e,function(e,o){t.push({node:e})}),t};t["default"]=o}])});
+//# sourceMappingURL=aos.js.map
+/*
+ * classList.js: Cross-browser full element.classList implementation.
+ * 1.1.20170427
+ *
+ * By Eli Grey, http://eligrey.com
+ * License: Dedicated to the public domain.
+ *   See https://github.com/eligrey/classList.js/blob/master/LICENSE.md
  */
 
-;(function () {
-  'use strict'
-
-  var sr
-  var _requestAnimationFrame
-
-  function ScrollReveal (config) {
-    // Support instantiation without the `new` keyword.
-    if (typeof this === 'undefined' || Object.getPrototypeOf(this) !== ScrollReveal.prototype) {
-      return new ScrollReveal(config)
-    }
-
-    sr = this // Save reference to instance.
-    sr.version = '3.3.4'
-    sr.tools = new Tools() // *required utilities
-
-    if (sr.isSupported()) {
-      sr.tools.extend(sr.defaults, config || {})
-
-      sr.defaults.container = _resolveContainer(sr.defaults)
-
-      sr.store = {
-        elements: {},
-        containers: []
-      }
-
-      sr.sequences = {}
-      sr.history = []
-      sr.uid = 0
-      sr.initialized = false
-    } else if (typeof console !== 'undefined' && console !== null) {
-      // Note: IE9 only supports console if devtools are open.
-      console.log('ScrollReveal is not supported in this browser.')
-    }
-
-    return sr
-  }
-
-  /**
-   * Configuration
-   * -------------
-   * This object signature can be passed directly to the ScrollReveal constructor,
-   * or as the second argument of the `reveal()` method.
-   */
-
-  ScrollReveal.prototype.defaults = {
-    // 'bottom', 'left', 'top', 'right'
-    origin: 'bottom',
-
-    // Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc.
-    distance: '20px',
-
-    // Time in milliseconds.
-    duration: 500,
-    delay: 0,
-
-    // Starting angles in degrees, will transition from these values to 0 in all axes.
-    rotate: { x: 0, y: 0, z: 0 },
-
-    // Starting opacity value, before transitioning to the computed opacity.
-    opacity: 0,
-
-    // Starting scale value, will transition from this value to 1
-    scale: 0.9,
-
-    // Accepts any valid CSS easing, e.g. 'ease', 'ease-in-out', 'linear', etc.
-    easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-
-    // `<html>` is the default reveal container. You can pass either:
-    // DOM Node, e.g. document.querySelector('.fooContainer')
-    // Selector, e.g. '.fooContainer'
-    container: window.document.documentElement,
-
-    // true/false to control reveal animations on mobile.
-    mobile: true,
-
-    // true:  reveals occur every time elements become visible
-    // false: reveals occur once as elements become visible
-    reset: false,
-
-    // 'always' — delay for all reveal animations
-    // 'once'   — delay only the first time reveals occur
-    // 'onload' - delay only for animations triggered by first load
-    useDelay: 'always',
-
-    // Change when an element is considered in the viewport. The default value
-    // of 0.20 means 20% of an element must be visible for its reveal to occur.
-    viewFactor: 0.2,
-
-    // Pixel values that alter the container boundaries.
-    // e.g. Set `{ top: 48 }`, if you have a 48px tall fixed toolbar.
-    // --
-    // Visual Aid: https://scrollrevealjs.org/assets/viewoffset.png
-    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
-
-    // Callbacks that fire for each triggered element reveal, and reset.
-    beforeReveal: function (domEl) {},
-    beforeReset: function (domEl) {},
-
-    // Callbacks that fire for each completed element reveal, and reset.
-    afterReveal: function (domEl) {},
-    afterReset: function (domEl) {}
-  }
-
-  /**
-   * Check if client supports CSS Transform and CSS Transition.
-   * @return {boolean}
-   */
-  ScrollReveal.prototype.isSupported = function () {
-    var style = document.documentElement.style
-    return 'WebkitTransition' in style && 'WebkitTransform' in style ||
-      'transition' in style && 'transform' in style
-  }
-
-  /**
-   * Creates a reveal set, a group of elements that will animate when they
-   * become visible. If [interval] is provided, a new sequence is created
-   * that will ensure elements reveal in the order they appear in the DOM.
-   *
-   * @param {Node|NodeList|string} [target]   The node, node list or selector to use for animation.
-   * @param {Object}               [config]   Override the defaults for this reveal set.
-   * @param {number}               [interval] Time between sequenced element animations (milliseconds).
-   * @param {boolean}              [sync]     Used internally when updating reveals for async content.
-   *
-   * @return {Object} The current ScrollReveal instance.
-   */
-  ScrollReveal.prototype.reveal = function (target, config, interval, sync) {
-    var container
-    var elements
-    var elem
-    var elemId
-    var sequence
-    var sequenceId
-
-    // No custom configuration was passed, but a sequence interval instead.
-    // let’s shuffle things around to make sure everything works.
-    if (config !== undefined && typeof config === 'number') {
-      interval = config
-      config = {}
-    } else if (config === undefined || config === null) {
-      config = {}
-    }
-
-    container = _resolveContainer(config)
-    elements = _getRevealElements(target, container)
-
-    if (!elements.length) {
-      console.log('ScrollReveal: reveal on "' + target + '" failed, no elements found.')
-      return sr
-    }
-
-    // Prepare a new sequence if an interval is passed.
-    if (interval && typeof interval === 'number') {
-      sequenceId = _nextUid()
-
-      sequence = sr.sequences[sequenceId] = {
-        id: sequenceId,
-        interval: interval,
-        elemIds: [],
-        active: false
-      }
-    }
-
-    // Begin main loop to configure ScrollReveal elements.
-    for (var i = 0; i < elements.length; i++) {
-      // Check if the element has already been configured and grab it from the store.
-      elemId = elements[i].getAttribute('data-sr-id')
-      if (elemId) {
-        elem = sr.store.elements[elemId]
-      } else {
-        // Otherwise, let’s do some basic setup.
-        elem = {
-          id: _nextUid(),
-          domEl: elements[i],
-          seen: false,
-          revealing: false
-        }
-        elem.domEl.setAttribute('data-sr-id', elem.id)
-      }
-
-      // Sequence only setup
-      if (sequence) {
-        elem.sequence = {
-          id: sequence.id,
-          index: sequence.elemIds.length
-        }
-
-        sequence.elemIds.push(elem.id)
-      }
-
-      // New or existing element, it’s time to update its configuration, styles,
-      // and send the updates to our store.
-      _configure(elem, config, container)
-      _style(elem)
-      _updateStore(elem)
-
-      // We need to make sure elements are set to visibility: visible, even when
-      // on mobile and `config.mobile === false`, or if unsupported.
-      if (sr.tools.isMobile() && !elem.config.mobile || !sr.isSupported()) {
-        elem.domEl.setAttribute('style', elem.styles.inline)
-        elem.disabled = true
-      } else if (!elem.revealing) {
-        // Otherwise, proceed normally.
-        elem.domEl.setAttribute('style',
-          elem.styles.inline +
-          elem.styles.transform.initial
-        )
-      }
-    }
-
-    // Each `reveal()` is recorded so that when calling `sync()` while working
-    // with asynchronously loaded content, it can re-trace your steps but with
-    // all your new elements now in the DOM.
-
-    // Since `reveal()` is called internally by `sync()`, we don’t want to
-    // record or intiialize each reveal during syncing.
-    if (!sync && sr.isSupported()) {
-      _record(target, config, interval)
-
-      // We push initialization to the event queue using setTimeout, so that we can
-      // give ScrollReveal room to process all reveal calls before putting things into motion.
-      // --
-      // Philip Roberts - What the heck is the event loop anyway? (JSConf EU 2014)
-      // https://www.youtube.com/watch?v=8aGhZQkoFbQ
-      if (sr.initTimeout) {
-        window.clearTimeout(sr.initTimeout)
-      }
-      sr.initTimeout = window.setTimeout(_init, 0)
-    }
-
-    return sr
-  }
-
-  /**
-   * Re-runs `reveal()` for each record stored in history, effectively capturing
-   * any content loaded asynchronously that matches existing reveal set targets.
-   * @return {Object} The current ScrollReveal instance.
-   */
-  ScrollReveal.prototype.sync = function () {
-    if (sr.history.length && sr.isSupported()) {
-      for (var i = 0; i < sr.history.length; i++) {
-        var record = sr.history[i]
-        sr.reveal(record.target, record.config, record.interval, true)
-      }
-      _init()
-    } else {
-      console.log('ScrollReveal: sync failed, no reveals found.')
-    }
-    return sr
-  }
-
-  /**
-   * Private Methods
-   * ---------------
-   */
-
-  function _resolveContainer (config) {
-    if (config && config.container) {
-      if (typeof config.container === 'string') {
-        return window.document.documentElement.querySelector(config.container)
-      } else if (sr.tools.isNode(config.container)) {
-        return config.container
-      } else {
-        console.log('ScrollReveal: invalid container "' + config.container + '" provided.')
-        console.log('ScrollReveal: falling back to default container.')
-      }
-    }
-    return sr.defaults.container
-  }
-
-  /**
-   * check to see if a node or node list was passed in as the target,
-   * otherwise query the container using target as a selector.
-   *
-   * @param {Node|NodeList|string} [target]    client input for reveal target.
-   * @param {Node}                 [container] parent element for selector queries.
-   *
-   * @return {array} elements to be revealed.
-   */
-  function _getRevealElements (target, container) {
-    if (typeof target === 'string') {
-      return Array.prototype.slice.call(container.querySelectorAll(target))
-    } else if (sr.tools.isNode(target)) {
-      return [target]
-    } else if (sr.tools.isNodeList(target)) {
-      return Array.prototype.slice.call(target)
-    }
-    return []
-  }
-
-  /**
-   * A consistent way of creating unique IDs.
-   * @returns {number}
-   */
-  function _nextUid () {
-    return ++sr.uid
-  }
-
-  function _configure (elem, config, container) {
-    // If a container was passed as a part of the config object,
-    // let’s overwrite it with the resolved container passed in.
-    if (config.container) config.container = container
-    // If the element hasn’t already been configured, let’s use a clone of the
-    // defaults extended by the configuration passed as the second argument.
-    if (!elem.config) {
-      elem.config = sr.tools.extendClone(sr.defaults, config)
-    } else {
-      // Otherwise, let’s use a clone of the existing element configuration extended
-      // by the configuration passed as the second argument.
-      elem.config = sr.tools.extendClone(elem.config, config)
-    }
-
-    // Infer CSS Transform axis from origin string.
-    if (elem.config.origin === 'top' || elem.config.origin === 'bottom') {
-      elem.config.axis = 'Y'
-    } else {
-      elem.config.axis = 'X'
-    }
-  }
-
-  function _style (elem) {
-    var computed = window.getComputedStyle(elem.domEl)
-
-    if (!elem.styles) {
-      elem.styles = {
-        transition: {},
-        transform: {},
-        computed: {}
-      }
-
-      // Capture any existing inline styles, and add our visibility override.
-      // --
-      // See section 4.2. in the Documentation:
-      // https://github.com/jlmakes/scrollreveal.js#42-improve-user-experience
-      elem.styles.inline = elem.domEl.getAttribute('style') || ''
-      elem.styles.inline += '; visibility: visible; '
-
-      // grab the elements existing opacity.
-      elem.styles.computed.opacity = computed.opacity
-
-      // grab the elements existing transitions.
-      if (!computed.transition || computed.transition === 'all 0s ease 0s') {
-        elem.styles.computed.transition = ''
-      } else {
-        elem.styles.computed.transition = computed.transition + ', '
-      }
-    }
-
-    // Create transition styles
-    elem.styles.transition.instant = _generateTransition(elem, 0)
-    elem.styles.transition.delayed = _generateTransition(elem, elem.config.delay)
-
-    // Generate transform styles, first with the webkit prefix.
-    elem.styles.transform.initial = ' -webkit-transform:'
-    elem.styles.transform.target = ' -webkit-transform:'
-    _generateTransform(elem)
-
-    // And again without any prefix.
-    elem.styles.transform.initial += 'transform:'
-    elem.styles.transform.target += 'transform:'
-    _generateTransform(elem)
-  }
-
-  function _generateTransition (elem, delay) {
-    var config = elem.config
-
-    return '-webkit-transition: ' + elem.styles.computed.transition +
-      '-webkit-transform ' + config.duration / 1000 + 's ' +
-      config.easing + ' ' +
-      delay / 1000 + 's, opacity ' +
-      config.duration / 1000 + 's ' +
-      config.easing + ' ' +
-      delay / 1000 + 's; ' +
-
-      'transition: ' + elem.styles.computed.transition +
-      'transform ' + config.duration / 1000 + 's ' +
-      config.easing + ' ' +
-      delay / 1000 + 's, opacity ' +
-      config.duration / 1000 + 's ' +
-      config.easing + ' ' +
-      delay / 1000 + 's; '
-  }
-
-  function _generateTransform (elem) {
-    var config = elem.config
-    var cssDistance
-    var transform = elem.styles.transform
-
-    // Let’s make sure our our pixel distances are negative for top and left.
-    // e.g. origin = 'top' and distance = '25px' starts at `top: -25px` in CSS.
-    if (config.origin === 'top' || config.origin === 'left') {
-      cssDistance = /^-/.test(config.distance)
-        ? config.distance.substr(1)
-        : '-' + config.distance
-    } else {
-      cssDistance = config.distance
-    }
-
-    if (parseInt(config.distance)) {
-      transform.initial += ' translate' + config.axis + '(' + cssDistance + ')'
-      transform.target += ' translate' + config.axis + '(0)'
-    }
-    if (config.scale) {
-      transform.initial += ' scale(' + config.scale + ')'
-      transform.target += ' scale(1)'
-    }
-    if (config.rotate.x) {
-      transform.initial += ' rotateX(' + config.rotate.x + 'deg)'
-      transform.target += ' rotateX(0)'
-    }
-    if (config.rotate.y) {
-      transform.initial += ' rotateY(' + config.rotate.y + 'deg)'
-      transform.target += ' rotateY(0)'
-    }
-    if (config.rotate.z) {
-      transform.initial += ' rotateZ(' + config.rotate.z + 'deg)'
-      transform.target += ' rotateZ(0)'
-    }
-    transform.initial += '; opacity: ' + config.opacity + ';'
-    transform.target += '; opacity: ' + elem.styles.computed.opacity + ';'
-  }
-
-  function _updateStore (elem) {
-    var container = elem.config.container
-
-    // If this element’s container isn’t already in the store, let’s add it.
-    if (container && sr.store.containers.indexOf(container) === -1) {
-      sr.store.containers.push(elem.config.container)
-    }
-
-    // Update the element stored with our new element.
-    sr.store.elements[elem.id] = elem
-  }
-
-  function _record (target, config, interval) {
-    // Save the `reveal()` arguments that triggered this `_record()` call, so we
-    // can re-trace our steps when calling the `sync()` method.
-    var record = {
-      target: target,
-      config: config,
-      interval: interval
-    }
-    sr.history.push(record)
-  }
-
-  function _init () {
-    if (sr.isSupported()) {
-      // Initial animate call triggers valid reveal animations on first load.
-      // Subsequent animate calls are made inside the event handler.
-      _animate()
-
-      // Then we loop through all container nodes in the store and bind event
-      // listeners to each.
-      for (var i = 0; i < sr.store.containers.length; i++) {
-        sr.store.containers[i].addEventListener('scroll', _handler)
-        sr.store.containers[i].addEventListener('resize', _handler)
-      }
-
-      // Let’s also do a one-time binding of window event listeners.
-      if (!sr.initialized) {
-        window.addEventListener('scroll', _handler)
-        window.addEventListener('resize', _handler)
-        sr.initialized = true
-      }
-    }
-    return sr
-  }
-
-  function _handler () {
-    _requestAnimationFrame(_animate)
-  }
-
-  function _setActiveSequences () {
-    var active
-    var elem
-    var elemId
-    var sequence
-
-    // Loop through all sequences
-    sr.tools.forOwn(sr.sequences, function (sequenceId) {
-      sequence = sr.sequences[sequenceId]
-      active = false
-
-      // For each sequenced elemenet, let’s check visibility and if
-      // any are visible, set it’s sequence to active.
-      for (var i = 0; i < sequence.elemIds.length; i++) {
-        elemId = sequence.elemIds[i]
-        elem = sr.store.elements[elemId]
-        if (_isElemVisible(elem) && !active) {
-          active = true
-        }
-      }
-
-      sequence.active = active
-    })
-  }
-
-  function _animate () {
-    var delayed
-    var elem
-
-    _setActiveSequences()
-
-    // Loop through all elements in the store
-    sr.tools.forOwn(sr.store.elements, function (elemId) {
-      elem = sr.store.elements[elemId]
-      delayed = _shouldUseDelay(elem)
-
-      // Let’s see if we should revealand if so,
-      // trigger the `beforeReveal` callback and
-      // determine whether or not to use delay.
-      if (_shouldReveal(elem)) {
-        elem.config.beforeReveal(elem.domEl)
-        if (delayed) {
-          elem.domEl.setAttribute('style',
-            elem.styles.inline +
-            elem.styles.transform.target +
-            elem.styles.transition.delayed
-          )
-        } else {
-          elem.domEl.setAttribute('style',
-            elem.styles.inline +
-            elem.styles.transform.target +
-            elem.styles.transition.instant
-          )
+/*global self, document, DOMException */
+
+/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+
+if ("document" in self) {
+
+// Full polyfill for browsers with no classList support
+// Including IE < Edge missing SVGElement.classList
+if (!("classList" in document.createElement("_")) 
+	|| document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg","g"))) {
+
+(function (view) {
+
+"use strict";
+
+if (!('Element' in view)) return;
+
+var
+	  classListProp = "classList"
+	, protoProp = "prototype"
+	, elemCtrProto = view.Element[protoProp]
+	, objCtr = Object
+	, strTrim = String[protoProp].trim || function () {
+		return this.replace(/^\s+|\s+$/g, "");
+	}
+	, arrIndexOf = Array[protoProp].indexOf || function (item) {
+		var
+			  i = 0
+			, len = this.length
+		;
+		for (; i < len; i++) {
+			if (i in this && this[i] === item) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	// Vendors: please allow content code to instantiate DOMExceptions
+	, DOMEx = function (type, message) {
+		this.name = type;
+		this.code = DOMException[type];
+		this.message = message;
+	}
+	, checkTokenAndGetIndex = function (classList, token) {
+		if (token === "") {
+			throw new DOMEx(
+				  "SYNTAX_ERR"
+				, "An invalid or illegal string was specified"
+			);
+		}
+		if (/\s/.test(token)) {
+			throw new DOMEx(
+				  "INVALID_CHARACTER_ERR"
+				, "String contains an invalid character"
+			);
+		}
+		return arrIndexOf.call(classList, token);
+	}
+	, ClassList = function (elem) {
+		var
+			  trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
+			, classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+			, i = 0
+			, len = classes.length
+		;
+		for (; i < len; i++) {
+			this.push(classes[i]);
+		}
+		this._updateClassName = function () {
+			elem.setAttribute("class", this.toString());
+		};
+	}
+	, classListProto = ClassList[protoProp] = []
+	, classListGetter = function () {
+		return new ClassList(this);
+	}
+;
+// Most DOMException implementations don't allow calling DOMException's toString()
+// on non-DOMExceptions. Error's toString() is sufficient here.
+DOMEx[protoProp] = Error[protoProp];
+classListProto.item = function (i) {
+	return this[i] || null;
+};
+classListProto.contains = function (token) {
+	token += "";
+	return checkTokenAndGetIndex(this, token) !== -1;
+};
+classListProto.add = function () {
+	var
+		  tokens = arguments
+		, i = 0
+		, l = tokens.length
+		, token
+		, updated = false
+	;
+	do {
+		token = tokens[i] + "";
+		if (checkTokenAndGetIndex(this, token) === -1) {
+			this.push(token);
+			updated = true;
+		}
+	}
+	while (++i < l);
+
+	if (updated) {
+		this._updateClassName();
+	}
+};
+classListProto.remove = function () {
+	var
+		  tokens = arguments
+		, i = 0
+		, l = tokens.length
+		, token
+		, updated = false
+		, index
+	;
+	do {
+		token = tokens[i] + "";
+		index = checkTokenAndGetIndex(this, token);
+		while (index !== -1) {
+			this.splice(index, 1);
+			updated = true;
+			index = checkTokenAndGetIndex(this, token);
+		}
+	}
+	while (++i < l);
+
+	if (updated) {
+		this._updateClassName();
+	}
+};
+classListProto.toggle = function (token, force) {
+	token += "";
+
+	var
+		  result = this.contains(token)
+		, method = result ?
+			force !== true && "remove"
+		:
+			force !== false && "add"
+	;
+
+	if (method) {
+		this[method](token);
+	}
+
+	if (force === true || force === false) {
+		return force;
+	} else {
+		return !result;
+	}
+};
+classListProto.toString = function () {
+	return this.join(" ");
+};
+
+if (objCtr.defineProperty) {
+	var classListPropDesc = {
+		  get: classListGetter
+		, enumerable: true
+		, configurable: true
+	};
+	try {
+		objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+	} catch (ex) { // IE 8 doesn't support enumerable:true
+		// adding undefined to fight this issue https://github.com/eligrey/classList.js/issues/36
+		// modernie IE8-MSW7 machine has IE8 8.0.6001.18702 and is affected
+		if (ex.number === undefined || ex.number === -0x7FF5EC54) {
+			classListPropDesc.enumerable = false;
+			objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+		}
+	}
+} else if (objCtr[protoProp].__defineGetter__) {
+	elemCtrProto.__defineGetter__(classListProp, classListGetter);
+}
+
+}(self));
+
+}
+
+// There is full or partial native classList support, so just check if we need
+// to normalize the add/remove and toggle APIs.
+
+(function () {
+	"use strict";
+
+	var testElement = document.createElement("_");
+
+	testElement.classList.add("c1", "c2");
+
+	// Polyfill for IE 10/11 and Firefox <26, where classList.add and
+	// classList.remove exist but support only one argument at a time.
+	if (!testElement.classList.contains("c2")) {
+		var createMethod = function(method) {
+			var original = DOMTokenList.prototype[method];
+
+			DOMTokenList.prototype[method] = function(token) {
+				var i, len = arguments.length;
+
+				for (i = 0; i < len; i++) {
+					token = arguments[i];
+					original.call(this, token);
+				}
+			};
+		};
+		createMethod('add');
+		createMethod('remove');
+	}
+
+	testElement.classList.toggle("c3", false);
+
+	// Polyfill for IE 10 and Firefox <24, where classList.toggle does not
+	// support the second argument.
+	if (testElement.classList.contains("c3")) {
+		var _toggle = DOMTokenList.prototype.toggle;
+
+		DOMTokenList.prototype.toggle = function(token, force) {
+			if (1 in arguments && !this.contains(token) === !force) {
+				return force;
+			} else {
+				return _toggle.call(this, token);
+			}
+		};
+
+	}
+
+	testElement = null;
+}());
+
+}
+var scrollbarPosition = (function () {
+    'use strict';
+
+    var position = null;
+    var showDebug = false;
+
+    var capture = function() {
+
+        if( showDebug ) {
+            console.log('--- scrollPosition.capture ---');
+            console.log( "JS " + window.pageYOffset | document.body.scrollTop );
+            console.log( "jQuery " +  $(window).scrollTop() );
+            console.log("");
         }
 
-        // Let’s queue the `afterReveal` callback
-        // and mark the element as seen and revealing.
-        _queueCallback('reveal', elem, delayed)
-        elem.revealing = true
-        elem.seen = true
+         position = window.pageYOffset | document.body.scrollTop;
 
-        if (elem.sequence) {
-          _queueNextInSequence(elem, delayed)
+    }
+
+    var get = function() {
+
+        if( showDebug ) {
+            console.log('--- scrollPosition.get ---');
+            console.log( "position " +  position);
+            console.log("");
         }
-      } else if (_shouldReset(elem)) {
-        //Otherwise reset our element and
-        // trigger the `beforeReset` callback.
-        elem.config.beforeReset(elem.domEl)
-        elem.domEl.setAttribute('style',
-          elem.styles.inline +
-          elem.styles.transform.initial +
-          elem.styles.transition.instant
-        )
-        // And queue the `afterReset` callback.
-        _queueCallback('reset', elem)
-        elem.revealing = false
-      }
-    })
-  }
 
-  function _queueNextInSequence (elem, delayed) {
-    var elapsed = 0
-    var delay = 0
-    var sequence = sr.sequences[elem.sequence.id]
+        return position;
 
-    // We’re processing a sequenced element, so let's block other elements in this sequence.
-    sequence.blocked = true
-
-    // Since we’re triggering animations a part of a sequence after animations on first load,
-    // we need to check for that condition and explicitly add the delay to our timer.
-    if (delayed && elem.config.useDelay === 'onload') {
-      delay = elem.config.delay
     }
 
-    // If a sequence timer is already running, capture the elapsed time and clear it.
-    if (elem.sequence.timer) {
-      elapsed = Math.abs(elem.sequence.timer.started - new Date())
-      window.clearTimeout(elem.sequence.timer)
-    }
+    var set = function(pPosition) {
 
-    // Start a new timer.
-    elem.sequence.timer = { started: new Date() }
-    elem.sequence.timer.clock = window.setTimeout(function () {
-      // Sequence interval has passed, so unblock the sequence and re-run the handler.
-      sequence.blocked = false
-      elem.sequence.timer = null
-      _handler()
-    }, Math.abs(sequence.interval) + delay - elapsed)
-  }
+        position = pPosition;
 
-  function _queueCallback (type, elem, delayed) {
-    var elapsed = 0
-    var duration = 0
-    var callback = 'after'
-
-    // Check which callback we’re working with.
-    switch (type) {
-      case 'reveal':
-        duration = elem.config.duration
-        if (delayed) {
-          duration += elem.config.delay
+        if( showDebug ) {
+            console.log('--- scrollPosition.set ---');
+            console.log( "pPosition " +  pPosition);
+            console.log( "position " +  position);
+            console.log("");
         }
-        callback += 'Reveal'
-        break
 
-      case 'reset':
-        duration = elem.config.duration
-        callback += 'Reset'
-        break
     }
 
-    // If a timer is already running, capture the elapsed time and clear it.
-    if (elem.timer) {
-      elapsed = Math.abs(elem.timer.started - new Date())
-      window.clearTimeout(elem.timer.clock)
-    }
+    var init = function ( pDebug ) {
 
-    // Start a new timer.
-    elem.timer = { started: new Date() }
-    elem.timer.clock = window.setTimeout(function () {
-      // The timer completed, so let’s fire the callback and null the timer.
-      elem.config[callback](elem.domEl)
-      elem.timer = null
-    }, duration - elapsed)
-  }
+        showDebug = pDebug;
 
-  function _shouldReveal (elem) {
-    if (elem.sequence) {
-      var sequence = sr.sequences[elem.sequence.id]
-      return sequence.active &&
-        !sequence.blocked &&
-        !elem.revealing &&
-        !elem.disabled
-    }
-    return _isElemVisible(elem) &&
-      !elem.revealing &&
-      !elem.disabled
-  }
+        this.capture();
 
-  function _shouldUseDelay (elem) {
-    var config = elem.config.useDelay
-    return config === 'always' ||
-      (config === 'onload' && !sr.initialized) ||
-      (config === 'once' && !elem.seen)
-  }
+        if( showDebug ) {
+            console.log('--- scrollPosition.init ---');
+            console.log( "showDebug " +  showDebug);
+            console.log( "position " +  position);
+            console.log("");
+        }
 
-  function _shouldReset (elem) {
-    if (elem.sequence) {
-      var sequence = sr.sequences[elem.sequence.id]
-      return !sequence.active &&
-        elem.config.reset &&
-        elem.revealing &&
-        !elem.disabled
-    }
-    return !_isElemVisible(elem) &&
-      elem.config.reset &&
-      elem.revealing &&
-      !elem.disabled
-  }
-
-  function _getContainer (container) {
-    return {
-      width: container.clientWidth,
-      height: container.clientHeight
-    }
-  }
-
-  function _getScrolled (container) {
-    // Return the container scroll values, plus the its offset.
-    if (container && container !== window.document.documentElement) {
-      var offset = _getOffset(container)
-      return {
-        x: container.scrollLeft + offset.left,
-        y: container.scrollTop + offset.top
-      }
-    } else {
-      // Otherwise, default to the window object’s scroll values.
-      return {
-        x: window.pageXOffset,
-        y: window.pageYOffset
-      }
-    }
-  }
-
-  function _getOffset (domEl) {
-    var offsetTop = 0
-    var offsetLeft = 0
-
-      // Grab the element’s dimensions.
-    var offsetHeight = domEl.offsetHeight
-    var offsetWidth = domEl.offsetWidth
-
-    // Now calculate the distance between the element and its parent, then
-    // again for the parent to its parent, and again etc... until we have the
-    // total distance of the element to the document’s top and left origin.
-    do {
-      if (!isNaN(domEl.offsetTop)) {
-        offsetTop += domEl.offsetTop
-      }
-      if (!isNaN(domEl.offsetLeft)) {
-        offsetLeft += domEl.offsetLeft
-      }
-      domEl = domEl.offsetParent
-    } while (domEl)
+    };
 
     return {
-      top: offsetTop,
-      left: offsetLeft,
-      height: offsetHeight,
-      width: offsetWidth
-    }
-  }
+        init: init,
+        get: get,
+        set: set,
+        capture: capture,
+    };
 
-  function _isElemVisible (elem) {
-    var offset = _getOffset(elem.domEl)
-    var container = _getContainer(elem.config.container)
-    var scrolled = _getScrolled(elem.config.container)
-    var vF = elem.config.viewFactor
+})();
+var scrollbarWidth = (function () {
+    'use strict';
 
-      // Define the element geometry.
-    var elemHeight = offset.height
-    var elemWidth = offset.width
-    var elemTop = offset.top
-    var elemLeft = offset.left
-    var elemBottom = elemTop + elemHeight
-    var elemRight = elemLeft + elemWidth
+    var width = null;
+    var showDebug = false;
 
-    return confirmBounds() || isPositionFixed()
+    var get = function() {
 
-    function confirmBounds () {
-      // Define the element’s functional boundaries using its view factor.
-      var top = elemTop + elemHeight * vF
-      var left = elemLeft + elemWidth * vF
-      var bottom = elemBottom - elemHeight * vF
-      var right = elemRight - elemWidth * vF
+        var body = document.body;
+        var box = document.createElement('div');
+        var boxStyle = box.style;
+        var width;
 
-      // Define the container functional boundaries using its view offset.
-      var viewTop = scrolled.y + elem.config.viewOffset.top
-      var viewLeft = scrolled.x + elem.config.viewOffset.left
-      var viewBottom = scrolled.y - elem.config.viewOffset.bottom + container.height
-      var viewRight = scrolled.x - elem.config.viewOffset.right + container.width
+        boxStyle.position = 'absolute';
+        boxStyle.top = boxStyle.left = '-9999px';
+        boxStyle.width = boxStyle.height = '100px';
+        boxStyle.overflow = 'scroll';
 
-      return top < viewBottom &&
-        bottom > viewTop &&
-        left > viewLeft &&
-        right < viewRight
-    }
+        body.appendChild(box);
 
-    function isPositionFixed () {
-      return (window.getComputedStyle(elem.domEl).position === 'fixed')
-    }
-  }
+        width = box.offsetWidth - box.clientWidth;
 
-  /**
-   * Utilities
-   * ---------
-   */
+        body.removeChild(box);
 
-  function Tools () {}
-
-  Tools.prototype.isObject = function (object) {
-    return object !== null && typeof object === 'object' && object.constructor === Object
-  }
-
-  Tools.prototype.isNode = function (object) {
-    return typeof window.Node === 'object'
-      ? object instanceof window.Node
-      : object && typeof object === 'object' &&
-        typeof object.nodeType === 'number' &&
-        typeof object.nodeName === 'string'
-  }
-
-  Tools.prototype.isNodeList = function (object) {
-    var prototypeToString = Object.prototype.toString.call(object)
-    var regex = /^\[object (HTMLCollection|NodeList|Object)\]$/
-
-    return typeof window.NodeList === 'object'
-      ? object instanceof window.NodeList
-      : object && typeof object === 'object' &&
-        regex.test(prototypeToString) &&
-        typeof object.length === 'number' &&
-        (object.length === 0 || this.isNode(object[0]))
-  }
-
-  Tools.prototype.forOwn = function (object, callback) {
-    if (!this.isObject(object)) {
-      throw new TypeError('Expected "object", but received "' + typeof object + '".')
-    } else {
-      for (var property in object) {
-        if (object.hasOwnProperty(property)) {
-          callback(property)
+        if( showDebug ) {
+            console.log('--- scrollWidth.get ---');
+            console.log( "scroll bar width " +  width );
+            console.log("\n");
         }
-      }
-    }
-  }
 
-  Tools.prototype.extend = function (target, source) {
-    this.forOwn(source, function (property) {
-      if (this.isObject(source[property])) {
-        if (!target[property] || !this.isObject(target[property])) {
-          target[property] = {}
+        return width;
+
+    }
+
+    var remove = function() {
+
+        var body = document.body;
+        var width = this.get();
+
+        body.classList.remove('scrollbarWidth-'+width);
+        
+    }
+
+    var add = function() {
+
+        var body = document.body;
+        var width = this.get();
+
+        body.classList.add('scrollbarWidth-'+width);
+
+        if( showDebug ) {
+            console.log('--- scrollWidth.add ---');
+            console.log( "width " +  width);
+            console.log("\n");
         }
-        this.extend(target[property], source[property])
-      } else {
-        target[property] = source[property]
-      }
-    }.bind(this))
-    return target
-  }
 
-  Tools.prototype.extendClone = function (target, source) {
-    return this.extend(this.extend({}, target), source)
-  }
-
-  Tools.prototype.isMobile = function () {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-  }
-
-  /**
-   * Polyfills
-   * --------
-   */
-
-  _requestAnimationFrame = window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (callback) {
-      window.setTimeout(callback, 1000 / 60)
     }
 
-  /**
-   * Module Wrapper
-   * --------------
-   */
-  if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-    define(function () {
-      return ScrollReveal
-    })
-  } else if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ScrollReveal
-  } else {
-    window.ScrollReveal = ScrollReveal
-  }
+    var init = function ( pDebug ) {
+
+        showDebug = pDebug;
+
+        this.add();
+
+        if( showDebug ) {
+            console.log('--- scrollWidth.init ---');
+            console.log( "showDebug " +  showDebug);
+            console.log("\n");
+        }
+
+    };
+
+    return {
+        init: init,
+        get: get,
+        remove: remove,
+        add: add, 
+    };
+
 })();
 
+
+
+/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+
+;( function( $, window, document, undefined )
+{
+	var s = document.body || document.documentElement, s = s.style, prefixAnimation = '', prefixTransition = '';
+
+	if( s.WebkitAnimation == '' )	prefixAnimation	 = '-webkit-';
+	if( s.MozAnimation == '' )		prefixAnimation	 = '-moz-';
+	if( s.OAnimation == '' )		prefixAnimation	 = '-o-';
+
+	if( s.WebkitTransition == '' )	prefixTransition = '-webkit-';
+	if( s.MozTransition == '' )		prefixTransition = '-moz-';
+	if( s.OTransition == '' )		prefixTransition = '-o-';
+
+	$.fn.extend(
+	{
+		onCSSAnimationEnd: function( callback )
+		{
+			var $this = $( this ).eq( 0 );
+			$this.one( 'webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', callback );
+			if( ( prefixAnimation == '' && !( 'animation' in s ) ) || $this.css( prefixAnimation + 'animation-duration' ) == '0s' ) callback();
+			return this;
+		},
+		onCSSTransitionEnd: function( callback )
+		{
+			var $this = $( this ).eq( 0 );
+			$this.one( 'webkitTransitionEnd mozTransitionEnd oTransitionEnd otransitionend transitionend', callback );
+			if( ( prefixTransition == '' && !( 'transition' in s ) ) || $this.css( prefixTransition + 'transition-duration' ) == '0s' ) callback();
+			return this;
+		}
+	});
+})( jQuery, window, document );
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+; (function ($, window, document, undefined) {
+    "use strict";
+
+    var _this;
+
+    // undefined is used here as the undefined global variable in ECMAScript 3 is
+    // mutable (ie. it can be changed by someone else). undefined isn't really being
+    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
+    // can no longer be modified.
+
+    // window and document are passed through as local variables rather than global
+    // as this (slightly) quickens the resolution process and can be more efficiently
+    // minified (especially when both are regularly referenced in your plugin).
+
+    // Create the defaults once
+    var pluginName = "modal",
+        defaults = {
+            propertyName: "value",
+            selectorModal: ".c-modal",
+            selectorOverlay: ".c-modal",
+            selectorContent: ".c-modal-content",
+            selectorBtnClose: "[data-modal-close]",
+            selectorStatus: "html"
+        };
+
+    // The actual plugin constructor
+    function Plugin(element, options) {
+        this.element = element;
+
+        // jQuery has an extend method which merges the contents of two or
+        // more objects, storing the result in the first object. The first object
+        // is generally empty as we don't want to alter the default options for
+        // future instances of the plugin
+        this.settings = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+
+        _this = this;
+
+        this.init();
+    }
+
+    // Avoid Plugin.prototype conflicts
+    $.extend(Plugin.prototype, {
+        init: function () {
+
+            $(this.element).each(function (index, element) {
+
+                var modal = "#" + this.href.substring(this.href.indexOf('#') + 1);
+
+                $(element).on('click', function (e) {
+
+                    e.preventDefault();
+
+                    if (!$(modal).hasClass('is-show is-hide')) {
+                        _this.open(modal);
+                    }
+
+                });
+
+                $(modal).find(_this.settings.selectorBtnClose).on('click', function (e) {
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    _this.close(modal);
+
+                });
+
+                $(modal).on('click', function (e) {
+
+                    e.preventDefault();
+
+                    _this.close(modal);
+
+                });
+
+                $(modal).find(_this.settings.selectorContent).on('click', function (e) {
+
+                    e.stopPropagation();
+
+                });
+
+            });
+
+        },
+        open: function (modal) {
+
+            $(modal).addClass('is-active');
+            $('body').addClass('has-modal');
+
+            $(modal).addClass('is-show').onCSSAnimationEnd(function (e) {
+                console.log('animation done is-show');
+                $(this).removeClass('is-show');
+            });
+
+        },
+        close: function (modal) {
+
+            if ($('body').hasClass('has-modal')) {
+
+                $(modal).addClass('is-hide').onCSSAnimationEnd(function (e) {
+                    $(this).removeClass('is-hide is-active');
+                    $('body').removeClass('has-modal');
+                });
+            }
+   
+        },
+        reset: function (modal) {
+            $(this).removeClass('is-show is-hide is-active');
+        }
+    });
+
+    // A really lightweight plugin wrapper around the constructor,
+    // preventing against multiple instantiations
+    $.fn[pluginName] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" +
+                    pluginName, new Plugin(this, options));
+            }
+        });
+    };
+
+})(jQuery, window, document);
 (function ($) {
   
   

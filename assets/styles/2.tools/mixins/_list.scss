@@ -1,0 +1,11 @@
+@mixin list-style-dash() {
+  
+  li {
+    
+    &:before {
+      content:"- ";
+    }
+    
+  }
+  
+}

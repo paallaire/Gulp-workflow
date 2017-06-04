@@ -1,0 +1,79 @@
+.show-large {
+  display: block;
+}
+
+.show-desktop {
+  display:none;
+  
+  @include media("<=large") {
+    display:block;
+  }
+
+}
+
+.show-tablet {
+  display:none;
+  
+  @include media("<=desktop") {
+    content: "Tablet";
+  }
+  
+  @include media("<=desktop") {
+    display:block;
+  }
+
+}
+
+.show-phone {
+  display:none;
+  
+  @include media("<=tablet") {
+    display:block;
+  }
+
+}
+
+.show-small {
+  display:none;
+  
+  @include media("<=phone") {
+    display:block;
+  }
+
+}
+
+.hide-large {
+  display: none;
+}
+
+.hide-desktop {
+  
+  @include media("<=large") {
+    display:none;
+  }
+
+}
+
+.hide-tablet {
+ 
+  @include media("<=desktop") {
+    display:none;
+  }
+
+}
+
+.hide-phone {
+  
+  @include media("<=tablet") {
+    display:none;
+  }
+
+}
+
+.hide-small {
+  
+  @include media("<=phone") {
+    display:none;
+  }
+
+}

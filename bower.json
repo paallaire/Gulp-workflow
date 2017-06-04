@@ -9,6 +9,11 @@
     "lazysizes": "^3.0.0",
     "parsleyjs": "^2.7.1",
     "bowser": "browser#^1.6.1",
-    "scrollreveal": "^3.3.5"
+    "aos": "^2.1.1"
+  },
+  "overrides": {
+    "aos": {
+      "dist/aos.css": []
+    }
   }
 }

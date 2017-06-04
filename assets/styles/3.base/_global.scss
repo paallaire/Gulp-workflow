@@ -1,0 +1,54 @@
+/* ==========================================================================
+   #HTML
+   ========================================================================== */
+
+html {
+  width:100%;
+
+  &.is-fixed {
+    overflow:hidden;
+    position:fixed;
+  }
+ 
+}
+
+
+/* ==========================================================================
+   #BODY
+   ========================================================================== */
+
+body {
+  color:$color-black;
+  background-color:$color-white;
+
+  &.has-bg-dark {
+    background-color:$color-black; 
+  }
+
+  &.has-bg-light {
+    background-color:$color-white; 
+  }
+
+  &.type-homepage {
+    background-color:#081f2c;
+  }
+
+
+}
+
+.site-body {
+  //
+  //padding-top:$header-height;
+}
+
+
+
+
+
+
+
+
+
+
+
+

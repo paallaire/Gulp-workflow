@@ -1,0 +1,160 @@
+/* ==========================================================================
+   #CONFIG
+   ========================================================================== */
+
+$env : 'prod';
+
+/* ==========================================================================
+   #FOLDER
+   ========================================================================== */
+
+$folder-fonts : "../fonts/";
+$folder-images : "../images/";
+$folder-svg : "../svg/";
+$icomoon-font-path: "../fonts";
+
+/* ==========================================================================
+   #LOST
+   ========================================================================== */
+
+@lost gutter 0;
+@lost flexbox no-flex;
+@lost cycle none;
+@lost clearing left;
+@lost rounder 100;
+
+/* ==========================================================================
+   #TYPOGRAPHY
+   ========================================================================== */
+
+$Montserrat: 'Montserrat', sans-serif;
+$Baskerville: 'Libre Baskerville', serif;
+
+$font-heading : $Baskerville;
+$font-text : $Montserrat;
+
+
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+
+$color-white: #fff;
+
+$color-black: #000;
+$color-black02: #010101;
+$color-black-pearl: #081f2c;
+
+$color-midnight: #001928;
+$color-mongoose: #b8a074;
+
+$color-gray: #b4b4b4;
+
+
+$color-text : $color-white;
+$color-heading : $color-black;
+
+// State
+$color-valid : green;
+$color-error : red;
+$color-warning : yellow;
+
+/* ==========================================================================
+   #THEME
+   ========================================================================== */
+$theme-blue : ".t-blue";
+$theme-dark : ".t-dark";
+$theme-light : ".t-light";
+
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+
+$form-border-width: 0px;
+$form-border-color: #ccc;
+$form-border-radius: 0;
+$form-input-height:40px;
+$form-input-color:#5a5657;
+$form-input-bgcolor:#e6e1db;
+$form-input-placehoder-color : #888;
+
+/* ==========================================================================
+   #MEDIA-QUERIES
+   ========================================================================== */
+
+$breakpoints: (
+  'small': 320px,
+  'phone': 520px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'large': 1440px,  
+);
+
+$padding-mobile : 20px;
+
+/* ==========================================================================
+   #CONTAINER
+   ========================================================================== */
+
+$containers: (
+  'mini' : 320px,
+  'tiny' : 600px,
+  'small': 700px,
+  'medium': 900px,
+  'large': 960px,
+  'big': 1100px,
+  'max': 1440px,
+  'full': 100%,  
+);
+
+@function container($width) {
+  @return map-get($containers, $width);
+}
+
+/* ==========================================================================
+   #Z-INDEX
+   ========================================================================== */
+$z-below : -1;
+$z-default : 1;
+
+
+
+$z-site-nav : 100;
+$z-header : 200;
+$z-modal : 300;
+
+
+/* ==========================================================================
+   #hamburger
+   ========================================================================== */
+
+$hamburger-padding-x                       : 0px;
+$hamburger-padding-y                       : 0px;
+$hamburger-layer-width                     : 40px;
+$hamburger-layer-height                    : 2px;
+$hamburger-layer-spacing                   : 9px;
+$hamburger-layer-color                     : $color-mongoose;
+$hamburger-layer-border-radius             : 0px;
+$hamburger-hover-opacity                   : 0.8;
+$hamburger-hover-transition-duration       : 0.15s;
+$hamburger-hover-transition-timing-function: ease;
+
+$hamburger-layer-width-mobile   : 28px;
+$hamburger-layer-height-mobile  : 2px;
+$hamburger-layer-spacing-mobile : 7px;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false;
+$hamburger-hover-filter    : opacity(50%);
+
+$header-height: 60px;
+$header-height-mobile: 46px;
+
+/* ==========================================================================
+   #aos animation scroll
+   ========================================================================== */
+   
+// Animations variables
+$aos-distance: 20px;

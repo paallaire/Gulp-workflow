@@ -1,0 +1,92 @@
+@mixin transition-underline($height : 2px, $bottom : -3px, $color : currentColor) {
+  position: relative;
+  
+  &:after {
+    content:"";
+    width:0;
+    height:$height;
+    position: absolute;
+    bottom:$bottom;
+    left:0;
+
+    background:$color;
+    transition:all 0.3s ease;
+  }
+
+  &:hover {
+
+    &:after {
+      width:100%;
+    }
+
+  }
+  
+}
+
+@mixin transition-opacity( $opacity : 0.8) {
+  opacity:1;
+  transition:opacity 0.3s ease;
+  
+  &:hover {
+    opacity:$opacity;
+  }
+  
+}
+
+@mixin transition-color-mongoose() {
+  transition:color 0.3s ease;
+
+  &:hover {
+    color:$color-mongoose;
+  }
+
+}
+
+@mixin transition-color-white() {
+  transition:color 0.3s ease;
+
+  &:hover {
+    color:$color-white;
+  }
+
+}
+
+@mixin transition-color-mongoose-icon-white() {
+  transition:color 0.3s ease;
+
+  &:hover {
+    color:$color-mongoose;
+
+    /*
+    i[class^='icon-'] {
+      color:$color-white;
+    }
+    */
+
+  }
+
+}
+
+
+@mixin transition-color-gray() {
+  transition:color 0.3s ease;
+
+  &:hover {
+    color:$color-gray;
+  }
+
+}
+
+@mixin transition-white-color-gray() {
+  transition:color 0.3s ease;
+  color:$color-white;
+
+  &:hover {
+    color:$color-gray;
+  }
+
+}
+
+
+
+

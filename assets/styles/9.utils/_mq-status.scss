@@ -1,0 +1,44 @@
+@if ($env == 'dev') {
+
+  body {
+
+    &:after {
+      @include media('<=large') {
+        content: 'MQ: Desktop';
+
+      }
+      @include media('<=desktop') {
+        content: 'MQ: Tablet';
+
+      }
+      @include media('<=tablet') {
+        content: 'MQ: Phone';
+
+      }
+      @include media('<=phone') {
+        content: 'MQ: Small';
+
+      }
+
+      padding: 10px;
+
+      position: fixed;
+      right: 0;
+      bottom: 0;
+
+      display: block;
+
+      content: 'Large';
+      content: 'MQ: Large';
+
+      background: #ccc;
+
+    }
+
+  }
+
+}
+
+
+
+

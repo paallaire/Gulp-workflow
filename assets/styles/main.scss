@@ -1,11 +1,88 @@
 
-body {
-    background: green;
-}
+// 1.settings
+///////////////////////////////////////////
+@import '1.settings/variables';
+@import 'icomoon/variables';
+@import 'icomoon/style';
 
+// 2.tools
+///////////////////////////////////////////
+@import '2.tools/mixins/pseudo';
+@import '2.tools/mixins/center-block';
+@import '2.tools/mixins/clearfix';
+@import '2.tools/mixins/input-placeholder';
+@import '2.tools/mixins/responsive-ratio';
+@import '2.tools/mixins/text-truncate';
+@import '2.tools/mixins/triangle';
+@import '2.tools/mixins/embed';
+@import '2.tools/mixins/mobile';
+@import '2.tools/mixins/link';
+@import '2.tools/mixins/typography';
+@import '2.tools/mixins/icons';
+@import '2.tools/mixins/wysiwyg';
+@import '10.vendors/include-media';
+@import '2.tools/mixins/transition';
+@import '2.tools/mixins/overlay';
 
+// 3.base
+///////////////////////////////////////////
+@import '3.base/reset';
+@import '3.base/fonts';
+@import '3.base/typography';
+@import '3.base/global';
+@import '3.base/icons';
 
+// 4.elements
+///////////////////////////////////////////
+@import '4.elements/btn';
 
+// 5.components
+///////////////////////////////////////////
+@import '5.components/banner';
+@import '5.components/wysiwyg';
+@import '5.components/overlay';
+@import '5.components/modal';
 
+// 6.objets
+///////////////////////////////////////////
+@import '6.objets/container';
+@import '6.objets/grid';
+@import '6.objets/animation';
+
+// 7.layout
+///////////////////////////////////////////
+@import '7.layout/wrapper';
+@import '7.layout/header';
+@import '7.layout/nav';
+@import '7.layout/content';
+@import '7.layout/footer';
+
+// 8.themes
+///////////////////////////////////////////
+@import '8.themes/light';
+@import '8.themes/dark';
+
+// 9.utils
+///////////////////////////////////////////
+@import '9.utils/mq-status';
+@import '9.utils/mq-visibility';
+
+// 10.vendors
+///////////////////////////////////////////
+@import '10.vendors/hamburgers/hamburgers';
+@import '10.vendors/lazysizes';
+@import '10.vendors/aos/aos';
+
+// 11.pages
+///////////////////////////////////////////
+@import '11.pages/404';
+
+// Shame
+///////////////////////////////////////////
+@import 'shame';
+
+// craftcms
+///////////////////////////////////////////
+@import 'craftcms';
 
 

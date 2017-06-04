@@ -2,6 +2,11 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/shim/classlist.js",
+        "scripts/helper/scrollbar.position.js",
+        "scripts/helper/scrollbar.width.js",
+        "scripts/vendor/jquery.oncssanimationend.js",
+        "scripts/vendor/jquery.modal.js",
         "scripts/main.js"
       ],
       "main": true

@@ -1,0 +1,64 @@
+
+@mixin anim-color-black-white() {
+
+    color:$color-black;
+    transition:color 0.3s ease;
+
+    &:hover {
+        color:$color-white; 
+    }
+
+}
+
+.o-anim-color-black-white {
+    @include anim-color-black-white();
+}
+
+@mixin anim-color-beige-white() {
+
+    color:$color-mongoose;
+    transition:color 0.3s ease;
+
+    &:hover {
+        color:$color-white; 
+    }
+
+}
+
+.o-anim-color-beige-white {
+    @include anim-color-beige-white();
+}
+
+@mixin anim-color-beige-black() {
+
+    color:$color-mongoose;
+    transition:color 0.3s ease;
+
+    &:hover {
+        color:$color-black; 
+    }
+
+}
+
+.o-anim-color-beige-black {
+    @include anim-color-beige-black();
+}
+
+
+
+@mixin anim-btn() {
+
+    background-color:#dbdbdb;
+    color:$color-black;
+    transition:color 0.3s ease,background-color 0.3s ease;
+
+    &:hover {
+        color:$color-white; 
+        background-color:$color-mongoose; 
+    }
+
+}
+
+.o-anim-btn {
+    @include anim-btn();
+}

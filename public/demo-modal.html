@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Page - Demo</title>
+    <link href="dist/styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    
+
+    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum iste reiciendis, at maxime dolorum perspiciatis consequatur sequi quasi? Temporibus provident perferendis recusandae et delectus consequatur natus soluta consectetur explicabo iusto?</p>
+
+    <p><a href="#top" data-modal="#welcome">Modal position</a></p>
+    <p><a href="#center" data-modal="#bye">Modal poistion center</a></p>
+
+    <div class="c-modal" id="top" data-modal-position="top">
+
+    <a href="#" class="c-modal__btn-close-outside" data-modal-close><i class="ion-android-close"></i></a>
+    
+    <div class="c-modal-content">
+
+        <a href="#" class="c-modal__btn-close-inside" data-modal-close><i class="ion-android-close"></i></a>
+
+        <h1>Headline</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <button data-modal-close>Close</button>
+
+    </div>
+
+</div>  
+    <div class="c-modal" id="center" data-modal-position="center">
+
+    <a href="#" class="c-modal__btn-close-outside" data-modal-close><i class="ion-android-close"></i></a>
+    
+    <div class="c-modal-content">
+
+        <a href="#" class="c-modal__btn-close-inside" data-modal-close><i class="ion-android-close"></i></a>
+
+        <h1>Headline</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <button data-modal-close>Close</button>
+
+    </div>
+
+</div> 
+
+
+
+    <script src="dist/scripts/main.js"></script>
+    
+<script>
+    (function ($) {
+        
+        console.log('demo-modal');
+        $('[data-modal]').modal();
+
+    }(jQuery));
+</script>
+
+</body>
+
+</html>

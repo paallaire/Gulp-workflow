@@ -1,0 +1,28 @@
+@mixin link-hover-underline() {
+
+    &:hover {
+        text-decoration:underline;
+    }
+
+}
+
+@mixin link-underline-hover-mongoose() {
+    text-decoration:underline;
+    transition:opacity 0.3s ease;
+
+    &:hover {
+        color:$color-mongoose;
+        //opacity:0.8;
+    }
+
+}
+
+@mixin link-underline-hover-black() {
+    text-decoration:underline;
+    transition:color 0.3s ease;
+
+    &:hover {
+        color:$color-black;
+    }
+
+}

@@ -28,6 +28,7 @@ var postcss = require('gulp-postcss');
 var lost = require('lost');
 var data = require('gulp-data');
 var twig = require('gulp-twig');
+var wait = require('gulp-wait');
 
 // Error
 var onError = function (err) {
@@ -103,6 +104,9 @@ var revManifest = path.dist + 'assets.json';
 // ```
 var cssTasks = function (filename) {
     return lazypipe()
+        .pipe(function () {
+            return wait(500)
+        })
         .pipe(function () {
             return gulpif(!enabled.failStyleTask, plumber());
         })
@@ -297,7 +301,7 @@ gulp.task('watch', function () {
     else if (gulpSetup === 'wordpress') {
     }
     // static
-    else if (gulpSetup === 'static' ) {
+    else if (gulpSetup === 'static') {
 
         browserSync.init({
             server: {
