@@ -2,6 +2,7 @@
   @include pseudo($pos: $position);
   width: 0;
   height: 0;
+
   @if $round {
     border-radius: 3px;
   }
@@ -29,4 +30,5 @@
     border-right: $size solid $color;
     margin-left: -$size;
   }
+  
 }

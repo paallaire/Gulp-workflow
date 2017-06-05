@@ -1,6 +1,7 @@
 (function ($) {
-  
-  
-  $('test').modal();
+
+var html = document.querySelector('html');
+html.className = html.className.replace("no-js","js");
 
 }(jQuery));
+

@@ -3,20 +3,12 @@
   body {
 
     &:after {
-      @include media('<=large') {
-        content: 'MQ: Desktop';
 
-      }
-      @include media('<=desktop') {
-        content: 'MQ: Tablet';
+      @each $name, $value in $breakpoints {
 
-      }
-      @include media('<=tablet') {
-        content: 'MQ: Phone';
-
-      }
-      @include media('<=phone') {
-        content: 'MQ: Small';
+        @include media('>=#{$name}') {
+          content: '#{$name}';
+        }
 
       }
 
@@ -27,11 +19,8 @@
       bottom: 0;
 
       display: block;
-
-      content: 'Large';
-      content: 'MQ: Large';
-
       background: #ccc;
+      text-transform: capitalize;
 
     }
 

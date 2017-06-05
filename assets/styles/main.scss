@@ -14,7 +14,7 @@
 
 // 2.tools - mixins
 ///////////////////////////////////////////
-@import '10.vendors/include-media';
+@import '11.vendors/include-media';
 
 // General
 @import '2.tools/mixins/typography';
@@ -31,7 +31,7 @@
 @import '2.tools/mixins/helpers/embed';
 @import '2.tools/mixins/helpers/mobile';
 
-// Elemetns
+// Elements
 @import '2.tools/mixins/elements/btn';
 @import '2.tools/mixins/elements/links';
 @import '2.tools/mixins/elements/wysiwyg';

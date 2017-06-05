@@ -1,7 +1,9 @@
 @mixin icon-css($content: false) {
+
   @if $content {
     content: '#{$content}';
   }
+  
   display: block;
   font-family: 'icomoon' !important;
   font-style: normal !important;

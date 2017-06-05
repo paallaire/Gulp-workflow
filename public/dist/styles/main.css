@@ -1016,6 +1016,9 @@ button.swiper-pagination-bullet {
    #Z-INDEX
    ========================================================================== */
 /* ==========================================================================
+   #TRANISTION
+   ========================================================================== */
+/* ==========================================================================
    #include-media
    ========================================================================== */
 /* ==========================================================================
@@ -1098,13 +1101,6 @@ div { @include responsive-ratio(16,9); }
 /* ==========================================================================
    #btn-reset
    ========================================================================== */
-.c-wysiwyg ol, .c-wysiwyg ul {
-  padding-left: 1em; }
-  .c-wysiwyg ol li, .c-wysiwyg ul li {
-    margin-bottom: 1em; }
-    .c-wysiwyg ol li:last-child, .c-wysiwyg ul li:last-child {
-      margin-bottom: 0; }
-
 /* ==========================================================================
    #WYSIWYG
    ========================================================================== */
@@ -1389,13 +1385,6 @@ legend {
   text-shadow: none; }
 
 /* ==========================================================================
-   #BODY
-   ========================================================================== */
-body {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.4; }
-
-/* ==========================================================================
    #HTML
    ========================================================================== */
 html {
@@ -1408,40 +1397,10 @@ html {
    #BODY
    ========================================================================== */
 body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
   color: #000;
   background-color: #fff; }
-  body.has-bg-dark {
-    background-color: #000; }
-  body.has-bg-light {
-    background-color: #fff; }
-  body.type-homepage {
-    background-color: #081f2c; }
-
-.o-anim-color-black-white {
-  color: #000;
-  transition: color 0.3s ease; }
-  .o-anim-color-black-white:hover {
-    color: #fff; }
-
-.o-anim-color-beige-white {
-  color: #b8a074;
-  transition: color 0.3s ease; }
-  .o-anim-color-beige-white:hover {
-    color: #fff; }
-
-.o-anim-color-beige-black {
-  color: #b8a074;
-  transition: color 0.3s ease; }
-  .o-anim-color-beige-black:hover {
-    color: #000; }
-
-.o-anim-btn {
-  background-color: #dbdbdb;
-  color: #000;
-  transition: color 0.3s ease,background-color 0.3s ease; }
-  .o-anim-btn:hover {
-    color: #fff;
-    background-color: #b8a074; }
 
 /* ==========================================================================
    #BTN
@@ -1477,40 +1436,6 @@ body {
   .c-wysiwyg > :last-child,
   .c-wysiwyg > :last-child > :last-child {
     margin-bottom: 0; }
-  .c-wysiwyg h1,
-  .c-wysiwyg h2,
-  .c-wysiwyg h3,
-  .c-wysiwyg h4,
-  .c-wysiwyg h5,
-  .c-wysiwyg h6 {
-    font-weight: 700;
-    line-height: 1.2; }
-  .c-wysiwyg h1 {
-    font-size: 2.4em;
-    margin-bottom: .58333em;
-    margin-top: .58333em;
-    line-height: 1; }
-  .c-wysiwyg h2 {
-    font-size: 1.6em;
-    margin-bottom: .875em;
-    margin-top: 1.75em;
-    line-height: 1.1; }
-  .c-wysiwyg h3 {
-    font-size: 1.3em;
-    margin-bottom: 1.07692em;
-    margin-top: 1.07692em; }
-  .c-wysiwyg h4 {
-    font-size: 1.2em;
-    margin-bottom: 1.16667em;
-    margin-top: 1.16667em; }
-  .c-wysiwyg h5 {
-    font-size: 1.1em;
-    margin-bottom: 1.27273em;
-    margin-top: 1.27273em; }
-  .c-wysiwyg h6 {
-    font-size: 1em;
-    margin-bottom: 1.4em;
-    margin-top: 1.4em; }
   .c-wysiwyg p:empty {
     display: none; }
   .c-wysiwyg a:not(img) {
@@ -1533,48 +1458,6 @@ body {
     height: 1px;
     margin-bottom: 1.4em;
     margin-top: 1.4em; }
-  .c-wysiwyg abbr {
-    border-bottom: 1px dotted;
-    cursor: help; }
-  .c-wysiwyg cite {
-    font-style: italic; }
-  .c-wysiwyg ins {
-    background-color: lime;
-    text-decoration: none; }
-  .c-wysiwyg mark {
-    background-color: #ff0; }
-  .c-wysiwyg small {
-    font-size: 0.8em; }
-  .c-wysiwyg strong {
-    font-weight: 700; }
-  .c-wysiwyg sub,
-  .c-wysiwyg sup {
-    font-size: 0.8em; }
-  .c-wysiwyg sub {
-    vertical-align: sub; }
-  .c-wysiwyg sup {
-    vertical-align: super; }
-  .c-wysiwyg code,
-  .c-wysiwyg kbd,
-  .c-wysiwyg samp,
-  .c-wysiwyg pre {
-    background-color: #f2f2f2;
-    color: #333;
-    font-size: 0.9em; }
-  .c-wysiwyg code,
-  .c-wysiwyg kbd,
-  .c-wysiwyg samp {
-    border-radius: 3px;
-    line-height: 1.77778;
-    padding: 0.1em 0.4em 0.2em;
-    vertical-align: baseline; }
-  .c-wysiwyg pre {
-    overflow: auto;
-    padding: 1em 1.2em; }
-  .c-wysiwyg pre code {
-    background: none;
-    font-size: 1em;
-    line-height: 1em; }
 
 /* ==========================================================================
    #WYSIWYG-MODIFIER
@@ -1902,11 +1785,41 @@ body {
    #FOOTER-MODIFIER
    ========================================================================== */
 /* ==========================================================================
+   #page-404
+   ========================================================================== */
+.page-404 {
+  background-color: #081f2c; }
+
+/* ==========================================================================
    #LIGHT
    ========================================================================== */
 /* ==========================================================================
    #DARK
    ========================================================================== */
+body:after {
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: #ccc;
+  text-transform: capitalize; }
+  @media (min-width: 320px) {
+    body:after {
+      content: "small"; } }
+  @media (min-width: 520px) {
+    body:after {
+      content: "phone"; } }
+  @media (min-width: 768px) {
+    body:after {
+      content: "tablet"; } }
+  @media (min-width: 1024px) {
+    body:after {
+      content: "desktop"; } }
+  @media (min-width: 1440px) {
+    body:after {
+      content: "large"; } }
+
 .show-large {
   display: block; }
 
@@ -3532,12 +3445,6 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
   [data-aos='flip-down'].aos-animate {
     -webkit-transform: perspective(2500px) rotateX(0);
             transform: perspective(2500px) rotateX(0); }
-
-/* ==========================================================================
-   #page-404
-   ========================================================================== */
-.page-404 {
-  background-color: #081f2c; }
 
 .craftcms-edit-page {
   position: fixed;
