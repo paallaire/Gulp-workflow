@@ -17,7 +17,7 @@
 @import '11.vendors/include-media';
 
 // General
-@import '2.tools/mixins/typography';
+@import '2.tools/mixins/animation';
 @import '2.tools/mixins/transition';
 
 // Helpers
@@ -36,6 +36,8 @@
 @import '2.tools/mixins/elements/links';
 @import '2.tools/mixins/elements/wysiwyg';
 @import '2.tools/mixins/elements/icons';
+@import '2.tools/mixins/elements/heading';
+@import '2.tools/mixins/elements/text';
 
 // Components
 @import '2.tools/mixins/components/overlay';
@@ -63,7 +65,6 @@
 ///////////////////////////////////////////
 @import '6.objets/container';
 @import '6.objets/grid';
-@import '6.objets/animation';
 
 // 7.layout
 ///////////////////////////////////////////

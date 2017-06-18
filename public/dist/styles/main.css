@@ -1065,6 +1065,134 @@ button.swiper-pagination-bullet {
 .icon-logo2:before {
   content: ""; }
 
+.bounce {
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  40% {
+    -webkit-transform: translate(-50%, -30px);
+            transform: translate(-50%, -30px); }
+  60% {
+    -webkit-transform: translate(-50%, -15px);
+            transform: translate(-50%, -15px); } }
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  40% {
+    -webkit-transform: translate(-50%, -30px);
+            transform: translate(-50%, -30px); }
+  60% {
+    -webkit-transform: translate(-50%, -15px);
+            transform: translate(-50%, -15px); } }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  50% {
+    -webkit-transform: translate(-50%, 10px);
+            transform: translate(-50%, 10px); }
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  50% {
+    -webkit-transform: translate(-50%, 10px);
+            transform: translate(-50%, 10px); }
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes moveDown {
+  0% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); } }
+
+@keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px); } }
+
 /* ==========================================================================
    #CENTER-BLOCK
    ========================================================================== */
@@ -1107,6 +1235,14 @@ div { @include responsive-ratio(16,9); }
 /* ==========================================================================
    #WYSIWYG
    ========================================================================== */
+/* ==========================================================================
+   #HEADING
+   ========================================================================== */
+/* TO DO */
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+/* TO DO */
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
@@ -1384,11 +1520,16 @@ legend {
   color: #000;
   text-shadow: none; }
 
+body,
+html {
+  height: 100%;
+  min-width: 320px; }
+
 /* ==========================================================================
    #HTML
    ========================================================================== */
 html {
-  width: 100%; }
+  overflow-y: scroll; }
   html.is-fixed {
     overflow: hidden;
     position: fixed; }
@@ -1397,10 +1538,14 @@ html {
    #BODY
    ========================================================================== */
 body {
+  color: #000;
+  background-color: #fff;
   font-family: "Montserrat", sans-serif;
   line-height: 1.4;
-  color: #000;
-  background-color: #fff; }
+  word-break: normal;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 /* ==========================================================================
    #BTN
@@ -1605,134 +1750,6 @@ body {
 /* ==========================================================================
    #GRID
    ========================================================================== */
-.bounce {
-  -webkit-animation-name: bounce;
-          animation-name: bounce;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
-  40% {
-    -webkit-transform: translate(-50%, -30px);
-            transform: translate(-50%, -30px); }
-  60% {
-    -webkit-transform: translate(-50%, -15px);
-            transform: translate(-50%, -15px); } }
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
-  40% {
-    -webkit-transform: translate(-50%, -30px);
-            transform: translate(-50%, -30px); }
-  60% {
-    -webkit-transform: translate(-50%, -15px);
-            transform: translate(-50%, -15px); } }
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
-  50% {
-    -webkit-transform: translate(-50%, 10px);
-            transform: translate(-50%, 10px); }
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); } }
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
-  50% {
-    -webkit-transform: translate(-50%, 10px);
-            transform: translate(-50%, 10px); }
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); } }
-
-.pulse {
-  -webkit-animation-name: pulse;
-          animation-name: pulse;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@-webkit-keyframes moveDown {
-  0% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px); }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
-
-@keyframes moveDown {
-  0% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px); }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
-
-@-webkit-keyframes moveUp {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  100% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px); } }
-
-@keyframes moveUp {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  100% {
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px); } }
-
 /* ==========================================================================
    #WRAPPER
    ========================================================================== */

@@ -12,6 +12,16 @@ SVG
 - https://github.com/jkphl/gulp-svg-sprite#basic-example
 - https://github.com/jonathantneal/svg4everybody
 
+Performance
+
+https://www.smashingmagazine.com/2016/12/front-end-performance-checklist-2017-pdf-pages/
+
+https://medium.freecodecamp.com/mastering-chrome-developer-tools-next-level-front-end-development-techniques-3ac0b6fe8a3
+
+
+
+https://frontendmasters.com/books/front-end-handbook/2017/learning/browsers.html
+
 ## Installation 
 
 npm install && bower install && gulp
