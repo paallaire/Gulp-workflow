@@ -1,0 +1,88 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-emo-happy {
+  width: 0.9990234375em;
+}
+
+.icon-emo-wink {
+  width: 0.9990234375em;
+}
+
+.icon-emo-unhappy {
+  width: 0.9990234375em;
+}
+
+.icon-emo-sleep {
+  width: 0.8876953125em;
+}
+
+.icon-emo-thumbsup {
+  width: 1.447265625em;
+}
+
+.icon-emo-surprised {
+  width: 0.6962890625em;
+}
+
+.icon-emo-tongue {
+  width: 0.82421875em;
+}
+
+.icon-emo-coffee {
+  width: 1.6728515625em;
+}
+
+.icon-emo-sunglasses {
+  width: 0.990234375em;
+}
+
+.icon-emo-displeased {
+  width: 0.8173828125em;
+}
+
+.icon-emo-beer {
+  width: 1.7890625em;
+}
+
+.icon-emo-grin {
+  width: 0.8701171875em;
+}
+
+.icon-emo-saint {
+  width: 0.9990234375em;
+}
+
+.icon-emo-cry {
+  width: 0.8505859375em;
+}
+
+.icon-emo-shoot {
+  width: 1.9482421875em;
+}
+
+.icon-emo-squint {
+  width: 0.9990234375em;
+}
+
+.icon-emo-laugh {
+  width: 0.892578125em;
+}
+
+.icon-emo-wink2 {
+  width: 0.7744140625em;
+}
