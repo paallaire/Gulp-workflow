@@ -1,79 +1,52 @@
-.show-large {
-  display: block;
-}
+/* ==========================================================================
+   #BREAKPOINT VISIBILITY
+   ========================================================================== */
 
-.show-desktop {
-  display:none;
-  
-  @include media("<=large") {
-    display:block;
+@each $key, $val in $breakpoints {
+
+  hide-#{$key} {
+
+    @include media("<=#{$val}") {
+      display:none;
+    }
+
   }
 
 }
 
-.show-tablet {
-  display:none;
-  
-  @include media("<=desktop") {
-    content: "Tablet";
-  }
-  
-  @include media("<=desktop") {
-    display:block;
-  }
+@each $key, $val in $breakpoints {
 
-}
+  show-#{$key} {
 
-.show-phone {
-  display:none;
-  
-  @include media("<=tablet") {
-    display:block;
+    @include media(">=#{$val}") {
+      display:block;
+    }
+
   }
 
 }
 
-.show-small {
-  display:none;
-  
-  @include media("<=phone") {
-    display:block;
+@each $key, $val in $breakpoints {
+
+  show-#{$key}-inline {
+
+    @include media(">=#{$val}") {
+      display:inline;
+    }
+
   }
 
 }
 
-.hide-large {
-  display: none;
-}
+@each $key, $val in $breakpoints {
 
-.hide-desktop {
-  
-  @include media("<=large") {
-    display:none;
+  show-#{$key}-inline-block {
+
+    @include media(">=#{$val}") {
+      display:inline-block;
+    }
+
   }
 
 }
 
-.hide-tablet {
- 
-  @include media("<=desktop") {
-    display:none;
-  }
-
-}
-
-.hide-phone {
-  
-  @include media("<=tablet") {
-    display:none;
-  }
-
-}
-
-.hide-small {
-  
-  @include media("<=phone") {
-    display:none;
-  }
-
-}

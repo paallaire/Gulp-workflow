@@ -4,7 +4,7 @@
   @return map-get($map-containers, $width);
 }
 
-// Map font size headling
+// Map font size heading
 @function container($size) {
   @return map-get($map-font-sizes-heading, $size);
 }
