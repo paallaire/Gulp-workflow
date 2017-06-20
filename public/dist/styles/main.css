@@ -1974,85 +1974,115 @@ body:after {
 /* ==========================================================================
    #BREAKPOINT VISIBILITY
    ========================================================================== */
-@media (max-width: 320px) {
-  hide-small {
+@media (max-width: 519px) {
+  .hide-small {
     display: none; } }
 
-@media (max-width: 520px) {
-  hide-phone {
+@media (max-width: 767px) {
+  .hide-phone {
     display: none; } }
 
-@media (max-width: 768px) {
-  hide-tablet {
+@media (max-width: 1023px) {
+  .hide-tablet {
     display: none; } }
 
-@media (max-width: 1024px) {
-  hide-desktop {
+@media (max-width: 1439px) {
+  .hide-desktop {
     display: none; } }
 
-@media (max-width: 1440px) {
-  hide-large {
+@media (max-width: 1439px) {
+  .hide-large {
     display: none; } }
 
-@media (min-width: 320px) {
-  show-small {
-    display: block; } }
+.show-small {
+  display: none; }
+  @media (min-width: 320px) {
+    .show-small {
+      display: block; } }
 
-@media (min-width: 520px) {
-  show-phone {
-    display: block; } }
+.show-phone {
+  display: none; }
+  @media (min-width: 520px) {
+    .show-phone {
+      display: block; } }
 
-@media (min-width: 768px) {
-  show-tablet {
-    display: block; } }
+.show-tablet {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-tablet {
+      display: block; } }
 
-@media (min-width: 1024px) {
-  show-desktop {
-    display: block; } }
+.show-desktop {
+  display: none; }
+  @media (min-width: 1024px) {
+    .show-desktop {
+      display: block; } }
 
-@media (min-width: 1440px) {
-  show-large {
-    display: block; } }
+.show-large {
+  display: none; }
+  @media (min-width: 1440px) {
+    .show-large {
+      display: block; } }
 
-@media (min-width: 320px) {
-  show-small-inline {
-    display: inline; } }
+.show-small-inline {
+  display: none; }
+  @media (min-width: 320px) {
+    .show-small-inline {
+      display: inline; } }
 
-@media (min-width: 520px) {
-  show-phone-inline {
-    display: inline; } }
+.show-phone-inline {
+  display: none; }
+  @media (min-width: 520px) {
+    .show-phone-inline {
+      display: inline; } }
 
-@media (min-width: 768px) {
-  show-tablet-inline {
-    display: inline; } }
+.show-tablet-inline {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-tablet-inline {
+      display: inline; } }
 
-@media (min-width: 1024px) {
-  show-desktop-inline {
-    display: inline; } }
+.show-desktop-inline {
+  display: none; }
+  @media (min-width: 1024px) {
+    .show-desktop-inline {
+      display: inline; } }
 
-@media (min-width: 1440px) {
-  show-large-inline {
-    display: inline; } }
+.show-large-inline {
+  display: none; }
+  @media (min-width: 1440px) {
+    .show-large-inline {
+      display: inline; } }
 
-@media (min-width: 320px) {
-  show-small-inline-block {
-    display: inline-block; } }
+.show-small-inline-block {
+  display: none; }
+  @media (min-width: 320px) {
+    .show-small-inline-block {
+      display: inline-block; } }
 
-@media (min-width: 520px) {
-  show-phone-inline-block {
-    display: inline-block; } }
+.show-phone-inline-block {
+  display: none; }
+  @media (min-width: 520px) {
+    .show-phone-inline-block {
+      display: inline-block; } }
 
-@media (min-width: 768px) {
-  show-tablet-inline-block {
-    display: inline-block; } }
+.show-tablet-inline-block {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-tablet-inline-block {
+      display: inline-block; } }
 
-@media (min-width: 1024px) {
-  show-desktop-inline-block {
-    display: inline-block; } }
+.show-desktop-inline-block {
+  display: none; }
+  @media (min-width: 1024px) {
+    .show-desktop-inline-block {
+      display: inline-block; } }
 
-@media (min-width: 1440px) {
-  show-large-inline-block {
-    display: inline-block; } }
+.show-large-inline-block {
+  display: none; }
+  @media (min-width: 1440px) {
+    .show-large-inline-block {
+      display: inline-block; } }
 
 /*!
  * Hamburgers

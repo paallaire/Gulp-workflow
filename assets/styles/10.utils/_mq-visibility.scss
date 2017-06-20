@@ -2,11 +2,25 @@
    #BREAKPOINT VISIBILITY
    ========================================================================== */
 
+
+// Hide
+/////////////////////////////
+$i : 0;
+
 @each $key, $val in $breakpoints {
 
-  hide-#{$key} {
+  $i : $i + 1;
+  $nextValue : $key;
 
-    @include media("<=#{$val}") {
+  @if( $i < length($breakpoints) ) {
+
+    $nextValue : nth( nth( $breakpoints, $i + 1 ), 2 );
+
+  }
+
+  .hide-#{$key} {
+
+    @include media("<#{$nextValue}") {
       display:none;
     }
 
@@ -14,9 +28,12 @@
 
 }
 
+// Show
+/////////////////////////////
 @each $key, $val in $breakpoints {
 
-  show-#{$key} {
+  .show-#{$key} {
+    display:none;
 
     @include media(">=#{$val}") {
       display:block;
@@ -28,7 +45,8 @@
 
 @each $key, $val in $breakpoints {
 
-  show-#{$key}-inline {
+  .show-#{$key}-inline {
+    display:none;
 
     @include media(">=#{$val}") {
       display:inline;
@@ -40,7 +58,8 @@
 
 @each $key, $val in $breakpoints {
 
-  show-#{$key}-inline-block {
+  .show-#{$key}-inline-block {
+    display:none;
 
     @include media(">=#{$val}") {
       display:inline-block;
