@@ -1,5 +1,12 @@
 # Base
 
+## Si erreur node avec sass
+
+installer node-sass
+avec gulp sass 
+https://www.npmjs.com/package/node-sass
+
+
 ## TO DO
 
 workflow email
