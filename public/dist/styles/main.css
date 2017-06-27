@@ -1001,9 +1001,6 @@ button.swiper-pagination-bullet {
    #COLORS
    ========================================================================== */
 /* ==========================================================================
-   #THEMES
-   ========================================================================== */
-/* ==========================================================================
    #FORM
    ========================================================================== */
 /* ==========================================================================
@@ -1018,6 +1015,9 @@ button.swiper-pagination-bullet {
 /* ==========================================================================
    #TRANISTION
    ========================================================================== */
+/* ==========================================================================
+    #SELECTORS
+========================================================================== */
 /* ==========================================================================
    #include-media
    ========================================================================== */
@@ -1144,6 +1144,7 @@ div { @include responsive-ratio(16,9); }
 /* ==========================================================================
    #TEXT-TRUNCATE
    ========================================================================== */
+/* TO DO */
 /* ==========================================================================
    #btn-reset
    ========================================================================== */
@@ -1151,19 +1152,41 @@ div { @include responsive-ratio(16,9); }
    #btn-reset
    ========================================================================== */
 /* ==========================================================================
-   #WYSIWYG
+   #btn-size
    ========================================================================== */
 /* ==========================================================================
-   #WYSIWYG
+   #link-default
    ========================================================================== */
 /* ==========================================================================
-   #HEADING
+   #icon-css
    ========================================================================== */
-/* TO DO */
 /* ==========================================================================
-   #TEXT
+   #heading-1
    ========================================================================== */
-/* TO DO */
+/* ==========================================================================
+   #heading-2
+   ========================================================================== */
+/* ==========================================================================
+   #heading-3
+   ========================================================================== */
+/* TO DO 
+@mixin title($align : 'left') {
+
+    @if $align == 'center' {
+        text-align: center;
+    }
+
+}
+*/
+/* ==========================================================================
+   #text-1
+   ========================================================================== */
+/* ==========================================================================
+   #text-2
+   ========================================================================== */
+/* ==========================================================================
+   #text-3
+   ========================================================================== */
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
@@ -1441,6 +1464,9 @@ legend {
   color: #000;
   text-shadow: none; }
 
+/* ==========================================================================
+   #HTML-BODY
+   ========================================================================== */
 body,
 html {
   height: 100%;
@@ -1492,38 +1518,51 @@ body {
 /* ==========================================================================
    #WYSIWYG
    ========================================================================== */
-.c-wysiwyg {
-  line-height: 2; }
-  .c-wysiwyg > * {
-    margin-bottom: 2em; }
-  .c-wysiwyg > :first-child,
-  .c-wysiwyg > :first-child > :first-child {
-    margin-top: 0; }
-  .c-wysiwyg > :last-child,
-  .c-wysiwyg > :last-child > :last-child {
-    margin-bottom: 0; }
-  .c-wysiwyg p:empty {
-    display: none; }
-  .c-wysiwyg a:not(img) {
-    text-decoration: none; }
-    .c-wysiwyg a:not(img):hover {
-      border-bottom: 1px solid; }
-  .c-wysiwyg img {
-    display: inline;
-    max-width: 100%;
-    width: auto;
-    vertical-align: text-bottom; }
-  .c-wysiwyg ol {
-    list-style: decimal; }
-  .c-wysiwyg ul {
-    list-style: disc; }
-  .c-wysiwyg hr {
-    background: currentColor;
-    border: none;
-    display: block;
-    height: 1px;
-    margin-bottom: 1.4em;
-    margin-top: 1.4em; }
+.c-wysiwyg > * + * {
+  background: red;
+  margin-top: 30px; }
+
+.c-wysiwyg > *:first-child {
+  margin-top: 0; }
+
+.c-wysiwyg p:empty {
+  display: none; }
+
+.c-wysiwyg h1 {
+  font-size: 2.4em;
+  margin-top: .58333em;
+  line-height: 1; }
+
+.c-wysiwyg h2 {
+  font-size: 1.6em;
+  margin-top: 1.75em;
+  line-height: 1.1; }
+
+.c-wysiwyg h3 {
+  font-size: 1.3em;
+  margin-top: 1.07692em; }
+
+.c-wysiwyg h4 {
+  font-size: 1.2em;
+  margin-top: 1.16667em; }
+
+.c-wysiwyg h5 {
+  font-size: 1.1em;
+  margin-top: 1.27273em; }
+
+.c-wysiwyg h6 {
+  font-size: 1em;
+  margin-top: 1.4em; }
+
+.c-wysiwyg ol,
+.c-wysiwyg ul {
+  padding-left: 1.4em; }
+
+.c-wysiwyg ol {
+  list-style-type: decimal; }
+
+.c-wysiwyg ul {
+  list-style-type: disc; }
 
 /* ==========================================================================
    #WYSIWYG-MODIFIER
@@ -1887,27 +1926,6 @@ body {
 /* ==========================================================================
    #WRAPPER
    ========================================================================== */
-.l-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-/* fix ie 10-11 */
-.l-wrapper-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
 /* ==========================================================================
    #WRAPPER-MODIFIER
    ========================================================================== */
@@ -1946,6 +1964,9 @@ body {
    ========================================================================== */
 /* ==========================================================================
    #DARK
+   ========================================================================== */
+/* ==========================================================================
+   #DEBUG BREAKPOINT
    ========================================================================== */
 body:after {
   padding: 10px;
@@ -2000,58 +2021,10 @@ body:after {
     .show-small {
       display: block; } }
 
-.show-phone {
-  display: none; }
-  @media (min-width: 520px) {
-    .show-phone {
-      display: block; } }
-
-.show-tablet {
-  display: none; }
-  @media (min-width: 768px) {
-    .show-tablet {
-      display: block; } }
-
-.show-desktop {
-  display: none; }
-  @media (min-width: 1024px) {
-    .show-desktop {
-      display: block; } }
-
-.show-large {
-  display: none; }
-  @media (min-width: 1440px) {
-    .show-large {
-      display: block; } }
-
 .show-small-inline {
   display: none; }
   @media (min-width: 320px) {
     .show-small-inline {
-      display: inline; } }
-
-.show-phone-inline {
-  display: none; }
-  @media (min-width: 520px) {
-    .show-phone-inline {
-      display: inline; } }
-
-.show-tablet-inline {
-  display: none; }
-  @media (min-width: 768px) {
-    .show-tablet-inline {
-      display: inline; } }
-
-.show-desktop-inline {
-  display: none; }
-  @media (min-width: 1024px) {
-    .show-desktop-inline {
-      display: inline; } }
-
-.show-large-inline {
-  display: none; }
-  @media (min-width: 1440px) {
-    .show-large-inline {
       display: inline; } }
 
 .show-small-inline-block {
@@ -2060,11 +2033,35 @@ body:after {
     .show-small-inline-block {
       display: inline-block; } }
 
+.show-phone {
+  display: none; }
+  @media (min-width: 520px) {
+    .show-phone {
+      display: block; } }
+
+.show-phone-inline {
+  display: none; }
+  @media (min-width: 520px) {
+    .show-phone-inline {
+      display: inline; } }
+
 .show-phone-inline-block {
   display: none; }
   @media (min-width: 520px) {
     .show-phone-inline-block {
       display: inline-block; } }
+
+.show-tablet {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-tablet {
+      display: block; } }
+
+.show-tablet-inline {
+  display: none; }
+  @media (min-width: 768px) {
+    .show-tablet-inline {
+      display: inline; } }
 
 .show-tablet-inline-block {
   display: none; }
@@ -2072,11 +2069,35 @@ body:after {
     .show-tablet-inline-block {
       display: inline-block; } }
 
+.show-desktop {
+  display: none; }
+  @media (min-width: 1024px) {
+    .show-desktop {
+      display: block; } }
+
+.show-desktop-inline {
+  display: none; }
+  @media (min-width: 1024px) {
+    .show-desktop-inline {
+      display: inline; } }
+
 .show-desktop-inline-block {
   display: none; }
   @media (min-width: 1024px) {
     .show-desktop-inline-block {
       display: inline-block; } }
+
+.show-large {
+  display: none; }
+  @media (min-width: 1440px) {
+    .show-large {
+      display: block; } }
+
+.show-large-inline {
+  display: none; }
+  @media (min-width: 1440px) {
+    .show-large-inline {
+      display: inline; } }
 
 .show-large-inline-block {
   display: none; }

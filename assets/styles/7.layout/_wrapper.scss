@@ -4,22 +4,8 @@
 
 // Variables
 /////////////////////////////
-$wrapper : ".l-wrapper";
 
-#{$wrapper} {
-    width: 100%;
-    min-height: 100vh;
-    position: relative; 
-    overflow: hidden;
-    display:flex;
-    flex-direction: column;
-}
-
-/* fix ie 10-11 */
-#{$wrapper}-container {
-    display: flex;
-    flex-direction: column;
-}
+#{$wrapper} {}
 
 /* ==========================================================================
    #WRAPPER-MODIFIER

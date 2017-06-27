@@ -2,6 +2,7 @@
 // 1.settings
 ///////////////////////////////////////////
 @import '1.settings/variables';
+@import '1.settings/selectors';
 @import '1.settings/include-media';
 @import '1.settings/lost';
 @import '1.settings/hamburger';
@@ -34,13 +35,11 @@
 // Elements
 @import '2.tools/mixins/elements/btn';
 @import '2.tools/mixins/elements/links';
-@import '2.tools/mixins/elements/wysiwyg';
 @import '2.tools/mixins/elements/icons';
 @import '2.tools/mixins/elements/heading';
 @import '2.tools/mixins/elements/text';
 
 // Components
-@import '2.tools/mixins/components/overlay';
 
 // 3.base
 ///////////////////////////////////////////

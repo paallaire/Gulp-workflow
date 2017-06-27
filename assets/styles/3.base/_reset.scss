@@ -9,7 +9,6 @@
   background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
 }
 
-
 /* ==========================================================================
    #HTML
    ========================================================================== */
@@ -22,7 +21,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-
 /* ==========================================================================
    #BODY
    ========================================================================== */
@@ -30,7 +28,6 @@ html {
 body {
   line-height:1;
 }
-
 
 /* ==========================================================================
    #RESET-TAGS
@@ -293,13 +290,13 @@ legend {
 /* Specify text selection background color and omit drop shadow */
 
 ::-moz-selection {
-  background-color: #b3d4fc; /* Required when declaring ::selection */
-  color: #000;
+  background-color: $text-selection-bg; /* Required when declaring ::selection */
+  color: $text-selection-color;
   text-shadow: none;
 }
 
 ::selection {
-  background-color: #b3d4fc; /* Required when declaring ::selection */
-  color: #000;
+  background-color: $text-selection-bg; /* Required when declaring ::selection */
+  color: $text-selection-color;
   text-shadow: none;
 }

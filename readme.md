@@ -1,5 +1,9 @@
 # Base
 
+## Modular
+
+https://alistapart.com/article/learning-from-lego-a-step-forward-in-modular-web-design
+
 ## Si erreur node avec sass
 
 installer node-sass
@@ -8,6 +12,10 @@ https://www.npmjs.com/package/node-sass
 
 
 ## TO DO
+HEAD
+https://github.com/joshbuchea/HEAD#performance
+http://gethead.info/
+https://github.com/google/web-starter-kit/blob/master/app/basic.html
 
 workflow email
 

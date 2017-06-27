@@ -7,20 +7,20 @@
 /////////////////////////////
 $i : 0;
 
-@each $key, $val in $breakpoints {
+@each $key, $value in $breakpoints {
 
   $i : $i + 1;
-  $nextValue : $key;
+  $nextBreakpoint : $key;
 
   @if( $i < length($breakpoints) ) {
 
-    $nextValue : nth( nth( $breakpoints, $i + 1 ), 2 );
+    $nextBreakpoint : nth( nth( $breakpoints, $i + 1 ), 2 );
 
   }
 
   .hide-#{$key} {
 
-    @include media("<#{$nextValue}") {
+    @include media("<#{$nextBreakpoint}") {
       display:none;
     }
 
@@ -30,38 +30,30 @@ $i : 0;
 
 // Show
 /////////////////////////////
-@each $key, $val in $breakpoints {
+@each $key, $value in $breakpoints {
 
   .show-#{$key} {
     display:none;
 
-    @include media(">=#{$val}") {
+    @include media(">=#{$value}") {
       display:block;
     }
 
   }
 
-}
-
-@each $key, $val in $breakpoints {
-
   .show-#{$key}-inline {
     display:none;
 
-    @include media(">=#{$val}") {
+    @include media(">=#{$value}") {
       display:inline;
     }
 
   }
 
-}
-
-@each $key, $val in $breakpoints {
-
   .show-#{$key}-inline-block {
     display:none;
 
-    @include media(">=#{$val}") {
+    @include media(">=#{$value}") {
       display:inline-block;
     }
 

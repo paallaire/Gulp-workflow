@@ -4,10 +4,11 @@
 
 // Variables
 /////////////////////////////
-$overlay : ".c-overlay";
 
+// Element
+/////////////////////////////
 #{$overlay} {
-    @include c-overlay();
+    background: rgba(0,0,0,0.6);
 }
 
 

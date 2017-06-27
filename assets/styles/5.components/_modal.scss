@@ -4,8 +4,6 @@
 
 // Variables
 /////////////////////////////
-$modal : ".c-modal";
-
 $modal-zindex:            1010 !default;
 $modal-max-width:         600px !default;
 $modal-padding-y:         40px !default;
@@ -17,7 +15,7 @@ $modal-content-padding:   30px !default;
 $modal-content-bg-color:  #fff !default;
 
 #{$modal} {
-  @include c-overlay();
+  background: rgba(0,0,0,0.6);
 
   padding-top: $modal-padding-y;
   padding-right: $modal-padding-x + $modal-btn-outside-width;
