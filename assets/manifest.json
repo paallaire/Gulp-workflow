@@ -24,7 +24,8 @@
     "public": "public/",
     "js": "scripts",
     "css": "styles",
-    "twig": "twig/*.twig"
+    "twig": "twig/*.twig",
+    "svg": "svg"
   },
   "config": {
     "devUrl": "http://gulp.dev.localtest.me"

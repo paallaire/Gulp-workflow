@@ -9,7 +9,8 @@
     "lazysizes": "^3.0.0",
     "parsleyjs": "^2.7.1",
     "bowser": "browser#^1.6.1",
-    "aos": "^2.1.1"
+    "aos": "^2.1.1",
+    "svgxuse": "^1.2.4"
   },
   "overrides": {
     "aos": {

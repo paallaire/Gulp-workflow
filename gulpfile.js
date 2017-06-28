@@ -273,6 +273,14 @@ gulp.task('images', function () {
         .pipe(browserSync.stream());
 });
 
+// ### SVG
+// `gulp svg` - 
+gulp.task('svg', function () {
+    return gulp.src(path.source + 'svg/*.svg')
+        .pipe(gulp.dest(path.dist + 'svg'))
+        .pipe(browserSync.stream());
+});
+
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
 gulp.task('clean', require('del').bind(null, ["public", "build"]));
@@ -338,7 +346,7 @@ gulp.task('build', function (callback) {
 
         runSequence('styles',
             'scripts',
-            ['fonts', 'icons', 'images'],
+            ['fonts', 'icons', 'images','svg'],
             callback);
 
     }
@@ -351,7 +359,7 @@ gulp.task('build', function (callback) {
 
         runSequence('styles',
             'scripts',
-            ['fonts', 'icons', 'images'],
+            ['fonts', 'icons', 'images','svg'],
             'twig-watch',
             callback);
 
