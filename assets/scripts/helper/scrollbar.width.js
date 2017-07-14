@@ -1,15 +1,15 @@
-var scrollbarWidth = (function () {
+let scrollbarWidth = (function () {
     'use strict';
 
-    var width = null;
-    var showDebug = false;
+    let width = null;
+    let showDebug;
 
-    var get = function() {
+    let get = () => {
 
-        var body = document.body;
-        var box = document.createElement('div');
-        var boxStyle = box.style;
-        var width;
+        let body = document.body;
+        let box = document.createElement('div');
+        let boxStyle = box.style;
+        let width;
 
         boxStyle.position = 'absolute';
         boxStyle.top = boxStyle.left = '-9999px';
@@ -24,7 +24,7 @@ var scrollbarWidth = (function () {
 
         if( showDebug ) {
             console.log('--- scrollWidth.get ---');
-            console.log( "scroll bar width " +  width );
+            console.log( `width = ${width}`);
             console.log("\n");
         }
 
@@ -32,49 +32,49 @@ var scrollbarWidth = (function () {
 
     }
 
-    var remove = function() {
+    let removeClass = () => {
 
-        var body = document.body;
-        var width = this.get();
+        let body = document.body;
+        let width = this.get();
 
         body.classList.remove('scrollbarWidth-'+width);
         
     }
 
-    var add = function() {
+    let addClass = () => {
 
-        var body = document.body;
-        var width = this.get();
+        let body = document.body;
+        let width = this.get();
 
         body.classList.add('scrollbarWidth-'+width);
 
         if( showDebug ) {
             console.log('--- scrollWidth.add ---');
-            console.log( "width " +  width);
+            console.log( `width = ${width}`);
             console.log("\n");
         }
 
     }
 
-    var init = function ( pDebug ) {
+    let init = (pDebug) => {
 
         showDebug = pDebug;
 
-        this.add();
+        this.addClass();
 
         if( showDebug ) {
             console.log('--- scrollWidth.init ---');
-            console.log( "showDebug " +  showDebug);
+            console.log( `showDebug = ${showDebug}`);
             console.log("\n");
         }
 
     };
 
     return {
-        init: init,
-        get: get,
-        remove: remove,
-        add: add, 
+        init,
+        get,
+        removeClass,
+        addClass
     };
 
 })();

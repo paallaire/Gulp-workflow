@@ -307,6 +307,16 @@ gulp.task('watch', function () {
     }
     // wordpress
     else if (gulpSetup === 'wordpress') {
+
+        browserSync.init({
+            files: ['{lib,templates}/**/*.php', '*.php'],
+            proxy: config.devUrl,
+            snippetOptions: {
+                whitelist: ['/wp-admin/admin-ajax.php'],
+                blacklist: ['/wp-admin/**']
+            }
+        });
+
     }
     // static
     else if (gulpSetup === 'static') {
@@ -346,7 +356,7 @@ gulp.task('build', function (callback) {
 
         runSequence('styles',
             'scripts',
-            ['fonts', 'icons', 'images','svg'],
+            ['fonts', 'icons', 'images', 'svg'],
             callback);
 
     }
@@ -359,7 +369,7 @@ gulp.task('build', function (callback) {
 
         runSequence('styles',
             'scripts',
-            ['fonts', 'icons', 'images','svg'],
+            ['fonts', 'icons', 'images', 'svg'],
             'twig-watch',
             callback);
 

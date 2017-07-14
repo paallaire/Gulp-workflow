@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- SEO -->
-    <title>{{ title|default('Page') }} - Demo</title>
+    <title>Page - Demo</title>
     <meta name="description" content="s">
     <meta name="keywords" content="">
 
@@ -44,10 +44,16 @@
 
 <body>
 
-  {% block content %}{% endblock %}
+  
+
+<div class="o-container-large">
+  <div class="c-loader"></div> test
+</div>
+
+
 
   <script src="dist/scripts/main.js"></script>
-  {% block js %}{% endblock %}
+  
 </body>
 
 </html>

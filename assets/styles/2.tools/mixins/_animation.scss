@@ -43,3 +43,22 @@
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
+
+@keyframes spin-loader {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+.spin-loader {
+  animation-name: spin-loader;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+  animation-fill-mode: both;
+}
