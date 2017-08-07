@@ -1,27 +1,28 @@
-@import "variables";
+  @import 'variables';
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('#{$icomoon-font-path}/icomoon.eot?bwxrep');
-  src:  url('#{$icomoon-font-path}/icomoon.eot?bwxrep#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/icomoon.ttf?bwxrep') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?bwxrep') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?bwxrep#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
+
+  src: url('#{$icomoon-font-path}/icomoon.eot?bwxrep');
+  src: url('#{$icomoon-font-path}/icomoon.eot?bwxrep#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/icomoon.ttf?bwxrep') format('truetype'),
+  url('#{$icomoon-font-path}/icomoon.woff?bwxrep') format('woff'),
+  url('#{$icomoon-font-path}/icomoon.svg?bwxrep#icomoon') format('svg');
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
+  line-height: 1;
   font-weight: normal;
+  font-style: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
 
-  /* Better Font Rendering =========== */
+  speak: none;/* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,26 +32,31 @@
     content: $icon-logo;
   }
 }
+
 .icon-arrow_right {
   &:before {
     content: $icon-arrow_right;
   }
 }
+
 .icon-close_btn {
   &:before {
     content: $icon-close_btn;
   }
 }
+
 .icon-arrow_left {
   &:before {
     content: $icon-arrow_left;
   }
 }
+
 .icon-arrow_bottom {
   &:before {
     content: $icon-arrow_bottom;
   }
 }
+
 .icon-logo2 {
   &:before {
     content: $icon-logo2;

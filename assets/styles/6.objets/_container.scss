@@ -1,6 +1,6 @@
 /* ==========================================================================
-   #CONTAINER
-   ========================================================================== */
+    #CONTAINER
+    ========================================================================== */
 
 // Variables
 /////////////////////////////
@@ -12,7 +12,9 @@ $container : '.o-container';
 
   #{$container}-#{$key} {
     @include center-block();
-    max-width:$value;
+
+    max-width: $value;
+
   }
 
 }
@@ -24,7 +26,9 @@ $container : '.o-container';
   #{$container}-#{$key}-padding {
     @include center-block();
     @include padding-mobile();
-    max-width:$value;
+
+    max-width: $value;
+
   }
 
 }

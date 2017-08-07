@@ -1,6 +1,6 @@
 /* ==========================================================================
-   #INPUT-PLACEHOLDER
-   ========================================================================== */
+    #INPUT-PLACEHOLDER
+    ========================================================================== */
 
 /*
 input,  
@@ -12,10 +12,24 @@ textarea {
 */
 
 @mixin input-placeholder {
-    &.placeholder { @content; }
-    &:-moz-placeholder { @content; }
-    &::-moz-placeholder { @content; }
-    &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; }
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
 }
 

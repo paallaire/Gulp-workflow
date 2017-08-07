@@ -1,41 +1,47 @@
-@if index($hamburger-types, spring) {
+  @if index($hamburger-types, spring) {
   /*
-   * Spring
-   */
+     * Spring
+     */
   .hamburger--spring {
     .hamburger-inner {
       top: $hamburger-layer-height / 2;
-      transition: background-color 0s 0.13s linear;
+
+      transition: background-color 0s .13s linear;
 
       &::before {
         top: $hamburger-layer-height + $hamburger-layer-spacing;
-        transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+        transition: top .1s .2s cubic-bezier(.33333, .66667, .66667, 1),
+        transform .13s cubic-bezier(.55, .055, .675, .19);
       }
 
       &::after {
         top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
-        transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+        transition: top .2s .2s cubic-bezier(.33333, .66667, .66667, 1),
+        transform .13s cubic-bezier(.55, .055, .675, .19);
       }
     }
 
     &.is-active {
       .hamburger-inner {
-        transition-delay: 0.22s;
+        transition-delay: .22s;
+
         background-color: transparent;
 
         &::before {
           top: 0;
-          transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                      transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          transition: top .1s .15s cubic-bezier(.33333, 0, .66667, .33333),
+          transform .13s .22s cubic-bezier(.215, .61, .355, 1);
           transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(45deg);
         }
 
         &::after {
           top: 0;
-          transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                      transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          transition: top .2s cubic-bezier(.33333, 0, .66667, .33333),
+          transform .13s .22s cubic-bezier(.215, .61, .355, 1);
           transform: translate3d(0, $hamburger-layer-spacing + $hamburger-layer-height, 0) rotate(-45deg);
         }
       }

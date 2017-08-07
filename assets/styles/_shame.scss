@@ -1,0 +1,15 @@
+/* before */
+
+p {
+  $color: tomato;
+  @include mixin($color);
+
+  padding: 0;
+  top: 0;
+
+  @include media('desktop') {
+    color: black;
+  }
+  
+}
+

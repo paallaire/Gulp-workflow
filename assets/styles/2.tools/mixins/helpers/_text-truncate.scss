@@ -1,12 +1,14 @@
 /* ==========================================================================
-   #TEXT-TRUNCATE
-   ========================================================================== */
+    #TEXT-TRUNCATE
+    ========================================================================== */
 
 @mixin truncate($truncation-boundary) {
   max-width: $truncation-boundary;
+
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+
+  overflow: hidden;
 }
 
 

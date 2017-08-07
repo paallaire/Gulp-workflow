@@ -1,22 +1,20 @@
 /* ==========================================================================
-   #MODAL
-   ========================================================================== */
+    #MODAL
+    ========================================================================== */
 
 // Variables
 /////////////////////////////
-$modal-zindex:            1010 !default;
-$modal-max-width:         600px !default;
-$modal-padding-y:         40px !default;
-$modal-padding-x:         15px !default;
+$modal-zindex: 1010 !default;
+$modal-max-width: 600px !default;
+$modal-padding-y: 40px !default;
+$modal-padding-x: 15px !default;
 $modal-btn-outside-width: 50px !default;
-$modal-btn-color:         #fff !default;
-$modal-btn-bg-color:      #000 !default;
-$modal-content-padding:   30px !default;
-$modal-content-bg-color:  #fff !default;
+$modal-btn-color: #fff !default;
+$modal-btn-bg-color: #000 !default;
+$modal-content-padding: 30px !default;
+$modal-content-bg-color: #fff !default;
 
 #{$modal} {
-  background: rgba(0,0,0,0.6);
-
   padding-top: $modal-padding-y;
   padding-right: $modal-padding-x + $modal-btn-outside-width;
   padding-bottom: $modal-padding-y;
@@ -32,6 +30,7 @@ $modal-content-bg-color:  #fff !default;
   display: none;
   overflow-y: auto;
 
+  background: rgba(0,0,0,.6);
 }
 
 #{$modal}-content {
@@ -45,7 +44,6 @@ $modal-content-bg-color:  #fff !default;
   overflow-y: auto;
 
   background-color: $modal-content-bg-color;
-
 }
 
 #{$modal}__btn-close-outside {
@@ -58,7 +56,6 @@ $modal-content-bg-color:  #fff !default;
 
   color: $modal-btn-color;
   background: $modal-btn-bg-color;
-
 }
 
 #{$modal}__btn-close-inside {
@@ -71,21 +68,18 @@ $modal-content-bg-color:  #fff !default;
 
   color: $modal-btn-color;
   background: $modal-btn-bg-color;
-
 }
 
 /* ==========================================================================
-   #MODAL-STATE
-   ========================================================================== */
+    #MODAL-STATE
+    ========================================================================== */
 
 #{$modal}.is-show {
   animation: fadeIn .3s linear;
 
   #{$modal}-content {
     animation: moveDown .3s ease-out,fadeIn .3s linear;
-
   }
-
 }
 
 #{$modal}.is-hide {
@@ -93,9 +87,7 @@ $modal-content-bg-color:  #fff !default;
 
   #{$modal}-content {
     animation: moveUp .3s ease-out,fadeOut .3s linear;
-
   }
-
 }
 
 #{$modal}.is-active {
@@ -105,9 +97,7 @@ $modal-content-bg-color:  #fff !default;
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
-
 }
 
 

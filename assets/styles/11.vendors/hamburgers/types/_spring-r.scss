@@ -1,45 +1,50 @@
-@if index($hamburger-types, spring-r) {
+  @if index($hamburger-types, spring-r) {
   /*
-   * Spring Reverse
-   */
+     * Spring Reverse
+     */
   .hamburger--spring-r {
     .hamburger-inner {
       top: auto;
       bottom: 0;
-      transition-duration: 0.13s;
+
       transition-delay: 0s;
-      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+      transition-duration: .13s;
 
       &::after {
         top: ($hamburger-layer-spacing * 2 + $hamburger-layer-height * 2) * -1;
-        transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                    opacity 0s linear;
+
+        transition: top .2s .2s cubic-bezier(.33333, .66667, .66667, 1),
+        opacity 0s linear;
       }
 
       &::before {
-        transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-                    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition: top .1s .2s cubic-bezier(.33333, .66667, .66667, 1),
+        transform .13s cubic-bezier(.55, .055, .675, .19);
       }
     }
 
     &.is-active {
       .hamburger-inner {
+        transition-delay: .22s;
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1);
         transform: translate3d(0, ($hamburger-layer-spacing + $hamburger-layer-height) * -1, 0) rotate(-45deg);
-        transition-delay: 0.22s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
         &::after {
           top: 0;
+
+          transition: top .2s cubic-bezier(.33333, 0, .66667, .33333),
+          opacity 0s .22s linear;
+
           opacity: 0;
-          transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                      opacity 0s 0.22s linear;
         }
 
         &::before {
           top: 0;
+
+          transition: top .1s .15s cubic-bezier(.33333, 0, .66667, .33333),
+          transform .13s .22s cubic-bezier(.215, .61, .355, 1);
           transform: rotate(90deg);
-          transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-                      transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
       }
     }

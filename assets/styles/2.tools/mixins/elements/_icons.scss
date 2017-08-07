@@ -1,22 +1,22 @@
 /* ==========================================================================
-   #icon-css
-   ========================================================================== */
+    #icon-css
+    ========================================================================== */
 @mixin icon-css($content: false) {
+  font-family: 'icomoon' !important;
+  line-height: 1;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
 
+  display: block;
+
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   @if $content {
     content: '#{$content}';
   }
-  
-  display: block;
-  font-family: 'icomoon' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 
