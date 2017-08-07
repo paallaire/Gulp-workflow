@@ -1,21 +1,3 @@
-/* --------------------------------------------------------------------------------
-    TO DO LIST
--------------------------------------------------------------------------------- */
-
-/*
-- SASS ok
--   SASS sourcemap level 1 = main.scss
-- IMAGES ok
-- FONTS ok
-- VIDEO ok
-- SERVER ok
-- TWIG ok
-- Notification ok
-- PROD VS DEV hold
-- SVG hold
-- sassSorting hold
--   Pour le momnent csscomb via studio code
-*/
 
 /* --------------------------------------------------------------------------------
     Variables

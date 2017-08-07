@@ -1,9 +1,20 @@
 
+// 0.npm-node-modules ( Vendors )
+///////////////////////////////////////////
+
+// core
+@import "../../node_modules/normalize-scss/sass/_normalize";
+@import "../../node_modules/include-media/dist/_include-media";
+
+// addon
+@import "../../node_modules/aos/src/sass/aos";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "../../node_modules/jquery-focuspoint/css/focuspoint";
+@import "../../node_modules/swiper/dist/css/swiper";
 
 // 1.settings
 ///////////////////////////////////////////
 @import '1.settings/variables';
-
 @import '1.settings/selectors';
 
 // 2.tools - functions
@@ -16,53 +27,37 @@
 
 // 2.tools - mixins
 ///////////////////////////////////////////
-@import '11.vendors/include-media';
 
 // General
 @import '2.tools/mixins/animation';
-
 @import '2.tools/mixins/transition';
 
 // Helpers
 @import '2.tools/mixins/helpers/pseudo';
-
 @import '2.tools/mixins/helpers/center-block';
-
 @import '2.tools/mixins/helpers/clearfix';
-
 @import '2.tools/mixins/helpers/input-placeholder';
-
 @import '2.tools/mixins/helpers/responsive-ratio';
-
 @import '2.tools/mixins/helpers/text-truncate';
-
 @import '2.tools/mixins/helpers/triangle';
-
 @import '2.tools/mixins/helpers/embed';
-
 @import '2.tools/mixins/helpers/mobile';
 
 // Elements
 @import '2.tools/mixins/elements/btn';
-
 @import '2.tools/mixins/elements/links';
-
 @import '2.tools/mixins/elements/icons';
-
 @import '2.tools/mixins/elements/heading';
-
 @import '2.tools/mixins/elements/text';
 
 // 3.base
 ///////////////////////////////////////////
+@include normalize(); // normalize-scss
+
 @import '3.base/reset';
-
 @import '3.base/fonts';
-
 @import '3.base/typography';
-
 @import '3.base/global';
-
 @import '3.base/icons';
 
 // 4.elements
@@ -72,31 +67,22 @@
 // 5.components
 ///////////////////////////////////////////
 @import '5.components/banner';
-
 @import '5.components/wysiwyg';
-
 @import '5.components/overlay';
-
 @import '5.components/modal';
-
 @import '5.components/loader';
 
 // 6.objets
 ///////////////////////////////////////////
 @import '6.objets/container';
-
 @import '6.objets/grid';
 
 // 7.layout
 ///////////////////////////////////////////
 @import '7.layout/wrapper';
-
 @import '7.layout/header';
-
 @import '7.layout/nav';
-
 @import '7.layout/content';
-
 @import '7.layout/footer';
 
 // 8.pages
@@ -106,25 +92,17 @@
 // 9.themes
 ///////////////////////////////////////////
 @import '9.themes/light';
-
 @import '9.themes/dark';
 
 // 10.utils
 ///////////////////////////////////////////
 @import '10.utils/mq-status';
-
 @import '10.utils/mq-visibility';
 
 // 11.vendors
 ///////////////////////////////////////////
-@import '11.vendors/hamburgers/hamburgers';
 
-@import '11.vendors/lazysizes';
-
-@import '11.vendors/aos/aos';
 
 // Shame
 ///////////////////////////////////////////
 @import 'shame';
-
-
