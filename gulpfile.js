@@ -29,6 +29,7 @@ var lost = require('lost');
 var data = require('gulp-data');
 var twig = require('gulp-twig');
 var wait = require('gulp-wait');
+var babel = require('gulp-babel');
 
 // Error
 var onError = function (err) {
@@ -162,6 +163,11 @@ var jsTasks = function (filename) {
         .pipe(function () {
             return gulpif(enabled.maps, sourcemaps.init());
         })
+        /*
+       .pipe(babel, {
+            presets: ['es2015']
+        })
+        */
         .pipe(function () {
             return gulpif('*.ts', ts({
                 out: 'output.js'
