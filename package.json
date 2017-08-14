@@ -1,8 +1,7 @@
 {
-  "name": "Base",
+  "name": "base",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -24,6 +23,13 @@
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "cross-env": "^5.0.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-twig": "^0.7.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
     "laravel-mix": "^1.4.2"
   },
   "dependencies": {
