@@ -6,17 +6,20 @@
 /////////////////////////////
 
 #{$btn} {
-    display:inline-block;
-    color:$color-white;
+  text-transform: uppercase;
+
     //background-color: rgba($color-black,0.2);
+  letter-spacing: 1px;
 
-    letter-spacing:1px;
-    text-transform: uppercase;
+  display: inline-block;
 
-    i {
-        position:relative;
-        color:$color-mongoose;
-    }
+  color: $color-white;
+
+  i {
+    position: relative;
+
+    color: $color-mongoose;
+  }
 
 }
 

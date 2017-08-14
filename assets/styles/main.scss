@@ -3,14 +3,14 @@
 ///////////////////////////////////////////
 
 // core
-@import "../../node_modules/normalize-scss/sass/_normalize";
-@import "../../node_modules/include-media/dist/_include-media";
+@import "~normalize-scss/sass/_normalize";
+@import "~include-media/dist/_include-media";
 
 // addon
-@import "../../node_modules/aos/src/sass/aos";
-@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
-@import "../../node_modules/jquery-focuspoint/css/focuspoint";
-@import "../../node_modules/swiper/dist/css/swiper";
+@import "~aos/src/sass/aos";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+@import "~jquery-focuspoint/css/focuspoint";
+@import "~swiper/dist/css/swiper";
 
 // 1.settings
 ///////////////////////////////////////////
@@ -102,7 +102,16 @@
 // 11.vendors
 ///////////////////////////////////////////
 
-
 // Shame
 ///////////////////////////////////////////
 @import 'shame';
+
+
+
+
+
+
+
+
+
+
