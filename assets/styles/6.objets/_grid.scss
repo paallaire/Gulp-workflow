@@ -13,13 +13,13 @@
 /////////////////////////////
 @for $i from 2 through 12 {
 
-    .o-grid-#{$i} {
+  .o-grid-#{$i} {
 
-        & > .o-grid-col {
-            lost-column: 1/#{$i};
-        }
+      & > .o-grid-col {
+          lost-column: 1/#{$i};
+      }
 
-    }
+  }
 }
 
 

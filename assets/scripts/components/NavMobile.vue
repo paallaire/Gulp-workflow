@@ -26,7 +26,7 @@ export default {
     },
     resize: _.debounce(function (e) {
 
-      const w = window.innerWidth;
+      let w = window.innerWidth;
 
       if (w >= 1000 && this.show) {
         this.close();
