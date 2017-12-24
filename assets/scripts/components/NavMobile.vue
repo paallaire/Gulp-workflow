@@ -71,9 +71,7 @@ export default {
   cursor: pointer;
 }
 
-
 /* transition menu */
-
 .nav-mobile--menu-enter-active,
 .nav-mobile--menu-leave-active {
   transition: transform .5s ease;
@@ -95,17 +93,13 @@ export default {
   transform: translateX(-320px);
 }
 
-
 /* transition overlay */
-
 .nav-mobile--overlay-enter-active,
 .nav-mobile--overlay-leave-active {
   transition: opacity 0.3s;
 }
 
-
 /* out */
-
 .nav-mobile--overlay-enter,
 .nav-mobile--overlay-leave-to {
   opacity: 0;
@@ -113,7 +107,6 @@ export default {
 
 
 /* in */
-
 .nav-mobile--overlay-enter-to,
 .nav-mobile--overlay-leave {
   opacity: 1;

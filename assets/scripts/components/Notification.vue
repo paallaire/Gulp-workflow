@@ -1,7 +1,7 @@
 <template>
-<div class="notification">
-  {{ body }}
-</div>
+  <div class="notification">
+    {{ body }}
+  </div>
 </template>
 
 <script>

@@ -2,12 +2,8 @@
 
 // 0.npm-node-modules ( Vendors )
 ///////////////////////////////////////////
-
-// core
 @import "~normalize-scss/sass/_normalize";
 @import "~include-media/dist/_include-media";
-
-// addon
 @import "~aos/src/sass/aos";
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 @import "~jquery-focuspoint/css/focuspoint";
