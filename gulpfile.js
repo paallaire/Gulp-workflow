@@ -9,7 +9,7 @@ const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
 const notify = require('gulp-notify');
 
-const src = './templates/**/*.twig';
+const src = './views/**/*.twig';
 const dest = './public';
 
 const options = {
@@ -35,12 +35,12 @@ gulp.task('clean', (done) => {
 
 });
 
-/* watch-twig
+/* watch
 ================================================================= */
-gulp.task('watch-twig', ['clean', 'build-twig'], function () {
+gulp.task('watch', ['clean', 'build'], function () {
 
-  return watch(src, options, function () {
-    gulp.src(src)
+  return watch('./views/**/*.twig', options, function () {
+    gulp.src('./views/*.twig')
       .pipe(plumber({
         errorHandler: onError
       }))
@@ -50,11 +50,11 @@ gulp.task('watch-twig', ['clean', 'build-twig'], function () {
 
 });
 
-/* build-twig
+/* build
 ================================================================= */
-gulp.task('build-twig', ['clean'], function () {
+gulp.task('build', ['clean'], function () {
 
-  return gulp.src(src)
+  return gulp.src('./views/*.twig')
     .pipe(plumber({
       errorHandler: onError
     }))

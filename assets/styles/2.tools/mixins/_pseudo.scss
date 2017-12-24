@@ -1,10 +1,11 @@
 /* ==========================================================================
-    #DARK
+    #PSEUDO
     ========================================================================== */
 
-// Variables
-/////////////////////////////
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  position: $pos;
 
-#{$theme-dark} {}
+  display: $display;
 
-
+  content: $content;
+}

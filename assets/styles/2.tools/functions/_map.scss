@@ -1,19 +1,36 @@
-
+/* ==========================================================================
+    #MAP CONTAINER
+========================================================================== */
 
 // Map container
 @function container($width) {
   @return map-get($map-containers, $width);
 }
 
+/* ==========================================================================
+    #MAP HEADING
+========================================================================== */
+
 // Map font size heading
-@function container($size) {
+@function headingSize($size) {
   @return map-get($map-font-sizes-heading, $size);
 }
 
+// Map font size heading (Mobile)
+@function headingSizeMobile($size) {
+  @return map-get($map-font-sizes-heading-mobile, $size);
+}
+
+/* ==========================================================================
+    #MAP TEXT
+========================================================================== */
+
 // Map font size text
-@function container($size) {
+@function textSize($size) {
   @return map-get($map-font-sizes-text, $size);
 }
 
-
-
+// Map font size text (Mobile)
+@function textSizeMobile($size) {
+  @return map-get($map-font-sizes-text-mobile, $size);
+}

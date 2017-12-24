@@ -1,0 +1,12 @@
+/* ==========================================================================
+    #GRID LAST ROW
+    ========================================================================== */
+
+@mixin grid-last-row($columns, $element : "li") {
+
+    &:nth-child(#{$columns}n+1):nth-last-child(-n+#{$columns}),
+    &:nth-child(#{$columns}n+1):nth-last-child(-n+#{$columns}) ~ #{$element} {
+        @content;
+    }
+
+}

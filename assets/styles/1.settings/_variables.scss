@@ -1,3 +1,5 @@
+
+
 /* ==========================================================================
     #CONFIG
     ========================================================================== */
@@ -18,33 +20,65 @@ $folder-node-modules : '../../node_modules/';
     #TYPOGRAPHY
     ========================================================================== */
 
+// font-family
+/////////////////////////////
 $Montserrat: 'Montserrat', sans-serif;
 $Baskerville: 'Libre Baskerville', serif;
-$font-heading: $Baskerville;
-$font-heading-line-height : 1.4;
-$font-text: $Montserrat;
-$font-text-line-height : 1.4;
+
+// heading
+/////////////////////////////
 $map-font-sizes-heading: (
-  'h1':  40px,
-  'h2':  32px,
-  'h3':  30px,
-  'h4':  28px,
-  'h5':  26px,  
-  'h6':  20px 
+    'h1':  40px,
+    'h2':  32px,
+    'h3':  30px,
+    'h4':  28px,
+    'h5':  26px,  
+    'h6':  20px 
 );
+
+$map-font-sizes-heading-mobile: (
+    'h1': 60px,
+    'h2': 40px,
+    'h3': 32px,
+    'h4': 20px,
+    'h5': 26px,
+    'h6': 22px
+) ;
+
+// text
+/////////////////////////////
 $map-font-sizes-text: (
-  'mini':   8px,
-  'tiny':   10px,
-  'small':  12px,
-  'medium': 16px,
-  'large':  24px,
-  'big':    40px,
-  'huge':   80px,
+    'mini':   8px,
+    'tiny':   10px,
+    'small':  12px,
+    'medium': 16px,
+    'large':  24px,
+    'big':    40px,
+    'huge':   80px,
 );
+
+$map-font-sizes-text-mobile: (
+    'small':  14px,
+    'medium': 16px,
+    'large':  16px,
+    'big':    20px
+) ;
+
+
+// style
+/////////////////////////////
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 $font-weight-black: 700;
+
+// type
+/////////////////////////////
+$font-heading: $Baskerville;
+$font-heading-line-height : 1.4;
+
+$font-text: $Montserrat;
+$font-text-line-height : 1.4;
 
 /* ==========================================================================
     #COLORS
@@ -59,15 +93,18 @@ $color-mongoose: #b8a074;
 $color-gray: #b4b4b4;
 
 // Typo
+/////////////////////////////
 $color-text: $color-white;
 $color-heading: $color-black;
 
 // State
+/////////////////////////////
 $color-valid: green;
 $color-error: red;
 $color-warning: yellow;
 
 // Text selection
+/////////////////////////////
 $text-selection-color : #000;
 $text-selection-bg : #b3d4fc;
 
@@ -89,6 +126,8 @@ $form-input-padding-y: 8px;
     #MEDIA-QUERIES
     ========================================================================== */
 
+// breakpoints (include-media)
+/////////////////////////////
 $breakpoints: (
   'small':   320px,
   'phone':   520px,
@@ -96,6 +135,9 @@ $breakpoints: (
   'desktop': 1024px,
   'large':   1440px,  
 );
+
+// padding 
+/////////////////////////////
 $padding-mobile : 20px;
 $padding-mobile-x : 20px;
 $padding-mobile-y : 20px;
@@ -131,4 +173,43 @@ $z-modal: 1000;
 $transition-speed-slow: .6s;
 $transition-speed-medium: .3s;
 $transition-speed-fast: .1s;
+
+/* ==========================================================================
+    #LOST (postcss)
+    ========================================================================== */
+
+@lost gutter 0;
+@lost flexbox no-flex;
+@lost cycle none;
+@lost clearing left;
+@lost rounder 99.99999;
+
+/* ==========================================================================
+    #hamburger (button nav mobile)
+    ========================================================================== */
+
+$hamburger-padding-x: 0;
+$hamburger-padding-y: 0;
+$hamburger-layer-width: 40px;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 9px;
+$hamburger-layer-color: $color-mongoose;
+$hamburger-layer-border-radius: 0;
+$hamburger-hover-opacity: .8;
+$hamburger-hover-transition-duration: .15s;
+$hamburger-hover-transition-timing-function: ease;
+$hamburger-layer-width-mobile: 28px;
+$hamburger-layer-height-mobile: 2px;
+$hamburger-layer-spacing-mobile: 7px;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false;
+$hamburger-hover-filter: opacity(50%);
+$header-height: 60px;
+$header-height-mobile: 46px;
+
+
+
 

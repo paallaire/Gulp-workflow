@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 const path = require('path');
 
+console.log(process.env.NODE_ENV);
 
 /*
  |--------------------------------------------------------------------------

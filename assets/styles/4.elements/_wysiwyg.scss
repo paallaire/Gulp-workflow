@@ -1,0 +1,55 @@
+/* ==========================================================================
+    #WYSIWYG
+    ========================================================================== */
+
+@mixin wysiwyg( $type : 'base') {
+
+    $margin: 25px;
+    $margin-large: 36px;
+
+    & > * + * {
+        margin-top: $margin;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $margin-large;
+    }
+
+    h2 {
+        @include h4();
+    }
+
+    h3 {
+        @include h5();
+    }
+
+    h4 {
+        @include h6();
+    }
+
+    p {
+        @include text-medium();
+    }
+
+    .txt-big {
+        @include text-big();
+        line-height: 1.2;
+    }
+
+    ul {
+        @include list-unordered();
+    }
+
+    img {
+        margin-top: $margin;
+        @include center-block();
+    }
+
+    blockquote {}
+
+}

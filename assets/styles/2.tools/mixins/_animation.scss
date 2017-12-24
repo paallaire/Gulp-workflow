@@ -2,6 +2,7 @@
     #ANIMATION
     ========================================================================== */
 
+// fadeIn
 @keyframes fadeIn {
 
   0% {
@@ -23,6 +24,7 @@
   animation-fill-mode: both;
 }
 
+// fadeOut
 @keyframes fadeOut {
 
   0% {
@@ -44,7 +46,8 @@
   animation-fill-mode: both;
 }
 
-@keyframes spin-loader {
+// spinLoader
+@keyframes spinLoader {
 
   0% {
     transform: rotate(0deg);
@@ -57,7 +60,7 @@
 }
 
 .spin-loader {
-  animation-name: spin-loader;
+  animation-name: spinLoader;
   animation-duration: 1s;
   animation-iteration-count:infinite;
   animation-fill-mode: both;
