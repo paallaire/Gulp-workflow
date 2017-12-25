@@ -1,4 +1,20 @@
 {
+  "order": [
+    "custom-properties",
+    "dollar-variables",
+    {
+      "type": "at-rule",
+      "name": "include"
+    },
+    "declarations",
+    {
+      "type": "at-rule",
+      "name": "include",
+      "parameter": "media",
+      "hasBlock": true
+    },
+    "rules"
+  ],
   "properties-order": [
     "-webkit-box-sizing",
     "-moz-box-sizing",
@@ -19,7 +35,6 @@
     "padding-right",
     "padding-bottom",
     "padding-left",
-
     "display",
     "visibility",
     "float",
@@ -44,14 +59,12 @@
     "flex-order",
     "flex-pack",
     "flex-align",
-
     "position",
     "z-index",
     "top",
     "right",
     "bottom",
     "left",
-
     "font",
     "font-family",
     "font-size",
@@ -80,18 +93,15 @@
     "word-wrap",
     "word-break",
     "text-shadow",
-
     "table-layout",
     "empty-cells",
     "caption-side",
     "border-spacing",
     "border-collapse",
-
     "list-style",
     "list-style-position",
     "list-style-type",
     "list-style-image",
-
     "content",
     "quotes",
     "counter-reset",
@@ -205,7 +215,6 @@
     "-moz-hyphens",
     "hyphens",
     "pointer-events",
-
     "opacity",
     "filter:progid:DXImageTransform.Microsoft.Alpha(Opacity",
     "-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha",

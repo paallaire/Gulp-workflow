@@ -10,24 +10,28 @@
   }
   @if $direction==down {
     margin-top: 0 - round( $size / 2.5);
+
     border-top: $size solid $color;
     border-right: $size solid transparent;
     border-left: $size solid transparent;
   }
   @else if $direction==up {
     margin-bottom: 0 - round( $size / 2.5);
+
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
     border-left: $size solid transparent;
   }
   @else if $direction==right {
     margin-right: -$size;
+
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
   }
   @else if $direction==left {
     margin-left: -$size;
+
     border-top: $size solid transparent;
     border-right: $size solid $color;
     border-bottom: $size solid transparent;

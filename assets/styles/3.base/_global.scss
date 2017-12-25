@@ -16,9 +16,9 @@ html {
   overflow-y: scroll;
 
   &.is-fixed {
-    position: fixed;
 
     overflow: hidden;
+    position: fixed;
   }
 }
 

@@ -3,7 +3,6 @@
     ========================================================================== */
 
 @mixin link-default() {
-
   &:hover {
     text-decoration: underline;
   }

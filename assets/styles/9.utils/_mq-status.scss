@@ -3,27 +3,24 @@
     ========================================================================== */
 
 @if ($env == 'dev') {
-
   body {
-
     &:before {
-
-      @each $name, $value in $breakpoints {
-
-        @include media('>=#{$name}') {
-          content: '#{$name}';
-        }
-      }
-
       padding: 10px;
+
+      display: block;
 
       position: fixed;
       right: 0;
       bottom: 0;
 
-      display: block;
-      background: #ccc;
       text-transform: capitalize;
+
+      background: #ccc;
+      @each $name, $value in $breakpoints {
+        @include media('>=#{$name}') {
+          content: '#{$name}';
+        }
+      }
     }
   }
 }

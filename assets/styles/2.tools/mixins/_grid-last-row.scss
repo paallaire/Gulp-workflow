@@ -2,8 +2,7 @@
     #GRID LAST ROW
     ========================================================================== */
 
-@mixin grid-last-row($columns, $element : "li") {
-
+@mixin grid-last-row($columns, $element : 'li') {
   false,
   false {
     @content;

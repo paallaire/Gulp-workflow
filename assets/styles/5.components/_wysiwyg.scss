@@ -2,13 +2,13 @@
     #WYSIWYG
     ========================================================================== */
 
-// Variables
-/////////////////////////////
+/* Variables*/
+/*///////////////////////////*/
 
 #{$wysiwyg} {
-  // lobotomized-owls
-  // https://alistapart.com/article/axiomatic-css-and-lobotomized-owls
-  /////////////////////////////
+  /* lobotomized-owls*/
+  /* https://alistapart.com/article/axiomatic-css-and-lobotomized-owls*/
+  /*///////////////////////////*/
   & > * + * {
     margin-top: 30px;
 
@@ -19,14 +19,14 @@
     margin-top: 0;
   }
 
-  // empty tag
-  ///////////////////////////// 
+  /* empty tag*/
+  /*/////////////////////////// */
   p:empty {
     display: none;
   }
 
-  // heading
-  ///////////////////////////// 
+  /* heading*/
+  /*/////////////////////////// */
   h1 {
     margin-top: .58333em;
 
@@ -65,8 +65,8 @@
     font-size: 1em;
   }
 
-  // list
-  ///////////////////////////// 
+  /* list*/
+  /*/////////////////////////// */
   ol,
   ul {
     padding-left: 1.4em;

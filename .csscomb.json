@@ -31,9 +31,7 @@
         ],
         [
             "$include",
-            "$import"
-        ],
-        [
+            "$import",
             "-webkit-box-sizing",
             "-moz-box-sizing",
             "box-sizing",

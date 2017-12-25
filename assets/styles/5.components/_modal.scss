@@ -2,8 +2,8 @@
     #MODAL
     ========================================================================== */
 
-// Variables
-/////////////////////////////
+/* Variables*/
+/*///////////////////////////*/
 $modal-zindex: 1010 !default;
 $modal-max-width: 600px !default;
 $modal-padding-y: 40px !default;
@@ -20,15 +20,15 @@ $modal-content-bg-color: #fff !default;
   padding-bottom: $modal-padding-y;
   padding-left: $modal-padding-x + $modal-btn-outside-width;
 
+  display: none;
+  overflow-y: auto;
+
   position: fixed;
   z-index: $modal-zindex;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
-  display: none;
-  overflow-y: auto;
 
   background: rgba(0,0,0,.6);
 }
@@ -39,9 +39,9 @@ $modal-content-bg-color: #fff !default;
   margin: 0 auto;
   padding: $modal-content-padding;
 
-  position: relative;
-
   overflow-y: auto;
+
+  position: relative;
 
   background-color: $modal-content-bg-color;
 }
@@ -75,18 +75,23 @@ $modal-content-bg-color: #fff !default;
     ========================================================================== */
 #{$modal}.is-show {
   animation: fadeIn .3s linear;
+
   #{$modal}-content {
     animation: moveDown .3s ease-out,fadeIn .3s linear;
   }
 }
+
 #{$modal}.is-hide {
   animation: fadeOut .3s linear;
+
   #{$modal}-content {
     animation: moveUp .3s ease-out,fadeOut .3s linear;
   }
 }
+
 #{$modal}.is-active {
   display: block;
+
   &[data-modal-position='center'] {
     display: flex;
     justify-content: center;

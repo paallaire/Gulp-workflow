@@ -9,16 +9,22 @@ const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
 const notify = require('gulp-notify');
 
+const sortingOptions = require('./postcss-sorting');
+const postcss = require('gulp-postcss');
+const sorting = require('postcss-sorting');
+const syntax = require('postcss-scss');
+const csscomb = require('gulp-csscomb');
+
+// Path
 const src = './views/**/*.twig';
 const dest = './public';
 
-const sortingOptions = require('./postcss-sorting');
-
-const options = {
+// Options
+const twigOptions = {
   verbose: true
 }
 
-var onError = function (err) {
+const onError = function (err) {
   notify.onError({
     title: "Gulp error in " + err.plugin,
     message: err.toString()
@@ -41,7 +47,7 @@ gulp.task('clean', (done) => {
 ================================================================= */
 gulp.task('watch', ['clean', 'build'], function () {
 
-  return watch('./views/**/*.twig', options, function () {
+  return watch('./views/**/*.twig', twigOptions, function () {
     gulp.src('./views/*.twig')
       .pipe(plumber({
         errorHandler: onError
@@ -66,21 +72,16 @@ gulp.task('build', ['clean'], function () {
 });
 
 
-var postcss = require('gulp-postcss');
-var sorting = require('postcss-sorting');
-var syntax = require('postcss-scss');
-var nested = require('postcss-nested');
-var sugarss = require('sugarss');
-
-gulp.task('css', function () {
+/* formatStyles
+================================================================= */
+gulp.task('formatStyles', function () {
   return gulp.src('./assets/styles/**/*.scss')
-    .pipe(
-      postcss([
-        sorting(sortingOptions)
+    //.pipe(csscomb())
+    .pipe(postcss([
+      sorting(sortingOptions)
     ], { parser: syntax })
-    ).pipe(
-      gulp.dest('./output')
-    );
+    )
+    .pipe(gulp.dest('./assets/styles/'));
 });
 
 
