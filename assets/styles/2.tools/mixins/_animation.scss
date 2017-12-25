@@ -7,14 +7,11 @@
 
   0% {
     opacity: 0;
-
   }
 
   100% {
     opacity: 1;
-
   }
-
 }
 
 .fadeIn {
@@ -29,14 +26,11 @@
 
   0% {
     opacity: 1;
-
   }
 
   100% {
     opacity: 0;
-
   }
-
 }
 
 .fadeOut {
@@ -56,12 +50,11 @@
   100% {
     transform: rotate(360deg);
   }
-
 }
 
 .spin-loader {
   animation-name: spinLoader;
   animation-duration: 1s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
   animation-fill-mode: both;
 }

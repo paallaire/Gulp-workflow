@@ -4,7 +4,7 @@
     #CONFIG
     ========================================================================== */
 
-$env : 'dev';
+$env: 'dev';
 
 /* ==========================================================================
     #FOLDER
@@ -14,7 +14,7 @@ $folder-fonts: '../fonts/';
 $folder-images: '../images/';
 $folder-svg: '../svg/';
 $icomoon-font-path: $folder-fonts;
-$folder-node-modules : '../../node_modules/';
+$folder-node-modules: '../../node_modules/';
 
 /* ==========================================================================
     #TYPOGRAPHY
@@ -43,7 +43,7 @@ $map-font-sizes-heading-mobile: (
     'h4': 20px,
     'h5': 26px,
     'h6': 22px
-) ;
+);
 
 // text
 /////////////////////////////
@@ -62,7 +62,7 @@ $map-font-sizes-text-mobile: (
     'medium': 16px,
     'large':  16px,
     'big':    20px
-) ;
+);
 
 
 // style
@@ -75,10 +75,10 @@ $font-weight-black: 700;
 // type
 /////////////////////////////
 $font-heading: $Baskerville;
-$font-heading-line-height : 1.4;
+$font-heading-line-height: 1.4;
 
 $font-text: $Montserrat;
-$font-text-line-height : 1.4;
+$font-text-line-height: 1.4;
 
 /* ==========================================================================
     #COLORS
@@ -105,8 +105,8 @@ $color-warning: yellow;
 
 // Text selection
 /////////////////////////////
-$text-selection-color : #000;
-$text-selection-bg : #b3d4fc;
+$text-selection-color: #000;
+$text-selection-bg: #b3d4fc;
 
 /* ==========================================================================
     #FORM
@@ -131,16 +131,17 @@ $form-input-padding-y: 8px;
 $breakpoints: (
   'small':   320px,
   'phone':   520px,
-  'tablet':  768px,
+  'tablet':  800px,
   'desktop': 1024px,
   'large':   1440px,  
 );
 
+
 // padding 
 /////////////////////////////
-$padding-mobile : 20px;
-$padding-mobile-x : 20px;
-$padding-mobile-y : 20px;
+$padding-mobile: 20px;
+$padding-mobile-x: 20px;
+$padding-mobile-y: 20px;
 
 /* ==========================================================================
     #CONTAINER

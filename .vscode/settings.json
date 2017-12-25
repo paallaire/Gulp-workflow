@@ -12,6 +12,11 @@
       "at-rules",
       "rules"
     ],
-    "properties-order": ["display", "position", "top", "right", "bottom", "left"]
+    "properties-order": [
+      "margin",
+      "padding",
+      "border",
+      "background"
+    ]
   }
 }

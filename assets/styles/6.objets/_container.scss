@@ -4,7 +4,7 @@
 
 // Variables
 /////////////////////////////
-$container : '.o-container';
+$container: '.o-container';
 
 // container with no paddding 
 /////////////////////////////
@@ -14,9 +14,7 @@ $container : '.o-container';
     @include center-block();
 
     max-width: $value;
-
   }
-
 }
 
 // container with padding
@@ -28,9 +26,7 @@ $container : '.o-container';
     @include padding-mobile();
 
     max-width: $value;
-
   }
-
 }
 
 

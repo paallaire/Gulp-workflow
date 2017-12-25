@@ -6,14 +6,13 @@
 
   body {
 
-    &:after {
+    &:before {
 
       @each $name, $value in $breakpoints {
 
         @include media('>=#{$name}') {
           content: '#{$name}';
         }
-
       }
 
       padding: 10px;
@@ -25,11 +24,8 @@
       display: block;
       background: #ccc;
       text-transform: capitalize;
-
     }
-
   }
-
 }
 
 

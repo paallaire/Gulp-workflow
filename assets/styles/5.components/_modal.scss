@@ -73,26 +73,20 @@ $modal-content-bg-color: #fff !default;
 /* ==========================================================================
     #MODAL-STATE
     ========================================================================== */
-
 #{$modal}.is-show {
   animation: fadeIn .3s linear;
-
   #{$modal}-content {
     animation: moveDown .3s ease-out,fadeIn .3s linear;
   }
 }
-
 #{$modal}.is-hide {
   animation: fadeOut .3s linear;
-
   #{$modal}-content {
     animation: moveUp .3s ease-out,fadeOut .3s linear;
   }
 }
-
 #{$modal}.is-active {
   display: block;
-
   &[data-modal-position='center'] {
     display: flex;
     justify-content: center;

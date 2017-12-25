@@ -12,6 +12,8 @@ const notify = require('gulp-notify');
 const src = './views/**/*.twig';
 const dest = './public';
 
+const sortingOptions = require('./postcss-sorting');
+
 const options = {
   verbose: true
 }
@@ -62,3 +64,24 @@ gulp.task('build', ['clean'], function () {
     .pipe(gulp.dest(dest));
 
 });
+
+
+var postcss = require('gulp-postcss');
+var sorting = require('postcss-sorting');
+var syntax = require('postcss-scss');
+var nested = require('postcss-nested');
+var sugarss = require('sugarss');
+
+gulp.task('css', function () {
+  return gulp.src('./assets/styles/**/*.scss')
+    .pipe(
+      postcss([
+        sorting(sortingOptions)
+    ], { parser: syntax })
+    ).pipe(
+      gulp.dest('./output')
+    );
+});
+
+
+

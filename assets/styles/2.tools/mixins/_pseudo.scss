@@ -1,11 +1,8 @@
 /* ==========================================================================
     #PSEUDO
     ========================================================================== */
-
 @mixin pseudo($display: block, $pos: absolute, $content: '') {
   position: $pos;
-
   display: $display;
-
   content: $content;
 }

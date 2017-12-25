@@ -26,7 +26,7 @@ html {
     ========================================================================== */
 
 body {
-  line-height:1;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -118,22 +118,22 @@ h2,
 h3,
 h4,
 h5,
-h6 {}
+h6 {
+}
 
 // link
 a {
   color: inherit;
   outline: none;
   text-decoration: none;
-  
+
   background-color: transparent; /* Remove the gray background on active links in IE 10 */
   -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
-  
+
   &:active,
   &:hover {
     outline-width: 0; /* Remove the outline when hovering in all browsers */
   }
-  
 }
 
 // images

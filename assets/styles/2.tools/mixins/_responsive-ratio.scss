@@ -16,7 +16,6 @@ div { @include responsive-ratio(16,9); }
   @if $pseudo {
     &:before {
       @include pseudo($pos: relative);
-
       width: 100%;
       padding-top: $padding;
     }
