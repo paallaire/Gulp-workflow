@@ -1,22 +1,18 @@
-console.log('hello js');
+// Fix simple polyfill that fetches external SVGs referenced in use elements when the browser itself  ( IE 10-11 )
+import 'svgxuse';
 
 // Get breakpoints from SASS
 // https://github.com/eduardoboucas/include-media-export
 import mq from './vendors/include-media-1.0.2.min.js';
 
+// Vue
 import Vue from 'vue';
-import Notification from './components/Notification.vue';
-import NavMobile from './components/NavMobile.vue';
-
-
-
-console.log( mq.getActive() );
+import Dropdown from './components/Dropdown.vue';
 
 let vm = new Vue({
   el: '#app',
   components: {
-    Notification,
-    NavMobile
+    Dropdown,
   },
   data: {
     showNavMobile: false

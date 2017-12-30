@@ -78,7 +78,6 @@
 /* 9.utils*/
 /*/////////////////////////////////////////*/
 @import '9.utils/mq-status';
-@import '9.utils/mq-visibility';
 
 /* 10.misc*/
 /*/////////////////////////////////////////*/
@@ -88,3 +87,33 @@
 /* Shame*/
 /*/////////////////////////////////////////*/
 @import 'shame';
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-header {
+  padding: 10px;
+  background: red;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-items {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background: blue;
+
+  .dropdown.placement-bottom > & {
+    top: 100%;
+  }
+
+  .dropdown.placement-top > & {
+    bottom: 100%;
+  }
+
+}
+

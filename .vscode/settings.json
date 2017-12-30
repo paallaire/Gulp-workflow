@@ -3,20 +3,5 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
-  "csscomb.useLatestCore": true,
-  "postcssSorting.config": {
-    "order": [
-      "custom-properties",
-      "dollar-variables",
-      "declarations",
-      "at-rules",
-      "rules"
-    ],
-    "properties-order": [
-      "margin",
-      "padding",
-      "border",
-      "background"
-    ]
-  }
+  "csscomb.useLatestCore": true
 }

@@ -1,5 +1,3 @@
-
-
 /* ==========================================================================
     #CONFIG
     ========================================================================== */
@@ -35,6 +33,7 @@ $map-font-sizes-heading: (
 'h5':  26px,  
 'h6':  20px 
 );
+
 $map-font-sizes-heading-mobile: (
 'h1': 60px,
 'h2': 40px,
@@ -55,13 +54,13 @@ $map-font-sizes-text: (
 'big':    40px,
 'huge':   80px,
 );
+
 $map-font-sizes-text-mobile: (
 'small':  14px,
 'medium': 16px,
 'large':  16px,
 'big':    20px
 );
-
 
 /* style*/
 /*///////////////////////////*/
@@ -132,7 +131,6 @@ $breakpoints: (
 'desktop': 1024px,
 'large':   1440px,  
 );
-
 
 /* padding */
 /*///////////////////////////*/

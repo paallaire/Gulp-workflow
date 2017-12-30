@@ -1,19 +1,22 @@
 /* --------------------------------------------------------------------------------
     Variables
 -------------------------------------------------------------------------------- */
-const gulp = require('gulp');
-const watch = require('gulp-watch');
-const twig = require('gulp-twig');
-const del = require('del');
-const plumber = require('gulp-plumber');
-const gutil = require('gulp-util');
-const notify = require('gulp-notify');
+const gulp           = require('gulp');
+const watch          = require('gulp-watch');
+const twig           = require('gulp-twig');
+const del            = require('del');
+const plumber        = require('gulp-plumber');
+const gutil          = require('gulp-util');
+const notify         = require('gulp-notify');
 
 const sortingOptions = require('./postcss-sorting');
-const postcss = require('gulp-postcss');
-const sorting = require('postcss-sorting');
-const syntax = require('postcss-scss');
-const csscomb = require('gulp-csscomb');
+const sorting        = require('postcss-sorting');
+
+const postcss        = require('gulp-postcss');
+const reporter       = require('postcss-reporter');
+const syntax_scss    = require('postcss-scss');
+const stylelint      = require('stylelint');
+
 
 // Path
 const src = './views/**/*.twig';
@@ -79,10 +82,52 @@ gulp.task('formatStyles', function () {
     //.pipe(csscomb())
     .pipe(postcss([
       sorting(sortingOptions)
-    ], { parser: syntax })
+    ], { parser: syntax_scss })
     )
     .pipe(gulp.dest('./assets/styles/'));
 });
 
+
+
+
+gulp.task("scss-lint", function () {
+
+  // Stylelint config rules
+  const stylelintConfig = {
+    "rules": {
+      "block-no-empty": null,
+      "color-no-invalid-hex": true,
+      "comment-empty-line-before": [ "always", {
+        "ignore": ["stylelint-commands", "after-comment"]
+      } ],
+      "declaration-colon-space-after": "always",
+      "indentation": ["tab", {
+        "except": ["value"]
+      }],
+      "max-empty-lines": 2,
+      "rule-empty-line-before": [ "always", {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      } ],
+      "unit-whitelist": ["em", "rem", "%", "s","px"]
+    }
+  }
+
+  const processors = [
+    stylelint(stylelintConfig),
+    reporter({
+      clearMessages: true,
+      throwError: false
+    })
+  ];
+
+  return gulp.src(
+    ['assets/styles/**/*.scss',
+      // Ignore linting vendor assets
+      // Useful if you have bower components
+      '!app/assets/css/vendor/**/*.scss']
+  )
+    .pipe(postcss(processors, { syntax: syntax_scss }));
+});
 
 
