@@ -1,0 +1,70 @@
+{# index.twig #}
+{% extends "layout/base.twig" %}
+
+{% block page %}
+
+<nav-sticky css-class="test"></nav-sticky>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a href="#" @click="showModal('test')" class="btn">welcome Modal</a>
+<br>
+<modal name="test">
+  <div slot="close">Fermer</div>
+  <div slot="body">Contenu</div>
+</modal>
+
+<a href="#" @click="showModal('test2')" class="btn">welcome Modal</a>
+<br>
+<modal name="test2">
+  <div slot="close">Fermer</div>
+  <div slot="body">Contenu</div>
+</modal>
+
+
+<div style="padding: 200px 0 0 0;">
+
+  <dropdown placement="top">
+    <div slot="header">sadad</div>
+    <ul slot="menu">
+      <li>
+        <a href="#1">Home</a>
+      </li>
+      <li>
+        <a href="#2">About</a>
+      </li>
+      <li>
+        <a href="#3">Clients</a>
+      </li>
+      <li>
+        <a href="#4">Contact Us</a>
+      </li>
+    </ul>
+  </dropdown>
+
+  <dropdown placement="bottom">
+    <div slot="header">sadad</div>
+    <ul slot="menu">
+      <li>
+        <a href="#1">Home</a>
+      </li>
+      <li>
+        <a href="#2">About</a>
+      </li>
+      <li>
+        <a href="#3">Clients</a>
+      </li>
+      <li>
+        <a href="#4">Contact Us</a>
+      </li>
+    </ul>
+  </dropdown>
+
+</div>
+
+{% endblock %}
