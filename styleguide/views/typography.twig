@@ -1,0 +1,190 @@
+{# index.twig #}
+{% extends "_layouts/base.twig" %}
+
+{% set dataFontSizes = [
+  {
+    type : "Small",
+    value : "16px",
+    class : ".text-small",
+    sass  : "@include textSize('small')",
+  },
+  {
+    type : "Medium",
+    value : "18px",
+    class : ".text-medium",
+    sass  : "@include textSize('medium')",
+  },
+  {
+    type : "Large",
+    value : "24px",
+    class : ".text-large",
+    sass  : "@include textSize('large')",
+  },
+
+] %}
+
+{% block page %}
+
+<!-- Section Typography -->
+<section class="sg-container-section">
+
+  <h2 class="sg-h2">Typography</h2>
+
+  <h3 class="sg-h3" id="heading">Heading</h3>
+
+  <div class="sg-preview">
+    <h1 class="h1">H1 lorem ipsum</h1>
+    <h2 class="h2">H2 lorem ipsum</h2>
+    <h3 class="h3">H3 lorem ipsum</h3>
+    <h4 class="h4">H4 lorem ipsum</h4>
+    <h5 class="h5">H5 lorem ipsum</h5>
+    <h6 class="h6">H6 lorem ipsum</h6>
+  </div>
+
+  <table class="sg-table">
+
+    <thead>
+      <tr>
+        <th width="50%">CSS Class*</th>
+        <th width="50%">SASS include</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for i in 1..6 %}
+      <tr>
+        <td>
+          <code class="sg-code">.h{{ i }}</code>
+        </td>
+        <td>
+          <code class="sg-code">@include h{{ i }}()</code>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+  <!-- Text Body Section -->
+  <h3 class="sg-h3">Text (body)</h3>
+
+  <table class="sg-table">
+
+    <thead>
+      <tr>
+        <th width="50%">CSS Class*</th>
+        <th width="50%">SASS include</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <code class="sg-code">.text</code>
+        </td>
+        <td>
+          <code class="sg-code">@include text()</code>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="sg-preview">
+    <p>Text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <h4 class="sg-h4" id="text-body-size">Font sizes</h4>
+
+  <table class="sg-table">
+
+    <thead>
+      <tr>
+        <th width="15%">Type</th>
+        <th width="15%">Value</th>
+        <th width="30%">CSS Class*</th>
+        <th>SASS include</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in dataFontSizes %}
+      <tr>
+        <td>{{ item.type }}</td>
+        <td>{{ item.value }}</td>
+        <td>
+          <code class="sg-code">{{ item.class }}</code>
+        </td>
+        <td>
+          <code class="sg-code">{{ item.sass }}</code>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+  <h4 class="sg-h4">.text-small</h4>
+
+  <div class="sg-preview">
+    <p class="text-small">Text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <h4 class="sg-h4">.text-medium</h4>
+
+  <div class="sg-preview">
+    <p class="text-medium">Text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <h4 class="sg-h4">text-large</h4>
+
+  <div class="sg-preview">
+    <p class="text-large">Text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <!-- Text Italic Section -->
+  <h3 class="sg-h3">Text Italic (body)</h3>
+
+  <div class="sg-preview">
+    <p>Note Lorem ipsum dolor sit consectetur</p>
+  </div>
+
+  <table class="sg-table">
+
+    <thead>
+      <tr>
+        <th width="50%">CSS Class*</th>
+        <th width="50%">SASS include</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <code class="sg-code">.text-italic</code>
+        </td>
+        <td>
+          <code class="sg-code">@include text('italic')</code>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="sg-preview">
+    <p class="text-italic">Text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+</section>
+
+{% endblock %}

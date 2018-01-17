@@ -1,0 +1,53 @@
+{# index.twig #}
+{% extends "_layouts/base.twig" %}
+
+{% set colors = [ 
+  {"name":"$white", "value":"#fff"}, 
+  {"name":"$black", "value":"#000"}, 
+  {"name":"$cararra", "value":"#e7e6e2"},
+  {"name":"$golden-grass", "value":"#d5b521"}, 
+  {"name":"$clay-creek", "value":"#918860"}, 
+  {"name":"$cod-gray", "value":"#191919"},
+  {"name":"$swirl", "value":"#d2d0c6"}, 
+] %}
+
+{% block page %}
+
+<!-- section Colors -->
+<section class="sg-container-section">
+
+  <h2 class="sg-h2">Colors</h2>
+
+  <table class="sg-table">
+
+    <thead>
+      <tr>
+        <th>SASS variable</th>
+        <th>hexadecimal</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for color in colors %}
+      <tr>
+        <td>
+          <code class="sg-code">{{ color.name }}</code>
+        </td>
+        <td>
+          <code class="sg-code">{{ color.value }}</code>
+        </td>
+        <td>
+          <code class="sg-color" style="background-color:{{ color.value }};"></code>
+        </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+  </table>
+
+</section>
+
+{% endblock %}

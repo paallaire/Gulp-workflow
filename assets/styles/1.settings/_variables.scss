@@ -125,11 +125,11 @@ $form-input-padding-y: 8px;
 /* breakpoints (include-media)*/
 /*///////////////////////////*/
 $breakpoints: (
-'small':   320px,
-'phone':   520px,
-'tablet':  800px,
-'desktop': 1024px,
 'large':   1440px,  
+'desktop': 1024px,
+'tablet':  800px,
+'phone':   520px,
+'small':   320px
 );
 
 /* padding */
@@ -174,11 +174,16 @@ $transition-speed-fast: .1s;
     #LOST (postcss)
     ========================================================================== */
 
-@lost gutter 0;
+@lost gutter 30px;
 @lost flexbox no-flex;
 @lost cycle none;
 @lost clearing left;
 @lost rounder 99.99999;
+
+$lost-grid-columns: 12;
+$lost-gutter-desktop: 60px;
+$lost-gutter-tablet: 30px;
+$lost-gutter-phone: 15px;
 
 /* ==========================================================================
     #hamburger (button nav mobile)
@@ -198,14 +203,10 @@ $hamburger-layer-width-mobile: 28px;
 $hamburger-layer-height-mobile: 2px;
 $hamburger-layer-spacing-mobile: 7px;
 
-/* To use CSS filters as the hover effect instead of opacity,*/
-/* set $hamburger-hover-use-filter as true and*/
-/* change the value of $hamburger-hover-filter accordingly.*/
+/* To use CSS filters as the hover effect instead of opacity, */
+/* set $hamburger-hover-use-filter as true and */
+/* change the value of $hamburger-hover-filter accordingly. */
 $hamburger-hover-use-filter: false;
 $hamburger-hover-filter: opacity(50%);
 $header-height: 60px;
 $header-height-mobile: 46px;
-
-
-
-

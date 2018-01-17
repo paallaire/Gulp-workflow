@@ -17,10 +17,20 @@ const reporter       = require('postcss-reporter');
 const syntax_scss    = require('postcss-scss');
 const stylelint      = require('stylelint');
 
-
-// Path
-const src = './views/**/*.twig';
+// Sites (Static)
+const src = [
+'./views/**/*.twig',
+];
 const dest = './public';
+
+// Stylesguide
+const srcStyles = [
+  './styleguide/views/**.twig', 
+];
+const watchStyles = [
+  './styleguide/views/**/*.twig', 
+];
+const destStyles = './public/styleguide';
 
 // Options
 const twigOptions = {
@@ -41,7 +51,7 @@ const onError = function (err) {
 ================================================================= */
 gulp.task('clean', (done) => {
 
-  del(['public/*.html']);
+  del(['public/*.html','public/styleguide/*.html']);
   done();
 
 });
@@ -50,13 +60,13 @@ gulp.task('clean', (done) => {
 ================================================================= */
 gulp.task('watch', ['clean', 'build'], function () {
 
-  return watch('./views/**/*.twig', twigOptions, function () {
-    gulp.src('./views/*.twig')
+  return watch(watchStyles, twigOptions, function () {
+    gulp.src(srcStyles)
       .pipe(plumber({
         errorHandler: onError
       }))
       .pipe(twig())
-      .pipe(gulp.dest(dest));
+      .pipe(gulp.dest(destStyles));
   });
 
 });
@@ -65,12 +75,12 @@ gulp.task('watch', ['clean', 'build'], function () {
 ================================================================= */
 gulp.task('build', ['clean'], function () {
 
-  return gulp.src('./views/*.twig')
+  return gulp.src(srcStyles)
     .pipe(plumber({
       errorHandler: onError
     }))
     .pipe(twig())
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(destStyles));
 
 });
 
@@ -86,9 +96,6 @@ gulp.task('formatStyles', function () {
     )
     .pipe(gulp.dest('./assets/styles/'));
 });
-
-
-
 
 gulp.task("scss-lint", function () {
 

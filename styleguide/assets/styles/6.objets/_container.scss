@@ -1,0 +1,36 @@
+/* ==========================================================================
+    #CONTAINER
+    ========================================================================== */
+
+// Variables
+/////////////////////////////
+
+
+// container with no paddding 
+/////////////////////////////
+@each $sg-key, $sg-value in $sg-map-containers {
+
+  #{$sg-container}-#{$sg-key} {
+    @include center-block();
+
+    max-width: $sg-value;
+
+  }
+
+}
+
+// container with padding
+/////////////////////////////
+@each $sg-key, $sg-value in $sg-map-containers {
+
+  #{$sg-container}-#{$sg-key}-padding {
+    @include center-block();
+    @include padding-mobile();
+
+    max-width: $sg-value;
+
+  }
+
+}
+
+

@@ -1,24 +1,58 @@
 /* ==========================================================================
-    #GRID
-    Framework : LOST
-    Doc : http://lostgrid.org/docs.html
-    Example : http://lostgrid.org/lostgrid-example.html
-    ========================================================================== */
+#GRID
+Framework : LOST
+Doc : http://lostgrid.org/docs.html
+Example : http://lostgrid.org/lostgrid-example.html
+========================================================================== */
 
-/* grid*/
-/*///////////////////////////*/
-.o-grid {
+.o-row {
+  lost-flex-container: row;
 }
 
 /* columns*/
 /*///////////////////////////*/
-@for $i from 2 through 12 {
-  .o-grid-#{$i} {
-    & > .o-grid-col {
-      lost-column: 1/#{$i};
+
+@for $i from 1 through $lost-grid-columns {
+
+  .o-column-#{$i} {
+
+    @include media('>=desktop') {
+      lost-column: #{$i}/#{$lost-grid-columns} 0 $lost-gutter-desktop;
     }
+
+    @include media('>=phone', '<desktop') {
+      lost-column: #{$i}/#{$lost-grid-columns} 0 $lost-gutter-tablet;
+    }
+
+    @include media('<phone') {
+      lost-column: #{$i}/#{$lost-grid-columns} 0 $lost-gutter-phone;
+    }
+
   }
+
 }
 
+@each $breakpoint in $breakpoints {
+  $key: nth($breakpoint, 1);
+  $value: nth($breakpoint, 2);
+
+  .element-#{$key} {
+    content: $value;
+  }
+
+}
+
+.t {
+  background: #3599c3;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.t2 {
+  background: #359934;
+}
 
 

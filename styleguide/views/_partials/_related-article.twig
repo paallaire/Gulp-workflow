@@ -1,0 +1,86 @@
+<div class="sg-container-section">
+    <h3 class="sg-h4" id="reladed-article-single">
+        <a href="#reladed-article-single" class="sg-anchor">#</a>Single</h3>
+</div>
+
+<div class="c-entry c-entry--black">
+
+    <article class="c-entry__content">
+        <div class="c-entry__tag">Article</div>
+        <h3 class="c-entry__title">How to Fix (and Avoid) Traffic Drops after a Website Redesign?</h3>
+        <a href="#" class="c-entry__btn btn-primary">lire l’article</a>
+    </article>
+
+</div>
+
+<div class="c-entry c-entry--gray">
+        
+    <article class="c-entry__content">
+        <div class="c-entry__tag">Article</div>
+        <h3 class="c-entry__title">How to Fix (and Avoid) Traffic Drops after a Website Redesign?</h3>
+        <a href="#" class="c-entry__btn btn-primary">lire l’article</a>
+    </article>
+
+</div>
+
+<div class="c-entry c-entry--yellow">
+        
+    <article class="c-entry__content">
+        <div class="c-entry__tag">Article</div>
+        <h3 class="c-entry__title">How to Fix (and Avoid) Traffic Drops after a Website Redesign?</h3>
+        <a href="#" class="c-entry__btn btn-primary">lire l’article</a>
+    </article>
+
+</div>
+
+<div class="sg-container-section">
+    <h3 class="sg-h4" id="reladed-article-grid">
+        <a href="#reladed-article-grid" class="sg-anchor">#</a>Grid</h3>
+</div>
+
+<div class="o-grid-posts o-grid-posts--bordered">
+
+    {% for i in 1..6 %}
+    <div class="o-grid-posts__item">
+
+        <div class="c-entry c-entry--black">
+
+            <article class="c-entry__content">
+                <div class="c-entry__tag">Article</div>
+                <h3 class="c-entry__title">How to Fix (and Avoid) Traffic Drops after a Website Redesign?</h3>
+                <a href="#" class="c-entry__btn btn-primary">lire l’article</a>
+            </article>
+
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+<div class="o-grid-posts">
+
+    {% set stateCycle = ['green', 'yellow', 'gray', 'black', 'black','gray'] %}
+    {% set sizeCycle = ['110x110', '220x40', '190x110', '250x50', '150x70','250x101'] %}
+        
+    {% for i in 0..5 %}
+    <div class="o-grid-posts__item">
+        
+        <div class="c-entry c-entry--{{ cycle(stateCycle, i) }}">
+
+            <article class="c-entry__content">
+                <div class="c-entry__image">
+                    <img src="http://via.placeholder.com/{{ cycle(sizeCycle, i) }}">
+                </div>
+                <h3 class="c-entry__title">How to Fix (and Avoid) Traffic Drops after a Website Redesign?</h3>
+                <a href="#" class="c-entry__btn btn-primary">lire l’article</a>
+            </article>
+
+        </div>
+        
+    </div>
+    {% endfor %}
+
+</div>
+
+

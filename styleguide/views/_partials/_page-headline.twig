@@ -1,0 +1,23 @@
+<div class="c-page-headline c-page-headline--{{ style }} c-page-headline--{{ type }}">
+
+    <div class="c-page-headline__container">
+
+        <div class="c-page-headline__tag">our work</div>
+        <h1 class="c-page-headline__title">mutation digitale</h1>
+        <h2 class="c-page-headline__subtitle">Se spécialise dans le développement de plateformes web.</h2>
+        <div class="c-page-headline__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio.</p>
+        </div>
+
+    </div>
+
+    {% if type == "services" %}
+    <a href="#" class="c-page-headline__btn-bottom btn-square btn-square--medium">
+        <svg class="icon icon-arrow-down svg">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/files/main.svg#icon-arrow-down"></use>
+        </svg>
+    </a>
+    {% endif %}
+
+</div>

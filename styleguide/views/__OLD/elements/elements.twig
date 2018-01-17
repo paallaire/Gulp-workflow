@@ -1,0 +1,183 @@
+{% extends "../_layouts/base.twig" %}
+
+{% set buttonPrimary = [ 
+  {"name":"Default", "value":".btn-primary"}, 
+  {"name":"Dark", "value":".btn-primary.btn--dark"}, 
+] %}
+
+{% set buttonSquare = [ 
+	{"name":"Default", "value":".btn-square"}, 
+	{"name":"Dark", "value":".btn-square.btn-square--dark"}, 
+	{"name":"Large size", "value":".btn-primary.btn--large"}, 
+] %}
+
+{% set listUnordered = [ 
+	{"name":".list-unordered", "value":".include .list-unordered()"}, 
+] %}
+
+{% block page %}
+
+	<section class="sg-container-section">
+
+		<h2 class="sg-h2">Elements</h2>
+
+		<!-- section Buttons Primary -->
+		<h3 class="sg-h3" id="button-primary">Buttons Primary</h3>
+
+		<table class="sg-table">
+
+			<thead>
+				<tr>
+					<th>Style</th>
+					<th>CSS Class</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				{% for item in buttonPrimary %}
+				<tr>
+					<td>{{ item.name }}</td>
+					<td>
+						<code class="sg-code">{{ item.value }}</code>
+					</td>
+				</tr>
+				{% endfor %}
+
+			</tbody>
+
+		</table>
+
+		<div class="sg-preview">
+			<a href="#" class="btn-primary">CALL TO ACTION (normal)</a>
+			<br />
+			<br />
+			<a href="#" class="btn-primary btn-primary--dark">CALL TO ACTION ( dark )</a>
+		</div>
+
+		<!-- section Buttons square -->
+		<h3 class="sg-h3" id="button-square">Buttons Square</h3>
+
+		<table class="sg-table">
+
+			<thead>
+				<tr>
+					<th>Style</th>
+					<th>CSS Class</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				{% for item in buttonSquare %}
+				<tr>
+					<td>
+						<code class="sg-code">{{ item.name }}</code>
+					</td>
+					<td>
+						<code class="sg-code">{{ item.value }}</code>
+					</td>
+				</tr>
+				{% endfor %}
+
+			</tbody>
+
+		</table>
+
+		<div class="sg-preview">
+
+			<a href="#" class="btn-square">
+					<span>Prev</span>
+				</a>
+
+			<a href="#" class="btn-square">
+					<span>Next</span>
+				</a>
+
+			<br />
+			<br />
+
+			<a href="#" class="btn-square btn-square--dark">
+					<span>Prev</span>
+				</a>
+
+			<a href="#" class="btn-square btn-square--dark">
+					<span>Next</span>
+				</a>
+
+			<br />
+			<br />
+
+			<a href="#" class="btn-square btn-square--large">
+					<span>Prev
+						<br/>CASE</span>
+				</a>
+			<a href="#" class="btn-square btn-square--large">
+					<span>NExt
+						<br/>CASE</span>
+				</a>
+
+			<br />
+			<br />
+
+			<a href="#" class="btn-square btn-square--large">
+				<svg class="icon icon-arrow-down svg">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/files/main.svg#icon-arrow-down"></use>
+				</svg>
+			</a>
+
+			<a href="#" class="btn-square btn-square--medium">
+				<svg class="icon icon-arrow-down svg">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/files/main.svg#icon-arrow-down"></use>
+				</svg>
+			</a>
+
+			<a href="#" class="btn-square btn-square--small">
+				<svg class="icon icon-arrow-down svg">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/files/main.svg#icon-arrow-down"></use>
+				</svg>
+			</a>
+
+		</div>
+
+		<!-- section list-unordered -->
+		<h3 class="sg-h3" id="list-unordered">List unordered</h3>
+
+		<table class="sg-table">
+
+			<thead>
+				<tr>
+					<th>CSS Class</th>
+					<th>SASS Include</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				{% for item in listUnordered %}
+				<tr>
+					<td>{{ item.name }}</td>
+					<td>
+						<code class="sg-code">{{ item.value }}</code>
+					</td>
+				</tr>
+				{% endfor %}
+
+			</tbody>
+
+		</table>
+
+		<div class="sg-preview">
+			<ul class="list-unordered" style="font-size: 24px;">
+				<li>Lorem ipsum dolorm ipsum dolor sit amet, consectetuer adipiscing elim ipsum dolor sit amet, consectetuer adipiscing elim
+					ipsum dolor sit amet, consectetuer adipiscing elim ipsum dolor sit amet, consectetuer adipiscing eli sit amet, consectetuer
+					adipiscing elit.</li>
+				<li>Aliquam tincidunt mauris eu risus.</li>
+				<li>Vestibulum auctor dapibus neque.</li>
+			</ul>
+		</div>
+
+	</section>
+
+{% endblock %}
+

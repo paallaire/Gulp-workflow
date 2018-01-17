@@ -1,0 +1,344 @@
+
+// Google Fonts
+//------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700');
+
+
+// 0.npm-node-modules ( Vendors )
+//------------------------------------------------------------
+@import '~normalize-scss/sass/_normalize';
+@import '~include-media/dist/_include-media';
+
+// 1.settings
+//------------------------------------------------------------
+@import '1.settings/site';
+@import '1.settings/vendors';
+@import '1.settings/selectors';
+
+// 2.tools - functions
+//------------------------------------------------------------
+@import '2.tools/functions/map';
+
+// 2.tools - functions
+//------------------------------------------------------------
+@import '2.tools/functions/map';
+
+// 2.tools - mixins
+//------------------------------------------------------------
+
+// General
+
+// Helpers
+@import '2.tools/mixins/helpers/center-block';
+@import '2.tools/mixins/helpers/clearfix';
+@import '2.tools/mixins/helpers/mobile';
+
+// 3.base
+//------------------------------------------------------------
+@include normalize(); // normalize-scss
+
+@import '3.base/reset';
+@import '3.base/fonts';
+@import '3.base/typography';
+@import '3.base/global';
+@import '3.base/icons';
+
+// 4.elements
+//------------------------------------------------------------
+
+
+// 5.components
+//------------------------------------------------------------
+
+// 6.objets
+//------------------------------------------------------------
+@import '6.objets/container';
+@import '6.objets/grid';
+
+// 7.layout
+//------------------------------------------------------------
+
+
+// 8.pages
+//------------------------------------------------------------
+
+
+// 9.themes
+//------------------------------------------------------------
+
+
+// 10.utils
+//------------------------------------------------------------
+
+
+// 11.vendors
+//------------------------------------------------------------
+
+// Shame
+//------------------------------------------------------------
+@import 'shame';
+
+.sg-container-section {
+  @include center-block();
+
+  max-width: container('large');
+  margin-bottom: 80px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+// Heading
+//------------------------------------------------------------
+.sg-h1,
+.sg-h2,
+.sg-h3,
+.sg-h4,
+.sg-h5,
+.sg-h6 {
+  margin-bottom: 18px;
+
+  font-family: $sg-Roboto;
+  font-weight: 700;
+
+  position: relative;
+
+  .sg-anchor  {
+    font-family: $sg-code;
+    position: absolute;
+    top: 0;
+    left: -26px;
+    opacity: 0.5;
+  }
+
+
+}
+
+.sg-h1 {
+  font-size: headingSize('h1');
+}
+
+.sg-h2 {
+  font-size: headingSize('h2');
+
+  color: $sg-color-brand;
+}
+
+.sg-h3 {
+  margin-top: 80px;
+  margin-bottom: 18px;
+
+  font-size: headingSize('h3');
+}
+
+.sg-h4 {
+  margin-top: 50px;
+  margin-bottom: 18px;
+
+  font-size: headingSize('h4');
+}
+
+// Text
+//------------------------------------------------------------
+.sg-text {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  font-family: $sg-Roboto;
+  font-size: textSize('medium');
+
+  a {
+    color: $sg-color-brand;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+
+}
+
+.sg-anchor {
+  font-style: italic;
+}
+
+// Table
+//------------------------------------------------------------
+.sg-table {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  width: 100%;
+
+  font-size: textSize('medium');
+
+  th,
+  td {
+    padding: 10px 14px;
+
+    text-align: left;
+    vertical-align: top;
+
+    border: 1px solid $sg-color-border;
+  }
+
+  th {
+    font-weight: 700;
+  }
+
+  td {
+    font-size: textSize('small');
+
+    color: $sg-color-gray;
+
+    * + * {
+      margin-top: 10px;
+    }
+
+  }
+
+  .icon {
+    font-size: 50px;
+    color: #000;
+  }
+
+
+}
+
+// Preview
+//------------------------------------------------------------
+.sg-preview {
+  margin-top: 62px;
+  padding: 20px;
+
+  position: relative;
+
+  font-size: textSize('medium');
+
+  border: 1px solid $sg-color-border;
+
+  &:before {
+    padding: 4px 12px;
+
+    position: absolute;
+    top: -33px;
+    right: 0;
+
+    display: block;
+
+    content: 'Preview';
+
+    color: $sg-color-white;
+    background-color: $sg-color-brand;
+  }
+
+  &--full {
+    padding-left: 0;
+    padding-right: 0;
+    border:0;
+  }
+
+}
+
+// Code-html
+//------------------------------------------------------------
+.sg-code-html {
+  padding: 20px 28px;
+
+  position: relative;
+
+  font-family: $sg-code;
+  font-size: textSize('medium');
+
+  color: $sg-color-brand;
+  border: 1px solid $sg-color-border;
+
+  &:before {
+    padding: 4px 12px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    content: 'HTML';
+
+    color: $sg-color-white;
+    background-color: $sg-color-brand;
+  }
+
+}
+
+.sg-preview + .sg-code-html {
+  margin-top: -1px;
+}
+
+// Code
+//------------------------------------------------------------
+.sg-code {
+  padding: 4px 10px;
+
+  font-family: $sg-code;
+
+  color: $sg-color-brand;
+  background-color: $sg-color-code;
+}
+
+
+// color
+//------------------------------------------------------------
+.sg-color {
+  padding: 4px 10px;
+  display: block;
+  height: 50px;
+  border: 3px solid $sg-color-border;
+}
+
+
+.vue-nav-mobile {
+
+}
+
+.vue-nav-mobile__title {
+  font-size: headingSize('h2');
+  color: $sg-color-brand;
+    padding: 30px 20px 0 20px;
+    display: block;
+}
+
+.vue-nav-mobile__section-title {
+    color: #303637;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 10px;
+    padding: 0 24px;
+}
+
+.vue-nav-mobile__section-list {
+
+  a {
+    font-size: 16px;
+    padding: 6px 24px;
+    border-bottom: 1px solid $sg-color-border;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+
+  li:first-child {
+
+    a {
+          border-top: 1px solid $sg-color-border;
+    }
+
+  }
+
+}
+
+#nav-mobile {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  padding: 4px 8px;
+  font-size: 18px;
+  background-color: #fff;
+}
