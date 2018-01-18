@@ -13,6 +13,7 @@
 <script>
 import _ from "lodash";
 import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   name: "modal",
   props: {
@@ -39,6 +40,9 @@ export default {
     }
   },
   methods: {
+   ...mapMutations([
+      'setModal'
+    ]),
     show() {
       this.visible = true;
       window.addEventListener("keyup", this.onEscapeKeyUp);

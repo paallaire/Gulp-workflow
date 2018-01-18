@@ -1,40 +1,5 @@
 {% extends "_layouts/base.twig" %}
 
-{% set dataStyles = [
-  {
-    type : "Black (Default)",
-    class : "black",
-  },
-  {
-    type : "Yellow",
-    class : "yellow",
-  },
-  {
-    type : "Green",
-    class : "green",
-  },
-  {
-    type : "Gray",
-    class : "gray",
-  },
-  {
-    type : "Background pattern black",
-    class : "bg-black",
-  },
-  {
-    type : "Background pattern white",
-    class : "bg-white",
-  },
-  {
-    type : "Services",
-    class : "services",
-  },
-  {
-    type : "Service single",
-    class : "service-single",
-  },
-] %}
-
 {% block page %}
 
 <!-- Page Headline Section -->
@@ -44,17 +9,49 @@
 
   <div class="o-container-big t2">
 
-    <div class="o-row">
-      <div class="t o-column-6">6</div>
-      <div class="t o-column-6">6</div>
+    <div class="o-row-desktop">
+    {% for i in 1..12 %}
+      <div class="t o-col-desktop-1">1</div>
+    {% endfor %}
     </div>
+
+    <div class="o-row-desktop">
+      {% for i in 1..6 %}
+      <div class="t o-col-desktop-2">2</div>
+      {% endfor %}
+     </div>
+
+     <div class="o-row-tablet">
+      {% for i in 1..4 %}
+      <div class="t o-col-desktop-3 o-col-tablet-6">3</div>
+      {% endfor %}
+     </div>
+
+     <div class="o-row-desktop">
+      {% for i in 1..3 %}
+      <div class="t o-col-desktop-4">4</div>
+      {% endfor %}
+     </div>
+
+     <div class="o-row-desktop">
+      {% for i in 1..2 %}
+      <div class="t o-col-desktop-6">6</div>
+      {% endfor %}
+     </div>
+
+     <div class="o-row-desktop">
+      {% for i in 1..1 %}
+      <div class="t o-col-desktop-12">12</div>
+      {% endfor %}
+     </div>
+
   </div>
 
   <br />
 
   <div class="o-container-big t2">
 
-    <div class="o-row">
+    <div class="o-row-desktop">
       <div class="t o-column-3">3</div>
       <div class="t o-column-6">6</div>
       <div class="t o-column-3">3</div>
@@ -65,7 +62,7 @@
 
   <div class="o-container-big t2">
 
-    <div class="o-row">
+    <div class="o-row-desktop">
       <div class="t o-column-6">6</div>
       <div class="t o-column-2">2</div>
       <div class="t o-column-1">1</div>

@@ -5,6 +5,11 @@
 @import '~aos/src/sass/aos';
 @import '~hamburgers/_sass/hamburgers/hamburgers';
 
+/* 2.tools - functions*/
+/*/////////////////////////////////////////*/
+@import '2.tools/functions/map';
+@import '2.tools/functions/list';
+
 /* 1.settings*/
 /*/////////////////////////////////////////*/
 @import '1.settings/variables';
@@ -14,12 +19,9 @@
 /*/////////////////////////////////////////*/
 @import '2.tools/functions/map';
 
-/* 2.tools - functions*/
-/*/////////////////////////////////////////*/
-@import '2.tools/functions/map';
-
 /* 2.tools - mixins*/
 /*/////////////////////////////////////////*/
+@import '2.tools/mixins/grid';
 @import '2.tools/mixins/center-block';
 @import '2.tools/mixins/clearfix';
 @import '2.tools/mixins/grid-last-row';
@@ -160,4 +162,23 @@ body {
   color: #fff;
   display: block;
   margin: 10px;
+}
+
+
+.t {
+  background: #3599c3;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.t2 {
+  background: #359934;
+
+  .o-row {
+    margin-bottom: 20px;
+  }
+
 }
