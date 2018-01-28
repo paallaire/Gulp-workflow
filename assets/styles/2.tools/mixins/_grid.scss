@@ -1,0 +1,40 @@
+@mixin make-row-mq($breakpoint) {
+
+  .o-row-#{$breakpoint} {
+    
+    @include media('>=#{$breakpoint}') {
+      lost-flex-container: row;
+    }
+
+  }
+
+}
+
+@mixin make-columns-mq($breakpoint, $maxColumns) {
+  
+/* column-#{$breakpoint} */
+/*///////////////////////////*/
+  @for $i from 1 through $maxColumns {
+
+    .o-col-#{$breakpoint}-#{$i} {
+
+      @include media('>=#{$breakpoint}') {
+        lost-column: #{$i}/#{$maxColumns} #{$maxColumns/$i} $lost-gutter-desktop;
+
+        @if( ($maxColumns/$i) % 2 == 0 ) {
+
+          &:nth-child(#{$maxColumns/$i}) {
+            margin-right: 0;
+            content: "test";
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
