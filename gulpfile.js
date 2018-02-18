@@ -1,34 +1,32 @@
 /* --------------------------------------------------------------------------------
-    Variables
+    Modules
 -------------------------------------------------------------------------------- */
-const gulp           = require('gulp');
-const watch          = require('gulp-watch');
-const twig           = require('gulp-twig');
-const del            = require('del');
-const plumber        = require('gulp-plumber');
-const gutil          = require('gulp-util');
-const notify         = require('gulp-notify');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const twig = require('gulp-twig');
+const del = require('del');
+const plumber = require('gulp-plumber');
+const gutil = require('gulp-util');
+const notify = require('gulp-notify');
 
 const sortingOptions = require('./postcss-sorting');
-const sorting        = require('postcss-sorting');
+const sorting = require('postcss-sorting');
 
-const postcss        = require('gulp-postcss');
-const reporter       = require('postcss-reporter');
-const syntax_scss    = require('postcss-scss');
-const stylelint      = require('stylelint');
+const postcss = require('gulp-postcss');
+const reporter = require('postcss-reporter');
+const syntax_scss = require('postcss-scss');
+const stylelint = require('stylelint');
 
-// Sites (Static)
-const src = [
-'./views/**/*.twig',
-];
-const dest = './public';
-
-// Stylesguide
+/* --------------------------------------------------------------------------------
+    Variables
+-------------------------------------------------------------------------------- */
 const srcStyles = [
-  './styleguide/views/**.twig', 
+  './styleguide/views/**.twig',
+  './styleguide/sg-views/**.twig',
 ];
 const watchStyles = [
-  './styleguide/views/**/*.twig', 
+  './styleguide/views/**/*.twig',
+  './styleguide/sg-views/**/*.twig',
 ];
 const destStyles = './public/styleguide';
 
@@ -37,6 +35,9 @@ const twigOptions = {
   verbose: true
 }
 
+/* --------------------------------------------------------------------------------
+    OnError
+-------------------------------------------------------------------------------- */
 const onError = function (err) {
   notify.onError({
     title: "Gulp error in " + err.plugin,
@@ -47,17 +48,19 @@ const onError = function (err) {
   gutil.beep();
 };
 
-/* clean
-================================================================= */
+/* --------------------------------------------------------------------------------
+    Clean
+-------------------------------------------------------------------------------- */
 gulp.task('clean', (done) => {
 
-  del(['public/*.html','public/styleguide/*.html']);
+  del(['public/*.html', 'public/styleguide/*.html']);
   done();
 
 });
 
-/* watch
-================================================================= */
+/* --------------------------------------------------------------------------------
+    Watch
+-------------------------------------------------------------------------------- */
 gulp.task('watch', ['clean', 'build'], function () {
 
   return watch(watchStyles, twigOptions, function () {
@@ -71,8 +74,9 @@ gulp.task('watch', ['clean', 'build'], function () {
 
 });
 
-/* build
-================================================================= */
+/* --------------------------------------------------------------------------------
+    Build
+-------------------------------------------------------------------------------- */
 gulp.task('build', ['clean'], function () {
 
   return gulp.src(srcStyles)
@@ -84,16 +88,17 @@ gulp.task('build', ['clean'], function () {
 
 });
 
-
-/* formatStyles
-================================================================= */
+/* --------------------------------------------------------------------------------
+    FormatStyles
+-------------------------------------------------------------------------------- */
 gulp.task('formatStyles', function () {
   return gulp.src('./assets/styles/**/*.scss')
     //.pipe(csscomb())
     .pipe(postcss([
       sorting(sortingOptions)
-    ], { parser: syntax_scss })
-    )
+    ], {
+      parser: syntax_scss
+    }))
     .pipe(gulp.dest('./assets/styles/'));
 });
 
@@ -104,19 +109,19 @@ gulp.task("scss-lint", function () {
     "rules": {
       "block-no-empty": null,
       "color-no-invalid-hex": true,
-      "comment-empty-line-before": [ "always", {
+      "comment-empty-line-before": ["always", {
         "ignore": ["stylelint-commands", "after-comment"]
-      } ],
+      }],
       "declaration-colon-space-after": "always",
       "indentation": ["tab", {
         "except": ["value"]
       }],
       "max-empty-lines": 2,
-      "rule-empty-line-before": [ "always", {
+      "rule-empty-line-before": ["always", {
         "except": ["first-nested"],
         "ignore": ["after-comment"]
-      } ],
-      "unit-whitelist": ["em", "rem", "%", "s","px"]
+      }],
+      "unit-whitelist": ["em", "rem", "%", "s", "px"]
     }
   }
 
@@ -129,12 +134,15 @@ gulp.task("scss-lint", function () {
   ];
 
   return gulp.src(
-    ['assets/styles/**/*.scss',
-      // Ignore linting vendor assets
-      // Useful if you have bower components
-      '!app/assets/css/vendor/**/*.scss']
-  )
-    .pipe(postcss(processors, { syntax: syntax_scss }));
+      ['assets/styles/**/*.scss',
+        // Ignore linting vendor assets
+        // Useful if you have bower components
+        '!app/assets/css/vendor/**/*.scss'
+      ]
+    )
+    .pipe(postcss(processors, {
+      syntax: syntax_scss
+    }));
 });
 
 

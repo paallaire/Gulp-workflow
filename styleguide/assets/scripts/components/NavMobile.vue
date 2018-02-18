@@ -18,7 +18,7 @@
 <script>
 import _ from 'lodash';
 export default {
-  name: 'navMobile',
+  name: 'SgNavMobile',
   props: ['show'],
   methods: {
     close: function () {

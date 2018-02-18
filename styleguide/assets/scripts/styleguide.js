@@ -1,13 +1,13 @@
 console.log('styleguide js');
 
 import Vue from 'vue';
-import NavMobile from './components/NavMobile.vue';
+import SgNavMobile from './components/NavMobile.vue';
 
 
 let vm = new Vue({
   el: '#app',
   components: {
-    NavMobile
+    SgNavMobile
   },
   data: {
     showNavMobile: false

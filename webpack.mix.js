@@ -1,7 +1,8 @@
 const mix = require('laravel-mix');
 const path = require('path');
 
-console.log( "ENV : " + process.env.NODE_ENV);
+var assetsPath = './assets';
+var distPath = './public/dist';
 
 /*
  |--------------------------------------------------------------------------
@@ -17,39 +18,48 @@ console.log( "ENV : " + process.env.NODE_ENV);
 mix
   .setPublicPath(path.normalize("public/dist"))
   .setResourceRoot("/dist/")
-  // Sites
-  .js('assets/scripts/main.js', 'scripts')
-  .sass('assets/styles/main.scss', 'styles')
-  // Styleguide
-	.js('styleguide/assets/scripts/styleguide.js', 'scripts/styleguide.js')
-	.sass('styleguide/assets/styles/styleguide.scss', 'styles/styleguide.css')
+  .js(assetsPath + '/scripts/main.js', 'scripts')
+  .sass(assetsPath + '/styles/main.scss', 'styles')
+  .copyDirectory(assetsPath + '/svg', distPath + "/svg", false)
+  .copyDirectory(assetsPath + '/images', distPath + "/images", false)
   .options({
     postCss: [
       require('lost')()
     ]
   })
-	.sourceMaps()
-	//.version()
-  .browserSync({
-    proxy: false,
-    files: [
-      // Sites
-      'public/**/*.html',
-      'public/dist/scripts/*.js',
-      'public/dist/styles/*.css',
-      // Styleguide
-      'public/styleguide/**/*.html',
-		],
-    server: {
-      baseDir: "./public/"
-    },
-    ghostMode: {
-      clicks: true,
-      links: true,
-      forms: true,
-      scroll: true
-    }
-  })
+
+
+if (!mix.inProduction()) {
+  mix
+    .js('styleguide/assets/scripts/styleguide.js', 'scripts/styleguide.js')
+    .sass('styleguide/assets/styles/styleguide.scss', 'styles/styleguide.css')
+    .options({
+      postCss: [
+        require('lost')()
+      ]
+    })
+    .sourceMaps()
+    .browserSync({
+      proxy: false,
+      files: [
+        'public/**/*.html',
+        'public/dist/scripts/*.js',
+        'public/dist/styles/*.css',
+        'public/styleguide/**/*.html',
+      ],
+      server: {
+        baseDir: "./public/"
+      },
+      ghostMode: {
+        clicks: true,
+        links: true,
+        forms: true,
+        scroll: true
+      }
+    })
+}
+
+
 
 // Full API
 // mix.js(src, output);

@@ -49,16 +49,12 @@
 /*/////////////////////////////////////////*/
 @import '4.elements/list';
 @import '4.elements/btn';
-@import '4.elements/wysiwyg';
-@import '4.elements/form';
 
 /* 5.components*/
 /*/////////////////////////////////////////*/
 @import '5.components/banner';
 @import '5.components/wysiwyg';
-@import '5.components/overlay';
 @import '5.components/modal';
-@import '5.components/loader';
 
 /* 6.objets*/
 /*/////////////////////////////////////////*/
@@ -165,20 +161,3 @@ body {
 }
 
 
-.t {
-  background: #3599c3;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-}
-
-.t2 {
-  background: #359934;
-
-  .o-row {
-    margin-bottom: 20px;
-  }
-
-}

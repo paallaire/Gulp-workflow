@@ -1,87 +1,18 @@
-
-// Google Fonts
-//------------------------------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700');
-
 
 // 0.npm-node-modules ( Vendors )
 //------------------------------------------------------------
 @import '~normalize-scss/sass/_normalize';
 @import '~include-media/dist/_include-media';
-
-// 1.settings
-//------------------------------------------------------------
-@import '1.settings/site';
-@import '1.settings/vendors';
-@import '1.settings/selectors';
-
-// 2.tools - functions
-//------------------------------------------------------------
-@import '2.tools/functions/map';
-
-// 2.tools - functions
-//------------------------------------------------------------
-@import '2.tools/functions/map';
-
-// 2.tools - mixins
-//------------------------------------------------------------
-
-// General
-
-// Helpers
-@import '2.tools/mixins/helpers/center-block';
-@import '2.tools/mixins/helpers/clearfix';
-@import '2.tools/mixins/helpers/mobile';
-
-// 3.base
-//------------------------------------------------------------
-@include normalize(); // normalize-scss
-
-@import '3.base/reset';
-@import '3.base/fonts';
-@import '3.base/typography';
-@import '3.base/global';
-@import '3.base/icons';
-
-// 4.elements
-//------------------------------------------------------------
-
-
-// 5.components
-//------------------------------------------------------------
-
-// 6.objets
-//------------------------------------------------------------
-@import '6.objets/container';
-@import '6.objets/grid';
-
-// 7.layout
-//------------------------------------------------------------
-
-
-// 8.pages
-//------------------------------------------------------------
-
-
-// 9.themes
-//------------------------------------------------------------
-
-
-// 10.utils
-//------------------------------------------------------------
-
-
-// 11.vendors
-//------------------------------------------------------------
-
-// Shame
-//------------------------------------------------------------
-@import 'shame';
+@import 'variables';
+@import 'mixins';
+@include normalize();
+@import 'base';
 
 .sg-container-section {
   @include center-block();
 
-  max-width: container('large');
+  max-width: 1200px;
   margin-bottom: 80px;
   padding-right: 60px;
   padding-left: 60px;
@@ -97,44 +28,40 @@
 .sg-h6 {
   margin-bottom: 18px;
 
+  position: relative;
+
   font-family: $sg-Roboto;
   font-weight: 700;
 
-  position: relative;
-
   .sg-anchor  {
-    font-family: $sg-code;
     position: absolute;
     top: 0;
     left: -26px;
+    font-family: $sg-code;
     opacity: 0.5;
   }
-
 
 }
 
 .sg-h1 {
-  font-size: headingSize('h1');
+  font-size: 40px;
 }
 
 .sg-h2 {
-  font-size: headingSize('h2');
-
+  font-size: 30px;
   color: $sg-color-brand;
 }
 
 .sg-h3 {
   margin-top: 80px;
   margin-bottom: 18px;
-
-  font-size: headingSize('h3');
+  font-size: 26px;
 }
 
 .sg-h4 {
   margin-top: 50px;
   margin-bottom: 18px;
-
-  font-size: headingSize('h4');
+  font-size: 24px;
 }
 
 // Text
@@ -147,9 +74,9 @@
   font-size: textSize('medium');
 
   a {
-    color: $sg-color-brand;
     font-weight: 700;
     text-decoration: underline;
+    color: $sg-color-brand;
   }
 
 
@@ -162,9 +89,9 @@
 // Table
 //------------------------------------------------------------
 .sg-table {
+  width: 100%;
   margin-top: 18px;
   margin-bottom: 18px;
-  width: 100%;
 
   font-size: textSize('medium');
 
@@ -216,11 +143,11 @@
   &:before {
     padding: 4px 12px;
 
-    position: absolute;
-    top: -33px;
-    right: 0;
-
     display: block;
+
+    position: absolute;
+    top: -36px;
+    right: 0;
 
     content: 'Preview';
 
@@ -229,8 +156,8 @@
   }
 
   &--full {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
     border:0;
   }
 
@@ -252,11 +179,11 @@
   &:before {
     padding: 4px 12px;
 
+    display: block;
+
     position: absolute;
     top: 0;
     right: 0;
-
-    display: block;
 
     content: 'HTML';
 
@@ -281,46 +208,67 @@
   background-color: $sg-color-code;
 }
 
+// container-demo
+//------------------------------------------------------------
+.sg-container-demo {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ccc;
+  margin-bottom: 40px;
+}
+
+// sg-grid-demo
+//------------------------------------------------------------
+.sg-grid-demo {
+
+  .sg-col-style {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: #3599c3;
+    color: #fff;
+  }
+
+}
 
 // color
 //------------------------------------------------------------
 .sg-color {
+  height: 50px;
   padding: 4px 10px;
   display: block;
-  height: 50px;
   border: 3px solid $sg-color-border;
 }
 
-
-.vue-nav-mobile {
-
-}
-
+// vue-nav-mobile
+//------------------------------------------------------------
 .vue-nav-mobile__title {
+  padding: 30px 20px 0 20px;
+  display: block;
   font-size: headingSize('h2');
   color: $sg-color-brand;
-    padding: 30px 20px 0 20px;
-    display: block;
 }
 
 .vue-nav-mobile__section-title {
-    color: #303637;
-    font-size: 20px;
-    font-weight: 700;
     margin: 30px 0 10px;
     padding: 0 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #303637;
 }
 
 .vue-nav-mobile__section-list {
 
   a {
-    font-size: 16px;
     padding: 6px 24px;
-    border-bottom: 1px solid $sg-color-border;
-    font-weight: 400;
-    position: relative;
-    text-decoration: none;
     display: block;
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid $sg-color-border;
   }
 
   li:first-child {
@@ -333,12 +281,19 @@
 
 }
 
+.vue-nav-mobile .nav {
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
 #nav-mobile {
+  padding: 4px 8px;
   position: fixed;
+  z-index: 1;
   top: 20px;
   right: 20px;
-  z-index: 1;
-  padding: 4px 8px;
   font-size: 18px;
   background-color: #fff;
+
+
 }

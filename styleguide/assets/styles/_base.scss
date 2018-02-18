@@ -1,0 +1,50 @@
+
+/* ==========================================================================
+    #BODY
+========================================================================== */
+
+.sg-body {
+  font-family: $sg-font-text;
+  font-size: 20px;
+  line-height: $sg-font-text-line-height;
+  word-wrap: break-word;
+  word-break: normal;
+
+  color: $sg-color-black;
+  background-color: $sg-color-white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================================================================
+    #SELECTION
+========================================================================== */
+
+/* Specify text selection background color and omit drop shadow */
+
+::-moz-selection {
+  background-color: $sg-text-selection-bg; /* Required when declaring ::selection */
+  color: $sg-text-selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: $sg-text-selection-bg; /* Required when declaring ::selection */
+  color: $sg-text-selection-color;
+  text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

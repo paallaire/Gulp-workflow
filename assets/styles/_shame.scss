@@ -1,46 +1,4 @@
 /* ==========================================================================
-    #LOADER
+    #SHAME
 ========================================================================== */
 
-#{$loader} {
-  @include center-block();
-  width: 50px;
-  height: 50px;
-  padding: 40px;
-  display: inline-block;
-
-  position: relative;
-  top: 20px;
-  
-  vertical-align: middle;
-  border: 6px solid rgba(#16a085, .5);
-  border-radius: 50%;
-
-  @include media('>tablet') {
-    display: block;
-  }
-  
-  @include media('>phone') {
-    display: block;
-  }
-
-  &:after {
-    width: 50px;
-    height: 50px;
-
-    display: block;
-
-    position: absolute;
-    top: -6px;
-    right: 0;
-    bottom: 0;
-    left: -6px;
-
-    content: '';
-    animation: spin-loader .75s infinite linear;
-
-    border: 6px solid transparent;
-    border-top-color: #16a085;
-    border-radius: 50%;
-  }
-}

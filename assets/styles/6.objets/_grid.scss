@@ -11,8 +11,6 @@ Example : http://lostgrid.org/lostgrid-example.html
   lost-flex-container: row;
 }
 
-
-
 @each $name, $value in $desktop-first-breakpoints {
   @include make-row-mq($name);
   @include make-columns-mq($name, $lost-grid-columns);

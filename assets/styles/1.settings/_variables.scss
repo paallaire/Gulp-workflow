@@ -27,15 +27,6 @@ $Baskerville: 'Libre Baskerville', serif;
 /* heading*/
 /*///////////////////////////*/
 $map-font-sizes-heading: (
-'h1':  40px,
-'h2':  32px,
-'h3':  30px,
-'h4':  28px,
-'h5':  26px,  
-'h6':  20px 
-);
-
-$map-font-sizes-heading-mobile: (
 'h1': 60px,
 'h2': 40px,
 'h3': 32px,
@@ -44,23 +35,33 @@ $map-font-sizes-heading-mobile: (
 'h6': 22px
 );
 
+$map-font-sizes-heading-mobile: (
+'h1':  40px,
+'h2':  32px,
+'h3':  30px,
+'h4':  28px,
+'h5':  26px,  
+'h6':  20px 
+);
+
 /* text*/
 /*///////////////////////////*/
 $map-font-sizes-text: (
-'mini':   8px,
-'tiny':   10px,
-'small':  12px,
-'medium': 16px,
-'large':  24px,
-'big':    40px,
-'huge':   80px,
+'t1': 30px,
+'t2': 24px,
+'t3': 20px,
+'t4': 18px,
+'t5': 16px,
+'t6': 12px,
 );
 
 $map-font-sizes-text-mobile: (
-'small':  14px,
-'medium': 16px,
-'large':  16px,
-'big':    20px
+'t1': 24px,
+'t2': 20px,
+'t3': 18px,
+'t4': 16px,
+'t5': 14px,
+'t6': 12px,
 );
 
 /* style*/
@@ -145,16 +146,16 @@ $padding-mobile-y: 20px;
 ========================================================================== */
 
 $map-containers: (
-'mini':   320px,
-'tiny':   600px,
-'small':  700px,
-'medium': 900px,
-'large':  960px,
-'big':    1100px,
-'max':    1440px,
-'full':   100%,  
+'mini':      320px,
+'tiny':      600px,
+'small':     700px,
+'medium':    900px,
+'large':     960px,
+'big':       1100px,
+'max':       1200px,
+'outer-max': 1920px,
+'full':      100%,  
 );
-
 /* ==========================================================================
     #Z-INDEX
 ========================================================================== */

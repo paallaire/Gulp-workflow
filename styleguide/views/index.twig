@@ -1,80 +1,11 @@
-{% extends "_layouts/base.twig" %} 
-
-{% set icons = ['mutation','facebook','twitter','linkedin','arrow-down','arrow-up','arrow-long-right','arrow-long-left','plus'] %}
-
-{% set breakpoints = [ 
-  {"name":"small", "value":"400px"}, 
-  {"name":"phone", "value":"520px"}, 
-  {"name":"tablet", "value":"768px"},
-  {"name":"desktop", "value":"1024px"}, 
-  {"name":"large", "value":"1440px"} 
-] %}
+{% extends "../sg-views/layouts/base.twig" %} 
 
 {% block page %}
 
   <!-- section Icons -->
   <section class="sg-container-section">
 
-    <h2 class="sg-h2" id="custom">Base 123</h2>
-    <h3 class="sg-h3">Icons</h3>
-
-    <table class="sg-table">
-
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>CSS Class</th>
-          <th>Render</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        {% for icon in icons %}
-        <tr>
-          <td>{{ icon }}</td>
-          <td>icon-{{ icon }}</td>
-          <td>
-            <svg class="icon icon-{{ icon }} svg">
-              <use xlink:href="/files/main.svg#icon-{{ icon }}"></use>
-            </svg>
-          </td>
-        </tr>
-        {% endfor %}
-
-      </tbody>
-
-    </table>
-
-  </section>
-
-  <!-- section Media queries -->
-  <section class="sg-container-section">
-
-    <h3 class="sg-h3">Media queries</h3>
-    <p class="sg-text">More information : <a href="https://include-media.com/">include-media.com</a></p>
-
-    <table class="sg-table">
-
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>value</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        {% for item in breakpoints %}
-        <tr>
-          <td>{{ item.name }}</td>
-          <td>{{ item.value }}</td>
-        </tr>
-        {% endfor %}
-
-      </tbody>
-
-    </table>
+    <h2 class="sg-h2">Index</h2>
 
   </section>
 
