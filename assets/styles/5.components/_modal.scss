@@ -3,36 +3,35 @@
 ========================================================================== */
 
 #{$modal} {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  align-items: center;
-  justify-content: center;
   display: none;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   &.is-active {
     display: flex;
   }
 
   &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: rgba(10, 10, 10, 0.86);
     cursor: pointer;
+    background-color: rgba(10, 10, 10, 0.86);
   }
 
   &__content {
+    max-height: calc(100vh - 160px);
     margin: 0 20px;
     padding: 30px;
-    max-height: calc(100vh - 160px);
     overflow: auto;
     position: relative;
     background-color: #fff;
