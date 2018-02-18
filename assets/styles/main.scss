@@ -22,13 +22,13 @@
 /* 2.tools - mixins*/
 /*/////////////////////////////////////////*/
 @import '2.tools/mixins/grid';
+@import '2.tools/mixins/center';
 @import '2.tools/mixins/center-block';
 @import '2.tools/mixins/clearfix';
 @import '2.tools/mixins/grid-last-row';
 @import '2.tools/mixins/input-placeholder';
-@import '2.tools/mixins/mobile';
-@import '2.tools/mixins/pseudo';
-@import '2.tools/mixins/responsive-ratio';
+@import '2.tools/mixins/padding';
+@import '2.tools/mixins/ratio';
 @import '2.tools/mixins/text-truncate';
 @import '2.tools/mixins/triangle';
 

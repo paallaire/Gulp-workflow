@@ -5,13 +5,14 @@
 /*
 input,  
 textarea {  
-    @include input-placeholder {
+    @include input-placeholder{
         color: $grey;
     }
 }
 */
 
 @mixin input-placeholder {
+
   &.placeholder {
     @content;
   }
@@ -31,5 +32,6 @@ textarea {
   &::-webkit-input-placeholder {
     @content;
   }
+
 }
 

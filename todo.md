@@ -8,11 +8,8 @@
 - [x] Container
 - [x] Grid
 - [x] Typography
-
-
 - [x] Icons
-
-
+- [x] Mixins
 
 ## Elements
 
@@ -20,30 +17,18 @@
 - [ ] Btn
 - [ ] Tag
 
-
-
 ## Components
 
 - [ ] Form elements
 
-
-
 ## Objets
-
-- [ ] Container iframe & video
-
-
 
 ## Vuejs
 
 - [ ] Revoir nav-mobile
-
 - [ ] Faire directive nav sticky
-
 - [ ] Faire player video
-
 - [ ] Faire Dropdown
-
 - [ ] Faire Toggle item
 
       ​

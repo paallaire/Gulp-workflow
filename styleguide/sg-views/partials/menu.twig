@@ -6,11 +6,15 @@
   { 'name' :  'Grid', 'url' : 'grid.html' },
   { 'name' :  'Typography', 'url' : 'typography.html' },
   { 'name' :  'Icons', 'url' : 'icons.html' },
+  { 'name' :  'Mixins', 'url' : 'mixins.html' },
 ] %}
 
 {% set pagesElements = [] %}
 
-{% set pagesComponents = [] %}
+{% set pagesComponents = [
+  { 'name' :  'Modal', 'url' : 'c-modal.html' },
+  { 'name' :  'Menu Mobile', 'url' : 'c-menu-mobile.html' },
+] %}
 
 {% set pagesLayout = [] %}
 
@@ -44,7 +48,7 @@
     <ul class="vue-nav-mobile__section-list">
       {% for page in pagesComponents %}
       <li>
-        <a href="/styleguide/components/{{ page.url }}">{{ page.name }}</a>
+        <a href="/styleguide/{{ page.url }}">{{ page.name }}</a>
       </li>
       {% endfor %}
     </ul>

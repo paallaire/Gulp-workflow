@@ -25,7 +25,6 @@
 
           &:nth-child(#{$maxColumns/$i}) {
             margin-right: 0;
-            content: "test";
           }
 
         }

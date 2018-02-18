@@ -137,9 +137,17 @@ $desktop-first-breakpoints: reverse($breakpoints);
 
 /* padding */
 /*///////////////////////////*/
-$padding-mobile: 20px;
-$padding-mobile-x: 20px;
-$padding-mobile-y: 20px;
+$padding-mobile: 30px;
+$padding-mobile-x: 30px;
+$padding-mobile-y: 30px;
+
+$padding-tablet: 40px;
+$padding-tablet-x: 40px;
+$padding-tablet-y: 40px;
+
+$padding-desktop: 60px;
+$padding-desktop-x: 60px;
+$padding-desktop-y: 60px;
 
 /* ==========================================================================
     #CONTAINER

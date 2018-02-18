@@ -206,7 +206,14 @@
 
   color: $sg-color-brand;
   background-color: $sg-color-code;
+
+  &.block {
+    display: block;
+  }
+  
 }
+
+
 
 // container-demo
 //------------------------------------------------------------
@@ -297,3 +304,21 @@
 
 
 }
+
+
+.sg-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  color: $sg-color-white;
+  background-color: $sg-color-brand;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $sg-color-code;
+    color: $sg-color-brand;
+  }
+
+}
+
+
+

@@ -2,3 +2,88 @@
     #SHAME
 ========================================================================== */
 
+/* demo */
+
+.sg-mixins-center-demo {
+    @include center-block();
+    max-width: 400px;
+}
+
+.sg-mixins-placeholder-demo {
+
+    input,  
+    textarea,
+    .placeholder {  
+        @include input-placeholder() {
+            color: #ccc;
+        }
+    }
+
+}
+
+.sg-mixins-placeholder-demo2 {
+
+    input,  
+    textarea,
+    .placeholder {  
+        @include input-placeholder() {
+            color: red;
+        }
+    }
+
+}
+  
+.sg-mixins-padding-desktop-demo {
+    @include padding-desktop();
+}
+
+.sg-mixins-padding-tablet-demo {
+    @include padding-tablet();
+}
+
+
+.sg-mixins-padding-mobile-demo {
+    @include padding-mobile();
+}
+
+.sg-mixins-padding-container-demo {
+    @include padding-container();
+}
+
+
+.sg-mixins-ratio-demo-16-9 {
+    @include ratio(16,9);  
+    background: #ccc;
+}
+
+.sg-mixins-ratio-demo-4-3 {
+    @include ratio(4,3); 
+    background: #bbb;
+}
+
+.sg-mixins-ratio-demo-1-1 {
+    @include ratio(1,1);  
+    background: #aaa;
+}
+
+
+.sg-mixins-text-truncate-demo1 {
+    @include truncate(50px);
+}
+
+.sg-mixins-text-truncate-demo2 {
+    @include truncate(200px);
+}
+
+.sg-mixins-iframe-ratio-demo1 {
+    @include iframe-ratio(16,9);
+}
+
+.sg-mixins-iframe-ratio-demo2 {
+    @include iframe-ratio(4,3);
+}
+
+.sg-mixins-iframe-ratio-demo3 {
+    @include iframe-ratio(1,1);
+}
+
