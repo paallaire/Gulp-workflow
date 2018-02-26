@@ -29,6 +29,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-twig": "^0.7.0",
     "gulp-util": "^3.0.8",
+    "gulp-wait2": "0.0.5",
     "gulp-watch": "^4.3.11",
     "laravel-mix": "^1.7.2"
   },

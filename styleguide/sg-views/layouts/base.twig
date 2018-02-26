@@ -18,8 +18,11 @@
 </head>
 <body class="sg-body">
     <div id="app">
+        <div class="l-wrapper">
         {% block page %}{% endblock %}
+        </div>
         {% include "../partials/menu.twig" %}
+        <show-grid :columns="20" :container-class="'l-wrapper'" :row-class="'o-row-tablet'" :column-class="'o-col-tablet-1'"></show-grid>
     </div>
     <script src="/dist/scripts/styleguide.js"></script>
 </body>

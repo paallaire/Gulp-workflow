@@ -26,12 +26,21 @@
 ## Vuejs
 
 - [ ] Revoir nav-mobile
+
 - [ ] Faire directive nav sticky
+
 - [ ] Faire player video
+
 - [ ] Faire Dropdown
+
 - [ ] Faire Toggle item
 
       ​
 
+      ​
 
 
+## Lost & grid
+
+- [ ] Faire un mixin container-padding global avec option spacing
+- [ ] Faire test avec le layout lost + mixin container-padding + inner + outer à la pratt

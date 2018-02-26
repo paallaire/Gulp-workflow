@@ -1,22 +1,28 @@
 console.log('styleguide js');
 
+// Helpers
+import getEnv from '../../../assets/scripts/utils/getEnv.js';
+
 // Vue
 import Vue from 'vue';
 import store from '../../../assets/scripts/store'
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 
+// Directives
 
+// components
 import SgNavMobile from './components/NavMobile.vue';
 import Modal from '../../../assets/scripts/components/Modal.vue';
-
+import ShowGrid from '../../../assets/scripts/components/ShowGrid.vue';
 
 let vm = new Vue({
   el: '#app',
   store,
   components: {
     SgNavMobile,
-    Modal
+    Modal,
+    ShowGrid
   },
   data: {
     showNavMobile: false
@@ -24,26 +30,30 @@ let vm = new Vue({
   computed: {
     ...mapGetters([
       'lang',
-      'modalActive'
+      'modalActive',
+      'env'
     ])
   },
   methods: {
     ...mapMutations([
-      'setModal'
+      'setModal',
+      'setEnv'
     ]),
     showModal: function (name) {
       this.setModal(name);
-      //this.$store.commit("setModal", name);
+
     },
     hideModal: function () {
       this.setModal(null);
-      //this.$store.commit("setModal", null);
     },
-    closeNavMobile: function() {
+    closeNavMobile: function () {
       this.showNavMobile = false;
     }
   },
-  mounted: function () { },
+  mounted: function () {
+    let env = getEnv();
+    this.setEnv(env);
+  },
   destroyed: function () { }
 });
 

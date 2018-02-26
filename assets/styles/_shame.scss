@@ -87,3 +87,24 @@
     @include iframe-ratio(1,1);
 }
 
+
+.lost-container {}
+.lost-container-row {}
+.lost-row {}
+.lost-column {}
+
+.grid-12 {
+    background: red;
+
+    @include media('>=desktop') {
+        @include lost-container-center( 10 );
+    }    
+
+    & > div {
+        width: 100%;
+    }
+
+}
+
+
+

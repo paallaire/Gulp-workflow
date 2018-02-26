@@ -2,8 +2,8 @@
     #CONFIG
 ========================================================================== */
 
-$env: 'dev';
-$isDesktop : true;
+$is-dev: '.is-dev';
+$isDesktopFirst : true;
 
 /* ==========================================================================
     #FOLDER
@@ -135,19 +135,16 @@ $breakpoints: (
 );
 $desktop-first-breakpoints: reverse($breakpoints);   
 
-/* padding */
-/*///////////////////////////*/
-$padding-mobile: 30px;
-$padding-mobile-x: 30px;
-$padding-mobile-y: 30px;
+/*
+lg
+dk
+tb
+ph
+sm
 
-$padding-tablet: 40px;
-$padding-tablet-x: 40px;
-$padding-tablet-y: 40px;
+*/
 
-$padding-desktop: 60px;
-$padding-desktop-x: 60px;
-$padding-desktop-y: 60px;
+
 
 /* ==========================================================================
     #CONTAINER
@@ -173,6 +170,8 @@ $z-mobile-nav: 100;
 $z-overlay: 999;
 $z-modal: 1000;
 
+$z-site-option : 1001;
+
 /* ==========================================================================
     #TRANISTION
 ========================================================================== */
@@ -185,16 +184,34 @@ $transition-speed-fast: .1s;
     #LOST (postcss)
 ========================================================================== */
 
-@lost gutter 30px;
+$lost-gutter : 20px;
+$lost-rounder : 99.99999;
+$lost-rounder-with-unit : #{$lost-rounder+'%'};
+$lost-grid-columns: 12;
+$lost-gutter-desktop: 20px;
+$lost-gutter-tablet: 20px;
+$lost-gutter-phone: 20px;
+
+@lost gutter #{$lost-gutter};
 @lost flexbox flex;
 @lost cycle none;
 @lost clearing left;
-@lost rounder 99.99999;
+@lost rounder #{$lost-rounder};
 
-$lost-grid-columns: 12;
-$lost-gutter-desktop: 60px;
-$lost-gutter-tablet: 30px;
-$lost-gutter-phone: 15px;
+
+/* padding */
+/*///////////////////////////*/
+$padding-mobile: 30px;
+$padding-mobile-x: 30px;
+$padding-mobile-y: 30px;
+
+$padding-tablet: 40px;
+$padding-tablet-x: 40px;
+$padding-tablet-y: 40px;
+
+$padding-desktop: 60px;
+$padding-desktop-x: 60px;
+$padding-desktop-y: 60px;
 
 /* ==========================================================================
     #hamburger (button nav mobile)

@@ -1,3 +1,8 @@
+
+
+// Helpers
+import getEnv from './utils/getEnv.js';
+
 // Fix simple polyfill that fetches external SVGs referenced in use elements when the browser itself  ( IE 10-11 )
 import 'svgxuse';
 
@@ -11,6 +16,8 @@ import store from './store'
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 
+// Directives
+
 // Components
 import Dropdown from './components/Dropdown.vue';
 import NavSticky from './components/NavSticky.vue';
@@ -20,31 +27,33 @@ let vm = new Vue({
   el: '#app',
   store,
   components: {
-    Dropdown,
-    NavSticky,
     Modal
   },
   data: {},
   computed: {
     ...mapGetters([
       'lang',
-      'modalActive'
+      'modalActive',
+      'env'
     ])
   },
   methods: {
     ...mapMutations([
-      'setModal'
+      'setModal',
+      'setEnv'
     ]),
     showModal: function (name) {
       this.setModal(name);
-      //this.$store.commit("setModal", name);
+
     },
     hideModal: function () {
       this.setModal(null);
-      //this.$store.commit("setModal", null);
-    },
+    }
   },
-  mounted: function () { },
+  mounted: function () {
+    let env = getEnv();
+    this.setEnv(env);
+  },
   destroyed: function () { }
 });
 

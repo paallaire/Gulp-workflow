@@ -9,7 +9,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     lang: null,
-    modalActive: null
+    modalActive: null,
+    env: "prod"
   },
   getters: {
     lang(state) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     modalActive(state) {
       return state.modalActive;
     },
+    env(state) {
+      return state.env;
+    },
   },
   mutations: {
     setLang(state, lang) {
@@ -25,6 +29,9 @@ export default new Vuex.Store({
     },
     setModal(state, modalActive) {
       state.modalActive = modalActive;
+    },
+    setEnv(state, env) {
+      state.env = env ? 'dev' : 'prod';
     },
   }
 

@@ -8,6 +8,7 @@ const del = require('del');
 const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
 const notify = require('gulp-notify');
+const wait = require('gulp-wait2');
 
 const sortingOptions = require('./postcss-sorting');
 const sorting = require('postcss-sorting');
@@ -68,6 +69,7 @@ gulp.task('watch', ['clean', 'build'], function () {
       .pipe(plumber({
         errorHandler: onError
       }))
+      .pipe(wait(1000))
       .pipe(twig())
       .pipe(gulp.dest(destStyles));
   });

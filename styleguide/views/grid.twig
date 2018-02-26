@@ -2,47 +2,71 @@
 
 {% block page %}
 
+
+
+
+
 <section class="sg-container-section">
 
   <h2 class="sg-h2">Grid</h2>
 
-  <div class="o-container-big sg-grid-demo">
+  <div class=" sg-grid-demo">
 
-    <div class="o-row-desktop">
-    {% for i in 1..12 %}
-      <div class="sg-col-style o-col-desktop-1">1</div>
-    {% endfor %}
+    <div class="grid-12">
+
+      <div class="o-row-tablet">
+        {% for i in 1..2 %}
+        <div class="sg-col-style o-col-tablet-6">6</div>
+        {% endfor %}
+      </div>
+
     </div>
 
-    <div class="o-row-desktop">
+    <div class="grid-12">
+
+      <div class="o-row-tablet">
+        {% for i in 1..3 %}
+        <div class="sg-col-style o-col-tablet-4">4</div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <div class="o-row-tablet">
+      {% for i in 1..12 %}
+      <div class="sg-col-style o-col-tablet-1">1</div>
+      {% endfor %}
+    </div>
+
+    <div class="o-row-tablet">
       {% for i in 1..6 %}
-      <div class="sg-col-style o-col-desktop-2">2</div>
+      <div class="sg-col-style o-col-tablet-2">2</div>
       {% endfor %}
-     </div>
+    </div>
 
-     <div class="o-row-tablet">
+    <div class="o-row-tablet">
       {% for i in 1..4 %}
-      <div class="sg-col-style o-col-desktop-3 o-col-tablet-6">3</div>
+      <div class="sg-col-style o-col-tablet-3 o-col-tablet-6">3</div>
       {% endfor %}
-     </div>
+    </div>
 
-     <div class="o-row-desktop">
+    <div class="o-row-tablet">
       {% for i in 1..3 %}
-      <div class="sg-col-style o-col-desktop-4">4</div>
+      <div class="sg-col-style o-col-tablet-4">4</div>
       {% endfor %}
-     </div>
+    </div>
 
-     <div class="o-row-desktop">
+    <div class="o-row-tablet">
       {% for i in 1..2 %}
-      <div class="sg-col-style o-col-desktop-6">6</div>
+      <div class="sg-col-style o-col-tablet-6">6</div>
       {% endfor %}
-     </div>
+    </div>
 
-     <div class="o-row-desktop">
+    <div class="o-row-tablet">
       {% for i in 1..1 %}
-      <div class="sg-col-style o-col-desktop-12">12</div>
+      <div class="sg-col-style o-col-tablet-12">12</div>
       {% endfor %}
-     </div>
+    </div>
 
   </div>
 
@@ -50,10 +74,10 @@
 
   <div class="o-container-big sg-grid-demo">
 
-    <div class="o-row-desktop">
-      <div class="sg-col-style o-col-desktop-3">3</div>
-      <div class="sg-col-style o-col-desktop-6">6</div>
-      <div class="sg-col-style o-col-desktop-3">3</div>
+    <div class="o-row-tablet">
+      <div class="sg-col-style o-col-tablet-3">3</div>
+      <div class="sg-col-style o-col-tablet-6">6</div>
+      <div class="sg-col-style o-col-tablet-3">3</div>
     </div>
   </div>
 
@@ -61,11 +85,11 @@
 
   <div class="o-container-big sg-grid-demo">
 
-    <div class="o-row-desktop">
-      <div class="sg-col-style o-col-desktop-6">6</div>
-      <div class="sg-col-style o-col-desktop-2">2</div>
-      <div class="sg-col-style o-col-desktop-1">1</div>
-      <div class="sg-col-style o-col-desktop-3">3</div>
+    <div class="o-row-tablet">
+      <div class="sg-col-style o-col-tablet-6">6</div>
+      <div class="sg-col-style o-col-tablet-2">2</div>
+      <div class="sg-col-style o-col-tablet-1">1</div>
+      <div class="sg-col-style o-col-tablet-3">3</div>
     </div>
 
   </div>

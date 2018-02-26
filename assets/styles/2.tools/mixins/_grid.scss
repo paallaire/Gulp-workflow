@@ -1,3 +1,11 @@
+// Hotfix lost-center
+@mixin lost-container-center( $column ) {
+  lost-center: #{$column}/#{$lost-grid-columns};
+  max-width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
+  width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
+  flex-basis: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
+}
+
 @mixin make-row-mq($breakpoint) {
 
   .o-row-#{$breakpoint} {
