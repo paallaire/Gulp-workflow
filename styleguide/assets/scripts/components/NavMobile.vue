@@ -46,71 +46,71 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .vue-nav-mobile {
-  width: 100%;
-  height: 100%;
-  background: #fff;
+width: 100%;
+height: 100%;
+background: #fff;
 }
 
 .vue-nav-mobile__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 320px;
-  height: 100%;
-  background: #fff;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
+width: 320px;
+height: 100%;
+background: #fff;
 }
 
 .vue-nav-mobile__overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  background-color: #000;
-  cursor: pointer;
-  opacity: 0.2;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 5;
+background-color: #000;
+cursor: pointer;
+opacity: 0.2;
 }
 
 /* transition menu */
 .nav-mobile--menu-enter-active,
 .nav-mobile--menu-leave-active {
-  transition: transform .3s ease;
+transition: transform .3s ease;
 }
 
 .nav-mobile--menu-enter {
-  transform: translateX(-320px);
+transform: translateX(-320px);
 }
 
 .nav-mobile--menu-enter-to {
-  transform: translateX(0);
+transform: translateX(0);
 }
 
 .nav-mobile--menu-leave {
-  transform: translateX(0);
+transform: translateX(0);
 }
 
 .nav-mobile--menu-leave-to {
-  transform: translateX(-320px);
+transform: translateX(-320px);
 }
 
 /* transition overlay */
 .nav-mobile--overlay-enter-active,
 .nav-mobile--overlay-leave-active {
-  transition: opacity 0.3s;
+transition: opacity 0.3s;
 }
 
 /* out */
 .nav-mobile--overlay-enter,
 .nav-mobile--overlay-leave-to {
-  opacity: 0;
+opacity: 0;
 }
 
 
 /* in */
 .nav-mobile--overlay-enter-to,
 .nav-mobile--overlay-leave {
-  opacity: 0.2;
+opacity: 0.2;
 }
 </style>

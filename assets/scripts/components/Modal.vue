@@ -15,50 +15,50 @@ import _ from "lodash";
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
-  name: "modal",
-  props: {
+name: "modal",
+props: {
     name: {
-      type: String
+    type: String
     }
-  },
-  data() {
+},
+data() {
     return {
-      visible: false
+        visible: false
     };
-  },
-  computed: {
+},
+computed: {
     ...mapGetters(["modalActive"]),
     isActive() {
-      return this.visible ? "is-active" : "";
+        return this.visible ? "is-active" : "";
     }
-  },
-  watch: {
+},
+watch: {
     modalActive() {
-      if (this.modalActive == this.name) {
-        this.show();
-      }
+        if (this.modalActive == this.name) {
+            this.show();
+        }
     }
-  },
-  methods: {
+},
+methods: {
     ...mapMutations(["setModal"]),
     show() {
-      this.visible = true;
-      window.addEventListener("keyup", this.onEscapeKeyUp);
+        this.visible = true;
+        window.addEventListener("keyup", this.onEscapeKeyUp);
     },
     hide() {
-      this.visible = false;
-      this.$store.commit("setModal", null);
-      window.removeEventListener("keyup", this.onEscapeKeyUp);
+        this.visible = false;
+        this.$store.commit("setModal", null);
+        window.removeEventListener("keyup", this.onEscapeKeyUp);
     },
     onEscapeKeyUp(event) {
-      if (event.which === 27 && this.visible) {
-        this.hide();
-      }
+        if (event.which === 27 && this.visible) {
+            this.hide();
+        }
     }
-  },
-  mounted() {},
-  destroyed() {
+},
+mounted() {},
+destroyed() {
     window.removeEventListener("keyup", this.onEscapeKeyUp);
-  }
+}
 };
 </script>

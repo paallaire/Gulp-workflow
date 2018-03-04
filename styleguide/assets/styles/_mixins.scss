@@ -1,28 +1,28 @@
 @mixin sg-padding-mobile() {
-  padding-right: $sg-padding-mobile;
-  padding-left: $sg-padding-mobile;
+padding-right: $sg-padding-mobile;
+padding-left: $sg-padding-mobile;
 }
 
 /* ==========================================================================
-    #CLEARFIX
+#CLEARFIX
 ========================================================================== */
 
 // Ref : http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
 @mixin clearfix() {
-  &:after {
-    display: block !important;
-    clear: both !important;
+&:after {
+display: block !important;
+clear: both !important;
 
-    content: '' !important;
-  }
+content: '' !important;
+}
 }
 
 /* ==========================================================================
-    #CENTER-BLOCK
+#CENTER-BLOCK
 ========================================================================== */
 @mixin center-block() {
-  margin-right: auto;
-  margin-left: auto;
+margin-right: auto;
+margin-left: auto;
 
-  display: block;
+display: block;
 }

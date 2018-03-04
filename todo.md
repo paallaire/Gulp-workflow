@@ -23,24 +23,15 @@
 
 ## Objets
 
-## Vuejs
+## JS helper 
 
-- [ ] Revoir nav-mobile
+- [x] sticky
 
-- [ ] Faire directive nav sticky
+## Vuejs 
 
-- [ ] Faire player video
-
-- [ ] Faire Dropdown
-
-- [ ] Faire Toggle item
-
-      ​
-
-      ​
-
+- [ ] Revoir nav-mobile ( like styleguide )
+- [ ] Faire Toggle item ( like podatrix )
 
 ## Lost & grid
 
-- [ ] Faire un mixin container-padding global avec option spacing
-- [ ] Faire test avec le layout lost + mixin container-padding + inner + outer à la pratt
+- [x] System Grid

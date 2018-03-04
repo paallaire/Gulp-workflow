@@ -1,176 +1,199 @@
 /* ==========================================================================
-    #HEADING
+#HEADING
 ========================================================================== */
 
 @mixin h1() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h1');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h1');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h1');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h1');
+    }
+
 }
 
 @mixin h2() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h2');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h2');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h2');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h2');
+    }
+
 }
 
 @mixin h3() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h3');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h3');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h3');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h3');
+    }
+
 }
 
 @mixin h4() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h4');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h4');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h4');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h4');
+    }
+
 }
 
 @mixin h5() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h5');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h5');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h5');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h5');
+    }
+
 }
 
 @mixin h6() {
-  @include media('<desktop') {
-    font-size: headingSizeMobile('h6');
-  }
-  @include media('>=desktop') {
-    font-size: headingSize('h6');
-  }
+
+    @include media('<desktop') {
+        font-size: headingSizeMobile('h6');
+    }
+
+    @include media('>=desktop') {
+        font-size: headingSize('h6');
+    }
+
 }
 
 .h1 {
-  @include h1();
+    @include h1();
 }
 
 .h2 {
-  @include h2();
+    @include h2();
 }
 
 .h3 {
-  @include h3();
+    @include h3();
 }
 
 .h4 {
-  @include h4();
+    @include h4();
 }
 
 .h5 {
-  @include h5();
+    @include h5();
 }
 
 .h6 {
-  @include h6();
+    @include h6();
 }
 
 
 /* ==========================================================================
-    #TEXT
+#TEXT
 ========================================================================== */
 
 @mixin t1() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t1');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t1');
+    }
 
-  @include media('>=desktop') {
-    font-size: textSize('t1');
-  }
+    @include media('>=desktop') {
+        font-size: textSize('t1');
+    }
+
 }
 
 @mixin t2() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t2');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t2');
+    }
 
-  @include media('>=desktop') {
-    font-size: textSize('t2');
-  }
+    @include media('>=desktop') {
+        font-size: textSize('t2');
+    }
+
 }
 
 @mixin t3() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t3');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t3');
+    }
 
-  @include media('>=desktop') {
-    font-size: textSize('t3');
-  }
+    @include media('>=desktop') {
+        font-size: textSize('t3');
+    }
+
 }
 
 @mixin t4() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t4');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t4');
+    }
 
-  @include media('>=desktop') {
-    font-size: textSize('t4');
-  }
+    @include media('>=desktop') {
+        font-size: textSize('t4');
+    }
+
 }
 
 @mixin t5() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t5');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t5');
+    }
 
-  @include media('>=desktop') {
-    font-size: textSize('t5');
-  }
+    @include media('>=desktop') {
+        font-size: textSize('t5');
+    }
+
 }
 
 @mixin t6() {
 
-  @include media('<desktop') {
-    font-size: textSizeMobile('t6');
-  }
-  
-  @include media('>=desktop') {
-    font-size: textSize('t6');
-  }
+    @include media('<desktop') {
+        font-size: textSizeMobile('t6');
+    }
+
+    @include media('>=desktop') {
+        font-size: textSize('t6');
+    }
 }
 
 .t1 {
-  @include t1();
+    @include t1();
 }
 
 .t2 {
-  @include t2();
+    @include t2();
 }
 
 .t3 {
-  @include t3();
+    @include t3();
 }
 
 .t4 {
-  @include t4();
+    @include t4();
 }
 
 .t5 {
-  @include t5();
+    @include t5();
 }
 
 .t6 {
-  @include t6();
+    @include t6();
 }

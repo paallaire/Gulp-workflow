@@ -13,10 +13,13 @@
 
     input,  
     textarea,
-    .placeholder {  
+    .placeholder {
+
         @include input-placeholder() {
             color: #ccc;
-        }
+        }  
+
+        border:1px solid #ccc;
     }
 
 }
@@ -107,4 +110,80 @@
 }
 
 
+.test2 {
 
+    & > div {
+        background-color: pink;
+      }
+
+      .a {
+        lost-column : 4/8 0 $lost-gutter-desktop;
+      }
+
+      .b {
+        lost-column : 2/8 0 $lost-gutter-desktop;
+      }
+
+      .c {
+        lost-column : 2/8 0 $lost-gutter-desktop;
+      }
+    
+}
+
+
+.test {
+
+    & > div {
+      background-color: red;
+    }
+  
+    .a {
+  
+      @include media('>=tablet') {
+        @include lost-offset( 2 );
+        lost-column : 4/12 0 $lost-gutter-desktop;
+      }
+  
+      @include media('<tablet') {
+        lost-column : 6/12 0 $lost-gutter-desktop;
+      }
+  
+    }
+  
+    .b {
+  
+      @include media('>=tablet') {
+  
+        lost-column : 2/12 0 $lost-gutter-desktop;
+      }
+  
+      @include media('<tablet') {
+        lost-column : 3/12 0 $lost-gutter-desktop;
+      }
+  
+    }
+  
+    .c {
+      @include media('>=tablet') {
+  
+        lost-column : 2/12 0 $lost-gutter-desktop;
+      }
+  
+      @include media('<tablet') {
+        lost-column : 3/12 0 $lost-gutter-desktop;
+      }
+    }
+  
+  
+  }
+
+
+
+  .is-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: red;
+  }

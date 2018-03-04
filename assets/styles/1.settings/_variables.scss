@@ -135,17 +135,6 @@ $breakpoints: (
 );
 $desktop-first-breakpoints: reverse($breakpoints);   
 
-/*
-lg
-dk
-tb
-ph
-sm
-
-*/
-
-
-
 /* ==========================================================================
     #CONTAINER
 ========================================================================== */
@@ -167,7 +156,6 @@ $map-containers: (
 
 $z-sticky-nav: 100;
 $z-mobile-nav: 100;
-$z-overlay: 999;
 $z-modal: 1000;
 
 $z-site-option : 1001;
@@ -192,7 +180,7 @@ $lost-gutter-desktop: 20px;
 $lost-gutter-tablet: 20px;
 $lost-gutter-phone: 20px;
 
-@lost gutter #{$lost-gutter};
+@lost gutter 0;
 @lost flexbox flex;
 @lost cycle none;
 @lost clearing left;
@@ -213,28 +201,4 @@ $padding-desktop: 60px;
 $padding-desktop-x: 60px;
 $padding-desktop-y: 60px;
 
-/* ==========================================================================
-    #hamburger (button nav mobile)
-========================================================================== */
 
-$hamburger-padding-x: 0;
-$hamburger-padding-y: 0;
-$hamburger-layer-width: 40px;
-$hamburger-layer-height: 2px;
-$hamburger-layer-spacing: 9px;
-$hamburger-layer-color: $color-mongoose;
-$hamburger-layer-border-radius: 0;
-$hamburger-hover-opacity: .8;
-$hamburger-hover-transition-duration: .15s;
-$hamburger-hover-transition-timing-function: ease;
-$hamburger-layer-width-mobile: 28px;
-$hamburger-layer-height-mobile: 2px;
-$hamburger-layer-spacing-mobile: 7px;
-
-/* To use CSS filters as the hover effect instead of opacity, */
-/* set $hamburger-hover-use-filter as true and */
-/* change the value of $hamburger-hover-filter accordingly. */
-$hamburger-hover-use-filter: false;
-$hamburger-hover-filter: opacity(50%);
-$header-height: 60px;
-$header-height-mobile: 46px;

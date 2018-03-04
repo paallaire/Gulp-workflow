@@ -2,80 +2,84 @@
     #WYSIWYG
 ========================================================================== */
 
-#{$wysiwyg} {
-  /* lobotomized-owls*/
-  /* https://alistapart.com/article/axiomatic-css-and-lobotomized-owls*/
-  /*///////////////////////////*/
-  & > * + * {
-    margin-top: 30px;
+$c-wysiwyg : '.c-wysiwyg';
 
-    background: red;
-  }
+#{$c-wysiwyg} {
+  
+    /* lobotomized-owls*/
+    /* https://alistapart.com/article/axiomatic-css-and-lobotomized-owls*/
+    /*///////////////////////////*/
+    & > * + * {
+        margin-top: 30px;
 
-  & > *:first-child {
-    margin-top: 0;
-  }
+        background: red;
+    }
 
-  /* empty tag*/
-  /*/////////////////////////// */
-  p:empty {
-    display: none;
-  }
+    & > *:first-child {
+        margin-top: 0;
+    }
 
-  /* heading*/
-  /*/////////////////////////// */
-  h1 {
-    margin-top: .58333em;
+    /* empty tag*/
+    /*/////////////////////////// */
+    p:empty {
+        display: none;
+    }
 
-    font-size: 2.4em;
-    line-height: 1;
-  }
+    /* heading*/
+    /*/////////////////////////// */
+    h1 {
+        margin-top: .58333em;
 
-  h2 {
-    margin-top: 1.75em;
+        font-size: 2.4em;
+        line-height: 1;
+    }
 
-    font-size: 1.6em;
-    line-height: 1.1;
-  }
+    h2 {
+        margin-top: 1.75em;
 
-  h3 {
-    margin-top: 1.07692em;
+        font-size: 1.6em;
+        line-height: 1.1;
+    }
 
-    font-size: 1.3em;
-  }
+    h3 {
+        margin-top: 1.07692em;
 
-  h4 {
-    margin-top: 1.16667em;
+        font-size: 1.3em;
+    }
 
-    font-size: 1.2em;
-  }
+    h4 {
+        margin-top: 1.16667em;
 
-  h5 {
-    margin-top: 1.27273em;
+        font-size: 1.2em;
+    }
 
-    font-size: 1.1em;
-  }
+    h5 {
+        margin-top: 1.27273em;
 
-  h6 {
-    margin-top: 1.4em;
+        font-size: 1.1em;
+    }
 
-    font-size: 1em;
-  }
+    h6 {
+        margin-top: 1.4em;
 
-  /* list*/
-  /*/////////////////////////// */
-  ol,
-  ul {
-    padding-left: 1.4em;
-  }
+        font-size: 1em;
+    }
 
-  ol {
-    list-style-type: decimal;
-  }
+    /* list*/
+    /*/////////////////////////// */
+    ol,
+    ul {
+        padding-left: 1.4em;
+    }
 
-  ul {
-    list-style-type: disc;
-  }
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+    
 }
 
 /* ==========================================================================

@@ -1,47 +1,96 @@
-// Hotfix lost-center
-@mixin lost-container-center( $column ) {
-  lost-center: #{$column}/#{$lost-grid-columns};
-  max-width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
-  width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
-  flex-basis: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
+/* ==========================================================================
+    #LOST-CONTAINER-CENTER
+========================================================================== */
+
+@mixin lost-container-center( $column) {
+    @include center-block();
+    max-width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column}/#{$lost-grid-columns}));
 }
 
-@mixin make-row-mq($breakpoint) {
 
-  .o-row-#{$breakpoint} {
-    
-    @include media('>=#{$breakpoint}') {
-      lost-flex-container: row;
+/* ==========================================================================
+    #LOST-OFFSET
+========================================================================== */
+
+@mixin lost-offset($column) {
+    margin-left: calc(#{$lost-rounder-with-unit} * #{$column}/#{$lost-grid-columns} - ( 0px - #{$lost-gutter} * #{$column}/#{$lost-grid-columns})) !important;
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-CONTAINER-CENTER
+========================================================================== */
+
+@mixin make-lost-container-center() {
+
+    @for $i from 1 through $lost-grid-columns {
+
+        .lost-container-center-#{$i} {
+
+            @include lost-container-center( $i);
+                &>div {
+                width: 100%;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            
+        }
+
     }
 
-  }
+}
+
+
+/* ==========================================================================
+    #MAKE-LOST-ROW-MQ
+========================================================================== */
+
+@mixin make-lost-row-mq($breakpoint) {
+
+    .lost-row-#{$breakpoint} {
+
+        @include media('>=#{$breakpoint}') {
+            lost-flex-container: row;
+        }
+
+    }
 
 }
 
-@mixin make-columns-mq($breakpoint, $maxColumns) {
-  
-/* column-#{$breakpoint} */
-/*///////////////////////////*/
-  @for $i from 1 through $maxColumns {
 
-    .o-col-#{$breakpoint}-#{$i} {
+/* ==========================================================================
+    #MAKE-LOST-COLUMNS-MQ
+========================================================================== */
 
-      @include media('>=#{$breakpoint}') {
-        lost-column: #{$i}/#{$maxColumns} #{$maxColumns/$i} $lost-gutter-desktop;
+@mixin make-lost-columns-mq($breakpoint, $maxColumns) {
 
-        @if( ($maxColumns/$i) % 2 == 0 ) {
+    @for $i from 1 through $maxColumns {
 
-          &:nth-child(#{$maxColumns/$i}) {
-            margin-right: 0;
-          }
+        .lost-column-#{$breakpoint}-#{$i} {
+
+            @include media('>=#{$breakpoint}') {
+                lost-column: #{$i}/#{$maxColumns} 0 $lost-gutter-desktop;
+            }
 
         }
 
-      }
-
     }
-
-  }
 
 }
 
+
+/* ==========================================================================
+    #MAKE-LOST-COLUMNS
+========================================================================== */
+
+@mixin make-lost-columns($maxColumns) {
+
+    @for $i from 1 through $maxColumns {
+
+        .lost-column-#{$i} {
+            lost-column: #{$i}/#{$maxColumns} 0 $lost-gutter-desktop;
+        }
+
+    }
+
+}

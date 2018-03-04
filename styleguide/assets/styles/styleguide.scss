@@ -9,6 +9,17 @@
 @include normalize();
 @import 'base';
 
+$h1 : 40px;
+$h2 : 32px;
+$h3 : 28px;
+$h4 : 26px;
+
+$t1 : 20px;
+$t2 : 18px;
+$t3 : 16px;
+$t4 : 14px;
+
+
 // Heading
 //------------------------------------------------------------
 .sg-h1,
@@ -17,104 +28,105 @@
 .sg-h4,
 .sg-h5,
 .sg-h6 {
-  margin-bottom: 18px;
+margin-bottom: 18px;
 
-  position: relative;
+position: relative;
 
-  font-family: $sg-Roboto;
-  font-weight: 700;
+font-family: $sg-Roboto;
+font-weight: 700;
 
-  .sg-anchor  {
-    position: absolute;
-    top: 0;
-    left: -26px;
-    font-family: $sg-code;
-    opacity: 0.5;
-  }
+.sg-anchor  {
+position: absolute;
+top: 0;
+left: -26px;
+font-family: $sg-code;
+opacity: 0.5;
+}
 
 }
 
 .sg-h1 {
-  font-size: 40px;
+font-size: $h1;
 }
 
 .sg-h2 {
-  font-size: 30px;
-  color: $sg-color-brand;
+font-size: $h2;
+color: $sg-color-brand;
 }
 
 .sg-h3 {
-  margin-top: 80px;
-  margin-bottom: 18px;
-  font-size: 26px;
+margin-top: 80px;
+margin-bottom: 18px;
+font-size: $h3;
 }
 
 .sg-h4 {
-  margin-top: 50px;
-  margin-bottom: 18px;
-  font-size: 24px;
+margin-top: 50px;
+margin-bottom: 18px;
+font-size: $h4;
 }
 
 // Text
 //------------------------------------------------------------
 .sg-text {
-  margin-top: 18px;
-  margin-bottom: 18px;
+margin-top: 18px;
+margin-bottom: 18px;
 
-  font-family: $sg-Roboto;
-  font-size: textSize('medium');
+font-family: $sg-Roboto;
+font-size: $t3;
 
-  a {
-    font-weight: 700;
-    text-decoration: underline;
-    color: $sg-color-brand;
-  }
+a {
+font-weight: 700;
+text-decoration: underline;
+color: $sg-color-brand;
+}
 
 
 }
 
 .sg-anchor {
-  font-style: italic;
+font-style: italic;
 }
 
 // Table
 //------------------------------------------------------------
 .sg-table {
-  width: 100%;
-  margin-top: 18px;
-  margin-bottom: 18px;
+width: 100%;
+max-width: 1000px;
+margin-top: 18px;
+margin-bottom: 18px;
 
-  font-size: textSize('medium');
+font-size: $t1;;
 
-  th,
-  td {
-    padding: 10px 14px;
+th,
+td {
+padding: 10px 14px;
 
-    text-align: left;
-    vertical-align: top;
+text-align: left;
+vertical-align: top;
 
-    border: 1px solid $sg-color-border;
-  }
+border: 1px solid $sg-color-border;
+}
 
-  th {
-    font-weight: 700;
-  }
+th {
+font-weight: 700;
+}
 
-  td {
-    font-size: textSize('small');
+td {
+font-size: $t2;
 
-    color: $sg-color-gray;
+color: $sg-color-gray;
 
-    * + * {
-      margin-top: 10px;
-    }
+* + * {
+    margin-top: 10px;
+}
 
-  }
+}
 
-  .icon {
-    font-size: 50px;
-    color: #000;
-  }
+.icon {
+font-size: 20px;
+color: #000;
+}
 
 
 }
@@ -122,86 +134,86 @@
 // Preview
 //------------------------------------------------------------
 .sg-preview {
-  margin-top: 62px;
-  padding: 20px;
+margin-top: 62px;
+padding: 20px;
 
-  position: relative;
+position: relative;
 
-  font-size: textSize('medium');
+font-size: 14px;
 
-  border: 1px solid $sg-color-border;
+border: 1px solid $sg-color-border;
 
-  &:before {
-    padding: 4px 12px;
+&:before {
+padding: 4px 12px;
 
-    display: block;
+display: block;
 
-    position: absolute;
-    top: -36px;
-    right: 0;
+position: absolute;
+top: -36px;
+right: 0;
 
-    content: 'Preview';
+content: 'Preview';
 
-    color: $sg-color-white;
-    background-color: $sg-color-brand;
-  }
+color: $sg-color-white;
+background-color: $sg-color-brand;
+}
 
-  &--full {
-    padding-right: 0;
-    padding-left: 0;
-    border:0;
-  }
+&--full {
+padding-right: 0;
+padding-left: 0;
+border:0;
+}
 
 }
 
 // Code-html
 //------------------------------------------------------------
 .sg-code-html {
-  padding: 20px 28px;
+padding: 20px 28px;
 
-  position: relative;
+position: relative;
 
-  font-family: $sg-code;
-  font-size: textSize('medium');
+font-family: $sg-code;
+font-size: 14px;
 
-  color: $sg-color-brand;
-  border: 1px solid $sg-color-border;
+color: $sg-color-brand;
+border: 1px solid $sg-color-border;
 
-  &:before {
-    padding: 4px 12px;
+&:before {
+padding: 4px 12px;
 
-    display: block;
+display: block;
 
-    position: absolute;
-    top: 0;
-    right: 0;
+position: absolute;
+top: 0;
+right: 0;
 
-    content: 'HTML';
+content: 'HTML';
 
-    color: $sg-color-white;
-    background-color: $sg-color-brand;
-  }
+color: $sg-color-white;
+background-color: $sg-color-brand;
+}
 
 }
 
 .sg-preview + .sg-code-html {
-  margin-top: -1px;
+margin-top: -1px;
 }
 
 // Code
 //------------------------------------------------------------
 .sg-code {
-  padding: 4px 10px;
+padding: 4px 10px;
 
-  font-family: $sg-code;
+font-family: $sg-code;
 
-  color: $sg-color-brand;
-  background-color: $sg-color-code;
+color: $sg-color-brand;
+background-color: $sg-color-code;
 
-  &.block {
-    display: block;
-  }
-  
+&.block {
+display: block;
+}
+
 }
 
 
@@ -209,105 +221,105 @@
 // container-demo
 //------------------------------------------------------------
 .sg-container-demo {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #ccc;
-  margin-bottom: 40px;
+padding-top: 40px;
+padding-bottom: 40px;
+background-color: #ccc;
+margin-bottom: 40px;
 }
 
 // sg-grid-demo
 //------------------------------------------------------------
 .sg-grid-demo {
 
-  .sg-col-style {
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background: #3599c3;
-    color: #fff;
-  }
+.sg-col-style {
+height: 100px;
+line-height: 100px;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+background: #3599c3;
+color: #fff;
+}
 
 }
 
 // color
 //------------------------------------------------------------
 .sg-color {
-  height: 50px;
-  padding: 4px 10px;
-  display: block;
-  border: 3px solid $sg-color-border;
+height: 50px;
+padding: 4px 10px;
+display: block;
+border: 3px solid $sg-color-border;
 }
 
 // vue-nav-mobile
 //------------------------------------------------------------
 .vue-nav-mobile__title {
-  padding: 30px 20px 0 20px;
-  display: block;
-  font-size: headingSize('h2');
-  color: $sg-color-brand;
+padding: 30px 20px 0 20px;
+display: block;
+font-size: headingSize('h2');
+color: $sg-color-brand;
 }
 
 .vue-nav-mobile__section-title {
-    margin: 30px 0 10px;
-    padding: 0 24px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #303637;
+margin: 30px 0 10px;
+padding: 0 24px;
+font-size: 20px;
+font-weight: 700;
+color: #303637;
 }
 
 .vue-nav-mobile__section-list {
 
-  a {
-    padding: 6px 24px;
-    display: block;
-    position: relative;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
-    border-bottom: 1px solid $sg-color-border;
-  }
+a {
+padding: 6px 24px;
+display: block;
+position: relative;
+font-size: 16px;
+font-weight: 400;
+text-decoration: none;
+border-bottom: 1px solid $sg-color-border;
+}
 
-  li:first-child {
+li:first-child {
 
-    a {
-          border-top: 1px solid $sg-color-border;
-    }
+a {
+        border-top: 1px solid $sg-color-border;
+}
 
-  }
+}
 
 }
 
 .vue-nav-mobile .nav {
-  max-height: calc(100vh - 60px);
-  overflow-y: auto;
+max-height: calc(100vh - 60px);
+overflow-y: auto;
 }
 
 #nav-mobile {
-  padding: 4px 8px;
-  position: fixed;
-  z-index: 1;
-  top: 20px;
-  right: 20px;
-  font-size: 18px;
-  background-color: #fff;
+padding: 4px 8px;
+position: fixed;
+z-index: 1;
+top: 20px;
+right: 20px;
+font-size: 18px;
+background-color: #fff;
 
 
 }
 
 
 .sg-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  color: $sg-color-white;
-  background-color: $sg-color-brand;
-  border-radius: 10px;
+display: inline-block;
+padding: 8px 16px;
+color: $sg-color-white;
+background-color: $sg-color-brand;
+border-radius: 10px;
 
-  &:hover {
-    background-color: $sg-color-code;
-    color: $sg-color-brand;
-  }
+&:hover {
+background-color: $sg-color-code;
+color: $sg-color-brand;
+}
 
 }
 

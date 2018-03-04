@@ -7,7 +7,7 @@
 
       <div class="show-grid__container" :class="containerClass">
         <div class="show-grid__row" :class="rowClass">
-          <div class="sg-col-style" :class="columnClass" v-for='(item, index) in columns' :key='index'></div>
+          <div class="show-grid__column" :class="columnClass" v-for='(item, index) in columns' :key='index'></div>
         </div>
       </div>
 
@@ -20,46 +20,46 @@
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
-  name: "showGrid",
-  props: {
-    columns: {
-      type: Number,
-      default: 12
-    },
-    containerClass: {
-      type: String,
-      default: "l-wrapper"
-    },
-    rowClass: {
-      type: String,
-      default: "o-row-tablet"
-    },
-    columnClass: {
-      type: String,
-      default: "o-col-tablet-1"
-    }
-  },
-  data() {
-    return {
-      isActive: false,
-      btnLabel: "Show"
-    };
-  },
-  computed: {
-    ...mapGetters(["env"])
-  },
-  methods: {
-    toggle: function() {
-      this.isActive = !this.isActive;
+name: "showGrid",
+props: {
+columns: {
+    type: Number,
+    default: 12
+},
+containerClass: {
+    type: String,
+    default: "l-wrapper"
+},
+rowClass: {
+    type: String,
+    default: "lost-row"
+},
+columnClass: {
+    type: String,
+    default: "lost-column-1"
+}
+},
+data() {
+return {
+    isActive: false,
+    btnLabel: "Show"
+};
+},
+computed: {
+...mapGetters(["env"])
+},
+methods: {
+toggle: function() {
+    this.isActive = !this.isActive;
 
-      if (this.isActive) {
-        this.btnLabel = "Hide";
-      } else {
-        this.btnLabel = "Show";
-      }
+    if (this.isActive) {
+    this.btnLabel = "Hide";
+    } else {
+    this.btnLabel = "Show";
     }
-  },
-  mounted: function() {},
-  destroyed: function() {}
+}
+},
+mounted: function() {},
+destroyed: function() {}
 };
 </script>

@@ -4,24 +4,24 @@
 ========================================================================== */
 
 @mixin ratio($x, $y) {
-  $padding: unquote( ( $y / $x) * 100 + '%');
-  position: relative;
+    $padding: unquote( ( $y / $x) * 100 + '%');
+    position: relative;
 
     &:before {
-      width: 100%;
-      padding-top: $padding;
-      display: block;
-      content: "";
+        width: 100%;
+        padding-top: $padding;
+        display: block;
+        content: "";
     }
 
     > .content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow-y: hidden;
-  }
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: hidden;
+    }
 
 }
 
@@ -30,19 +30,19 @@
 ========================================================================== */
 
 @mixin iframe-ratio($x, $y) {
-  $padding: unquote( ( $y / $x) * 100 + '%');
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  padding-top: $padding;
+    $padding: unquote( ( $y / $x) * 100 + '%');
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-top: $padding;
 
-  iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+    iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
 }
 

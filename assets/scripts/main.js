@@ -19,41 +19,39 @@ import { mapMutations } from "vuex";
 // Directives
 
 // Components
-import Dropdown from './components/Dropdown.vue';
-import NavSticky from './components/NavSticky.vue';
 import Modal from './components/Modal.vue';
 
 let vm = new Vue({
-  el: '#app',
-  store,
-  components: {
-    Modal
-  },
-  data: {},
-  computed: {
-    ...mapGetters([
-      'lang',
-      'modalActive',
-      'env'
-    ])
-  },
-  methods: {
-    ...mapMutations([
-      'setModal',
-      'setEnv'
-    ]),
-    showModal: function (name) {
-      this.setModal(name);
-
+    el: '#app',
+    store,
+    components: {
+        Modal
     },
-    hideModal: function () {
-      this.setModal(null);
-    }
-  },
-  mounted: function () {
-    let env = getEnv();
-    this.setEnv(env);
-  },
-  destroyed: function () { }
+    data: {},
+    computed: {
+        ...mapGetters([
+            'lang',
+            'modalActive',
+            'env'
+        ])
+    },
+    methods: {
+        ...mapMutations([
+            'setModal',
+            'setEnv'
+        ]),
+        showModal: function (name) {
+            this.setModal(name);
+
+        },
+        hideModal: function () {
+            this.setModal(null);
+        }
+    },
+    mounted: function () {
+        let env = getEnv();
+        this.setEnv(env);
+    },
+    destroyed: function () { }
 });
 

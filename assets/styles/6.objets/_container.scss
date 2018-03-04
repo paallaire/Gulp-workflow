@@ -1,38 +1,35 @@
 /* ==========================================================================
-    #CONTAINER
+#CONTAINER
 ========================================================================== */
 
+$o-container : '.o-container';
+
 @mixin container($type : 'desktop') {
-  @include center-block();
-  max-width: container($type);
+    @include center-block();
+    max-width: container($type);
 }
 
 @mixin container-padding($type : 'desktop') {
-  @include center-block();
-  @include padding-mobile();
-  max-width: container($type);
+    @include center-block();
+    @include padding-mobile();
+    max-width: container($type);
 }
 
 /* container with no paddding */
-/*///////////////////////////*/
-
 @each $key,$value in $map-containers {
 
-  #{$container}-#{$key} {
-    @include container($key);
-  }
+    #{$o-container}-#{$key} {
+        @include container($key);
+    }
 
 }
 
-
-/* container with padding*/
-/*///////////////////////////*/
-
+/* container with padding */
 @each $key, $value in $map-containers {
 
-  #{$container}-padding-#{$key} {
-    @include container-padding($key);
-  }
+    #{$o-container}-padding-#{$key} {
+        @include container-padding($key);
+    }
 
 }
 
