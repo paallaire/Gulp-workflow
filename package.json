@@ -31,7 +31,8 @@
     "gulp-util": "^3.0.8",
     "gulp-wait2": "0.0.5",
     "gulp-watch": "^4.3.11",
-    "laravel-mix": "^1.7.2"
+    "laravel-mix": "^1.7.2",
+    "stylelint-config-recommended": "^2.1.0"
   },
   "dependencies": {
     "aos": "^2.2.0",
