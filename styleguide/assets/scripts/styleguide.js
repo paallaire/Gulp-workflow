@@ -19,10 +19,6 @@ import ShowGrid from '../../../assets/scripts/components/ShowGrid.vue';
 // Directives
 import { Sticky } from '../../../assets/scripts/utils/sticky.js';
 
-
-
-
-
 let vm = new Vue({
     el: '#app',
     store,
@@ -48,7 +44,6 @@ let vm = new Vue({
         ]),
         showModal: function (name) {
             this.setModal(name);
-
         },
         hideModal: function () {
             this.setModal(null);

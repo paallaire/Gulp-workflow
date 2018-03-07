@@ -55,7 +55,8 @@ if (!mix.inProduction()) {
         links: true,
         forms: true,
         scroll: true
-      }
+      },
+      reloadDelay: 1000
     })
 }
 

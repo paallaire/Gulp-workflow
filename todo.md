@@ -26,6 +26,7 @@
 ## JS helper 
 
 - [x] sticky
+- [ ] is-fixed
 
 ## Vuejs 
 

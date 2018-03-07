@@ -7,7 +7,7 @@
 
   <br>
   <br>
-  <a href="#" @click="showModal('content')" class="sg-btn">Modal content</a>
+  <a href="#" @click.prevent="showModal('content')" class="sg-btn">Modal content</a>
   <br>
   <modal name="content">
     <div slot="close">Fermer</div>
@@ -24,8 +24,10 @@
     </div>
   </modal>
 
+  <div style="background:blue; height : 1000px;"></div>
+
   <br>
-  <a href="#" @click="showModal('content-long')" class="sg-btn">Modal content long</a>
+  <a href="#" @click.prevent="showModal('content-long')" class="sg-btn">Modal content long</a>
   <br>
   <modal name="content-long">
     <div slot="close">Fermer</div>
@@ -76,8 +78,11 @@
     </div>
   </modal>
 
+  
+  <div style="background:red; height : 1000px;"></div>
+
   <br>
-  <a href="#" @click="showModal('video')" class="sg-btn">Modal video</a>
+  <a href="#" @click.prevent="showModal('video')" class="sg-btn">Modal video</a>
   <br>
   <modal name="video">
     <div slot="close">Fermer</div>
