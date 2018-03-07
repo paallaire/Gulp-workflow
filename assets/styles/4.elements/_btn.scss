@@ -4,7 +4,6 @@
 
 @mixin btn-reset() {
     user-select: none;
-
     -webkit-appearance: none;
     -webkit-box-align: center;
 }
@@ -15,21 +14,21 @@
 
 @mixin btn-primary() {
     display: inline-block;
+    overflow: hidden;
 
     font-size: 14px;
     line-height: 1;
     font-weight: 500;
-    text-decoration: none;
-    overflow: hidden;
     vertical-align: middle;
+    text-decoration: none;
 
     color: $color-white;
     border-radius: 0;
     background-color: $color-purple;
 
     &:hover {
-    color: $color-white;
-    background-color: $color-dark01;
+        color: $color-white;
+        background-color: $color-dark01;
     }
 
     &.is-disabled,

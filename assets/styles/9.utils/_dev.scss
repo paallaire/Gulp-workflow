@@ -10,9 +10,9 @@ body#{$is-dev} {
     display: block;
 
     position: fixed;
+    z-index: $z-site-option;
     right: 0;
     bottom: 0;
-    z-index: $z-site-option;
 
     text-transform: capitalize;
 
@@ -36,22 +36,22 @@ body#{$is-dev} {
 .show-grid {
 
     &__button {
-        position: fixed;
-        bottom: 60px;
-        right: 0;
-        z-index: $z-site-option;
-        background-color: #ccc;
         padding: 4px 8px;
+        position: fixed;
+        z-index: $z-site-option;
+        right: 0;
+        bottom: 60px;
+        background-color: #ccc;
     }
 
     &__visual {
+        width: 100%;
+        height: 100vh;
         position: fixed;
+        z-index: $z-site-option - 1;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        width: 100%;
-        height: 100vh;
-        z-index: $z-site-option - 1;
         opacity: 0.5;
     }
 
