@@ -1,24 +1,33 @@
 console.log('styleguide js');
 
-// Helpers
+/* --------------------------------------------------------------------------------
+Helpers
+-------------------------------------------------------------------------------- */
 import getEnv from '../../../assets/scripts/utils/getEnv.js';
+import { Sticky } from '../../../assets/scripts/utils/sticky.js';
 
-// Vue
+/* --------------------------------------------------------------------------------
+Vue
+-------------------------------------------------------------------------------- */
 import Vue from 'vue';
 import store from '../../../assets/scripts/store'
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 
-
-
-// components
-import SgNavMobile from './components/NavMobile.vue';
+/* --------------------------------------------------------------------------------
+Vue - Components
+-------------------------------------------------------------------------------- */
+import SgNavMobile from './components/SgNavMobile.vue';
 import Modal from '../../../assets/scripts/components/Modal.vue';
 import ShowGrid from '../../../assets/scripts/components/ShowGrid.vue';
 
-// Directives
-import { Sticky } from '../../../assets/scripts/utils/sticky.js';
+/* --------------------------------------------------------------------------------
+Vue - Directives
+-------------------------------------------------------------------------------- */
 
+/* --------------------------------------------------------------------------------
+APP
+-------------------------------------------------------------------------------- */
 let vm = new Vue({
     el: '#app',
     store,
@@ -33,6 +42,7 @@ let vm = new Vue({
     computed: {
         ...mapGetters([
             'lang',
+            'isMenuMobileActive',
             'modalActive',
             'env'
         ])
@@ -40,7 +50,8 @@ let vm = new Vue({
     methods: {
         ...mapMutations([
             'setModal',
-            'setEnv'
+            'setEnv',
+            'setMenuMobile'
         ]),
         showModal: function (name) {
             this.setModal(name);
@@ -48,7 +59,11 @@ let vm = new Vue({
         hideModal: function () {
             this.setModal(null);
         },
+        showMenuMobile : function() {
+            this.setMenuMobile(true);
+        },
         closeNavMobile: function () {
+            this.setMenuMobile(false);
             this.showNavMobile = false;
         }
     },

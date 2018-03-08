@@ -127,11 +127,11 @@ $form-input-padding-y: 8px;
 /* breakpoints (include-media)*/
 /*///////////////////////////*/
 $breakpoints: (
-'large':   1440px,  
-'desktop': 1024px,
-'tablet':  800px,
+'small':   320px,
 'phone':   520px,
-'small':   320px
+'tablet':  800px,
+'desktop': 1024px,
+'large':   1440px  
 );
 $desktop-first-breakpoints: reverse($breakpoints);   
 

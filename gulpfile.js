@@ -21,32 +21,35 @@ const stylelint = require('stylelint');
 /* --------------------------------------------------------------------------------
     Variables
 -------------------------------------------------------------------------------- */
-const srcStyles = [
-  './styleguide/views/**.twig',
-  './styleguide/sg-views/**.twig',
-];
-const watchStyles = [
-  './styleguide/views/**/*.twig',
-  './styleguide/sg-views/**/*.twig',
-];
-const destStyles = './public/styleguide';
 
-// Options
+const styleguide = {
+    src: [
+        './styleguide/templates/pages/**.twig'
+    ],
+    watch: [
+        './styleguide/sg-templates/**/*.twig',
+        './styleguide/templates/**/*.twig'
+    ],
+    dest: './public/styleguide',
+    delete: 'public/styleguide/*.html'
+}
+
 const twigOptions = {
-  verbose: true
+    verbose: true
 }
 
 /* --------------------------------------------------------------------------------
     OnError
 -------------------------------------------------------------------------------- */
-const onError = function (err) {
-  notify.onError({
-    title: "Gulp error in " + err.plugin,
-    message: err.toString()
-  })(err);
+const onError = (err) => {
 
-  // play a sound once
-  gutil.beep();
+    notify.onError({
+        title: "Gulp error in " + err.plugin,
+        message: err.toString()
+    })(err);
+
+    gutil.beep();
+
 };
 
 /* --------------------------------------------------------------------------------
@@ -54,97 +57,122 @@ const onError = function (err) {
 -------------------------------------------------------------------------------- */
 gulp.task('clean', (done) => {
 
-  del(['public/*.html', 'public/styleguide/*.html']);
-  done();
+    del([styleguide.delete]);
+    done();
 
 });
 
 /* --------------------------------------------------------------------------------
     Watch
 -------------------------------------------------------------------------------- */
-gulp.task('watch', ['clean', 'build'], function () {
+gulp.task('watch', ['clean', 'build'], () => {
 
-  return watch(watchStyles, twigOptions, function () {
-    gulp.src(srcStyles)
-      .pipe(plumber({
-        errorHandler: onError
-      }))
-      .pipe(wait(1000))
-      .pipe(twig())
-      .pipe(gulp.dest(destStyles));
-  });
+    return watch(styleguide.watch, twigOptions, () => {
+        gulp.src(styleguide.src)
+            .pipe(plumber({
+                errorHandler: onError
+            }))
+            .pipe(wait(1000))
+            .pipe(twig())
+            .pipe(gulp.dest(styleguide.dest));
+    });
 
 });
 
 /* --------------------------------------------------------------------------------
     Build
 -------------------------------------------------------------------------------- */
-gulp.task('build', ['clean'], function () {
+gulp.task('build', ['clean'], () => {
 
-  return gulp.src(srcStyles)
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(twig())
-    .pipe(gulp.dest(destStyles));
+    return gulp.src(styleguide.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(twig())
+        .pipe(gulp.dest(styleguide.dest));
 
 });
 
 /* --------------------------------------------------------------------------------
-    FormatStyles
+    Build
 -------------------------------------------------------------------------------- */
-gulp.task('formatStyles', function () {
-  return gulp.src('./assets/styles/**/*.scss')
-    //.pipe(csscomb())
-    .pipe(postcss([
-      sorting(sortingOptions)
-    ], {
-      parser: syntax_scss
-    }))
-    .pipe(gulp.dest('./assets/styles/'));
+gulp.task('build', ['clean'], () => {
+
+    return gulp.src(styleguide.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(twig())
+        .pipe(gulp.dest(styleguide.dest));
+
 });
 
-gulp.task("scss-lint", function () {
+/* --------------------------------------------------------------------------------
+    Default
+-------------------------------------------------------------------------------- */
+gulp.task('default', ['clean'], () => {
+    gulp.start('build');
+});
 
-  // Stylelint config rules
-  const stylelintConfig = {
-    "rules": {
-      "block-no-empty": null,
-      "color-no-invalid-hex": true,
-      "comment-empty-line-before": ["always", {
-        "ignore": ["stylelint-commands", "after-comment"]
-      }],
-      "declaration-colon-space-after": "always",
-      "indentation": ["tab", {
-        "except": ["value"]
-      }],
-      "max-empty-lines": 2,
-      "rule-empty-line-before": ["always", {
-        "except": ["first-nested"],
-        "ignore": ["after-comment"]
-      }],
-      "unit-whitelist": ["em", "rem", "%", "s", "px"]
+/* --------------------------------------------------------------------------------
+    FormatStyles ( Work in progress... )
+-------------------------------------------------------------------------------- */
+gulp.task('formatStyles', () => {
+
+    return gulp.src('./assets/styles/**/*.scss')
+        .pipe(postcss([
+            sorting(sortingOptions)
+        ], {
+                parser: syntax_scss
+            }))
+        .pipe(gulp.dest('./assets/styles/'));
+
+});
+
+/* --------------------------------------------------------------------------------
+    Scss-lint ( Work in progress... )
+-------------------------------------------------------------------------------- */
+gulp.task("scss-lint", () => {
+
+    // Stylelint config rules
+    const stylelintConfig = {
+        "rules": {
+            "block-no-empty": null,
+            "color-no-invalid-hex": true,
+            "comment-empty-line-before": ["always", {
+                "ignore": ["stylelint-commands", "after-comment"]
+            }],
+            "declaration-colon-space-after": "always",
+            "indentation": ["tab", {
+                "except": ["value"]
+            }],
+            "max-empty-lines": 2,
+            "rule-empty-line-before": ["always", {
+                "except": ["first-nested"],
+                "ignore": ["after-comment"]
+            }],
+            "unit-whitelist": ["em", "rem", "%", "s", "px"]
+        }
     }
-  }
 
-  const processors = [
-    stylelint(stylelintConfig),
-    reporter({
-      clearMessages: true,
-      throwError: false
-    })
-  ];
+    const processors = [
+        stylelint(stylelintConfig),
+        reporter({
+            clearMessages: true,
+            throwError: false
+        })
+    ];
 
-  return gulp.src(
-      ['assets/styles/**/*.scss',
-        // Ignore linting vendor assets
-        // Useful if you have bower components
-        '!app/assets/css/vendor/**/*.scss'
-      ]
+    return gulp.src(
+        ['assets/styles/**/*.scss',
+            // Ignore linting vendor assets
+            // Useful if you have bower components
+            '!app/assets/css/vendor/**/*.scss'
+        ]
     )
-    .pipe(postcss(processors, {
-      syntax: syntax_scss
-    }));
+        .pipe(postcss(processors, {
+            syntax: syntax_scss
+        }));
 });
 
 

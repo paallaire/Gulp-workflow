@@ -1,6 +1,5 @@
 
 import 'es6-promise/auto';
-
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -10,11 +9,15 @@ export default new Vuex.Store({
     state: {
         lang: null,
         modalActive: null,
+        isMenuMobileActive: false,
         env: "prod"
     },
     getters: {
         lang(state) {
             return state.lang;
+        },
+        isMenuMobileActive(state) {
+            return state.isMenuMobileActive;
         },
         modalActive(state) {
             return state.modalActive;
@@ -26,6 +29,9 @@ export default new Vuex.Store({
     mutations: {
         setLang(state, lang) {
             state.lang = lang;
+        },
+        setMenuMobile(state, isMenuMobileActive) {
+            state.isMenuMobileActive = isMenuMobileActive;
         },
         setModal(state, modalActive) {
             state.modalActive = modalActive;

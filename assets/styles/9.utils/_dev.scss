@@ -18,7 +18,7 @@ body#{$is-dev} {
 
     background: #ccc;
 
-    @each $name, $value in $desktop-first-breakpoints {
+    @each $name, $value in $breakpoints {
 
       @include media('>=#{$name}') {
         content: '#{$name}';

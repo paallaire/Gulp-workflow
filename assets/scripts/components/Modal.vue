@@ -1,67 +1,68 @@
 <template>
-  <transition name="modal">
-    <div :id="name" :name="name" v-if="visible" class="c-modal" :class="isActive">
-      <div class="c-modal__overlay" @click.self="hide()"></div>
-      <div class="c-modal__content">
-            <button  @click.prevent="hide()" class="c-modal__btn-close" aria-label="close">Close</button>
-            <div class="c-modal__body"><slot name="body"></slot></div>
-      </div>
-    </div>
-  </transition>
+    <transition name="modal">
+        <div :id="name" :name="name" v-if="visible" class="c-modal" :class="isActive">
+            <div class="c-modal__overlay" @click.self="hide()"></div>
+            <div class="c-modal__content">
+                <button @click.prevent="hide()" class="c-modal__btn-close" aria-label="close">Close</button>
+                <div class="c-modal__body"><slot name="body"></slot></div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script>
 import _ from "lodash";
-import scroll from '../../../assets/scripts/utils/disabledBodyScroll.js';
+import scroll from "./../utils/disabledBodyScroll.js";
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
-name: "modal",
-props: {
+  name: "modal",
+  props: {
     name: {
-    type: String
+      type: String,
+      required: true
     }
-},
-data() {
+  },
+  data() {
     return {
-        visible: false
+      visible: false
     };
-},
-computed: {
+  },
+  computed: {
     ...mapGetters(["modalActive"]),
     isActive() {
-        return this.visible ? "is-active" : "";
+      return this.visible ? "is-active" : "";
     }
-},
-watch: {
+  },
+  watch: {
     modalActive() {
-        if (this.modalActive == this.name) {
-            this.show();
-        }
+      if (this.modalActive == this.name) {
+        this.show();
+      }
     }
-},
-methods: {
+  },
+  methods: {
     ...mapMutations(["setModal"]),
     show() {
-        this.visible = true;
-        window.addEventListener("keyup", this.onEscapeKeyUp);
-        scroll.disabledBodyScroll(true);
+      this.visible = true;
+      window.addEventListener("keyup", this.onEscapeKeyUp);
+      scroll.disabledBodyScroll(true);
     },
     hide() {
-        this.visible = false;
-        this.$store.commit("setModal", null);
-        window.removeEventListener("keyup", this.onEscapeKeyUp);
-        scroll.disabledBodyScroll(false);
+      this.visible = false;
+      this.setModal(null);
+      window.removeEventListener("keyup", this.onEscapeKeyUp);
+      scroll.disabledBodyScroll(false);
     },
     onEscapeKeyUp(event) {
-        if (event.which === 27 && this.visible) {
-            this.hide();
-        }
+      if (event.which === 27 && this.visible) {
+        this.hide();
+      }
     }
-},
-mounted() {},
-destroyed() {
+  },
+  mounted() {},
+  destroyed() {
     window.removeEventListener("keyup", this.onEscapeKeyUp);
-}
+  }
 };
 </script>

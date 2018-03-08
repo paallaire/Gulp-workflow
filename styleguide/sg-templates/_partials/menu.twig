@@ -18,9 +18,9 @@
 
 {% set pagesLayout = [] %}
 
-<button id="nav-mobile" @click="showNavMobile = true">Menu</button>
+<button id="nav-mobile" @click.prevent="showMenuMobile()">Menu</button>
 
-<sg-nav-mobile :show="showNavMobile" @nav-mobile-close="closeNavMobile">
+<sg-nav-mobile>
   <div slot="header">
     <span class="vue-nav-mobile__title">Styleguide</span>
   </div>
