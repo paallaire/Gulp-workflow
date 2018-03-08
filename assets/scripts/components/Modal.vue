@@ -12,7 +12,7 @@
 
 <script>
 import _ from "lodash";
-import scroll from '../../../assets/scripts/utils/isFixed.js';
+import scroll from '../../../assets/scripts/utils/disabledBodyScroll.js';
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
@@ -45,13 +45,13 @@ methods: {
     show() {
         this.visible = true;
         window.addEventListener("keyup", this.onEscapeKeyUp);
-        scroll.isFixed(true);
+        scroll.disabledBodyScroll(true);
     },
     hide() {
         this.visible = false;
         this.$store.commit("setModal", null);
         window.removeEventListener("keyup", this.onEscapeKeyUp);
-        scroll.isFixed(false);
+        scroll.disabledBodyScroll(false);
     },
     onEscapeKeyUp(event) {
         if (event.which === 27 && this.visible) {

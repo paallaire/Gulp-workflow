@@ -32,11 +32,12 @@ $c-modal : '.c-modal';
     }
 
     &__content {
+        @include ios-scroll-smooth();
         width: 100%;
         max-width: 800px;
         max-height: calc(100vh - 160px);
         padding: 40px;
-        overflow: auto;
+        overflow-y: auto;
         position: relative;
         z-index: $z-modal + 1;
 

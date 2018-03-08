@@ -3,6 +3,7 @@ export class Sticky {
     constructor() {
         this.el = null;
         this.offsetTop = null;
+        this.scrollBoundFunction = this.scroll.bind(this);
     }
 
     init(selector) {
@@ -17,19 +18,11 @@ export class Sticky {
             this.el.parentNode.insertBefore(wrapper, this.el);
             wrapper.appendChild(this.el);
 
-            // working !!
-            window.addEventListener("scroll", (e) => {
-             // this.scroll();
-            });
-
-            // why not working ?
-             window.addEventListener("scroll", this.scroll.bind(this) );
-
+            window.addEventListener("scroll", this.scrollBoundFunction);
         }
     }
 
     scroll() {
-        console.log( this)
         let top = window.pageYOffset;
 
         if (top >= this.offsetTop) {
@@ -40,12 +33,8 @@ export class Sticky {
 
     }
 
-    /* TO DO : HOW remove the listener ? */
     destroy() {
-        window.removeEventListener("scroll", this.scroll.bind(this) );
+        window.removeEventListener("scroll", this.scrollBoundFunction);
     }
 
 }
-
-
-// Thank for the answer but with this technique how I remove the "EventListerner" ?
