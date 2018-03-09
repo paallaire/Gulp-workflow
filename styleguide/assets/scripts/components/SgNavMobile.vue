@@ -16,8 +16,8 @@
 </template>
 
 <script>
-// Get breakpoints from SASS ( https://github.com/eduardoboucas/include-media-export )
 import im from "../../../../assets/scripts/vendors/include-media-1.0.2.min.js";
+import * as bodyScroll from "../../../../assets/scripts/utils/bodyScroll.js";
 import _ from "lodash";
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
@@ -26,21 +26,26 @@ export default {
   computed: {
     ...mapGetters(["isMenuMobileActive"])
   },
+  watch: {
+    isMenuMobileActive() {
+      bodyScroll.noScroll(this.isMenuMobileActive);
+    }
+  },
   methods: {
     ...mapMutations(["setMenuMobile"]),
-    close: function() {
+    close() {
       this.setMenuMobile(false);
     },
     resize: _.debounce(function(e) {
-      if (im.greaterThan('tablet') && this.isMenuMobileActive) {
+      if (im.greaterThan("tablet") && this.isMenuMobileActive) {
         this.close();
       }
     }, 250)
   },
-  mounted: function() {
+  mounted() {
     window.addEventListener("resize", this.resize);
   },
-  destroyed: function() {
+  destroyed() {
     window.removeEventListener("resize", this.resize);
   }
 };

@@ -1,12 +1,15 @@
 
 
 /* --------------------------------------------------------------------------------
+Polyfill
+-------------------------------------------------------------------------------- */
+import 'babel-polyfill';
+
+/* --------------------------------------------------------------------------------
 Helpers
 -------------------------------------------------------------------------------- */
 import getEnv from './utils/getEnv.js';
-
-// Fix simple polyfill that fetches external SVGs referenced in use elements when the browser itself  ( IE 10-11 )
-import 'svgxuse';
+import 'svgxuse'; // Fix simple polyfill that fetches external SVGs referenced in use elements when the browser itself  ( IE 10-11 )
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -38,7 +41,7 @@ let vm = new Vue({
     computed: {
         ...mapGetters([
             'lang',
-            'modalActive',
+            'isModalActive',
             'env'
         ])
     },

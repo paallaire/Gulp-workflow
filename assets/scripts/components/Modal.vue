@@ -12,7 +12,7 @@
 
 <script>
 import _ from "lodash";
-import scroll from "./../utils/disabledBodyScroll.js";
+import * as bodyScroll from './../utils/bodyScroll.js';
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
@@ -29,14 +29,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["modalActive"]),
+    ...mapGetters(["isModalActive"]),
     isActive() {
       return this.visible ? "is-active" : "";
     }
   },
   watch: {
-    modalActive() {
-      if (this.modalActive == this.name) {
+    isModalActive() {
+      if (this.isModalActive == this.name) {
         this.show();
       }
     }
@@ -46,13 +46,13 @@ export default {
     show() {
       this.visible = true;
       window.addEventListener("keyup", this.onEscapeKeyUp);
-      scroll.disabledBodyScroll(true);
+      bodyScroll.noScroll(true);
     },
     hide() {
       this.visible = false;
       this.setModal(null);
       window.removeEventListener("keyup", this.onEscapeKeyUp);
-      scroll.disabledBodyScroll(false);
+      bodyScroll.noScroll(false);
     },
     onEscapeKeyUp(event) {
       if (event.which === 27 && this.visible) {
@@ -66,3 +66,5 @@ export default {
   }
 };
 </script>
+
+

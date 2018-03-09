@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "aos": "^2.2.0",
+    "babel-polyfill": "^6.26.0",
     "bowser": "^1.9.2",
     "es6-promise": "^4.2.4",
     "gulp-postcss": "^7.0.1",

@@ -4,6 +4,8 @@ console.log('styleguide js');
 Helpers
 -------------------------------------------------------------------------------- */
 import getEnv from '../../../assets/scripts/utils/getEnv.js';
+import getLang from '../../../assets/scripts/utils/getLang.js';
+import * as bodyScroll from '../../../assets/scripts/utils/bodyScroll.js';
 import { Sticky } from '../../../assets/scripts/utils/sticky.js';
 
 /* --------------------------------------------------------------------------------
@@ -42,40 +44,44 @@ let vm = new Vue({
     computed: {
         ...mapGetters([
             'lang',
+            'env',
             'isMenuMobileActive',
-            'modalActive',
-            'env'
+            'isModalActive',
         ])
     },
     methods: {
         ...mapMutations([
-            'setModal',
             'setEnv',
+            'setLanguage',
+            'setModal',
             'setMenuMobile'
         ]),
-        showModal: function (name) {
+        showModal(name) {
             this.setModal(name);
         },
-        hideModal: function () {
+        hideModal() {
             this.setModal(null);
         },
-        showMenuMobile : function() {
+        showMenuMobile() {
             this.setMenuMobile(true);
         },
-        closeNavMobile: function () {
+        closeNavMobile() {
             this.setMenuMobile(false);
             this.showNavMobile = false;
         }
     },
-    mounted: function () {
-        let env = getEnv();
-        this.setEnv(env);
-
+    mounted() {
+        this.setEnv(getEnv());
+        this.setLanguage(getLang());
     },
-    destroyed: function () { }
+    destroyed() { }
 });
 
 
 let stickyNav = new Sticky();
 stickyNav.init('.test');
+
+console.log( bodyScroll.getWidth() );
+bodyScroll.init();
+
 

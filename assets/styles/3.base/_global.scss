@@ -18,11 +18,19 @@ html {
     &:not(.has-no-scroll) {
         overflow-y: scroll;
     }
-    
+
     &.has-no-scroll {
         overflow: hidden;
     }
 
+    @for $i from 1 to 50 {
+
+        &.scroll-width-#{$i} {
+            width: calc(100vw - #{$i}px); 
+        }
+
+    }
+    
 }
 
 /* ==========================================================================

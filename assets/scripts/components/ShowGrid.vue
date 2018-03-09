@@ -20,46 +20,47 @@
 import { mapGetters } from "vuex";
 import { mapMutations } from "vuex";
 export default {
-name: "showGrid",
-props: {
-columns: {
-    type: Number,
-    default: 12
-},
-containerClass: {
-    type: String,
-    default: "l-wrapper"
-},
-rowClass: {
-    type: String,
-    default: "lost-row"
-},
-columnClass: {
-    type: String,
-    default: "lost-column-1"
-}
-},
-data() {
-return {
-    isActive: false,
-    btnLabel: "Show"
-};
-},
-computed: {
-...mapGetters(["env"])
-},
-methods: {
-toggle: function() {
-    this.isActive = !this.isActive;
-
-    if (this.isActive) {
-    this.btnLabel = "Hide";
-    } else {
-    this.btnLabel = "Show";
+  name: "showGrid",
+  props: {
+    columns: {
+      type: Number,
+      default: 12
+    },
+    containerClass: {
+      type: String,
+      default: "l-wrapper"
+    },
+    rowClass: {
+      type: String,
+      default: "lost-row"
+    },
+    columnClass: {
+      type: String,
+      default: "lost-column-1"
     }
-}
-},
-mounted: function() {},
-destroyed: function() {}
+  },
+  data() {
+    return {
+      isActive: false,
+      btnLabel: "Show"
+    };
+  },
+  computed: {
+    ...mapGetters(["env"])
+  },
+  methods: {
+    toggle() {
+      this.isActive = !this.isActive;
+
+      if (this.isActive) {
+        this.btnLabel = "Hide";
+      } else {
+        this.btnLabel = "Show";
+      }
+      
+    }
+  },
+  mounted() {},
+  destroyed() {}
 };
 </script>

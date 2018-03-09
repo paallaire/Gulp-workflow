@@ -8,37 +8,36 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         lang: null,
-        modalActive: null,
-        isMenuMobileActive: false,
-        env: "prod"
+        env: "prod",
+        isModalActive: null,
+        isMenuMobileActive: false
     },
     getters: {
         lang(state) {
             return state.lang;
         },
-        isMenuMobileActive(state) {
-            return state.isMenuMobileActive;
-        },
-        modalActive(state) {
-            return state.modalActive;
-        },
         env(state) {
             return state.env;
         },
+        isMenuMobileActive(state) {
+            return state.isMenuMobileActive;
+        },
+        isModalActive(state) {
+            return state.isModalActive;
+        }
     },
     mutations: {
-        setLang(state, lang) {
+        setLanguage(state, lang) {
             state.lang = lang;
-        },
-        setMenuMobile(state, isMenuMobileActive) {
-            state.isMenuMobileActive = isMenuMobileActive;
-        },
-        setModal(state, modalActive) {
-            state.modalActive = modalActive;
         },
         setEnv(state, env) {
             state.env = env ? 'dev' : 'prod';
         },
+        setMenuMobile(state, isMenuMobileActive) {
+            state.isMenuMobileActive = isMenuMobileActive;
+        },
+        setModal(state, isModalActive) {
+            state.isModalActive = isModalActive;
+        }
     }
-
 });
