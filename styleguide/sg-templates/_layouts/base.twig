@@ -14,7 +14,9 @@
     <link href="/dist/styles/styleguide.css" rel="stylesheet">
     <link href="/dist/styles/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/zzn8shy.css">
+
+    {% block head %}{% endblock %}
+
 </head>
 <body class="sg-body">
     <div id="app">
@@ -25,5 +27,6 @@
         <show-grid :columns="12" :container-class="'l-wrapper'" :row-class="'lost-row'" :column-class="'lost-column-1'"></show-grid>
     </div>
     <script src="/dist/scripts/styleguide.js"></script>
+    {% block afterMainScript %}{% endblock %}
 </body>
 </html>

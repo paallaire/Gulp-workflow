@@ -8,6 +8,10 @@ import getLang from '../../../assets/scripts/utils/getLang.js';
 import * as bodyScroll from '../../../assets/scripts/utils/bodyScroll.js';
 import { Sticky } from '../../../assets/scripts/utils/sticky.js';
 
+// Analytic
+import * as gtag from '../../../assets/scripts/utils/analytic/gtag.js';
+//import * as ga from '../../../assets/scripts/utils/analytic/ga.js';
+
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
@@ -73,15 +77,30 @@ let vm = new Vue({
     mounted() {
         this.setEnv(getEnv());
         this.setLanguage(getLang());
+
+        gtag.init();
+        let stickyNav = new Sticky();
+        stickyNav.init('.test');
+        
+        console.log( bodyScroll.getWidth() );
+        bodyScroll.init();
+        
     },
     destroyed() { }
 });
 
 
-let stickyNav = new Sticky();
-stickyNav.init('.test');
+document.addEventListener('DOMContentLoaded', function(){
+    console.log('DOMContentLoaded' + new Date());
+}, false);
 
-console.log( bodyScroll.getWidth() );
-bodyScroll.init();
+window.addEventListener("load", function(event) {
+    console.log('load' + new Date());
+}, false);
+
+
+
+
+
 
 

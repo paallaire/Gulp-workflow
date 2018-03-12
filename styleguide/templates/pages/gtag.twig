@@ -1,0 +1,35 @@
+{% extends "../../sg-templates/_layouts/base.twig" %} 
+
+{% block head %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115451618-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-115451618-1');
+</script>
+
+{% endblock %}
+
+{% block page %}
+
+<!-- section Colors -->
+<section class="sg-container-section">
+
+  <h2 class="sg-h2">Gtag</h2>
+
+  <a href="https://support.google.com/analytics/answer/7478520?hl=en">Check out example.com</a>
+  <br />
+  <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener">Check out example.com</a>
+  <br />
+  <a href="https://www.google.ca/search?q=js+show+time+console&oq=js+show+time+console&aqs=chrome..69i57j69i64.5239j0j7&sourceid=chrome&ie=UTF-8">Check out example.com</a>
+  <br />
+  <a href="#custom" onclick="gtag('event', 'btn-action-test', { 'event_category': 'event_category-custom','event_label': 'event_label-custom','value': 'value-custom'}); return false;">custom event click</a>
+  <br />
+  <a href="#custom" onclick="gtag('event', 'btn-action-test2', { 'event_category': 'event_category-custom','event_label': 'event_label-custom','value': 'value-custom'}); return false;">custom event click</a>
+
+</section>
+
+{% endblock %}

@@ -40,7 +40,7 @@ if (!mix.inProduction()) {
     })
     .sourceMaps()
     .browserSync({
-      proxy: false,
+      proxy: "http://style.localtest.me",
       files: [
         'public/**/*.html',
         'public/dist/scripts/*.js',
