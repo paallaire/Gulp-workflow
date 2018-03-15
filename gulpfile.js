@@ -34,6 +34,17 @@ const styleguide = {
     delete: 'public/styleguide/*.html'
 }
 
+const site = {
+    src: [
+        './site/pages/**.twig'
+    ],
+    watch: [
+        './site/**/*.twig'
+    ],
+    dest: './public/',
+    delete: 'public/*.html'
+}
+
 const twigOptions = {
     verbose: true
 }
@@ -57,26 +68,47 @@ const onError = (err) => {
 -------------------------------------------------------------------------------- */
 gulp.task('clean', (done) => {
 
-    del([styleguide.delete]);
+    del([
+        styleguide.delete,
+        site.delete
+    ]);
     done();
 
 });
+
 
 /* --------------------------------------------------------------------------------
     Watch
 -------------------------------------------------------------------------------- */
 gulp.task('watch', ['clean', 'build'], () => {
 
-    return watch(styleguide.watch, twigOptions, () => {
-        gulp.src(styleguide.src)
-            .pipe(plumber({
-                errorHandler: onError
-            }))
-            .pipe(wait(1000))
-            .pipe(twig())
-            .pipe(gulp.dest(styleguide.dest));
-    });
+    gulp.watch(styleguide.watch, ['watch-sg']);
+    gulp.watch(site.watch, ['watch-site']);
 
+});
+
+gulp.task('twig-sg', () => {
+
+    return gulp.src(styleguide.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(wait(1000))
+        .pipe(twig(twigOptions))
+        .pipe(gulp.dest(styleguide.dest));
+  
+});
+
+gulp.task('twig-site', () => {
+
+    return gulp.src(site.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(wait(1000))
+        .pipe(twig(twigOptions))
+        .pipe(gulp.dest(site.dest));
+  
 });
 
 /* --------------------------------------------------------------------------------
@@ -84,28 +116,11 @@ gulp.task('watch', ['clean', 'build'], () => {
 -------------------------------------------------------------------------------- */
 gulp.task('build', ['clean'], () => {
 
-    return gulp.src(styleguide.src)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(twig())
-        .pipe(gulp.dest(styleguide.dest));
+    gulp.start('twig-sg');
+    gulp.start('twig-site');
 
 });
 
-/* --------------------------------------------------------------------------------
-    Build
--------------------------------------------------------------------------------- */
-gulp.task('build', ['clean'], () => {
-
-    return gulp.src(styleguide.src)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(twig())
-        .pipe(gulp.dest(styleguide.dest));
-
-});
 
 /* --------------------------------------------------------------------------------
     Default

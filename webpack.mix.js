@@ -35,12 +35,22 @@ if (!mix.inProduction()) {
     .sass('styleguide/assets/styles/styleguide.scss', 'styles/styleguide.css')
     .options({
       postCss: [
-        require('lost')()
+        require('lost')(),
+        require('postcss-pxtorem')({
+          rootValue: 16,
+          unitPrecision: 5,
+          propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+          selectorBlackList: [],
+          replace: true,
+          mediaQuery: false,
+          minPixelValue: 0
+        })
       ]
     })
     .sourceMaps()
     .browserSync({
-      proxy: "http://style.localtest.me",
+      //proxy: "http://style.localtest.me",
+      proxy: false,
       files: [
         'public/**/*.html',
         'public/dist/scripts/*.js',

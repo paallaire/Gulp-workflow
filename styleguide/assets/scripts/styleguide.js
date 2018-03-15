@@ -7,6 +7,7 @@ import getEnv from '../../../assets/scripts/utils/getEnv.js';
 import getLang from '../../../assets/scripts/utils/getLang.js';
 import * as bodyScroll from '../../../assets/scripts/utils/bodyScroll.js';
 import { Sticky } from '../../../assets/scripts/utils/sticky.js';
+import AOS from 'aos';
 
 // Analytic
 import * as gtag from '../../../assets/scripts/utils/analytic/gtag.js';
@@ -92,6 +93,28 @@ let vm = new Vue({
 
 document.addEventListener('DOMContentLoaded', function(){
     console.log('DOMContentLoaded' + new Date());
+
+    let toggle = document.querySelector('#toggle');
+    let swap = document.querySelector(".image-swap");
+
+    toggle.addEventListener("click", function(e){
+
+        e.preventDefault();
+        console.log('test');
+
+        swap.classList.toggle('reverse');
+
+    });
+
+	AOS.init({
+        offset: 250,
+        duration: 300,
+        delay: 0,
+        disable: window.innerWidth < 1140,
+        once: false,
+    });
+
+
 }, false);
 
 window.addEventListener("load", function(event) {
