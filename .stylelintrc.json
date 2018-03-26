@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "@lost",
+          "lost"
+        ]
+      }
+    ],
+    "indentation": [
+      "tab",
+      {
+        "except": [
+          "value"
+        ]
+      }
+    ],
+    "block-no-empty": null,
+    "unit-whitelist": [
+      "em",
+      "rem",
+      "s",
+      "px",
+      "vw",
+      "vh",
+      "%"
+    ]
+  }
+}

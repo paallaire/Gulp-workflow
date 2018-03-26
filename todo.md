@@ -36,3 +36,6 @@
 ## Lost & grid
 
 - [x] System Grid
+
+## Lint
+- [] stylelint-scss (https://medium.com/@bjankord/how-to-lint-scss-with-stylelint-dc87809a9878)

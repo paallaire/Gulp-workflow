@@ -33,9 +33,9 @@
     "gulp-watch": "^4.3.11",
     "laravel-mix": "^1.7.2",
     "postcss-pxtorem": "^4.0.1",
-    "scssfmt": "^1.0.5",
     "stylelint": "^8.4.0",
     "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-recommended-scss": "^3.1.0",
     "stylelint-scss": "^2.5.0"
   },
   "dependencies": {
