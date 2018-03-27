@@ -10,7 +10,6 @@
 ========================================================================== */
 
 @mixin input-placeholder {
-
     &.placeholder {
         @content;
     }
@@ -19,15 +18,11 @@
         @content;
     }
 
-    &::-moz-placeholder {
-        @content;
-    }
-
     &:-ms-input-placeholder {
         @content;
     }
 
-    &::-webkit-input-placeholder {
+    &:-webkit-input-placeholder {
         @content;
     }
 

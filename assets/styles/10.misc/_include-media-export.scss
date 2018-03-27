@@ -10,15 +10,15 @@
 /*/  '{"phone":{"value": "320px", "active": true}, "tablet":{"value": "768px", "active": true}, "desktop":{"value": "1024px", "active": false}}'*/
 /*/*/
 @function im-breakpoints-to-json($target-name) {
-  $breakpoints-json: ();
-  $target-value: map-get($breakpoints, $target-name);
+    $breakpoints-json: ();
+    $target-value: map-get($breakpoints, $target-name);
 
-  @each $name, $value in $breakpoints {
-    $breakpoint: '"#{$name}":{"value": "#{$value}", "active": #{$target-value >= $value}}';
-    $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
-  }
+    @each $name, $value in $breakpoints {
+        $breakpoint: '"#{$name}":{"value": "#{$value}", "active": #{$target-value >= $value}}';
+        $breakpoints-json: append($breakpoints-json, $breakpoint, 'comma');
+    }
 
-  @return '{#{$breakpoints-json}}';
+    @return '{#{$breakpoints-json}}';
 }
 
 /*/*/
@@ -27,19 +27,19 @@
 /*/ @param {String} $element - Element to append JSON data to*/
 /*/*/
 @mixin im-export($element) {
-  @each $name, $value in $breakpoints {
-    @include media('>=#{$name}') {
-      #{$element} {
-        width: 0;
-        height: 0;
+    @each $name, $value in $breakpoints {
+        @include media('>=#{$name}') {
+            #{$element} {
 
-        display: block;
-        overflow: hidden;
+                content: im-breakpoints-to-json($name);
 
-        content: im-breakpoints-to-json($name);
-      }
+                display: block;
+                height: 0;
+                overflow: hidden;
+                width: 0;
+            }
+        }
     }
-  }
 }
 
 @include im-export(if(variable-exists('im-export-element'), $im-export-element + '::after', 'body::after'));

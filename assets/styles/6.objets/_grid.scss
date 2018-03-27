@@ -10,13 +10,10 @@ Example : http://lostgrid.org/lostgrid-example.html
 @include make-lost-columns($lost-grid-columns);
 
 @each $name, $value in $desktop-first-breakpoints {
-@include make-lost-row-mq($name);
-@include make-lost-columns-mq($name, $lost-grid-columns);
+    @include make-lost-row-mq($name);
+    @include make-lost-columns-mq($name, $lost-grid-columns);
 }
 
 .lost-row {
     lost-flex-container: row;
 }
-
-
-

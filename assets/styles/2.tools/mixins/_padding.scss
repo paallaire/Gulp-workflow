@@ -2,30 +2,30 @@
     #PADDING
 ========================================================================== */
 @mixin padding-desktop() {
-    padding-right: $padding-desktop;
     padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
 }
 
 @mixin padding-tablet() {
-    padding-right: $padding-tablet;
     padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
 }
 
 @mixin padding-mobile() {
-    padding-right: $padding-mobile;
     padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
 }
 
 @mixin padding-container() {
 
-  @include media('>=phone') {
-    padding-right: $padding-tablet;
-    padding-left: $padding-tablet;
-  }
+    @include media('>=phone') {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
 
-  @include media('<phone') {
-    padding-right: $padding-mobile;
-    padding-left: $padding-mobile;
-  }
+    @include media('<phone') {
+        padding-left: $padding-mobile;
+        padding-right: $padding-mobile;
+    }
 
 }

@@ -3,8 +3,8 @@
 ========================================================================== */
 
 @mixin grid-last-row($columns, $element : 'li') {
-  false,
-  false {
-    @content;
-  }
+    false,
+    false {
+        @content;
+    }
 }

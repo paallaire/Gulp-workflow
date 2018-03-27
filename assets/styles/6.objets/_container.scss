@@ -2,7 +2,7 @@
 #CONTAINER
 ========================================================================== */
 
-$o-container : '.o-container';
+$o-container: '.o-container';
 
 @mixin container($type : 'desktop') {
     @include center-block();
@@ -17,7 +17,6 @@ $o-container : '.o-container';
 
 /* container with no paddding */
 @each $key,$value in $map-containers {
-
     #{$o-container}-#{$key} {
         @include container($key);
     }
@@ -26,7 +25,6 @@ $o-container : '.o-container';
 
 /* container with padding */
 @each $key, $value in $map-containers {
-
     #{$o-container}-padding-#{$key} {
         @include container-padding($key);
     }

@@ -158,11 +158,7 @@ gulp.task("scss-lint", () => {
     ];
 
     return gulp.src(
-        ['assets/styles/**/*.scss',
-            // Ignore linting vendor assets
-            // Useful if you have bower components
-            '!app/assets/css/vendor/**/*.scss'
-        ]
+        ['assets/styles/**/*.scss']
     )
         .pipe(postcss(processors, {
             syntax: syntax_scss
