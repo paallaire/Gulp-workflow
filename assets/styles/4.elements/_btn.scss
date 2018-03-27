@@ -3,9 +3,9 @@
 ========================================================================== */
 
 @mixin btn-reset() {
+    user-select: none;
     -webkit-appearance: none;
     -webkit-box-align: center;
-    user-select: none;
 }
 
 /* ==========================================================================
@@ -13,22 +13,22 @@
 ========================================================================== */
 
 @mixin btn-primary() {
-    background-color: $color-purple;
-    border-radius: 0;
-
-    color: $color-white;
     display: inline-block;
+    overflow: hidden;
 
     font-size: 14px;
-    font-weight: 500;
     line-height: 1;
-    overflow: hidden;
-    text-decoration: none;
+    font-weight: 500;
     vertical-align: middle;
+    text-decoration: none;
+
+    color: $color-white;
+    border-radius: 0;
+    background-color: $color-purple;
 
     &:hover {
-        background-color: $color-dark01;
         color: $color-white;
+        background-color: $color-dark01;
     }
 
     &.is-disabled,

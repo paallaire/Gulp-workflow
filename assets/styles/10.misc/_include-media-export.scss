@@ -30,13 +30,13 @@
     @each $name, $value in $breakpoints {
         @include media('>=#{$name}') {
             #{$element} {
-
-                content: im-breakpoints-to-json($name);
+                width: 0;
+                height: 0;
 
                 display: block;
-                height: 0;
                 overflow: hidden;
-                width: 0;
+
+                content: im-breakpoints-to-json($name);
             }
         }
     }

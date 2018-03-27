@@ -16,7 +16,8 @@ const sorting = require('postcss-sorting');
 const postcss = require('gulp-postcss');
 const reporter = require('postcss-reporter');
 const syntax_scss = require('postcss-scss');
-const stylelint = require('stylelint');
+
+
 
 /* --------------------------------------------------------------------------------
     Variables
@@ -142,27 +143,6 @@ gulp.task('formatStyles', () => {
             }))
         .pipe(gulp.dest('./assets/styles/'));
 
-});
-
-/* --------------------------------------------------------------------------------
-    Scss-lint ( Work in progress... )
--------------------------------------------------------------------------------- */
-gulp.task("scss-lint", () => {
-
-    const processors = [
-        stylelint(),
-        reporter({
-            clearMessages: true,
-            throwError: false
-        })
-    ];
-
-    return gulp.src(
-        ['assets/styles/**/*.scss']
-    )
-        .pipe(postcss(processors, {
-            syntax: syntax_scss
-        }));
 });
 
 

@@ -84,28 +84,28 @@
 @import 'vuejs';
 
 .modal {
-    background: green;
-    height: 400px;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%,-50%);
     width: 400px;
+    height: 400px;
+    position: fixed;
     z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: green;
 }
 
 .btn {
-    background-color: #000;
-    color: #fff;
-    display: block;
     margin: 10px;
     padding: 10px;
+    display: block;
     text-align: center;
+    color: #fff;
+    background-color: #000;
 }
 
 
 
 .paa {
-    content: 'paa';
     font-size: 100px;
+    content: 'paa';
 }

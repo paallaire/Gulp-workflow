@@ -12,13 +12,13 @@
 .sg-mixins-placeholder-demo {
     input,  
     textarea,
-    .placeholder {  
-
-        border:1px solid #ccc;
+    .placeholder {
 
         @include input-placeholder() {
             color: #ccc;
-        }
+        }  
+
+        border:1px solid #ccc;
     }
 
 }
@@ -178,10 +178,10 @@
 
 
 .is-sticky {
-    background-color: red;
-    left: 0;
-    position: fixed;
-    top: 0;
     width: 100%;
+    position: fixed;
     z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: red;
 }

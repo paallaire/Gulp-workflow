@@ -10,9 +10,9 @@ html {}
 ========================================================================== */
 
 html {
+    overflow-x: hidden;
     -moz-osx-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
     -webkit-text-size-adjust: 100%; /* iOS 8+ */
 
     &:not(.has-no-scroll) {
@@ -37,19 +37,19 @@ html {
 ========================================================================== */
 
 body {
-    background-color: $color-white;
-
-    color: $color-black;
-    font-family: $font-text;
-    font-size: 10px;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     height: 100%;
-    line-height: $font-text-line-height;
 
 
     overflow: visible;
-    word-break: normal;
+    font-family: $font-text;
+    font-size: 10px;
+    line-height: $font-text-line-height;
     word-wrap: break-word;
+    word-break: normal;
+
+    color: $color-black;
+    background-color: $color-white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
