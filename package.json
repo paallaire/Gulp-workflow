@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "sort": "postcss \"assets/styles/**/*.scss\" -u postcss-sorting --parser postcss-scss -c postcss-sorting.json -r --no-map",
-    "stylelint": "stylelint \"assets/styles/**/*.scss\" --syntax scss --fix; exit 0",
+    "stylelint": "stylelint \"assets/styles/**/*.scss\" --syntax scss --fix",
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",

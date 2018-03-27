@@ -5,6 +5,27 @@
         "stylelint-order"
     ],
     "rules": {
+        "order/order": [
+            "custom-properties",
+            "declarations"
+        ],
+        "order/properties-order": [
+            {
+                "emptyLineBefore": false,
+                "properties": [
+                    "height",
+                    "width"
+                ]
+            },
+            {
+                "emptyLineBefore": false,
+                "properties": [
+                    "font-size",
+                    "font-weight"
+                ]
+            }
+        ],
+        "order/properties-alphabetical-order": true,
         "at-rule-blacklist": [
             "debug"
         ],

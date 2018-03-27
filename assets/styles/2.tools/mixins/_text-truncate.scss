@@ -3,12 +3,13 @@
 ========================================================================== */
 
 @mixin truncate($truncation-boundary) {
-    width: $truncation-boundary;
 
     overflow: hidden;
+    text-overflow: ellipsis;
 
     white-space: nowrap;
-    text-overflow: ellipsis;
+
+    width: $truncation-boundary;
 }
 
 

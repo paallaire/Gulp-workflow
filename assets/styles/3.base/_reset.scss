@@ -5,9 +5,9 @@
 *,
 *:after,
 *:before {
-    box-sizing: border-box;
 
     background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -76,17 +76,18 @@ button,
 input,
 select,
 textarea {
-    margin: 0;
-    padding: 0;
-
-    font-family: inherit;
-    font-size: 100%;
-    font-weight: inherit;
-    font-style: inherit;
-    vertical-align: baseline;
 
     border: 0;
+
+    font-family: inherit;
+
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
     outline: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 /* list*/
@@ -106,11 +107,11 @@ h6 {
 
 /* link*/
 a {
-    text-decoration: none;
+    background-color: transparent; /* Remove the gray background on active links in IE 10 */
 
     color: inherit;
     outline: none;
-    background-color: transparent; /* Remove the gray background on active links in IE 10 */
+    text-decoration: none;
 
     -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
 
@@ -122,18 +123,19 @@ a {
 
 /* images*/
 img {
-    max-width: 100%;
-    height: auto;
+
+    border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
 
     display: block;
 
-    border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+    height: auto;
+    max-width: 100%;
 }
 
 /* table*/
 table {
-    border-spacing: 0;
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* strong*/
@@ -204,9 +206,9 @@ button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
-    padding: 0;
 
     border-style: 0;
+    padding: 0;
 }
 
 /* Replace focus style removed in the border reset above */
@@ -235,9 +237,9 @@ button,
 input,
 select,
 textarea {
-    color: inherit;
-    border-style: none;
     background-color: transparent;
+    border-style: none;
+    color: inherit;
 }
 
 /* Style select like a standard input */
@@ -255,26 +257,26 @@ select::-ms-value {
 }
 
 legend {
-    max-width: 100%; /* Correct the text wrapping in Edge and IE */
-
-    display: table; /* Correct the text wrapping in Edge and IE */
-
-    white-space: normal; /* Correct the text wrapping in Edge and IE */
+    border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
 
     color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
-    border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+
+    display: table; /* Correct the text wrapping in Edge and IE */
+    max-width: 100%; /* Correct the text wrapping in Edge and IE */
+
+    white-space: normal; /* Correct the text wrapping in Edge and IE */
 }
 
 ::-webkit-file-upload-button {
-    font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
 
     -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
+    font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
 }
 
 [type='search'] {
-    outline-offset: -2px; /* Correct the outline style in Safari */
 
     -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+    outline-offset: -2px; /* Correct the outline style in Safari */
 }
 
 /* ==========================================================================
@@ -284,13 +286,13 @@ legend {
 /* Specify text selection background color and omit drop shadow */
 
 ::-moz-selection {
-    text-shadow: none;
-    color: $text-selection-color;
     background-color: $text-selection-bg; /* Required when declaring ::selection */
+    color: $text-selection-color;
+    text-shadow: none;
 }
 
 ::selection {
-    text-shadow: none;
-    color: $text-selection-color;
     background-color: $text-selection-bg; /* Required when declaring ::selection */
+    color: $text-selection-color;
+    text-shadow: none;
 }

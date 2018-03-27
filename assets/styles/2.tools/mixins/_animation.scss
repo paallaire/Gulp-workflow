@@ -14,10 +14,10 @@
 }
 
 .fadeIn {
-    animation-name: fadeIn;
     animation-duration: 2s;
-    animation-iteration-count: 1;
     animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-name: fadeIn;
 }
 
 /* fadeOut*/
@@ -33,10 +33,10 @@
 }
 
 .fadeOut {
-    animation-name: fadeOut;
     animation-duration: 2s;
-    animation-iteration-count: 1;
     animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-name: fadeOut;
 }
 
 /* spinLoader*/
@@ -52,8 +52,8 @@
 }
 
 .spin-loader {
-    animation-name: spinLoader;
     animation-duration: 1s;
-    animation-iteration-count: infinite;
     animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: spinLoader;
 }
