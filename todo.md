@@ -42,15 +42,3 @@
 
 
 
-
-stylelint-config-sass-guidelines
-https://github.com/bjankord/stylelint-config-sass-guidelines
-
-Config
-https://github.com/bjankord/stylelint-config-sass-guidelines/blob/master/src/.stylelintrc.json
-
-configuration 
-https://stylelint.io/user-guide/configuration/
-
-Warning & error
-https://stylelint.io/user-guide/configuration/#severities-error--warning
