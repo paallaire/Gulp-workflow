@@ -3,7 +3,6 @@
 ========================================================================== */
 
 $is-dev: '.is-dev';
-$isDesktopFirst : true;
 
 /* ==========================================================================
     #FOLDER
@@ -21,8 +20,8 @@ $folder-node-modules: '../../node_modules/';
 
 /* font-family*/
 /*///////////////////////////*/
-$Montserrat: 'Montserrat', sans-serif;
-$Baskerville: 'Libre Baskerville', serif;
+$montserrat: 'Montserrat', sans-serif;
+$baskerville: 'Libre Baskerville', serif;
 
 /* heading*/
 /*///////////////////////////*/
@@ -73,9 +72,9 @@ $font-weight-black: 700;
 
 /* type*/
 /*///////////////////////////*/
-$font-heading: $Baskerville;
+$font-heading: $baskerville;
 $font-heading-line-height: 1.4;
-$font-text: $Montserrat;
+$font-text: $montserrat;
 $font-text-line-height: 1.4;
 
 /* ==========================================================================
@@ -159,7 +158,7 @@ $z-sticky-nav: 100;
 $z-mobile-nav: 100;
 $z-modal: 1000;
 
-$z-site-option : 1001;
+$z-site-option: 1001;
 
 /* ==========================================================================
     #TRANISTION
@@ -173,9 +172,9 @@ $transition-speed-fast: 0.1s;
     #LOST (postcss)
 ========================================================================== */
 
-$lost-gutter : 20px;
-$lost-rounder : 99.99999;
-$lost-rounder-with-unit : #{$lost-rounder+'%'};
+$lost-gutter: 20px;
+$lost-rounder: 99.99999;
+$lost-rounder-with-unit: #{$lost-rounder+'%'};
 $lost-grid-columns: 12;
 $lost-gutter-desktop: 20px;
 $lost-gutter-tablet: 20px;

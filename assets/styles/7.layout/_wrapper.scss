@@ -2,7 +2,7 @@
     #WRAPPER
 ========================================================================== */
 
-$l-wrapper : '.l-wrapper';
+$l-wrapper: '.l-wrapper';
 
 #{$l-wrapper} {
     @include container-padding('outer-max');

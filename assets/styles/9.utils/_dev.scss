@@ -5,11 +5,12 @@
 body#{$is-dev} {
     &:before {
 
+        padding: 10px;
+
         background: #ccc;
         bottom: 0;
 
         display: block;
-        padding: 10px;
 
         position: fixed;
         right: 0;
@@ -34,9 +35,10 @@ body#{$is-dev} {
 ========================================================================== */
 .show-grid {
     &__button {
+
+        padding: 4px 8px;
         background-color: #ccc;
         bottom: 60px;
-        padding: 4px 8px;
         position: fixed;
         right: 0;
         z-index: $z-site-option;
@@ -48,7 +50,7 @@ body#{$is-dev} {
         opacity: 0.5;
         position: fixed;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
 
         width: 100%;
         z-index: $z-site-option - 1;

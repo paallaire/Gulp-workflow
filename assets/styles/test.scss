@@ -1,0 +1,32 @@
+
+a {
+    @if $toto == true {
+        $toto: #44f;
+    }
+    $toto: '.test';
+    padding: 1em;
+
+    padding-top: 1em;
+    padding-left: 2em;
+    color: pink;
+
+    font-size: 2px;
+    font-weight: bold;
+    background: orange;
+    display: inline;
+    left: 0;
+    top: 0;
+
+    @include media('>tablet') {
+        padding-top: 1em;
+        padding-left: 2em;
+        background: red;
+    }
+
+    @include media('>mobile') {
+        padding-top: 1em;
+        padding-left: 2em;
+        background: red;
+    }
+
+}

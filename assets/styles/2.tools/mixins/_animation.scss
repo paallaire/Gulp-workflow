@@ -2,8 +2,8 @@
     #ANIMATION
 ========================================================================== */
 
-/* fadeIn*/
-@keyframes fadeIn {
+/* fade-in*/
+@keyframes fade-in {
     0% {
         opacity: 0;
     }
@@ -13,16 +13,16 @@
     }
 }
 
-.fadeIn {
+.fade-in {
     animation-duration: 2s;
     animation-fill-mode: both;
     animation-iteration-count: 1;
-    animation-name: fadeIn;
+    animation-name: fade-in;
 }
 
-/* fadeOut*/
+/* fade-out*/
 
-@keyframes fadeOut {
+@keyframes fade-out {
     0% {
         opacity: 1;
     }
@@ -32,16 +32,16 @@
     }
 }
 
-.fadeOut {
+.fade-out {
     animation-duration: 2s;
     animation-fill-mode: both;
     animation-iteration-count: 1;
-    animation-name: fadeOut;
+    animation-name: fade-out;
 }
 
-/* spinLoader*/
+/* spin-loader*/
 
-@keyframes spinLoader {
+@keyframes spin-loader {
     0% {
         transform: rotate(0deg);
     }
@@ -55,5 +55,5 @@
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-name: spinLoader;
+    animation-name: spin-loader;
 }

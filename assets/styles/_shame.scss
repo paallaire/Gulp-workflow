@@ -5,20 +5,20 @@
 /* demo */
 
 .sg-mixins-center-demo {
-    max-width: 400px;
     @include center-block();
+    max-width: 400px;
 }
 
 .sg-mixins-placeholder-demo {
     input,  
     textarea,
-    .placeholder {  
-
-        border:1px solid #ccc;
+    .placeholder {
 
         @include input-placeholder() {
             color: #ccc;
-        }
+        }  
+
+        border:1px solid #ccc;
     }
 
 }
@@ -52,19 +52,19 @@
 }
 
 
-.sg-mixins-ratio-demo-16-9 {  
+.sg-mixins-ratio-demo-16-9 {
+    @include ratio(16,9);  
     background: #ccc;
-    @include ratio(16,9);
 }
 
-.sg-mixins-ratio-demo-4-3 { 
+.sg-mixins-ratio-demo-4-3 {
+    @include ratio(4,3); 
     background: #bbb;
-    @include ratio(4,3);
 }
 
-.sg-mixins-ratio-demo-1-1 {  
+.sg-mixins-ratio-demo-1-1 {
+    @include ratio(1,1);  
     background: #aaa;
-    @include ratio(1,1);
 }
 
 
@@ -139,8 +139,8 @@
     .a {
   
         @include media('>=tablet') {
-            lost-column : 4/12 0 $lost-gutter-desktop;
             @include lost-offset( 2 );
+            lost-column : 4/12 0 $lost-gutter-desktop;
         }
   
         @include media('<tablet') {
@@ -178,30 +178,14 @@
 
 
 .is-sticky {
-    background-color: red;
-    left: 0;
-
-    position: fixed;
-
-    top: 0;
-
-    width: 100%;
-
-    
-    z-index: 1000;
+    padding: 1em;
+    padding-top: 1em;
+    padding-left: 2em;
+    color: pink;
 }
 
-//https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
 a {
-    color: pink;
-
-    font-size: 2px;
-    font-weight: bold;
-
-    height: 1px;
-    top: 0;
     -moz-transform: scale(1);
     -webkit-transform: scale(1);
     transform: scale(1);
-    width: 2px;
 }

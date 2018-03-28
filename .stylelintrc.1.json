@@ -1,5 +1,5 @@
 {
-    "extends": "stylelint-config-sass-guidelines",
+    "extends": "stylelint-config-recommended-scss",
     "plugins": [
         "stylelint-scss",
         "stylelint-order"
@@ -46,8 +46,8 @@
                     ]
                 }
             ],
-            {
-                "unspecified": "bottomAlphabetical"
+            { 
+                "unspecified" : "bottomAlphabetical" 
             }
         ],
         "order/properties-alphabetical-order": null,
@@ -77,49 +77,34 @@
                 ]
             }
         ],
-        "block-no-empty": [
-            true,
-            {
-                "severity": "warning"
-            }
-        ],
-        "color-named": [
-            "always-where-possible",
-            {
-                "severity": "warning"
-            }
-        ],
-        "max-nesting-depth": [
-            3,
-            {
-                "severity": "warning"
-            }
-        ],
-        "selector-pseudo-element-colon-notation": "single",
-        "selector-no-vendor-prefix": [
-            true,
-            {
-                "severity": "warning",
-                "ignoreProperties": [
-                    "-webkit-text-size-adjust"
-                ]
-            }
-        ],
-        "selector-no-qualifying-type": [
-            true,
+
+
+        "at-rule-no-unknown": null,
+        "block-no-empty": null,
+        "color-no-invalid-hex": true,
+        "comment-empty-line-before": [
+            "always",
             {
                 "ignore": [
-                    "attribute",
-                    "class"
+                    "stylelint-commands",
+                    "after-comment"
                 ]
             }
         ],
-        "property-no-vendor-prefix": [
-            true,
+        "declaration-colon-space-after": "always",
+        "max-empty-lines": 2,
+        "rule-empty-line-before": [
+            "always",
             {
-                "severity": "warning"
+                "except": [
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment"
+                ]
             }
         ],
+
         "scss/at-rule-no-unknown": [
             true,
             {

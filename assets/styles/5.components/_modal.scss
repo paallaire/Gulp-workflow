@@ -2,7 +2,7 @@
     #MODAL
 ========================================================================== */
 
-$c-modal : '.c-modal';
+$c-modal: '.c-modal';
 
 #{$c-modal} {
     align-items: center;
@@ -34,11 +34,12 @@ $c-modal : '.c-modal';
     &__content {
         @include ios-scroll-smooth();
 
+        padding: 40px;
+
         background-color: $color-white;
         max-height: calc(100vh - 160px);
         max-width: 800px;
         overflow-y: auto;
-        padding: 40px;
         position: relative;
 
         width: 100%;

@@ -28,7 +28,7 @@
 
             @include lost-container-center( $i);
 
-            &>div {
+            > div {
                 flex-basis: 100%;
                 max-width: 100%;
 

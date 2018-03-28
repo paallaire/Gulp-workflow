@@ -12,12 +12,12 @@
   ========================================================================== */
   
 /* Map font size heading*/
-@function headingSize($size) {
+@function heading-size($size) {
     @return map-get($map-font-sizes-heading, $size);
 }
   
 /* Map font size heading (Mobile)*/
-@function headingSizeMobile($size) {
+@function heading-size-mobile($size) {
     @return map-get($map-font-sizes-heading-mobile, $size);
 }
   
@@ -26,11 +26,11 @@
   ========================================================================== */
   
 /* Map font size text*/
-@function textSize($size) {
+@function text-size($size) {
     @return map-get($map-font-sizes-text, $size);
 }
   
 /* Map font size text (Mobile)*/
-@function textSizeMobile($size) {
+@function text-size-mobile($size) {
     @return map-get($map-font-sizes-text-mobile, $size);
 }
