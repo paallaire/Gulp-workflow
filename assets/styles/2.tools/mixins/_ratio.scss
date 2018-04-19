@@ -9,20 +9,24 @@
 
     &:before {
 
+        width: 100%;
+
         padding-top: $padding;
-        content: '';
+
         display: block;
 
-        width: 100%;
+        content: '';
     }
 
     > .content {
+
+        overflow-y: hidden;
+
+        position: absolute;
+        top: 0;
+        right: 0;
         bottom: 0;
         left: 0;
-        overflow-y: hidden;
-        position: absolute;
-        right: 0;
-        top: 0;
     }
 
 }
@@ -33,19 +37,22 @@
 
 @mixin iframe-ratio($x, $y) {
     $padding: unquote(( $y / $x) * 100 + '%');
+    height: 0;
 
     padding-top: $padding;
-    height: 0;
+
     overflow: hidden;
+
     position: relative;
 
     iframe {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
 
         width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
 }

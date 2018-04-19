@@ -3,9 +3,10 @@
 ========================================================================== */
 
 @mixin btn-reset() {
+
+    user-select: none;
     -webkit-appearance: none;
     -webkit-box-align: center;
-    user-select: none;
 }
 
 /* ==========================================================================
@@ -14,21 +15,25 @@
 
 @mixin btn-primary() {
 
-    color: $color-white;
+    display: inline-block;
+
+    overflow: hidden;
 
     font-size: 14px;
-    font-weight: 500;
-    background-color: $color-purple;
-    border-radius: 0;
-    display: inline-block;
+
     line-height: 1;
-    overflow: hidden;
-    text-decoration: none;
+    font-weight: 500;
     vertical-align: middle;
+    text-decoration: none;
+
+    background-color: $color-purple;
+
+    color: $color-white;
+    border-radius: 0;
 
     &:hover {
-        color: $color-white;
         background-color: $color-dark01;
+        color: $color-white;
     }
 
     &.is-disabled,

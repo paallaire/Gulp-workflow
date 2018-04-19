@@ -4,12 +4,13 @@
 
 @mixin truncate($truncation-boundary) {
 
+    width: $truncation-boundary;
+
     overflow: hidden;
-    text-overflow: ellipsis;
 
     white-space: nowrap;
 
-    width: $truncation-boundary;
+    text-overflow: ellipsis;
 }
 
 

@@ -83,25 +83,35 @@
 @import 'vuejs';
 
 .modal {
-    background: green;
+
+    width: 400px;
 
     height: 400px;
-    left: 50%;
+
     position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+
     z-index: 1000;
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: green;
 }
 
 .btn {
+
+    margin: 10px;
     padding: 10px;
 
-    color: #fff;
-    background-color: #000;
     display: block;
-    margin: 10px;
+
     text-align: center;
+
+    background-color: #000;
+
+    color: #fff;
 }
 
 
