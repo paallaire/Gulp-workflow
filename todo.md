@@ -1,4 +1,8 @@
 
+## Mixin
+
+- [ ] _focuspoint
+- [ ] _intrinsic
 
 ## Pages
 
@@ -9,7 +13,7 @@
 - [x] Grid
 - [x] Typography
 - [x] Icons
-- [x] Mixins
+- [] Mixins
 
 ## Elements
 

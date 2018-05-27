@@ -10,15 +10,6 @@ const gutil = require('gulp-util');
 const notify = require('gulp-notify');
 const wait = require('gulp-wait2');
 
-const sortingOptions = require('./postcss-sorting');
-const sorting = require('postcss-sorting');
-
-const postcss = require('gulp-postcss');
-const reporter = require('postcss-reporter');
-const syntax_scss = require('postcss-scss');
-
-
-
 /* --------------------------------------------------------------------------------
     Variables
 -------------------------------------------------------------------------------- */
@@ -128,21 +119,6 @@ gulp.task('build', ['clean'], () => {
 -------------------------------------------------------------------------------- */
 gulp.task('default', ['clean'], () => {
     gulp.start('build');
-});
-
-/* --------------------------------------------------------------------------------
-    FormatStyles ( Work in progress... )
--------------------------------------------------------------------------------- */
-gulp.task('formatStyles', () => {
-
-    return gulp.src('./assets/styles/**/*.scss')
-        .pipe(postcss([
-            sorting(sortingOptions)
-        ], {
-                parser: syntax_scss
-            }))
-        .pipe(gulp.dest('./assets/styles/'));
-
 });
 
 

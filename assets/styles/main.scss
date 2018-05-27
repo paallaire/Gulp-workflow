@@ -1,12 +1,7 @@
-/* 0.npm-node-modules ( Vendors )*/
-/*/////////////////////////////////////////*/
-@import '~normalize-scss/sass/_normalize';
-@import '~include-media/dist/_include-media';
-@import '~aos/src/sass/aos';
-@import '~hamburgers/_sass/hamburgers/hamburgers';
 
 /* 2.tools - functions*/
 /*/////////////////////////////////////////*/
+@import '2.tools/functions/misc';
 @import '2.tools/functions/map';
 @import '2.tools/functions/list';
 
@@ -15,19 +10,28 @@
 @import '1.settings/variables';
 @import '1.settings/components';
 
+/* npm-node-modules ( Vendors )*/
+@import '~normalize-scss/sass/_normalize';
+@import '~include-media/dist/_include-media';
+@import '~aos/src/sass/aos';
+@import '~hamburgers/_sass/hamburgers/hamburgers';
+
 /* 2.tools - mixins*/
 /*/////////////////////////////////////////*/
 @import '2.tools/mixins/grid';
 @import '2.tools/mixins/center';
 @import '2.tools/mixins/center-block';
+@import '2.tools/mixins/last-row';
 @import '2.tools/mixins/clearfix';
-@import '2.tools/mixins/grid-last-row';
+@import '2.tools/mixins/last-row';
 @import '2.tools/mixins/input-placeholder';
 @import '2.tools/mixins/padding';
-@import '2.tools/mixins/ratio';
 @import '2.tools/mixins/text-truncate';
 @import '2.tools/mixins/triangle';
 @import '2.tools/mixins/ios-scroll-smooth';
+@import '2.tools/mixins/responsive';
+@import '2.tools/mixins/focuspoint';
+@import '2.tools/mixins/intrinsic';
 
 /* Animation*/
 @import '2.tools/mixins/animation';
@@ -50,7 +54,6 @@
 /* 5.components*/
 /*/////////////////////////////////////////*/
 @import '5.components/wysiwyg';
-@import '5.components/modal';
 
 /* 6.objets*/
 /*/////////////////////////////////////////*/

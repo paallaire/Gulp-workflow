@@ -8,8 +8,8 @@ import 'babel-polyfill';
 /* --------------------------------------------------------------------------------
 Helpers
 -------------------------------------------------------------------------------- */
-import getEnv from './utils/getEnv.js';
-import 'svgxuse'; // Fix simple polyfill that fetches external SVGs referenced in use elements when the browser itself  ( IE 10-11 )
+import 'svgxuse'; 
+
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -26,7 +26,6 @@ Vue - Directives
 /* --------------------------------------------------------------------------------
 Vue - Components
 -------------------------------------------------------------------------------- */
-import Modal from './components/Modal.vue';
 
 /* --------------------------------------------------------------------------------
 APP
@@ -34,33 +33,12 @@ APP
 let vm = new Vue({
     el: '#app',
     store,
-    components: {
-        Modal
-    },
+    components: {},
     data: {},
-    computed: {
-        ...mapGetters([
-            'lang',
-            'isModalActive',
-            'env'
-        ])
-    },
-    methods: {
-        ...mapMutations([
-            'setModal',
-            'setEnv'
-        ]),
-        showModal: function (name) {
-            this.setModal(name);
-        },
-        hideModal: function () {
-            this.setModal(null);
-        }
-    },
-    mounted: function () {
-        let env = getEnv();
-        this.setEnv(env);
-    },
+    computed: {},
+    methods: {},
+    mounted: function () { },
     destroyed: function () { }
 });
+
 

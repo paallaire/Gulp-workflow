@@ -6,13 +6,13 @@ $o-container: '.o-container';
 
 @mixin container($type : 'desktop') {
     @include center-block();
-    max-width: container($type);
+    max-width: get-container($type);
 }
 
 @mixin container-padding($type : 'desktop') {
     @include center-block();
     @include padding-mobile();
-    max-width: container($type);
+    max-width: get-container($type);
 }
 
 /* container with no paddding */

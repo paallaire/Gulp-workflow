@@ -24,10 +24,6 @@ html {
         overflow: hidden;
     }
 
-    &.test {
-        background: red;
-    }
-
     @for $i from 1 to 50 {
         &.scroll-width-#{$i} {
             width: calc(100vw - #{$i}px); 
@@ -50,7 +46,7 @@ body {
 
     font-family: $font-text;
 
-    font-size: 10px;
+    font-size: $body-font-size;
 
     line-height: $font-text-line-height;
     word-wrap: break-word;

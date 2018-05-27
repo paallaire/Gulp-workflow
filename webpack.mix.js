@@ -1,8 +1,10 @@
 const mix = require('laravel-mix');
 const path = require('path');
 
-var assetsPath = './assets';
-var distPath = './public/dist';
+const assetsPath = './assets';
+const distPath = './public/dist';
+
+const WEBSITE_URL = "http://example.localtest.me";
 
 /*
  |--------------------------------------------------------------------------
@@ -22,44 +24,43 @@ mix
   .sass(assetsPath + '/styles/main.scss', 'styles')
   .copyDirectory(assetsPath + '/svg', distPath + "/svg", false)
   .copyDirectory(assetsPath + '/images', distPath + "/images", false)
+  .copyDirectory(assetsPath + '/fonts', distPath + "/fonts", false)
+  .copyDirectory(assetsPath + '/videos', distPath + "/videos", false)
+  .copyDirectory(assetsPath + '/json', distPath + "/json", false)
   .options({
+    processCssUrls: false,
     postCss: [
-      require('lost')()
+      require('lost')(),
+      require('postcss-pxtorem')({
+        rootValue: 16,
+        unitPrecision: 5,
+        propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+        selectorBlackList: [],
+        replace: true,
+        mediaQuery: false,
+        minPixelValue: 0
+      })
     ]
   })
 
 
 if (!mix.inProduction()) {
   mix
-    .js('styleguide/assets/scripts/styleguide.js', 'scripts/styleguide.js')
-    .sass('styleguide/assets/styles/styleguide.scss', 'styles/styleguide.css')
-    .options({
-      postCss: [
-        require('lost')(),
-        require('postcss-pxtorem')({
-          rootValue: 16,
-          unitPrecision: 5,
-          propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
-          selectorBlackList: [],
-          replace: true,
-          mediaQuery: false,
-          minPixelValue: 0
-        })
-      ]
-    })
+    //.js('styleguide/assets/scripts/styleguide.js', 'scripts/styleguide.js')
+    //.sass('styleguide/assets/styles/styleguide.scss', 'styles/styleguide.css')
     .sourceMaps()
     .browserSync({
-      //proxy: "http://style.localtest.me",
+      //proxy: WEBSITE_URL,
       proxy: false,
+      server: {
+        baseDir: "./public/"
+      },
       files: [
         'public/**/*.html',
         'public/dist/scripts/*.js',
         'public/dist/styles/*.css',
         'public/styleguide/**/*.html',
       ],
-      server: {
-        baseDir: "./public/"
-      },
       ghostMode: {
         clicks: true,
         links: true,
