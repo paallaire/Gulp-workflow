@@ -5,7 +5,9 @@
 @mixin truncate($truncation-boundary) {
 
     width: $truncation-boundary;
+
     overflow: hidden;
+
     white-space: nowrap;
     text-overflow: ellipsis;
 }

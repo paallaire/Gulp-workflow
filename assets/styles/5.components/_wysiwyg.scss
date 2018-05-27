@@ -3,6 +3,7 @@
 ========================================================================== */
 
 $c-wysiwyg: '.c-wysiwyg';
+
 #{$c-wysiwyg} {
 
     /* lobotomized-owls*/
@@ -16,7 +17,7 @@ $c-wysiwyg: '.c-wysiwyg';
     >*:first-child {
         margin-top: 0;
     }
-
+    
     /* empty tag*/
     /*/////////////////////////// */
     p:empty {

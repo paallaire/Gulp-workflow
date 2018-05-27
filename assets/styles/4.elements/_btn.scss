@@ -28,12 +28,12 @@
 
     background-color: $color-purple;
 
-    color: $color-white;
+    color: $white;
     border-radius: 0;
 
     &:hover {
         background-color: $color-dark01;
-        color: $color-white;
+        color: $white;
     }
 
     &.is-disabled,
