@@ -4,9 +4,9 @@
 
 @mixin btn-reset() {
 
+    appearance: none;
+
     user-select: none;
-    -webkit-appearance: none;
-    -webkit-box-align: center;
 }
 
 /* ==========================================================================
@@ -14,26 +14,31 @@
 ========================================================================== */
 
 @mixin btn-primary() {
-
     display: inline-block;
 
     overflow: hidden;
 
+    color: $white;
+
+    font-weight: 500;
+
     font-size: 14px;
 
     line-height: 1;
-    font-weight: 500;
-    vertical-align: middle;
+
     text-decoration: none;
+
+    vertical-align: middle;
 
     background-color: $color-purple;
 
-    color: $white;
     border-radius: 0;
 
     &:hover {
-        background-color: $color-dark01;
+
         color: $white;
+
+        background-color: $color-dark01;
     }
 
     &.is-disabled,
@@ -42,4 +47,3 @@
     &.is-active {}
   
 }
-

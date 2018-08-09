@@ -9,6 +9,7 @@
     $x: (($min-size / $mobile-size) - ($y * 1 / $mobile-size)) * 100;
 
     #{$property}: #{$prefix} #{$max-size}px #{$suffix};
+
     #{$property}: #{$prefix} calc(#{$x}vw + #{$y}px) #{$suffix};
 
     @media only screen and #{'(max-width: #{$mobile-size}px)'} {

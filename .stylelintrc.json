@@ -1,5 +1,7 @@
 {
-    "extends": "stylelint-config-sass-guidelines",
+    "extends": [
+        "stylelint-config-sass-guidelines"
+    ],
     "plugins": [
         "stylelint-scss",
         "stylelint-order"
@@ -28,8 +30,37 @@
         "order/properties-order": [
             [
                 {
+                    "type" : "Positioning",
                     "emptyLineBefore": "always",
                     "properties": [
+                        "position",
+                        "top",
+                        "right",
+                        "bottom",
+                        "left",
+                        "z-index"
+                    ]
+                },
+                {
+                    "type" : "Box Model",
+                    "emptyLineBefore": "always",
+                    "properties": [
+                        "display",
+                        "flex",
+                        "flex-grow",
+                        "flex-shrink",
+                        "flex-basis",
+                        "flex-flow",
+                        "flex-direction",
+                        "flex-wrap",
+                        "justify-content",
+                        "align-content",
+                        "align-items",
+                        "align-self",
+                        "order",
+                        "float",
+                        "clear",
+                        "box-sizing",
                         "width",
                         "min-width",
                         "max-width",
@@ -45,88 +76,21 @@
                         "padding-top",
                         "padding-right",
                         "padding-bottom",
-                        "padding-left"
-                    ]
-                },
-                {
-                    "emptyLineBefore": "always",
-                    "properties": [
-                        "display",
-                        "table-layout",
-                        "empty-cells",
-                        "caption-side",
-                        "border-spacing",
-                        "border-collapse",
-                        "flex",
-                        "flex-grow",
-                        "flex-shrink",
-                        "flex-basis",
-                        "flex-direction",
-                        "justify-content",
-                        "align-content",
-                        "align-items",
-                        "align-self",
-                        "flex-wrap",
-                        "flex-flow",
-                        "order",
-                        "flex-order",
-                        "flex-pack",
-                        "flex-align"
-                    ]
-                },
-                {
-                    "emptyLineBefore": "always",
-                    "properties": [
-                        "box-sizing",
-                        "visibility",
-                        "float",
-                        "clear",
+                        "padding-left",
                         "overflow",
                         "overflow-x",
-                        "overflow-y",
-                        "clip",
-                        "zoom"
+                        "overflow-y"
                     ]
                 },
                 {
+                    "type" : "Typography",
                     "emptyLineBefore": "always",
                     "properties": [
-                        "position",
-                        "z-index",
-                        "top",
-                        "right",
-                        "bottom",
-                        "left"
-                    ]
-                },
-                {
-                    "emptyLineBefore": "always",
-                    "properties": [
-                        "transition",
-                        "transition-delay",
-                        "transition-timing-function",
-                        "transition-duration",
-                        "transition-property",
-                        "transform",
-                        "transform-origin",
-                        "animation",
-                        "animation-name",
-                        "animation-duration",
-                        "animation-play-state",
-                        "animation-timing-function",
-                        "animation-delay",
-                        "animation-iteration-count",
-                        "animation-direction"
-                    ]
-                },
-                {
-                    "emptyLineBefore": "always",
-                    "properties": [
+                        "color",
                         "font",
-                        "font-family",
-                        "font-size",
-                        "line-height",
                         "font-weight",
+                        "font-size",
+                        "font-family",
                         "font-style",
                         "font-variant",
                         "font-size-adjust",
@@ -136,50 +100,75 @@
                         "font-emphasize-position",
                         "font-emphasize-style",
                         "font-smooth",
-                        "text-align",
-                        "vertical-align",
-                        "white-space",
-                        "text-decoration",
-                        "text-indent",
-                        "text-outline",
-                        "text-transform",
-                        "text-wrap",
-                        "text-overflow",
+                        "line-height",
+                        "direction",
                         "letter-spacing",
-                        "word-spacing",
-                        "word-wrap",
-                        "word-break",
-                        "text-shadow",
+                        "white-space",
+                        "text-align",
                         "text-align-last",
+                        "text-transform",
+                        "text-decoration",
                         "text-emphasis",
                         "text-emphasis-color",
                         "text-emphasis-style",
                         "text-emphasis-position",
+                        "text-indent",
                         "text-justify",
+                        "text-outline",
+                        "text-wrap",
+                        "text-overflow",
                         "text-overflow-ellipsis",
                         "text-overflow-mode",
+                        "text-orientation",
+                        "text-shadow",
+                        "vertical-align",
+                        "word-wrap",
+                        "word-break",
+                        "word-spacing",
+                        "overflow-wrap",
                         "tab-size",
-                        "hyphens"
+                        "hyphens",
+                        "unicode-bidi",
+                        "columns",
+                        "column-count",
+                        "column-fill",
+                        "column-gap",
+                        "column-rule",
+                        "column-rule-color",
+                        "column-rule-style",
+                        "column-rule-width",
+                        "column-span",
+                        "column-width",
+                        "page-break-after",
+                        "page-break-before",
+                        "page-break-inside",
+                        "src"
                     ]
                 },
                 {
+                    "type" : "Visual",
                     "emptyLineBefore": "always",
                     "properties": [
-                        "opacity",
+                        "list-style",
+                        "list-style-position",
+                        "list-style-type",
+                        "list-style-image",
+                        "table-layout",
+                        "empty-cells",
+                        "caption-side",
                         "background",
                         "background-color",
                         "background-image",
                         "background-repeat",
-                        "background-attachment",
                         "background-position",
                         "background-position-x",
                         "background-position-y",
+                        "background-size",
                         "background-clip",
                         "background-origin",
-                        "background-size",
+                        "background-attachment",
+                        "background-blend-mode",
                         "box-decoration-break",
-                        "box-shadow",
-                        "color",
                         "border",
                         "border-width",
                         "border-style",
@@ -211,42 +200,80 @@
                         "border-image-width",
                         "border-image-outset",
                         "border-image-repeat",
+                        "border-collapse",
+                        "border-spacing",
                         "outline",
                         "outline-width",
                         "outline-style",
                         "outline-color",
-                        "outline-offset"
+                        "outline-offset",
+                        "box-shadow",
+                        "transform",
+                        "transform-origin",
+                        "transform-style",
+                        "backface-visibility",
+                        "perspective",
+                        "perspective-origin",
+                        "visibility",
+                        "cursor",
+                        "opacity",
+                        "filter",
+                        "backdrop-filter"
                     ]
                 },
                 {
+                    "type" : "Animation",
                     "emptyLineBefore": "always",
                     "properties": [
-                        "pointer-events",
-                        "list-style",
-                        "list-style-position",
-                        "list-style-type",
-                        "list-style-image",
-                        "content",
-                        "quotes",
+                        "transition",
+                        "transition-delay",
+                        "transition-timing-function",
+                        "transition-duration",
+                        "transition-property",
+                        "animation",
+                        "animation-name",
+                        "animation-duration",
+                        "animation-play-state",
+                        "animation-timing-function",
+                        "animation-delay",
+                        "animation-iteration-count",
+                        "animation-direction",
+                        "animation-fill-mode"
+                    ]
+                },
+                {
+                    "type" : "Misc",
+                    "emptyLineBefore": "always",
+                    "properties": [
+                        "appearance",
+                        "clip",
+                        "clip-path",
                         "counter-reset",
                         "counter-increment",
                         "resize",
-                        "cursor",
                         "user-select",
                         "nav-index",
                         "nav-up",
                         "nav-right",
                         "nav-down",
-                        "nav-left"
+                        "nav-left",
+                        "pointer-events",
+                        "quotes",
+                        "touch-action",
+                        "will-change",
+                        "zoom",
+                        "fill",
+                        "fill-rule",
+                        "clip-rule",
+                        "stroke",
+                        "font-smoothing",
+                        "text-size-adjust",
+                        "-webkit-text-size-adjust"
                     ]
-                },
-                {
-                    "emptyLineBefore": "always",
-                    "properties": []
                 }
             ],
             {
-                "unspecified": "bottomAlphabetical"
+                "unspecified": "ignore"
             }
         ],
         "order/properties-alphabetical-order": null,
@@ -328,8 +355,8 @@
                 ]
             }
         ],
-        "scss/at-mixin-pattern" : null,
-        "scss/at-import-no-partial-leading-underscore" : null,
-        "selector-list-comma-newline-after": null
+        "selector-list-comma-newline-after": null,
+        "scss/at-mixin-pattern": null,
+        "scss/at-import-no-partial-leading-underscore": null
     }
 }

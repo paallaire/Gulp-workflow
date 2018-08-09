@@ -4,6 +4,7 @@
 
 @mixin lost-container-center( $column) {
     @include center-block();
+
     max-width: calc(#{$lost-rounder-with-unit} * #{$column} / #{$lost-grid-columns} - (#{$lost-gutter} - #{$lost-gutter} * #{$column} / #{$lost-grid-columns}));
 }
 
@@ -30,11 +31,11 @@
 
             > div {
 
+                flex-basis: 100%;
+
                 width: 100%;
 
                 max-width: 100%;
-
-                flex-basis: 100%;
             }
             
         }

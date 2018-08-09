@@ -5,7 +5,6 @@
 *,
 *:after,
 *:before {
-
     box-sizing: border-box;
 
     background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
@@ -77,20 +76,22 @@ button,
 input,
 select,
 textarea {
-
     margin: 0;
 
     padding: 0;
 
-    font-family: inherit;
+    font-weight: inherit;
 
     font-size: 100%;
-    font-weight: inherit;
+
+    font-family: inherit;
+
     font-style: inherit;
 
     vertical-align: baseline;
 
     border: 0;
+
     outline: 0;
 }
 
@@ -103,14 +104,15 @@ ol {
 /* link*/
 a {
 
+    color: inherit;
+
     text-decoration: none;
 
     background-color: transparent; /* Remove the gray background on active links in IE 10 */
 
-    color: inherit;
     outline: none;
 
-    -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+    text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
 
     &:active,
     &:hover {
@@ -120,19 +122,21 @@ a {
 
 /* images*/
 img {
+
+    display: block;
+
     max-width: 100%;
 
     height: auto;
-
-    display: block;
 
     border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
 }
 
 /* table*/
 table {
-    border-spacing: 0;
+
     border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* strong*/
@@ -168,12 +172,12 @@ button,
 }
 
 [type='search'] {
-    -webkit-appearance: textfield; /* Safari 8+ */
+    appearance: textfield; /* Safari 8+ */
 }
 
 [type='search']::-webkit-search-cancel-button,
 [type='search']::-webkit-search-decoration {
-    -webkit-appearance: none; /* Safari 8 */
+    appearance: none; /* Safari 8 */
 }
 
 textarea {
@@ -203,7 +207,6 @@ button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
-
     padding: 0;
 
     border-style: 0;
@@ -222,7 +225,7 @@ html [type='button'],
 /* Prevent a WebKit bug where (2) destroys native `audio` and `video`controls in Android 4 */
 [type='reset'],
 [type='submit'] {
-    -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+    appearance: button; /* Correct the inability to style clickable types in iOS */
 }
 
 button,
@@ -235,16 +238,17 @@ button,
 input,
 select,
 textarea {
-    background-color: transparent;
 
     color: inherit;
+
+    background-color: transparent;
+
     border-style: none;
 }
 
 /* Style select like a standard input */
 select {
-    -moz-appearance: none; /* Firefox 36+ */
-    -webkit-appearance: none; /* Chrome 41+ */
+    appearance: none; 
 }
 
 select::-ms-expand {
@@ -257,26 +261,24 @@ select::-ms-value {
 
 legend {
 
-    max-width: 100%; /* Correct the text wrapping in Edge and IE */
-
     display: table; /* Correct the text wrapping in Edge and IE */
 
-    white-space: normal; /* Correct the text wrapping in Edge and IE */
+    max-width: 100%; /* Correct the text wrapping in Edge and IE */
 
     color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+
+    white-space: normal; /* Correct the text wrapping in Edge and IE */
 
     border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
 }
 
 ::-webkit-file-upload-button {
-
     font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
 
     -webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
 }
 
 [type='search'] {
-
     outline-offset: -2px; /* Correct the outline style in Safari */
 
     -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
@@ -290,18 +292,18 @@ legend {
 
 ::-moz-selection {
 
+    color: $text-selection-color;
+
     text-shadow: none;
 
     background-color: $text-selection-bg; /* Required when declaring ::selection */
-
-    color: $text-selection-color;
 }
 
 ::selection {
 
+    color: $text-selection-color;
+
     text-shadow: none;
 
     background-color: $text-selection-bg; /* Required when declaring ::selection */
-
-    color: $text-selection-color;
 }

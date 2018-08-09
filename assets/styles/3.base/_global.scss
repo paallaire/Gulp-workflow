@@ -1,7 +1,7 @@
-
 /* ==========================================================================
     #HTML-BODY
 ========================================================================== */
+
 body,
 html {}
 
@@ -10,15 +10,14 @@ html {}
 ========================================================================== */
 
 html {
-
     overflow-x: hidden;
-    -moz-osx-font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%; /* iOS 8+ */
+    overflow-y: scroll;
 
-    &:not(.has-no-scroll) {
-        overflow-y: scroll;
-    }
+    font-size: 100%;
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+
+    -webkit-text-size-adjust: 100%;
 
     &.has-no-scroll {
         overflow: hidden;
@@ -26,11 +25,9 @@ html {
 
     @for $i from 1 to 50 {
         &.scroll-width-#{$i} {
-            width: calc(100vw - #{$i}px); 
+            width: calc(100vw - #{$i}px);
         }
-
     }
-    
 }
 
 /* ==========================================================================
@@ -38,24 +35,15 @@ html {
 ========================================================================== */
 
 body {
-
     height: 100%;
-
-
     overflow: visible;
 
-    font-family: $font-text;
-
+    color: $black;
     font-size: $body-font-size;
-
+    font-family: $font-text;
     line-height: $font-text-line-height;
     word-wrap: break-word;
     word-break: normal;
 
     background-color: $white;
-
-    color: $black;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }

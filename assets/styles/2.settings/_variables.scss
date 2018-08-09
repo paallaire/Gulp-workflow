@@ -83,8 +83,8 @@ $map-font-sizes-text-mobile: (
     #COLORS
 ==========================================================================  */
 
-$white: #fff;
-$black: #000;
+$white: white;
+$black: black;
 
 /* Typo */
 /*///////////////////////////*/
@@ -99,7 +99,7 @@ $color-warning: yellow;
 
 /* Text selection */
 /*///////////////////////////*/
-$text-selection-color: #000;
+$text-selection-color: $black;
 $text-selection-bg: #b3d4fc;
 
 /* ==========================================================================
