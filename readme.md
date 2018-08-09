@@ -21,3 +21,6 @@ Rule problem
 "scss/at-mixin-pattern" : null,
 "scss/at-import-no-partial-leading-underscore" : null,
 "selector-list-comma-newline-after": null
+
+## Stylelint Order
+https://github.com/constverum/stylelint-config-rational-order
