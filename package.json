@@ -41,13 +41,13 @@
   "twig": {
     "site": {
       "src": "./templates/pages/**.twig",
-      "watch": "./templates/pages/**.twig",
+      "watch": "./templates/pages/**/*.twig",
       "dest": "./public",
       "delete": "./public/*.html"
     },
     "styleguide": {
       "src": "./styleguide/templates/pages/**.twig",
-      "watch": "./styleguide/templates/pages/**.twig",
+      "watch": "./styleguide/templates/pages/**/*.twig",
       "dest": "./public/styleguide",
       "delete": "./public/styleguide/*.html"
     }

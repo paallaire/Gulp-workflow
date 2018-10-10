@@ -52,8 +52,8 @@ gulp.task('clean', () => {
 -------------------------------------------------------------------------------- */
 gulp.task('watch', ['clean', 'build'], () => {
 
-    gulp.watch(config.twig.styleguide.watch, ['watch-sg']);
-    gulp.watch(config.twig.site.watch, ['watch-site']);
+    gulp.watch(config.twig.styleguide.watch, ['twig-sg']);
+    gulp.watch(config.twig.site.watch, ['twig-site']);
 
 });
 
