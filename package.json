@@ -41,7 +41,7 @@
   "twig": {
     "site": {
       "src": "./templates/pages/**.twig",
-      "watch": "./templates/pages/**/*.twig",
+      "watch": "./templates/**/*.twig",
       "dest": "./public",
       "delete": "./public/*.html"
     },

@@ -1,0 +1,21 @@
+/* ==========================================================================
+#GRID
+Framework : LOST
+Doc : http://lostgrid.org/docs.html
+Example : http://lostgrid.org/lostgrid-example.html
+========================================================================== */
+
+/* Create a grid like boostrap 
+@include make-lost-container-center(); 
+@include make-lost-columns($lost-grid-columns);
+*/
+
+@each $name, $value in $desktop-first-breakpoints {
+    @include make-lost-columns-mq($name, $lost-grid-columns);
+}
+
+// Class helpers
+
+.row {
+    lost-flex-container: row;
+}

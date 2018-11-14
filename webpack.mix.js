@@ -53,7 +53,15 @@ if (!mix.inProduction()) {
       server: {
         baseDir: config.browserSync.baseDir
       },
-      files: config.browserSync.watch,
+      files:  [
+        "./templates/**/*.twig",
+        "./public/*.html",
+        "./**/*.html",
+        "**/*.html",
+        "./public/dist/scripts/*.js",
+        "./public/dist/styles/*.css",
+        "./public/styleguide/**/*.html"
+      ],
       ghostMode: {
         clicks: true,
         links: true,
