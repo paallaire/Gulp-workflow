@@ -52,15 +52,24 @@
 
 @mixin make-lost-row-mq($breakpoint) {
 
-    .lost-row-#{$breakpoint} {
+    @each $name, $value in $breakpoint {
 
-        @include media('>=#{$breakpoint}') {
-            lost-flex-container: row;
+        .row--mb-#{$name} {
+
+            > [class^="col"] {
+    
+                @include media('<#{$name}') {
+                    margin-bottom: 15px;
+                }
+    
+            }
+    
         }
-
+        
     }
 
 }
+
 
 
 /* ==========================================================================
@@ -73,10 +82,15 @@
 
         .col-#{$breakpoint}-#{$i} {
 
-            @include media('>=#{$breakpoint}') {
-                //lost-column: 4 / 12 0 $lost-gutter-desktop;
+            @if $breakpoint != 'small' {
+
+                @include media('>=#{$breakpoint}') {
+                    lost-column: #{$i}/#{$maxColumns} 0 #{$lost-gutter-desktop};
+                }
+
+            }
+            @else {
                 lost-column: #{$i}/#{$maxColumns} 0 #{$lost-gutter-desktop};
-                    
             }
 
         }

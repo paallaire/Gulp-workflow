@@ -10,7 +10,12 @@ Example : http://lostgrid.org/lostgrid-example.html
 @include make-lost-columns($lost-grid-columns);
 */
 
-@each $name, $value in $desktop-first-breakpoints {
+// Build row with margin-bottom when below breakpoint
+// eg row--mb-desktop
+@include make-lost-row-mq($breakpoints);
+
+// Build column with breakpoints
+@each $name, $value in $breakpoints {
     @include make-lost-columns-mq($name, $lost-grid-columns);
 }
 

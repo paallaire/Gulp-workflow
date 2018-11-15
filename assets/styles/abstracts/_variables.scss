@@ -132,7 +132,7 @@ $breakpoints: (
 'large':   1440px
 ) !default;
 
-$desktop-first-breakpoints: reverse($breakpoints) !default;
+$desktop-first-breakpoints: $breakpoints !default;
 
 /* ==========================================================================
     #CONTAINER
