@@ -5,10 +5,10 @@ Doc : http://lostgrid.org/docs.html
 Example : http://lostgrid.org/lostgrid-example.html
 ========================================================================== */
 
-/* Create a grid like boostrap 
+/* Create a grid like boostrap */
 @include make-lost-container-center(); 
 @include make-lost-columns($lost-grid-columns);
-*/
+
 
 // Build row with margin-bottom when below breakpoint
 // eg row--mb-desktop

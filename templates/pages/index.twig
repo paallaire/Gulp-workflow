@@ -2,6 +2,8 @@
 
 {% block content %}
 
+    <show-grid></show-grid>
+
     <button class="hamburger hamburger--collapse" type="button">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -9,9 +11,18 @@
     </button>
 
     <div class="row row--mb-desktop">
-        <div class="col-small-12 col-desktop-4">4</div>
-        <div class="col-small-12 col-desktop-4">4</div>
-        <div class="col-small-12 col-desktop-4">4</div>
+        <div class="col-small-12 col-desktop-4 col-large-8">4</div>
+        <div class="col-small-12 col-desktop-4 col-large-2">4</div>
+        <div class="col-small-12 col-desktop-4 col-large-2">4</div>
     </div>
+
+    <section>
+
+        <div class="row row--mb-desktop">
+            <div class="col-small-12 col-desktop-6">4</div>
+            <div class="col-small-12 col-desktop-6">4</div>
+        </div>
+
+    </section>
 
 {% endblock %}

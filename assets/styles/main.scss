@@ -56,3 +56,28 @@ div[class^="col"] {
     color: white;
 }
 
+section {
+    @include container('large');
+    background: yellow;
+}
+
+.show-grid__visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+.show-grid__row,
+.show-grid__container {
+    height: 100%;;
+}
+
+.show-grid__column {
+    background-color: cadetblue;
+    color: white;
+    height: 100vh;
+    opacity: 0.5;
+}
