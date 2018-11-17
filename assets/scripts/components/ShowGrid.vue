@@ -5,12 +5,10 @@
     <transition name="show-grid">
     <div class="show-grid__visual" v-if="isActive">
 
-      <div class="show-grid__container" :class="containerClass">
         <div class="show-grid__row" :class="rowClass">
           <div class="show-grid__column" :class="columnClass" v-for='(item, index) in columns' :key='index'></div>
         </div>
-      </div>
-
+  
     </div>
     </transition>
   </div>
@@ -25,10 +23,6 @@ export default {
     columns: {
       type: Number,
       default: 12
-    },
-    containerClass: {
-      type: String,
-      default: "l-wrapper"
     },
     rowClass: {
       type: String,

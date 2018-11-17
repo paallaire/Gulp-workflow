@@ -22,10 +22,8 @@ $body-font-size: 10px !default;
 
 /* font-family */
 /*///////////////////////////*/
-$montserrat: 'Montserrat',
-sans-serif !default;
-$baskerville: 'Libre Baskerville',
-serif !default;
+$montserrat: 'Montserrat',sans-serif !default;
+$baskerville: 'Libre Baskerville',serif !default;
 
 /* type */
 /*///////////////////////////*/
@@ -161,15 +159,15 @@ $padding-desktop: 60px !default;
     #GRID (lost)
 ==========================================================================  */
 
-$lost-gutter: 20px !default;
-$lost-rounder: 99.99999 !default;
+$grid-gutter: 20px !default;
+$lost-rounder: 100 !default;
 $lost-rounder-with-unit: #{$lost-rounder+'%'} !default;
-$lost-grid-columns: 12 !default;
-$lost-gutter-desktop: 20px !default;
-$lost-gutter-tablet: 20px !default;
-$lost-gutter-phone: 20px !default;
+$grid-max-columns: 12 !default;
+$grid-gutter-desktop: 20px !default;
+$grid-gutter-tablet: 20px !default;
+$grid-gutter-phone: 20px !default;
 
-@lost gutter 0;
+@lost gutter $grid-gutter;
 @lost flexbox flex;
 @lost cycle none;
 @lost clearing left;

@@ -5,10 +5,9 @@ Doc : http://lostgrid.org/docs.html
 Example : http://lostgrid.org/lostgrid-example.html
 ========================================================================== */
 
-/* Create a grid like boostrap */
-@include make-lost-container-center(); 
-@include make-lost-columns($lost-grid-columns);
-
+@each $name, $value in $breakpoints {
+    @include make-lost-container-mq($name, $grid-max-columns);
+}
 
 // Build row with margin-bottom when below breakpoint
 // eg row--mb-desktop
@@ -16,11 +15,10 @@ Example : http://lostgrid.org/lostgrid-example.html
 
 // Build column with breakpoints
 @each $name, $value in $breakpoints {
-    @include make-lost-columns-mq($name, $lost-grid-columns);
+    @include make-lost-columns-mq($name, $grid-max-columns);
 }
 
 // Class helpers
-
 .row {
     lost-flex-container: row;
 }

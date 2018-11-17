@@ -47,9 +47,6 @@
 @import 'pages/home';
 @import 'pages/404';
 
-
-
-
 div[class^="col"] {
     padding: 10px;
     background: green;
@@ -57,8 +54,8 @@ div[class^="col"] {
 }
 
 section {
-    @include container('large');
-    background: yellow;
+    @include lost-container-center(6);
+    background: blue;
 }
 
 .show-grid__visual {
@@ -80,4 +77,11 @@ section {
     color: white;
     height: 100vh;
     opacity: 0.5;
+}
+
+.show-grid__button {
+    position: relative;
+    z-index: 2000;;
+    padding: 30px;
+    background: red;
 }
