@@ -2,8 +2,7 @@
     #LOST-CONTAINER-CENTER
 ========================================================================== */
 
-@mixin lost-container-center( $column, $gutter : $grid-gutter) {
-    @include center-block();
+@mixin lost-container( $column, $gutter : $grid-gutter) {
     max-width: calc(#{$lost-rounder-with-unit} * #{$column}/#{$grid-max-columns} - (#{$gutter} - #{$gutter} * #{$column}/#{$grid-max-columns}));
 }
 
@@ -18,7 +17,16 @@
         .container-#{$breakpoint}-#{$i} {
 
             @include media('>=#{$breakpoint}') {
-                @include lost-container-center($i);
+                @include center-block();
+                @include lost-container($i);
+            }
+
+        }
+
+        .container-no-center-#{$breakpoint}-#{$i} {
+
+            @include media('>=#{$breakpoint}') {
+                @include lost-container($i);
             }
 
         }

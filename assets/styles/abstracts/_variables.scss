@@ -167,7 +167,7 @@ $grid-gutter-desktop: 20px !default;
 $grid-gutter-tablet: 20px !default;
 $grid-gutter-phone: 20px !default;
 
-@lost gutter $grid-gutter;
+@lost gutter 20px; // most by a value ( not a variable )
 @lost flexbox flex;
 @lost cycle none;
 @lost clearing left;
@@ -189,3 +189,4 @@ $z-site-option: 1001 !default;
 $transition-speed-slow: 0.6s !default;
 $transition-speed-medium: 0.3s !default;
 $transition-speed-fast: 0.1s !default;
+
