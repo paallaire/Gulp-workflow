@@ -80,6 +80,7 @@
     "@paallaire/debug-breakpoint-scss": "^1.0.1",
     "aos": "^2.3.4",
     "babel-polyfill": "^6.26.0",
+    "body-scroll-lock": "^2.5.10",
     "bowser": "^2.0.0-beta.3",
     "es6-promise": "^4.2.5",
     "hamburgers": "^1.1.3",
