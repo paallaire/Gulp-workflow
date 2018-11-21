@@ -34,16 +34,35 @@ let vm = new Vue({
     store,
     components: {},
     data: {},
-    computed: {},
+    computed: {
+        ...mapGetters([
+            'lang',
+            'env',
+            'isModalActive',
+            'isMenuMobileActive',
+            'hasBodyScroll',
+        ])
+    },
+    watch: {
+        hasBodyScroll: function (val) {
+            const $body = document.querySelector("body");
+
+            if (this.hasBodyScroll === false) {
+                disableBodyScroll($body);
+                $body.classList.add('no-scroll')
+            } else {
+                enableBodyScroll($body);
+                $body.classList.remove('no-scroll');
+            }
+
+        },
+      },
     methods: {
         ...mapMutations(["setHasBodyScroll"])
     },
     mounted: function () {
-
         ShowGridInit(12);
-
-        this.setHasBodyScroll(true);
-
+        this.setHasBodyScroll(false);
     },
     destroyed: function () {}
 });

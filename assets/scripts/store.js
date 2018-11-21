@@ -3,8 +3,6 @@ import 'es6-promise/auto';
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -46,18 +44,7 @@ export default new Vuex.Store({
             state.isModalActive = isModalActive;
         },
         setHasBodyScroll(state, hasBodyScroll) {
-            const $body = document.querySelector("body");
-
             state.hasBodyScroll = hasBodyScroll;
-
-            if (state.hasBodyScroll === false) {
-                disableBodyScroll($body);
-                $body.classList.add('no-scroll')
-            } else {
-                enableBodyScroll($body);
-                $body.classList.remove('no-scroll');
-            }
-
         }
     }
 });
