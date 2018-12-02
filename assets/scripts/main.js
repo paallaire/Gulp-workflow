@@ -8,7 +8,6 @@ Helpers
 -------------------------------------------------------------------------------- */
 import 'svgxuse';
 import ShowGridInit from './utils/showGrid.js'
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -38,31 +37,21 @@ let vm = new Vue({
         ...mapGetters([
             'lang',
             'env',
-            'isModalActive',
-            'isMenuMobileActive',
+            'modal',
+            'hasMenuCanvas',
             'hasBodyScroll',
         ])
     },
-    watch: {
-        hasBodyScroll: function (val) {
-            const $body = document.querySelector("body");
-
-            if (this.hasBodyScroll === false) {
-                disableBodyScroll($body);
-                $body.classList.add('no-scroll')
-            } else {
-                enableBodyScroll($body);
-                $body.classList.remove('no-scroll');
-            }
-
-        },
-      },
+    watch: {},
     methods: {
-        ...mapMutations(["setHasBodyScroll"])
+        ...mapMutations([
+            'setModal',
+            'setHasMenuCanvas',
+            'setBodyScroll',
+        ])
     },
     mounted: function () {
         ShowGridInit(12);
-        this.setHasBodyScroll(false);
     },
     destroyed: function () {}
 });

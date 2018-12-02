@@ -4,7 +4,6 @@
 
 @mixin center() {
     margin-right: auto;
-
     margin-left: auto;
 }
 
@@ -13,10 +12,7 @@
 ========================================================================== */
 
 @mixin center-block() {
-
-    display: block;
-
     margin-right: auto;
-
     margin-left: auto;
+    display: block;
 }

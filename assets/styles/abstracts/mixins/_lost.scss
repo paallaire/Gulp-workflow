@@ -45,7 +45,7 @@
 
         .row--mb-#{$name} {
 
-            > [class^="col"] {
+            > [class^='col'] {
     
                 @include media('<#{$name}') {
                     margin-bottom: 15px;

@@ -4,9 +4,7 @@
 
 /* transition-fade-in*/
 @mixin transition-fade-in( $opacity : 0.8, $speed : $transition-speed-medium, $easing : linear ) {
-
     opacity: 0;
-
     transition: opacity $speed $easing;
 
     &:hover {
@@ -16,9 +14,7 @@
 
 /* transition-fade-out*/
 @mixin transition-fade-out( $opacity : 0.8, $speed : $transition-speed-medium, $easing : linear ) {
-
     opacity: $opacity;
-
     transition: opacity $speed $easing;
 
     &:hover {

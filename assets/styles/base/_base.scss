@@ -11,13 +11,12 @@
 /* ==========================================================================
     #HTML
 ========================================================================== */
+
 html {
     box-sizing: border-box;
     font-size: 100%;
-
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
-
     -webkit-text-size-adjust: 100%;
 }
 
@@ -26,15 +25,15 @@ html {
 ========================================================================== */
 
 body {
+    overflow-x: hidden;
+    overflow-y: scroll;
     color: $black;
     font-size: $body-font-size;
     font-family: $font-text;
     line-height: $font-text-line-height;
     word-wrap: break-word;
     word-break: normal;
-
     background-color: $white;
-    overflow-x: hidden;
 }
 
 /* ==========================================================================

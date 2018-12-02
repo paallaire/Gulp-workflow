@@ -16,11 +16,8 @@
 
 .fade-in {
     animation-name: fade-in;
-
     animation-duration: 2s;
-
     animation-iteration-count: 1;
-
     animation-fill-mode: both;
 }
 
@@ -39,11 +36,8 @@
 
 .fade-out {
     animation-name: fade-out;
-
     animation-duration: 2s;
-
     animation-iteration-count: 1;
-
     animation-fill-mode: both;
 }
 
@@ -62,10 +56,7 @@
 
 .spin-loader {
     animation-name: spin-loader;
-
     animation-duration: 1s;
-
     animation-iteration-count: infinite;
-
     animation-fill-mode: both;
 }
