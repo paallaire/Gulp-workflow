@@ -7,15 +7,14 @@ import 'babel-polyfill';
 Helpers
 -------------------------------------------------------------------------------- */
 import 'svgxuse';
-import ShowGridInit from './utils/showGrid.js'
 
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
 import Vue from 'vue';
-import store from './store'
-import { mapGetters } from "vuex";
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from 'vuex';
+import store from './store';
+import ShowGridInit from './utils/showGrid';
 
 /* --------------------------------------------------------------------------------
 Vue - Directives
@@ -28,7 +27,7 @@ Vue - Components
 /* --------------------------------------------------------------------------------
 APP
 -------------------------------------------------------------------------------- */
-let vm = new Vue({
+const vm = new Vue({
     el: '#app',
     store,
     components: {},
@@ -40,7 +39,7 @@ let vm = new Vue({
             'modal',
             'hasMenuCanvas',
             'hasBodyScroll',
-        ])
+        ]),
     },
     watch: {},
     methods: {
@@ -48,10 +47,10 @@ let vm = new Vue({
             'setModal',
             'setHasMenuCanvas',
             'setBodyScroll',
-        ])
+        ]),
     },
-    mounted: function () {
+    mounted() {
         ShowGridInit(12);
     },
-    destroyed: function () {}
+    destroyed() {},
 });

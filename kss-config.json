@@ -1,0 +1,13 @@
+{
+  "title"        : "Styleguide",
+  "mask"         : "*.scss",
+  "placeholder"  : "[modifier]",
+  "builder"      : "kss_styleguide/custom-template/",
+  "source"       : "assets/styles/",
+  "destination"  : "kss_styleguide/styleguide/",
+  "homepage"     : "../../kss_styleguide/kss-homepage.md",
+  "css": [
+      "../../public/dist/styles/main.css"
+  ],
+  "js" : []
+}
