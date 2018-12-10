@@ -2,12 +2,14 @@
   "title"        : "Styleguide",
   "mask"         : "*.scss",
   "placeholder"  : "[modifier]",
-  "builder"      : "kss_styleguide/custom-template/",
+  "builder"      : "kss-styleguide/custom-template",
   "source"       : "assets/styles/",
-  "destination"  : "kss_styleguide/styleguide/",
-  "homepage"     : "../../kss_styleguide/kss-homepage.md",
+  "destination"  : "kss-styleguide/styleguide/",
+  "homepage"     : "../../kss-styleguide/kss-homepage.md",
   "css": [
-      "../../public/dist/styles/main.css"
+      "/styles/main.css"
   ],
   "js" : []
 }
+
+

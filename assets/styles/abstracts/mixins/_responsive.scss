@@ -2,8 +2,8 @@
 
     $min-size: strip-unit($min-size);
     $max-size: strip-unit($max-size);
-    $mobile-size: strip-unit(get-breakpoint('phone'));
-    $desktop-size: strip-unit(get-breakpoint('desktop'));
+    $mobile-size: strip-unit(get-breakpoint('small'));
+    $desktop-size: strip-unit(get-breakpoint('large'));
 
     $y: ($max-size - ($desktop-size * $min-size / $mobile-size)) / (($desktop-size * -1 / $mobile-size) + 1);
     $x: (($min-size / $mobile-size) - ($y * 1 / $mobile-size)) * 100;

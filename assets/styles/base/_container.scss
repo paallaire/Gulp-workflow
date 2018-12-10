@@ -6,8 +6,19 @@
 
 @each $key,$value in $map-containers {
 
-    #{$o-container}-#{$key} {
-        @include container($key);
+    @if( $value == 'full') {
+
+        #{$o-container} {
+            @include container($key);
+        }        
+
+    }
+    @else {
+
+        #{$o-container}-#{$key} {
+            @include container($key);
+        }
+
     }
 
 }
@@ -20,8 +31,19 @@
 
 @each $key, $value in $map-containers {
 
-    #{$o-container}-#{$key}-padding {
-        @include container-padding($key);
+    @if( $value == 'full') {
+
+        #{$o-container}-padding {
+            @include container-padding($key);
+        }      
+
+    }
+    @else {
+
+        #{$o-container}-#{$key}-padding {
+            @include container-padding($key);
+        }
+
     }
 
 }

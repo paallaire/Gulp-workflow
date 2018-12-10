@@ -1,3 +1,6 @@
+/* for style guide */
+@import 'styleguide';
+
 /* 1. Configuration and helpers*/
 /*/////////////////////////////////////////*/
 @import 'abstracts/functions';
@@ -31,7 +34,7 @@
 @import '../../node_modules/include-media/dist/_include-media';
 @import '../../node_modules/aos/src/sass/aos';
 @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
-@import '../../node_modules/@paallaire/debug-breakpoint-scss/assets/styles/main';
+//@import '../../node_modules/@paallaire/debug-breakpoint-scss/assets/styles/main'; ( bug avec @import '~include-media/dist/_include-media'; )
 
 /* 3. Base stuff*/
 /*/////////////////////////////////////////*/
@@ -58,7 +61,3 @@
 /*/////////////////////////////////////////*/
 @import 'pages/home';
 @import 'pages/404';
-
-@import 'test';
-
-

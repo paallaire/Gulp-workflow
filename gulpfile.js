@@ -1,100 +1,267 @@
-const config = require('./package.json');
-
 /* --------------------------------------------------------------------------------
     Modules
 -------------------------------------------------------------------------------- */
-const gulp = require('gulp');
-const watch = require('gulp-watch');
-const twig = require('gulp-twig');
+
+const args = require('yargs').argv;
+const autoprefixer = require('autoprefixer');
+const browserSync = require('browser-sync');
+const browserSyncSite = require('browser-sync').create('site');
+const browserSyncStyleguide = require('browser-sync').create('styleguide');
+const cssnano = require('cssnano');
 const del = require('del');
-const plumber = require('gulp-plumber');
-const gutil = require('gulp-util');
-const notify = require('gulp-notify');
-const wait = require('gulp-wait2');
+const fs = require('fs');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const imagemin = require('gulp-imagemin');
+const lost = require('lost');
+const postcss = require('gulp-postcss');
+const reload = browserSync.reload;
+const run = require('gulp-run-command').default
+const sass = require('gulp-dart-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const svgmin = require('gulp-svgmin');
+const svgSymbols = require('gulp-svg-symbols');
+const twig = require('gulp-twig');
+const webpack = require('webpack-stream');
+
+const isProd = args.env === 'production';
+const config = require('./gulpfile.config');
 
 /* --------------------------------------------------------------------------------
-    Variables
+    CLEAN
 -------------------------------------------------------------------------------- */
+gulp.task('clean', function () {
+	return del(
+		[config.root.public, './kss-styleguide/styleguide']
+	);
+});
 
+/* --------------------------------------------------------------------------------
+    TWIG STYLEGUIDE
+-------------------------------------------------------------------------------- */
 const twigOptions = {
-    verbose: true
+	verbose: true
 }
 
+gulp.task('twig-site', function () {
+
+	return gulp.src(config.twigSite.dev + '/pages/*.twig')
+		.pipe(twig(twigOptions))
+		.pipe(gulp.dest(config.twigSite.dist));
+});
+
+
 /* --------------------------------------------------------------------------------
-    Event OnError
+    STYLEGUIDE (KSS)
 -------------------------------------------------------------------------------- */
-const onError = (err) => {
 
-    notify.onError({
-        title: "Gulp error in " + err.plugin,
-        message: err.toString()
-    })(err);
+gulp.task('twig-styleguide', function () {
 
-    gutil.beep();
+	return gulp.src(config.twigStyleGuide.dev + '/*.twig')
+		.pipe(twig(twigOptions))
+		.pipe(gulp.dest(config.twigStyleGuide.dist));
+});
 
+gulp.task('kss-build', run('npm run kss'));
+
+gulp.task('kss', gulp.series(
+	'twig-styleguide',
+	'kss-build'
+));
+
+/* --------------------------------------------------------------------------------
+    WEBPACK
+-------------------------------------------------------------------------------- */
+const webpackTask = function (watch) {
+	const webpackConfig = require('./webpack.config.js');
+	webpackConfig.watch = watch;
+	return gulp.src(config.scripts.dev + '/main.js')
+		.pipe(webpack(webpackConfig))
+		.pipe(gulp.dest(config.scripts.dist));
 };
 
-/* --------------------------------------------------------------------------------
-    Clean
--------------------------------------------------------------------------------- */
-gulp.task('clean', () => {
-
-    del([
-        config.twig.site.delete,
-        config.twig.styleguide.delete
-    ]);
-
+gulp.task('webpack', function () {
+	return webpackTask(false);
 });
 
-
-/* --------------------------------------------------------------------------------
-    Watch
--------------------------------------------------------------------------------- */
-gulp.task('watch', ['clean', 'build'], () => {
-
-    gulp.watch(config.twig.styleguide.watch, ['twig-sg']);
-    gulp.watch(config.twig.site.watch, ['twig-site']);
-
-});
-
-gulp.task('twig-sg', () => {
-
-    return gulp.src(config.twig.styleguide.src)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(wait(1000))
-        .pipe(twig(twigOptions))
-        .pipe(gulp.dest(config.twig.styleguide.dest));
-
-});
-
-gulp.task('twig-site', () => {
-
-    return gulp.src(config.twig.site.src)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(wait(1000))
-        .pipe(twig(twigOptions))
-        .pipe(gulp.dest(config.twig.site.dest));
-
+gulp.task('webpack-watch', function () {
+	return webpackTask(true);
 });
 
 /* --------------------------------------------------------------------------------
-    Build
+    SASS
 -------------------------------------------------------------------------------- */
-gulp.task('build', ['clean'], () => {
-
-    gulp.start('twig-sg');
-    gulp.start('twig-site');
-
+gulp.task('sass', function () {
+	let opts = {
+		outputStyle: isProd ? 'compressed' : 'expanded',
+		includePaths: ['node_modules']
+	};
+	let plugins = [
+		lost(),
+		autoprefixer({
+			browsers: [
+				"last 2 versions",
+				"ie >= 10"
+			]
+		})
+	];
+	if (isProd) {
+		plugins.push(cssnano({
+			preset: 'default'
+		}));
+	}
+	return gulp.src(config.styles.dev + '/main.scss')
+		.pipe(gulpif(!isProd, sourcemaps.init()))
+		.pipe(sass(opts)).on('error', sass.logError)
+		.pipe(postcss(plugins))
+		.pipe(gulpif(!isProd, sourcemaps.write()))
+		.pipe(gulp.dest(config.styles.dist))
+		.pipe(gulp.dest(config.styles.kssDist))
+		.pipe(reload({
+			stream: true
+		}));
 });
-
 
 /* --------------------------------------------------------------------------------
-    Default
+    ASSETS
 -------------------------------------------------------------------------------- */
-gulp.task('default', ['clean'], () => {
-    gulp.start('build');
+gulp.task('images', function () {
+	return gulp.src(config.images.dev + '/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest(config.images.dist));
 });
+
+gulp.task('svg', function () {
+	return gulp
+		.src(config.svg.dev + '/*')
+		.pipe(svgmin({
+			plugins: [{
+				removeViewBox: false
+			}]
+		}))
+		.pipe(svgSymbols({
+			templates: [`default-svg`]
+		}))
+		.pipe(gulp.dest(config.svg.dist));
+});
+
+gulp.task('fonts', function () {
+	return gulp
+		.src(config.fonts.dev + '/*')
+		.pipe(gulp.dest(config.fonts.dist));
+});
+
+gulp.task('json', function () {
+	return gulp
+		.src(config.json.dev + '/*')
+		.pipe(gulp.dest(config.json.dist));
+});
+
+gulp.task('video', function () {
+	return gulp
+		.src(config.video.dev + '/*')
+		.pipe(gulp.dest(config.video.dist));
+});
+
+/* --------------------------------------------------------------------------------
+    SERVER
+-------------------------------------------------------------------------------- */
+gulp.task('browser-sync', function (cb) {
+	browserSyncSite.init({
+		proxy: false,
+		server: {
+			baseDir: config.browserSync.baseDir
+		},
+        port: 3000,
+        ui: {
+            port: 3000
+        },
+		notify: true,
+		files: [
+			'./templates/**/*.twig',
+			config.scripts.dist + '/**/*.js',
+			config.styles.dist + '/**/*.css',
+		],
+		ghostMode: {
+			clicks: true,
+			links: true,
+			forms: true,
+			scroll: true
+		},
+		reloadDelay: 250
+	});
+	cb();
+});
+
+gulp.task('browser-sync-sg', function (cb) {
+	browserSyncStyleguide.init({
+		proxy: false,
+		server: {
+			baseDir: './kss-styleguide/styleguide'
+		},
+        port: 4001,
+        ui: {
+            port: 4001
+        },
+		notify: true,
+		files: [
+			'./kss-styleguide/markup/*.twig',
+			config.styles.dist + '/**/*.css',
+		],
+		ghostMode: {
+			clicks: true,
+			links: true,
+			forms: true,
+			scroll: true
+		},
+		reloadDelay: 2000
+	});
+	cb();
+});
+
+/* --------------------------------------------------------------------------------
+    WATCH-FILES
+-------------------------------------------------------------------------------- */
+gulp.task('watch-files', function (done) {
+	gulp.watch(config.styles.dev + '/**/*', gulp.series('sass'));
+	gulp.watch(config.images.dev + '/**/*', gulp.series('images'));
+	gulp.watch(config.svg.dev + '/**/*', gulp.series('svg'));
+	gulp.watch(config.fonts.dev + '/**/*', gulp.series('fonts'));
+	gulp.watch(config.json.dev + '/**/*', gulp.series('json'));
+	gulp.watch(config.video.dev + '/**/*', gulp.series('video'));
+    gulp.watch(config.twigSite.dev + '/**/*.twig', gulp.series('twig-site'));
+    gulp.watch(config.twigStyleGuide.dev + '/**/*.twig', gulp.series('kss'));
+	gulp.watch([
+		config.root.dist + '/**/*.css',
+		config.root.dist + '/**/*.js',
+	]);
+	done();
+});
+
+/* --------------------------------------------------------------------------------
+    MAIN TASKS
+-------------------------------------------------------------------------------- */
+gulp.task('build', gulp.series(
+	'clean',
+	gulp.parallel(
+		'sass',
+		'webpack',
+		'images',
+		'svg',
+		'fonts',
+		'video',
+		'json',
+		'twig-site'
+	),
+	'kss'
+));
+
+gulp.task('watch', gulp.series(
+	'build',
+	gulp.parallel(
+		'webpack-watch',
+        'browser-sync',
+        'browser-sync-sg',
+        'watch-files'
+	)
+));
