@@ -7,7 +7,7 @@
   "destination"  : "kss-styleguide/styleguide/",
   "homepage"     : "../../kss-styleguide/kss-homepage.md",
   "css": [
-      "/styles/main.css"
+      "/kss-assets/css/main.css"
   ],
   "js" : []
 }

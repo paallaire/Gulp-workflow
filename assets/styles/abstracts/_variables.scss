@@ -123,11 +123,11 @@ $form-input-padding-y: 8px !default;
 /* breakpoints (include-media) */
 /*///////////////////////////*/
 $breakpoints: (
-'xsmall':   320px,
-'small':   520px,
-'medium':  800px,
-'large': 1024px,
-'xlarge':   1440px
+'xsmall': 320px,
+'small':  520px,
+'medium': 800px,
+'large':  1024px,
+'xlarge': 1440px
 ) !default;
 
 $desktop-first-breakpoints: $breakpoints !default;
@@ -137,14 +137,14 @@ $desktop-first-breakpoints: $breakpoints !default;
 ==========================================================================  */
 
 $map-containers: (
-'mini':      320px,
-'xsmall':    600px,
-'small':     700px,
-'medium':    900px,
-'large':     960px,
-'xlarge':    1100px,
-'huge':      1200px,
-'full': 100%
+'mini':   320px,
+'xsmall': 600px,
+'small':  700px,
+'medium': 900px,
+'large':  960px,
+'xlarge': 1100px,
+'huge':   1200px,
+'full':   100%
 ) !default;
 
 /* ==========================================================================
@@ -180,6 +180,7 @@ $z-sticky-nav: 100 !default;
 $z-mobile-nav: 100 !default;
 $z-modal: 1000 !default;
 $z-site-option: 1001 !default;
+$z-bp-debug: 1000 !default;
 
 /* ==========================================================================
     #TRANISTION

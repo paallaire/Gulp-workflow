@@ -24,10 +24,6 @@
 @import 'abstracts/mixins/intrinsic';
 @import 'abstracts/mixins/letter-spacing';
 
-/* - utils*/
-/*/////////////////////////////////////////*/
-@import 'abstracts/utils/show-grid';
-
 /* 2. Vendors*/
 /*/////////////////////////////////////////*/
 @import '../../node_modules/normalize-scss/sass/_normalize';
@@ -35,6 +31,11 @@
 @import '../../node_modules/aos/src/sass/aos';
 @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
 //@import '../../node_modules/@paallaire/debug-breakpoint-scss/assets/styles/main'; ( bug avec @import '~include-media/dist/_include-media'; )
+
+/* - utils*/
+/*/////////////////////////////////////////*/
+@import 'abstracts/utils/show-grid';
+@import 'abstracts/utils/breakpoint-helper';
 
 /* 3. Base stuff*/
 /*/////////////////////////////////////////*/

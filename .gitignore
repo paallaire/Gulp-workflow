@@ -2,3 +2,5 @@
 /public
 /output
 /.sonarlint
+/kss-styleguide/styles
+/kss-styleguide/styleguide

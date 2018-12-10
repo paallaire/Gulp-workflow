@@ -1,26 +1,32 @@
-// Abstracts
-//
-// Configuration and helpers.
-//
-// Weight: 1
-//
-// Styleguide Abstracts
+/*
+Abstracts
 
-// Icons
-//
-// Icons for this website.
-//
-// Weight: 2
-//
-// Styleguide: Base
+Configuration and helpers.
 
-// Typograhy
-//
-// Base style for heading, text etc...
-//
-// Weight: 3
-//
-// Styleguide: Typograhy
+Weight: 1
+
+Styleguide 1
+*/
+
+/*
+Icons
+
+Icons for this website.
+
+Weight: 2
+
+Styleguide: 2
+*/
+
+/*
+Typograhy
+
+Base style for heading, text etc...
+
+Weight: 3
+
+Styleguide: 3
+*/
 
 /*
 Grid
@@ -35,129 +41,43 @@ Styleguide: 4
 */
 
 /*
-Row
-
-Options <br />
-.row--mb-xsmall - Add margin-bottom below xsmall <br />
-.row--mb-small - Add margin-bottom below small <br />
-.row--mb-medium - Add margin-bottom below medium <br />
-.row--mb-large - Add margin-bottom below large <br />
-.row--mb-xlarge - Add margin-bottom below xlarge
-
-Markup:
-<div class="row {{modifier_class}}">
-    <div class="col-small-12 col-medium-12">12</div>
-</div>
-
-Styleguide: 4.1
-*/
-
-/*
-Column
-
-Options  <br />
-Breakpoint => xsmall, small, medium, large and xlarge <br />
-Size => 1 to 12
-
-Markup:
-<div class="row row--mb-medium">
-    <div class="col-small-12 col-medium-2">2</div>
-    <div class="col-small-12 col-medium-4">4</div>
-    <div class="col-small-12 col-medium-6">6</div>
-</div>
-
-Styleguide: 4.2
-*/
-
-/*
 Container
 
 Container for the website.
 
 Weight: 5
 
-Markup:
-<div class="container-full">.container-full</div>
-<div class="container-mini">.container-mini</div>
-<div class="container-xsmall">.container-xsmall</div>
-<div class="container-medium">.container-medium</div>
-<div class="container-large">.container-large</div>
-<div class="container-xlarge">.container-xlarge}</div>
-<div class="container-huge">.container-huge</div>
-<div class="container-full-padding">.container-full</div>
-<div class="container-mini-padding">.container-mini</div>
-<div class="container-xsmall-padding">.container-xsmall</div>
-<div class="container-medium-padding">.container-medium</div>
-<div class="container-large-padding">.container-large</div>
-<div class="container-xlarge-padding">.container-xlarge}</div>
-<div class="container-huge-padding">.container-huge</div>
-
-Styleguide: Container
+Styleguide: 5
 */
 
-// Components
-//
-// Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
-//
-// Weight: 5
-//
-// Styleguide: Components
+/*
+Components
 
-// Layout
-//
-// Layout-related sections.
-//
-// Weight: 7
-//
-// Styleguide: Layout
+Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
 
-// Pages
-//
-// Page-specific styles.
-//
-// Weight: 8
-//
-// Styleguide: Pages
+Weight: 6
+
+Styleguide: 6
+*/
+
+/*
+Layout
+
+Layout-related sections.
+
+Weight: 7
+
+Styleguide: 7
+*/
+
+/*
+Pages
+
+Page-specific styles.
+
+Weight: 8
+
+Styleguide: 8
+*/
 
 
-.kss-modifiers__example {
-    font-size: 14px;
-
-    div[class^='col-'] {
-        padding: 10px;
-        color: white;
-        background: #0182ff;
-    }
-
-    div[class^='container-'] {
-        padding: 10px;
-        color: white;
-        background: #0182ff;
-        margin-bottom: 30px;
-    }
-
-}
-
-#kssref-typograhy-1 {
-
-    .kss-modifiers__example {
-
-        p[class^='h'] {
-            margin-bottom: 30px;
-        }
-        
-    }
-
-}
-
-#kssref-typograhy-2 {
-
-    .kss-modifiers__example {
-
-        p[class^='t'] {
-            margin-bottom: 30px;
-        }
-        
-    }
-
-}
