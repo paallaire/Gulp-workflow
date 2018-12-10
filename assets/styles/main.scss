@@ -62,3 +62,8 @@
 /*/////////////////////////////////////////*/
 @import 'pages/home';
 @import 'pages/404';
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
