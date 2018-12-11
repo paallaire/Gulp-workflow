@@ -64,6 +64,11 @@
 @import 'pages/404';
 
 #app {
-    max-width: 1200px;
+    max-width: $site-container-max-width;
     margin: 0 auto;
+}
+
+#test {
+    lost-center: 4/12;
+    background: red;
 }

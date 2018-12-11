@@ -13,6 +13,11 @@ Markup:
 Styleguide: 5.1
 */
 
+@each $name, $value in $breakpoints {
+    @include make-lost-container-mq($name, $grid-max-columns);
+}
+
+
 @each $key,$value in $map-containers {
 
     @if( $value == 'full') {

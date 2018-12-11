@@ -147,6 +147,8 @@ $map-containers: (
 'full':   100%
 ) !default;
 
+$site-container-max-width: 1200px !default;
+
 /* ==========================================================================
     #PADDING
 ==========================================================================  */
@@ -165,6 +167,8 @@ $grid-max-columns: 12 !default;
 $grid-gutter-desktop: 20px !default;
 $grid-gutter-tablet: 20px !default;
 $grid-gutter-phone: 20px !default;
+
+$row-margin-bottom: 15px !default;
 
 @lost gutter 20px; // most by a value ( not a variable )
 @lost flexbox flex;

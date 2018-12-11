@@ -1,13 +1,7 @@
 /* ==========================================================================
 #GRID
-Framework : LOST
-Doc : http://lostgrid.org/docs.html
-Example : http://lostgrid.org/lostgrid-example.html
-========================================================================== */
 
-@each $name, $value in $breakpoints {
-    @include make-lost-container-mq($name, $grid-max-columns);
-}
+========================================================================== */
 
 /*
 Row
