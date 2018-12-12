@@ -51,4 +51,5 @@ module.exports = {
     browserSync: {
         baseDir: './public',
     },
+    styleguide: true,
 };

@@ -76,63 +76,47 @@ gulp.task('webpack-watch', () => webpackTask(true));
 /* --------------------------------------------------------------------------------
     SASS
 -------------------------------------------------------------------------------- */
+const sassOpts = {
+    outputStyle: isProd ? 'compressed' : 'expanded',
+    includePaths: ['node_modules'],
+};
+const sassPlugins = [
+    lost(),
+    autoprefixer({
+        browsers: [
+            'last 2 versions',
+            'ie >= 10',
+        ],
+    }),
+];
+if (isProd) {
+    sassPlugins.push(cssnano({
+        preset: 'default',
+    }));
+}
+
+
 gulp.task('sass', () => {
-    const opts = {
-        outputStyle: isProd ? 'compressed' : 'expanded',
-        includePaths: ['node_modules'],
-    };
-    const plugins = [
-        lost(),
-        autoprefixer({
-            browsers: [
-                'last 2 versions',
-                'ie >= 10',
-            ],
-        }),
-    ];
-    if (isProd) {
-        plugins.push(cssnano({
-            preset: 'default',
-        }));
-    }
     return gulp.src(`${config.styles.dev}/main.scss`)
         .pipe(gulpif(!isProd, sourcemaps.init()))
-        .pipe(sass(opts)).on('error', sass.logError)
-        .pipe(postcss(plugins))
+        .pipe(sass(sassOpts)).on('error', sass.logError)
+        .pipe(postcss(sassPlugins))
         .pipe(gulpif(!isProd, sourcemaps.write()))
         .pipe(gulp.dest(config.styles.dist))
-        .pipe(gulp.dest(config.styles.kssDist))
+        .pipe(gulpif(config.styleguide, gulp.dest(config.styles.kssDist)))
         .pipe(browserSyncSiteReload({
             stream: true,
         }))
-        .pipe(browserSyncStyleguideReload({
+        .pipe(gulpif(config.styleguide, browserSyncStyleguideReload({
             stream: true,
-        }));
+        })));
 });
 
 gulp.task('kss-sass', () => {
-    const opts = {
-        outputStyle: isProd ? 'compressed' : 'expanded',
-        includePaths: ['node_modules'],
-    };
-    const plugins = [
-        lost(),
-        autoprefixer({
-            browsers: [
-                'last 2 versions',
-                'ie >= 10',
-            ],
-        }),
-    ];
-    if (isProd) {
-        plugins.push(cssnano({
-            preset: 'default',
-        }));
-    }
     return gulp.src(`${config.styles.kssDev}/kss.scss`)
         .pipe(gulpif(!isProd, sourcemaps.init()))
-        .pipe(sass(opts)).on('error', sass.logError)
-        .pipe(postcss(plugins))
+        .pipe(sass(sassOpts)).on('error', sass.logError)
+        .pipe(postcss(sassPlugins))
         .pipe(gulpif(!isProd, sourcemaps.write()))
         .pipe(gulp.dest(config.styles.kssDist))
         .pipe(browserSyncStyleguideReload({
@@ -255,26 +239,36 @@ gulp.task('reload-styleguide', (done) => {
     WATCH-FILES
 -------------------------------------------------------------------------------- */
 gulp.task('watch-files', (done) => {
-    gulp.watch(`${config.styles.dev}/**/*`, gulp.series('kss', 'reload-styleguide'));
     gulp.watch(`${config.images.dev}/**/*`, gulp.series('images'));
     gulp.watch(`${config.svg.dev}/**/*`, gulp.series('svg'));
     gulp.watch(`${config.fonts.dev}/**/*`, gulp.series('fonts'));
     gulp.watch(`${config.json.dev}/**/*`, gulp.series('json'));
     gulp.watch(`${config.video.dev}/**/*`, gulp.series('video'));
     gulp.watch(`${config.twigSite.dev}/**/*.twig`, gulp.series('twig-site'));
-    gulp.watch(`${config.twigStyleGuide.dev}/**/*.twig`, gulp.series('kss', 'reload-styleguide'));
-    gulp.watch(`${config.styles.kssDev}/**/*`, gulp.series('kss-sass'));
+
     gulp.watch([
         `${config.root.dist}/**/*.css`,
         `${config.root.dist}/**/*.js`,
     ]);
+
+    if (config.styleguide) {
+        gulp.watch(`${config.styles.dev}/**/*`, gulp.series('kss', 'reload-styleguide'));
+    } else {
+        gulp.watch(`${config.styles.dev}/**/*`, gulp.series('sass'));
+    }
+
+    if (config.styleguide) {
+        gulp.watch(`${config.twigStyleGuide.dev}/**/*.twig`, gulp.series('kss', 'reload-styleguide'));
+        gulp.watch(`${config.styles.kssDev}/**/*`, gulp.series('kss-sass'));
+    }
+
     done();
 });
 
 /* --------------------------------------------------------------------------------
-    MAIN TASKS
+    BUILD TASKS
 -------------------------------------------------------------------------------- */
-gulp.task('build', gulp.series(
+gulp.task('build-with-sg', gulp.series(
     'clean',
     gulp.parallel(
         'sass',
@@ -289,7 +283,26 @@ gulp.task('build', gulp.series(
     'kss',
 ));
 
-gulp.task('watch', gulp.series(
+gulp.task('build-no-sg', gulp.series(
+    'clean',
+    gulp.parallel(
+        'sass',
+        'webpack',
+        'images',
+        'svg',
+        'fonts',
+        'video',
+        'json',
+        'twig-site',
+    ),
+));
+
+gulp.task('build', config.styleguide ? gulp.task('build-with-sg') : gulp.task('build-no-sg'));
+
+/* --------------------------------------------------------------------------------
+    WATCH TASK
+-------------------------------------------------------------------------------- */
+gulp.task('watch-with-sg', gulp.series(
     'build',
     gulp.parallel(
         'webpack-watch',
@@ -298,3 +311,14 @@ gulp.task('watch', gulp.series(
         'watch-files',
     ),
 ));
+
+gulp.task('watch-no-sg', gulp.series(
+    'build',
+    gulp.parallel(
+        'webpack-watch',
+        'browser-sync',
+        'watch-files',
+    ),
+));
+
+gulp.task('watch', config.styleguide ? gulp.task('watch-with-sg') : gulp.task('watch-no-sg'));
