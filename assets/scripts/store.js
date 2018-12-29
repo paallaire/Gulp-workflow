@@ -35,7 +35,7 @@ export default new Vuex.Store({
         setEnv: (state, env) => {
             state.env = env ? 'dev' : 'prod';
         },
-        setHasMenuCanvas: (state, hasMenuCanvas) => {
+        setNavCanvas: (state, hasMenuCanvas) => {
             state.hasMenuCanvas = hasMenuCanvas;
         },
         setModal: (state, modal) => {

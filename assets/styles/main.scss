@@ -1,8 +1,12 @@
-/* for style guide */
-@import 'styleguide';
+/*
+Abstracts
 
-/* 1. Configuration and helpers*/
-/*/////////////////////////////////////////*/
+Configuration and helpers.
+
+Weight: 1
+
+Styleguide abstracts
+*/
 @import 'abstracts/functions';
 @import 'abstracts/variables';
 @import 'abstracts/variables-hamburger';
@@ -24,51 +28,134 @@
 @import 'abstracts/mixins/intrinsic';
 @import 'abstracts/mixins/letter-spacing';
 
-/* 2. Vendors*/
+/* - utils*/
+@import 'abstracts/utils/grid-helper';
+@import 'abstracts/utils/bp-helper';
+
+/* Vendors*/
 /*/////////////////////////////////////////*/
+
+/* - external*/
 @import '../../node_modules/normalize-scss/sass/_normalize';
 @import '../../node_modules/include-media/dist/_include-media';
 @import '../../node_modules/aos/src/sass/aos';
 @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
-//@import '../../node_modules/@paallaire/debug-breakpoint-scss/assets/styles/main'; ( bug avec @import '~include-media/dist/_include-media'; )
+@import '../../node_modules/swiper/dist/css/swiper';
+@import '../../node_modules/include-media-export/dist/_include-media-export';
 
-/* - utils*/
-/*/////////////////////////////////////////*/
-@import 'abstracts/utils/show-grid';
-@import 'abstracts/utils/breakpoint-helper';
+/* - local*/
+@import 'vendors/_lazyload';
 
-/* 3. Base stuff*/
-/*/////////////////////////////////////////*/
+/*
+Base
+
+Base stuffs for the website
+
+Weight: 2
+
+Styleguide base
+*/
+
 @import 'base/reset';
 @import 'base/base';
 @import 'base/fonts';
-@import 'base/typography';
+@import 'base/typography/heading';
+@import 'base/typography/text';
 @import 'base/icons';
 @import 'base/animations';
 @import 'base/transitions';
-@import 'base/container';
-@import 'base/grid';
 
-/* 4. Layout-related sections */
-/*/////////////////////////////////////////*/
+/*
+Objects
+
+Base stuffs for the website
+
+Weight: 3
+
+Styleguide objects
+*/
+
+@import 'objects/container';
+
+/*
+Grid
+
+LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS. <br />
+
+Doc: <a href="http://lostgrid.org/docs.html">http://lostgrid.org/docs.html</a> <br />
+Example: <a href="http://lostgrid.org/lostgrid-example.html">http://lostgrid.org/lostgrid-example.html</a> <br />
+
+Markup: ../../kss-styleguide/styleguide/markup/grid.html
+
+Weight: 1
+
+Styleguide: objects.grid
+*/
+
+@import 'objects/grid';
+
+/*
+Elements
+
+Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
+
+Weight: 6
+
+Styleguide: elements
+*/
+@import 'elements/circle';
+@import 'elements/btn';
+
+/*
+Layout
+
+Layout-related sections.
+
+Weight: 8
+
+Styleguide: layout
+*/
+@import 'layout/wrapper';
 @import 'layout/header';
+@import 'layout/main';
 @import 'layout/footer';
+@import 'layout/nav-canvas';
 
-/* 5. Components
-/*/////////////////////////////////////////*/
-@import 'components/btn';
+/*
+Components
 
-/* 6. Page-specific styles */
-/*/////////////////////////////////////////*/
+Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
+
+Weight: 7
+
+Styleguide: components
+*/
+@import 'components/form';
+@import 'components/slider-images';
+@import 'components/modal';
+
+/*
+Pages
+
+Page-specific styles.
+
+Weight: 9
+
+Styleguide: pages
+*/
 @import 'pages/home';
 @import 'pages/404';
 
-#app {
-    max-width: $site-container-max-width;
-    margin: 0 auto;
-}
+/*
+utility 
 
-#test {
-    lost-center: 4/12;
-    background: red;
-}
+Utility classes are helper classes that perform one thing extremely well. They do it so well, they override everything else. As such, they often only contain one property, and they include the !important declaration.
+
+Weight: 10
+
+Styleguide utility
+*/
+@import 'utility/text';
+
+@include bp-helper();
+@include grid-helper();

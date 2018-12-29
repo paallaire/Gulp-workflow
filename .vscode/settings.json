@@ -8,7 +8,11 @@
   "css.validate": false, // Disable css built-in lint
   "scss.validate": false, // Disable scss built-in lint
   "stylelint.enable": true, // Enable sytlelint
+  "scss.scannerInclude": [
+    "**/assets",
+  ],
   "scss.scannerExclude": [
+    "**/kss-styleguide",
     "**/.git",
     "**/node_modules",
     "**/bower_components",
@@ -16,7 +20,6 @@
   ],
   "workbench.colorTheme": "Flat UI (+GUI)",
   "workbench.statusBar.visible": true,
-  "window.menuBarVisibility": "default",
   "php.suggest.basic": false,
   "emmet.includeLanguages": {},
   //"emmet.showExpandedAbbreviation": "never",

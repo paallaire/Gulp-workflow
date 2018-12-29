@@ -7,13 +7,13 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="generator" content="kss-node">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300">
     <link rel="stylesheet" href="kss-assets/vendor/prism.css">
-    <link rel="stylesheet" href="kss-assets/css/kss.css">
     {{{styles}}}
   </head>
 
   <body class="kss-body">
+
+    <div id="app">
 
     <!-- header. -->
     <header class="kss-header">
@@ -154,7 +154,7 @@
     </section>
     <!-- /documentation. -->
 
-
+</div>
 
   <!-- scripts. -->
   <script src="kss-assets/vendor/jquery.js"></script>
@@ -162,6 +162,15 @@
   <script src="kss-assets/js/kss.js"></script>
   {{{scripts}}}
   <!-- /scripts. -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:400,500,700,800']
+			}
+		});
+	</script>
 
   </body>
 </html>

@@ -1,0 +1,133 @@
+/*
+Form
+
+Markup: ../../kss-styleguide/styleguide/markup/form.html
+
+Styleguide components.form
+*/
+
+.c-form {
+
+    .group-input {
+        padding-top: 30px;
+        position: relative;
+
+        &.is-filled {
+
+            label {
+                opacity: 1;
+            }
+    
+        }
+
+    }
+
+
+    label {
+        @include t2();
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #c1c1c1;
+        font-weight: 700;
+        font-family: $heebo;
+        opacity: 0;
+        transition: opacity $easing 150ms;
+    }
+
+    textarea,
+    input[type='text'],
+    input[type='email'] {
+        padding: 0 0 14px;
+        display: block;
+        width: 100%;
+        color: $cod-gray;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: $heebo;
+        line-height: 25px;
+        border-bottom: 1px solid $cod-gray;
+        transition: all $easing 150ms;
+
+        &:focus {
+            border-color: $lightning-yellow;
+        }
+
+        &.wpcf7-not-valid {
+            color: $color-error;
+            border-color: $color-error;
+        }
+
+    }
+
+    textarea {
+        height: 140px;
+        resize: none;
+    }
+
+    input[type='submit'] {
+        padding: 16px 28px;
+        color: $white;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: $heebo;
+        background-color: $cod-gray;
+        transition: all $easing 150ms;
+
+        @include media('>=large') {
+            float: right;
+        }
+        
+        &:hover {
+            color: $cod-gray;
+            background-color: $lightning-yellow;
+        }
+
+    }
+
+    div.wpcf7-validation-errors {
+        padding: 15px;
+        border-color: $color-error;
+    }
+
+    div.wpcf7-response-output {
+        margin: $rhythm-vertical * 2 0;
+    }
+
+    span.wpcf7-not-valid-tip {
+        margin-top: $rhythm-vertical * 1;
+    }
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    @include t2();
+    color: $cod-gray;
+    font-weight: 500;
+    font-family: $heebo;
+    line-height: 25px;   
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    @include t2();
+    color: $cod-gray;
+    font-weight: 500;
+    font-family: $heebo;
+    line-height: 25px;   
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    @include t2();
+    color: $cod-gray;
+    font-weight: 500;
+    font-family: $heebo;
+    line-height: 25px;   
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    @include t2();
+    color: $cod-gray;
+    font-weight: 500;
+    font-family: $heebo;
+    line-height: 25px;   
+}
