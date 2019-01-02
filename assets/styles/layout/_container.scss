@@ -14,7 +14,7 @@ Markup:
 
 Weight: 4
 
-Styleguide: objects.container
+Styleguide: layout.container
 */
 
 @each $name, $value in $breakpoints {
@@ -54,7 +54,7 @@ Markup:
 <div class="container-huge-padding">.container-huge</div>
 </div>
 
-Styleguide: objects.container.with padding
+Styleguide: layout.container.with padding
 */
 
 @each $key, $value in $map-containers {

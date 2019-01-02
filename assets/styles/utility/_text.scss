@@ -24,13 +24,17 @@ Markup:
 Styleguide utility.text-align
 */
 
-.u-sr-only {
-    position: absolute;
+%u-sr-only {
+    margin: -1px;
+    padding: 0;
     width: 1px;
     height: 1px;
-    padding: 0;
-    margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    position: absolute;
     border: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+.u-sr-only {
+    @extend %u-sr-only;
 }

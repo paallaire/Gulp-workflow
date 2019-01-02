@@ -205,7 +205,7 @@ gulp.task('browser-sync-site', (done) => {
         ghostMode: {
             clicks: true,
             links: true,
-            forms: true,
+            forms: false,
             scroll: true,
         },
         reloadDelay: 250,
@@ -232,7 +232,7 @@ gulp.task('browser-sync-kss', (done) => {
         ghostMode: {
             clicks: true,
             links: true,
-            forms: true,
+            forms: false,
             scroll: true,
         },
         reloadDelay: 2000,

@@ -1,3 +1,17 @@
+/*
+Grid
+
+LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS. <br />
+
+Doc: <a href="http://lostgrid.org/docs.html">http://lostgrid.org/docs.html</a> <br />
+Example: <a href="http://lostgrid.org/lostgrid-example.html">http://lostgrid.org/lostgrid-example.html</a> <br />
+
+Markup: ../../kss-styleguide/styleguide/markup/grid.html
+
+Weight: 1
+
+Styleguide: layout.grid
+*/
 
 /*
 Row
@@ -22,7 +36,7 @@ Markup:
 
 Weight: 2
 
-Styleguide: objects.grid.row
+Styleguide: layout.grid.row
 */
 @include make-lost-row-mq($breakpoints);
 
@@ -46,7 +60,7 @@ Markup:
 
 Weight: 3
 
-Styleguide: objects.grid.columns
+Styleguide: layout.grid.columns
 */
 @each $name, $value in $breakpoints {
     @include make-lost-columns-mq($name, $grid-max-columns);

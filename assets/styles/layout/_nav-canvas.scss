@@ -35,8 +35,8 @@ $nav-canvas-overlay-bg-color: rgba(#000, 0.5) !default;
     }
 
     &__container {
-        height: 100%;
         display: flex;
+        height: 100%;
         justify-content: center;
         align-items: center;
     }
@@ -48,10 +48,10 @@ $nav-canvas-overlay-bg-color: rgba(#000, 0.5) !default;
     }
 
     &__list-social {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
         display: flex;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
 
         > li {
 
@@ -82,9 +82,9 @@ $nav-canvas-overlay-bg-color: rgba(#000, 0.5) !default;
             @include transition-scale-underline();
             display: block;
             color: $lightning-yellow;
-            text-align: center;
-            font-family: $heebo;
             font-weight: 700;
+            font-family: $heebo;
+            text-align: center;
 
             @include media('>=medium') {
                 font-size: 50px;

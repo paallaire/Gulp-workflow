@@ -1,7 +1,7 @@
 /*
 Abstracts
 
-Configuration and helpers.
+The abstracts/ folder gathers all Sass tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here.
 
 Weight: 1
 
@@ -14,19 +14,19 @@ Styleguide abstracts
 
 /* - mixins*/
 /*/////////////////////////////////////////*/
-@import 'abstracts/mixins/container';
-@import 'abstracts/mixins/lost';
 @import 'abstracts/mixins/center';
 @import 'abstracts/mixins/clearfix';
-@import 'abstracts/mixins/last-row';
-@import 'abstracts/mixins/input-placeholder';
-@import 'abstracts/mixins/padding';
-@import 'abstracts/mixins/text-truncate';
-@import 'abstracts/mixins/ios';
-@import 'abstracts/mixins/responsive';
+@import 'abstracts/mixins/container';
 @import 'abstracts/mixins/focuspoint';
+@import 'abstracts/mixins/input-placeholder';
 @import 'abstracts/mixins/intrinsic';
+@import 'abstracts/mixins/ios';
+@import 'abstracts/mixins/last-row';
 @import 'abstracts/mixins/letter-spacing';
+@import 'abstracts/mixins/lost';
+@import 'abstracts/mixins/padding';
+@import 'abstracts/mixins/responsive';
+@import 'abstracts/mixins/text-truncate';
 
 /* - utils*/
 @import 'abstracts/utils/grid-helper';
@@ -44,12 +44,14 @@ Styleguide abstracts
 @import '../../node_modules/include-media-export/dist/_include-media-export';
 
 /* - local*/
-@import 'vendors/_lazyload';
+@import 'vendors/lazyload';
+@import 'vendors/vuejs';
+@import 'vendors/hyperform';
 
 /*
 Base
 
-Base stuffs for the website
+The base/ folder holds what we might call the boilerplate code for the project. In there, you might find the reset file, some typographic rules, and probably a stylesheet defining some standard styles for commonly used HTML elements.
 
 Weight: 2
 
@@ -66,35 +68,6 @@ Styleguide base
 @import 'base/transitions';
 
 /*
-Objects
-
-Base stuffs for the website
-
-Weight: 3
-
-Styleguide objects
-*/
-
-@import 'objects/container';
-
-/*
-Grid
-
-LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS. <br />
-
-Doc: <a href="http://lostgrid.org/docs.html">http://lostgrid.org/docs.html</a> <br />
-Example: <a href="http://lostgrid.org/lostgrid-example.html">http://lostgrid.org/lostgrid-example.html</a> <br />
-
-Markup: ../../kss-styleguide/styleguide/markup/grid.html
-
-Weight: 1
-
-Styleguide: objects.grid
-*/
-
-@import 'objects/grid';
-
-/*
 Elements
 
 Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
@@ -103,41 +76,60 @@ Weight: 6
 
 Styleguide: elements
 */
-@import 'elements/circle';
 @import 'elements/btn';
-
-/*
-Layout
-
-Layout-related sections.
-
-Weight: 8
-
-Styleguide: layout
-*/
-@import 'layout/wrapper';
-@import 'layout/header';
-@import 'layout/main';
-@import 'layout/footer';
-@import 'layout/nav-canvas';
+@import 'elements/circle';
 
 /*
 Components
 
-Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
+For smaller components, there is the components/ folder. While layout/ is macro (defining the global wireframe), components/ is more focused on widgets. It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines.
 
 Weight: 7
 
 Styleguide: components
 */
-@import 'components/form';
-@import 'components/slider-images';
 @import 'components/modal';
+@import 'components/progress-bar';
+@import 'components/slider-images';
+
+/*
+Layout
+
+The layout/ folder contains everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
+
+Weight: 8
+
+Styleguide: layout
+*/
+@import 'layout/container';
+@import 'layout/grid';
+
+/*
+Form
+
+Styleguide layout.form
+*/
+
+@import 'layout/form/base';
+@import 'layout/form/label';
+@import 'layout/form/input';
+@import 'layout/form/checkbox';
+@import 'layout/form/radio';
+@import 'layout/form/select';
+@import 'layout/form/input-note';
+@import 'layout/form/input-status';
+@import 'layout/form/control';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/nav-canvas';
+@import 'layout/wrapper';
 
 /*
 Pages
 
-Page-specific styles.
+If you have page-specific styles, it is better to put them in a pages/ folder, in a file named after the page. For instance, it’s not uncommon to have very specific styles for the home page hence the need for a _home.scss file in pages/.
 
 Weight: 9
 

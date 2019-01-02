@@ -1,12 +1,33 @@
-# (SITE) styleguide
+# Styleguide
+
+## TO-DO
+
+- [x] Form label floating
+- [ ] Form toggle On/Off
+- [x] Form message error
+- [x] Form note
+- [ ] Base list ul & ol
+- [ ] stikcy nav up & down
+- [ ] update modal https://alligator.io/vuejs/vue-modal-component/
+- [ ] import hyperform from 'hyperform'; not working for IE 10-11
+
+# Collections
+[https://github.com/sorrycc/awesome-javascript](https://github.com/sorrycc/awesome-javascript)
 
 ## Documentation syntax
 
 [The official KSS spec on the KSS-node repository](https://github.com/kss-node/kss/blob/spec/SPEC.md)
 [michelangelo theme](https://github.com/stamkracht/michelangelo)
 
+## Accessibility
+https://a11y-style-guide.com/style-guide/
+
 ## SASS
-[Pattern 7-1](https://sass-guidelin.es/fr/)
+https://sass-guidelin.es/fr/
+
+## Reference
+
+https://ustyle.guide/pattern-library/typography.html
 
 Custom styles 
 --------------

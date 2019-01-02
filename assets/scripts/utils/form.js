@@ -21,19 +21,21 @@ function classList(elt) {
 
 export default function () {
 
-    const inputs = Array.from(document.querySelectorAll('.c-form input[type="text"], .c-form input[type="email"], .c-form textarea'));
+    const inputs = Array.from(document.querySelectorAll('.form-control.form-control--floating-label input[type="text"], .form-control.form-control--floating-label input[type="email"], .form-control.form-control--floating-label textarea'));
 
-    inputs.map((el, index) => {
+    console.log(inputs);
+
+    inputs.forEach((el, index) => {
 
         el.addEventListener('keyup', (e) => {
 
             const el = e.currentTarget;
-            const elGroup = el.closest('.group-input');
+            const elGroup = el.closest('.form-control');
 
             if (el.value != "") {
-                classList(elGroup).remove("is-empty").add("is-filled");
+                classList(elGroup).add("has-value");
             } else {
-                classList(elGroup).remove("is-filled").add("is-empty");
+                classList(elGroup).remove("has-value");
             }
 
         });

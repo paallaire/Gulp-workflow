@@ -2,19 +2,21 @@
 Polyfill
 -------------------------------------------------------------------------------- */
 import 'babel-polyfill';
-import bowser from 'bowser';
+import 'svgxuse';
 // import im from '../../node_modules/include-media-export/dist/include-media-1.0.2.min.js';
 
 /* --------------------------------------------------------------------------------
 Helpers
 -------------------------------------------------------------------------------- */
-import 'svgxuse';
+import bowser from 'bowser';
 import formInit from './utils/form';
+import formValidation from './utils/from-validaton';
 import swiperInit from './utils/swiper';
 import ShowGridInit from './utils/showGrid';
 import rellaxInit from './utils/rellax';
 import aosInit from './utils/aos.js';
 import lazyInit from './utils/lazyload';
+import progressBar from './utils/progresBar'; // TO DO
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -25,7 +27,6 @@ import {
     mapMutations,
 } from 'vuex';
 import store from './store';
-
 
 /* --------------------------------------------------------------------------------
 Vue - Directives
@@ -94,6 +95,11 @@ const vm = new Vue({
         formInit();
         swiperInit();
         lazyInit();
+        // let test = new progressBar();
+
+   
+
+        formValidation(this.lang);
 
         // Dev only
         if (this.env == 'dev') {

@@ -121,13 +121,22 @@ $o-container: '.container' !default;
     #FORM
 ==========================================================================  */
 
-$form-border-width: 0 !default;
-$form-border-color: #ccc !default;
+$form-border-color: $cod-gray !default;
+$form-border-font-size: 16px !default;
 $form-border-radius: 0 !default;
+$form-border-width: 2px !default;
+
+
+$form-checkbox-size: 22px;
+$form-checkbox-space: 10px;
+
+$form-color-invalid: #e00000;
+$form-color-valid: #218003;
+$form-color-placeholder: #888 !default;
+$form-input-color-bg: $white !default;
+
+
 $form-input-height: 40px !default;
-$form-input-color: #5a5657 !default;
-$form-input-bgcolor: #e6e1db !default;
-$form-input-placehoder-color: #888 !default;
 $form-input-padding-x: 12px !default;
 $form-input-padding-y: 8px !default;
 
