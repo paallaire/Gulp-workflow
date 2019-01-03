@@ -18,6 +18,8 @@ import aosInit from './utils/aos.js';
 import lazyInit from './utils/lazyload';
 import progressBar from './utils/progresBar'; // TO DO
 
+import toggleInit from './utils/form/toggle';
+
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
@@ -97,6 +99,7 @@ const vm = new Vue({
         lazyInit();
         // let test = new progressBar();
 
+        toggleInit();
    
 
         formValidation(this.lang);

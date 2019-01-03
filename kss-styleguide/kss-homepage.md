@@ -3,10 +3,10 @@
 ## TO-DO
 
 - [x] Form label floating
-- [ ] Form toggle On/Off
+- [x] Form toggle On/Off
 - [x] Form message error
 - [x] Form note
-- [ ] Base list ul & ol
+- [x] Base list ul & ol
 - [ ] stikcy nav up & down
 - [ ] update modal https://alligator.io/vuejs/vue-modal-component/
 - [ ] import hyperform from 'hyperform'; not working for IE 10-11

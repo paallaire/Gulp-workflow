@@ -126,7 +126,6 @@ $form-border-font-size: 16px !default;
 $form-border-radius: 0 !default;
 $form-border-width: 2px !default;
 
-
 $form-checkbox-size: 22px;
 $form-checkbox-space: 10px;
 
@@ -135,10 +134,11 @@ $form-color-valid: #218003;
 $form-color-placeholder: #888 !default;
 $form-input-color-bg: $white !default;
 
-
 $form-input-height: 40px !default;
 $form-input-padding-x: 12px !default;
 $form-input-padding-y: 8px !default;
+
+$toggle-color-bg: #ccc;
 
 /* ==========================================================================
     #MEDIA-QUERIES
