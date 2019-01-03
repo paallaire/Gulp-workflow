@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "kss": "kss --config kss-config.json",
+    "kss": "gulp kss",
     "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
     "dev": "gulp default",
     "watch": "gulp watch",

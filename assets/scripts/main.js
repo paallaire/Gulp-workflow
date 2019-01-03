@@ -9,16 +9,13 @@ import 'svgxuse';
 Helpers
 -------------------------------------------------------------------------------- */
 import bowser from 'bowser';
-import formInit from './utils/form';
-import formValidation from './utils/from-validaton';
+import ShowGridInit from './utils/helper/showGrid';
+
+import formInit from './utils/form/main.js';
 import swiperInit from './utils/swiper';
-import ShowGridInit from './utils/showGrid';
 import rellaxInit from './utils/rellax';
 import aosInit from './utils/aos.js';
 import lazyInit from './utils/lazyload';
-import progressBar from './utils/progresBar'; // TO DO
-
-import toggleInit from './utils/form/toggle';
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -94,18 +91,13 @@ const vm = new Vue({
         ]),
     },
     mounted() {
-        formInit();
+
+        formInit(this.lang);
         swiperInit();
         lazyInit();
-        // let test = new progressBar();
-
-        toggleInit();
-   
-
-        formValidation(this.lang);
 
         // Dev only
-        if (this.env == 'dev') {
+        if (this.env === 'dev') {
             ShowGridInit(16);
         }
 
