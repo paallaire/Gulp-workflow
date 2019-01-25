@@ -1,10 +1,9 @@
-//import hyperform from 'hyperform';
+// import hyperform from 'hyperform';
 import {
-    HYPERFORM_STRING_FR
-} from '../hyperform/fr';
+    HYPERFORM_STRING_FR,
+} from './hyperform/fr';
 
 export default function (lang) {
-
     const form = document.querySelector('#form-validation');
 
     if (form !== null) {
@@ -14,26 +13,23 @@ export default function (lang) {
                 invalid: 'is-invalid',
                 validated: 'is-valid',
                 warning: 'form-input-status',
-            }
+            },
         });
 
-        if (lang == 'fr') {
-            hyperform.addTranslation("fr", HYPERFORM_STRING_FR);
-            hyperform.setLanguage("fr");
+        if (lang === 'fr') {
+            hyperform.addTranslation('fr', HYPERFORM_STRING_FR);
+            hyperform.setLanguage('fr');
         }
 
-        form.addEventListener('submit', event => {
-
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
 
             const target = event.target;
 
             if (target.checkValidity()) {
                 console.log('submit');
-                //target.submit();
+                // target.submit();
             }
-
         });
     }
-
 }
