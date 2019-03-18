@@ -25,10 +25,9 @@ if (!mix.inProduction()) {
     mix
         .browserSync({
             proxy: WEBSITE_URL,
+            port: 3000,
             files: [
-                'craft/plugins/**/*.php',
-                'craft/translations/**/*.php',
-                'craft/templates/**/*.twig',
+                'templates/**/*.twig',
                 'public/dist/scripts/**/*.js',
                 'public/dist/styles/**/*.css',
             ],
