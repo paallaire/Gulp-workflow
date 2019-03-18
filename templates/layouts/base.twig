@@ -12,6 +12,12 @@
     </div>
 
     {% block script %}{% endblock %}
-    <script src="/dist/scripts/main.js"></script>
+    <script>
+        function cbPolyfill() {
+            console.log('polyfill loaded')
+        }
+    </script>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?callback=cbPolyfill" defer></script>
+    <script src="/dist/scripts/main.js" async defer></script>
 </body>
 </html>

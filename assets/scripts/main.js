@@ -1,9 +1,9 @@
+
 /* --------------------------------------------------------------------------------
 Polyfill
 -------------------------------------------------------------------------------- */
 import 'babel-polyfill';
 import 'svgxuse';
-// import im from '../../node_modules/include-media-export/dist/include-media-1.0.2.min.js';
 
 /* --------------------------------------------------------------------------------
 Helpers
@@ -14,6 +14,7 @@ import {
     mapGetters,
     mapMutations,
 } from 'vuex';
+import im from '../../node_modules/include-media-export/dist/include-media-1.0.2.min.js';
 
 import ShowGridInit from './utils/helper/showGrid';
 import formInit from './utils/form/main';
@@ -63,6 +64,7 @@ Vue.use(VueScrollTo, {
 /* --------------------------------------------------------------------------------
 APP
 -------------------------------------------------------------------------------- */
+console.log('main.js');
 aosInit();
 
 const vm = new Vue({
@@ -91,9 +93,20 @@ const vm = new Vue({
         ]),
     },
     mounted() {
+        console.log('mounted');
         formInit(this.lang);
         swiperInit();
         lazyInit();
+
+        const el = document.querySelector('#app');
+
+        el.classList.add('test');
+
+        const url = new URL(window.location.href);
+        // const debug = url.searchParams.get('debug') !== null ? true : false;
+
+        console.log('url', url);
+        // console.log('debug', debug);
 
         // Dev only
         if (this.env === 'dev') {

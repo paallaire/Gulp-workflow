@@ -5,10 +5,14 @@
   "scripts": {
     "kss": "gulp kss",
     "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
-    "dev": "gulp default",
-    "watch": "gulp watch",
+    "production2": "gulp build --env production",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "gulp build --env production"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -54,6 +58,8 @@
     "postcss-reporter": "^6.0.1",
     "postcss-scss": "^2.0.0",
     "postcss-sorting": "^4.1.0",
+    "resolve-url-loader": "^2.3.1",
+    "sass-loader": "^7.1.0",
     "stylelint": "^9.10.1",
     "stylelint-config-rational-order": "0.0.4",
     "stylelint-config-sass-guidelines": "^5.3.0",
@@ -75,6 +81,8 @@
     "hyperform": "^0.9.23",
     "include-media": "^1.4.9",
     "include-media-export": "^1.0.3",
+    "laravel-mix": "^4.0.15",
+    "laravel-mix-polyfill": "^1.0.0",
     "lodash": "^4.17.11",
     "lost": "^8.3.1",
     "normalize-scss": "^7.0.1",
