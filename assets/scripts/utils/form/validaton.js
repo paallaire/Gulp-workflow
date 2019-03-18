@@ -1,7 +1,7 @@
 //import hyperform from 'hyperform';
 import {
     HYPERFORM_STRING_FR
-} from '../hyperform/fr';
+} from './hyperform/fr';
 
 export default function (lang) {
 

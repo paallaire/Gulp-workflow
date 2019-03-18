@@ -1,7 +1,7 @@
 /* --------------------------------------------------------------------------------
-Polyfill
+Polyfill 
+Note : When setting `useBuiltIns: 'usage'`, polyfills are automatically imported when needed.
 -------------------------------------------------------------------------------- */
-import 'babel-polyfill';
 import 'svgxuse';
 // import im from '../../node_modules/include-media-export/dist/include-media-1.0.2.min.js';
 
