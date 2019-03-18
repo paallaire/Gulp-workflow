@@ -5,7 +5,6 @@ import Vuex from 'vuex';
 import {
     disableBodyScroll,
     enableBodyScroll,
-    clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 
 import getEnv from './utils/helper/getEnv';

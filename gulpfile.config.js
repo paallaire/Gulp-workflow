@@ -3,7 +3,7 @@ const assetsDist = './dist';
 const assetsPublic = './dist';
 const twigDev = './templates';
 
-const kssDist = './kss-styleguide/styleguide/site-assets'
+const kssDist = './kss-styleguide/styleguide/site-assets';
 
 module.exports = {
     url: 'http://cafe.test/',
@@ -16,7 +16,7 @@ module.exports = {
         dev: `${assetsDev}/styles`,
         dist: `${assetsDist}/styles`,
         kss: `${kssDist}/styles`,
-        kssDev: './kss-styleguide/custom-template/kss-assets/css',
+        kssDev: './kss-styleguide/custom-template-twig/kss-assets/css',
     },
     scripts: {
         dev: `${assetsDev}/scripts`,
@@ -64,7 +64,7 @@ module.exports = {
         title: 'Styleguide',
         mask: '*.scss',
         placeholder: '[modifier]',
-        builder: 'kss-styleguide/custom-template',
+        builder: 'kss-styleguide/custom-template-twig',
         source: 'assets/styles/',
         destination: 'kss-styleguide/styleguide/',
         homepage: '../../kss-styleguide/kss-homepage.md',
