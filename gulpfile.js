@@ -47,6 +47,10 @@ gulp.task('json', getTask('json'));
 gulp.task('svg', getTask('svg'));
 gulp.task('twig', getTask('twig'));
 
+gulp.task('styleguide', getTask('styleguide'));
+gulp.task('styleguide-server', getTask('styleguide-server'));
+gulp.task('copy-assets-to-styleguide', getTask('copy-assets-to-styleguide'));
+
 /* --------------------------------------------------------------------------------
     BUILD
 -------------------------------------------------------------------------------- */
@@ -62,6 +66,8 @@ gulp.task('build', gulp.series(
         'svg',
         'twig',
     ),
+    'styleguide',
+    'copy-assets-to-styleguide',
 ));
 
 gulp.task('default', gulp.series('build'));
@@ -72,4 +78,5 @@ gulp.task('default', gulp.series('build'));
 gulp.task('watch', gulp.series(
     'build',
     'server',
+    'styleguide-server',
 ));

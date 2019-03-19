@@ -147,12 +147,12 @@ $toggle-color-bg: #ccc;
 /* breakpoints (include-media) */
 /*///////////////////////////*/
 $breakpoints: (
-'xsmall': 320px,
-'small':  520px,
-'medium': 800px,
-'large':  1024px,
-'xlarge': 1200px,
-'huge': 1400px
+'xsmall': 400px,
+'small':  480px,
+'medium': 768px,
+'large':  992px,
+'xlarge': 1440px,
+'huge': 1920px
 ) !default;
 
 $desktop-first-breakpoints: $breakpoints !default;

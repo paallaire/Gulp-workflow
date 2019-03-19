@@ -53,10 +53,6 @@ module.exports = {
         dev: twigDev,
         dist: './public',
     },
-    kssTwig: {
-        dev: './kss-styleguide/markup',
-        dist: './kss-styleguide/styleguide/markup',
-    },
     browserSync: {
         server: {
             baseDir: './public',
@@ -79,6 +75,29 @@ module.exports = {
         },
         reloadDelay: 250,
     },
+    browserSyncStyleguide: {
+        proxy: false,
+        server: {
+            baseDir: './kss-styleguide/styleguide',
+        },
+        port: 4001,
+        ui: {
+            port: 4001,
+        },
+        notify: true,
+        files: [
+            './kss-styleguide/styleguide/*.html',
+            './kss-styleguide/styleguide/markup/*.html',
+            `${assetsDist}/**/*.css`,
+        ],
+        ghostMode: {
+            clicks: true,
+            links: true,
+            forms: false,
+            scroll: true,
+        },
+        reloadDelay: 2000,
+    },
     styleguide: true,
     kssOptions: {
         title: 'Styleguide',
@@ -89,11 +108,10 @@ module.exports = {
         destination: 'kss-styleguide/styleguide/',
         homepage: '../../kss-styleguide/kss-homepage.md',
         css: [
-            '/site-assets/styles/kss.css',
-            '/site-assets/styles/main.css',
+            '/dist/styles/main.css',
         ],
         js: [
-            '/site-assets/scripts/main.js',
+            '/dist/scripts/main.js',
         ],
     },
 };

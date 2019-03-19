@@ -33,6 +33,9 @@ module.exports = function (gulp, config, browserSyncSite, browserSyncStyleguide)
                 .pipe(gulp.dest(config.styles.dist))
                 .pipe(browserSyncSite.reload({
                     stream: true,
+                }))
+                .pipe(browserSyncStyleguide.reload({
+                    stream: true,
                 }));
 
         return stream;

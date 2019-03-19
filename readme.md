@@ -52,6 +52,13 @@ See *gulpfile.config.js*
 - **Pages:** If you have page-specific styles, it is better to put them in a pages/ folder, in a file named after the page. For instance, it’s not uncommon to have very specific styles for the home page hence the need for a _home.scss file in pages/. 
 - **Utilities:** Utility classes are helper classes that perform one thing extremely well. They do it so well, they override everything else. As such, they often only contain one property, and they include the !important declaration. 
 
+element
+components
+layout
+site-layout
+pages/templates
+
+
 ### Namespaces
 
 - **.l-** layouts
