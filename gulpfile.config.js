@@ -1,12 +1,13 @@
 const assetsDev = './assets';
-const assetsDist = './dist';
-const assetsPublic = './dist';
+const assetsDist = './public/dist';
+const assetsPublic = './public';
 const twigDev = './templates';
 
 const kssDist = './kss-styleguide/styleguide/site-assets';
 
 module.exports = {
     url: 'http://cafe.test/',
+    isProd: true,
     root: {
         dev: assetsDev,
         dist: assetsDist,
