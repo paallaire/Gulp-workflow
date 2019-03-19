@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable import/no-extraneous-dependencies */
 const postcss = require('gulp-postcss');
 const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
@@ -6,7 +8,6 @@ const autoprefixer = require('autoprefixer');
 const sass = require('gulp-dart-sass');
 
 module.exports = function (gulp, config, browserSyncSite, browserSyncStyleguide) {
-
     const sassOpts = {
         outputStyle: config.isProd ? 'compressed' : 'expanded',
         includePaths: ['node_modules'],
@@ -20,19 +21,19 @@ module.exports = function (gulp, config, browserSyncSite, browserSyncStyleguide)
                 'ie >= 10',
             ],
         }),
-    ]
+    ];
 
     return function () {
-        var stream =
+        let stream =
             gulp.src(`${config.styles.dev}/main.scss`)
-            //.pipe(gulpif(!isProd, sourcemaps.init()))
-            .pipe(sass(sassOpts)).on('error', sass.logError)
-            .pipe(postcss(sassPlugins))
-            //.pipe(gulpif(!isProd, sourcemaps.write()))
-            .pipe(gulp.dest(config.styles.dist))
-            .pipe(browserSyncSite.reload({
-                stream: true,
-            }))
+                .pipe(gulpif(!config.isProd, sourcemaps.init()))
+                .pipe(sass(sassOpts)).on('error', sass.logError)
+                .pipe(postcss(sassPlugins))
+                .pipe(gulpif(!config.isProd, sourcemaps.write()))
+                .pipe(gulp.dest(config.styles.dist))
+                .pipe(browserSyncSite.reload({
+                    stream: true,
+                }));
 
         return stream;
     };

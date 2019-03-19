@@ -58,7 +58,26 @@ module.exports = {
         dist: './kss-styleguide/styleguide/markup',
     },
     browserSync: {
-        baseDir: './public',
+        server: {
+            baseDir: './public',
+        },
+        port: 3000,
+        ui: {
+            port: 3000,
+        },
+        notify: true,
+        files: [
+            './public/**/*.html',
+            `${assetsDev}/scripts/**/*.js`,
+            `${assetsDev}/scripts/**/*.css`,
+        ],
+        ghostMode: {
+            clicks: true,
+            links: true,
+            forms: false,
+            scroll: true,
+        },
+        reloadDelay: 250,
     },
     styleguide: true,
     kssOptions: {
