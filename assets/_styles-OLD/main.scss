@@ -9,30 +9,30 @@ Weight: 1
 
 Styleguide abstracts
 */
-@import '1.abstracts/functions';
-@import '1.abstracts/variables';
-@import '1.abstracts/variables-hamburger';
-@import '1.abstracts/get';
+@import 'abstracts/functions';
+@import 'abstracts/variables';
+@import 'abstracts/variables-hamburger';
+@import 'abstracts/get';
 
 /* - mixins*/
 /*/////////////////////////////////////////*/
-@import '1.abstracts/mixins/center';
-@import '1.abstracts/mixins/clearfix';
-@import '1.abstracts/mixins/container';
-@import '1.abstracts/mixins/focuspoint';
-@import '1.abstracts/mixins/input-placeholder';
-@import '1.abstracts/mixins/intrinsic';
-@import '1.abstracts/mixins/ios';
-@import '1.abstracts/mixins/last-row';
-@import '1.abstracts/mixins/letter-spacing';
-@import '1.abstracts/mixins/lost';
-@import '1.abstracts/mixins/padding';
-@import '1.abstracts/mixins/responsive';
-@import '1.abstracts/mixins/text-truncate';
+@import 'abstracts/mixins/center';
+@import 'abstracts/mixins/clearfix';
+@import 'abstracts/mixins/container';
+@import 'abstracts/mixins/focuspoint';
+@import 'abstracts/mixins/input-placeholder';
+@import 'abstracts/mixins/intrinsic';
+@import 'abstracts/mixins/ios';
+@import 'abstracts/mixins/last-row';
+@import 'abstracts/mixins/letter-spacing';
+@import 'abstracts/mixins/lost';
+@import 'abstracts/mixins/padding';
+@import 'abstracts/mixins/responsive';
+@import 'abstracts/mixins/text-truncate';
 
 /* - utils*/
-@import '1.abstracts/utils/grid-helper';
-@import '1.abstracts/utils/bp-helper';
+@import 'abstracts/utils/grid-helper';
+@import 'abstracts/utils/bp-helper';
 
 /* Vendors*/
 /*/////////////////////////////////////////*/
@@ -45,6 +45,11 @@ Styleguide abstracts
 @import '../../node_modules/swiper/dist/css/swiper';
 @import '../../node_modules/include-media-export/dist/_include-media-export';
 
+/* - local*/
+@import 'vendors/lazyload';
+@import 'vendors/vuejs';
+@import 'vendors/hyperform';
+
 /*
 Base
 
@@ -55,16 +60,14 @@ Weight: 2
 Styleguide base
 */
 
-@import '2.base/reset';
-@import '2.base/base';
-@import '2.base/fonts';
-@import '2.base/typography/heading';
-@import '2.base/typography/text';
-@import '2.base/icons';
-@import '2.base/animations';
-@import '2.base/transitions';
-@import '2.base/grid/container';
-@import '2.base/grid/index';
+@import 'base/reset';
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography/heading';
+@import 'base/typography/text';
+@import 'base/icons';
+@import 'base/animations';
+@import 'base/transitions';
 
 /*
 Elements
@@ -75,20 +78,9 @@ Weight: 6
 
 Styleguide: elements
 */
-@import '3.elements/btn';
-@import '3.elements/list';
-
-// form
-@import '3.elements/form/base';
-@import '3.elements/form/label';
-@import '3.elements/form/input';
-@import '3.elements/form/checkbox';
-@import '3.elements/form/radio';
-@import '3.elements/form/select';
-@import '3.elements/form/input-note';
-@import '3.elements/form/input-status';
-@import '3.elements/form/control';
-@import '3.elements/form/toggle';
+@import 'elements/btn';
+@import 'elements/list';
+@import 'elements/circle';
 
 /*
 Components
@@ -99,8 +91,9 @@ Weight: 7
 
 Styleguide: components
 */
-@import '4.components/modal';
-@import '4.components/slider-images';
+@import 'components/modal';
+@import 'components/progress-bar';
+@import 'components/slider-images';
 
 /*
 Layout
@@ -111,7 +104,8 @@ Weight: 8
 
 Styleguide: layout
 */
-
+@import 'layout/grid/container';
+@import 'layout/grid/grid';
 
 /*
 Form
@@ -119,11 +113,22 @@ Form
 Styleguide layout.form
 */
 
-@import '5.layout/footer';
-@import '5.layout/header';
-@import '5.layout/main';
-@import '5.layout/nav-canvas';
-@import '5.layout/wrapper';
+@import 'layout/form/base';
+@import 'layout/form/label';
+@import 'layout/form/input';
+@import 'layout/form/checkbox';
+@import 'layout/form/radio';
+@import 'layout/form/select';
+@import 'layout/form/input-note';
+@import 'layout/form/input-status';
+@import 'layout/form/control';
+@import 'layout/form/toggle';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/nav-canvas';
+@import 'layout/wrapper';
 
 /*
 Pages
@@ -134,7 +139,8 @@ Weight: 9
 
 Styleguide: pages
 */
-@import '6.pages//404';
+@import 'pages/home';
+@import 'pages/404';
 
 /*
 Utility 
@@ -145,8 +151,11 @@ Weight: 10
 
 Styleguide utility
 */
-@import '7.utility/text';
+@import 'utility/text';
 
-// Init
 @include bp-helper();
 @include grid-helper();
+
+body {
+    background: red !important;
+}

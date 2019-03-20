@@ -7,7 +7,7 @@ const kssDist = './kss-styleguide/styleguide/site-assets';
 
 module.exports = {
     url: 'http://cafe.test/',
-    isProd: true,
+    isProd: false,
     root: {
         dev: assetsDev,
         dist: assetsDist,

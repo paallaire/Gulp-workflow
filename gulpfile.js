@@ -6,8 +6,14 @@ const browserSyncSite = require('browser-sync').create('site');
 const browserSyncStyleguide = require('browser-sync').create('styleguide');
 const webpack = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
+const args = require('yargs').argv;
 
 const config = require('./gulpfile.config');
+
+/* --------------------------------------------------------------------------------
+    INIT
+-------------------------------------------------------------------------------- */
+config.isProd = args.env === 'production';
 
 /* --------------------------------------------------------------------------------
     BUILD TASKS
