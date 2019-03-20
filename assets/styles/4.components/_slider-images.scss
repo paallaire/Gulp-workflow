@@ -1,7 +1,7 @@
 /*
 Slider-images
 
-Markup: ../../kss-styleguide/styleguide/markup/slider-images.html
+Markup: ../../kss-styleguide/markup/slider-images.html
 
 Styleguide components.slider-images
 */
@@ -10,7 +10,7 @@ Styleguide components.slider-images
     position: relative;
     
     .swiper-slide {
-        background: #000;
+        background: $black;
     }
  
     .swiper-pagination-bullet {
@@ -31,7 +31,7 @@ Styleguide components.slider-images
 
         .swiper-pagination__line {
             height: 40px;
-            background-color: $lightning-yellow;
+            background-color: $black;
             opacity: 1;
         }
 

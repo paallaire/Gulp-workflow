@@ -5,8 +5,6 @@ Abstracts
 
 The abstracts/ folder gathers all Sass tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here.
 
-Weight: 1
-
 Styleguide abstracts
 */
 @import '1.abstracts/functions';
@@ -50,8 +48,6 @@ Base
 
 The base/ folder holds what we might call the boilerplate code for the project. In there, you might find the reset file, some typographic rules, and probably a stylesheet defining some standard styles for commonly used HTML elements.
 
-Weight: 2
-
 Styleguide base
 */
 
@@ -70,8 +66,6 @@ Styleguide base
 Elements
 
 Explicitly named designed pieces of UI. The cosmetic layer, includes more specific styling instructions.
-
-Weight: 6
 
 Styleguide: elements
 */
@@ -95,8 +89,6 @@ Components
 
 For smaller components, there is the components/ folder. While layout/ is macro (defining the global wireframe), components/ is more focused on widgets. It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines.
 
-Weight: 7
-
 Styleguide: components
 */
 @import '4.components/modal';
@@ -107,16 +99,7 @@ Layout
 
 The layout/ folder contains everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
 
-Weight: 8
-
 Styleguide: layout
-*/
-
-
-/*
-Form
-
-Styleguide layout.form
 */
 
 @import '5.layout/footer';
@@ -130,8 +113,6 @@ Pages
 
 If you have page-specific styles, it is better to put them in a pages/ folder, in a file named after the page. For instance, it’s not uncommon to have very specific styles for the home page hence the need for a _home.scss file in pages/.
 
-Weight: 9
-
 Styleguide: pages
 */
 @import '6.pages//404';
@@ -141,12 +122,14 @@ Utility
 
 Utility classes are helper classes that perform one thing extremely well. They do it so well, they override everything else. As such, they often only contain one property, and they include the !important declaration.
 
-Weight: 10
-
 Styleguide utility
 */
 @import '7.utility/text';
 
 // Init
-@include bp-helper();
+
+body.is-dev {
+    @include bp-helper();
+}
+
 @include grid-helper();

@@ -39,11 +39,11 @@
     
 }
 
-@mixin transition-focus-color( $color: $lightning-yellow) {
+@mixin transition-focus-color( $color: $black) {
     transition: color 300ms $easing;
 
     &:hover {
-        color: $lightning-yellow; 
+        color: $black; 
     }
 
 }

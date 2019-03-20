@@ -1,21 +1,13 @@
 /*
 Typograhy
 
-Style for heading, text etc...
-
 Styleguide: base.typograhy
 */
-
 
 /*
 Heading
 
-All HTML headings, h1 through h6, are available. <br /><br />
-
-CSS class: .h1 ... .h6 <br />
-SASS: @include h1() ... ()h6; <br />
-
-Markup: ../../kss-styleguide/styleguide/markup/typo-heading.html
+Markup: ../../kss-styleguide/markup/typo-heading.twig
 
 Styleguide base.typograhy.heading
 */
@@ -88,22 +80,4 @@ Styleguide base.typograhy.heading
 
 .h6 {
     @include h6();
-}
-
-/*
-surtitle
-
-Markup:
-<p class="surtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide base.typograhy.surtitle
-*/
-
-.surtitle {
-    color: $lightning-yellow;
-    font-size: 11px;
-    font-family: $font-heading;
-    font-family: 'Roboto Slab';
-    letter-spacing: 2px;
-    text-transform: uppercase;
 }

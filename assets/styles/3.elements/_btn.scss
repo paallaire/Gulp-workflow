@@ -29,37 +29,24 @@ Styleguide elements.button
     padding: 12px 17px;
     display: inline-block;
     overflow: hidden;
-    color: $cod-gray;
+    color: $black;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.4;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-    background-color: rgba($lightning-yellow, 0);
-    border-bottom: 2px solid currentColor;
+    background-color: rgba($white, 0);
     border-radius: 0;
     transition: all $easing 300ms;
 
     &.is-active,
-    &:hover {
-        background-color: rgba($lightning-yellow, 1);
-        box-shadow: 0 0 20px 0 rgba(black, 0.2);
-    }
+    &:hover {}
 
     &.is-disabled,
     &:disabled {}
 
-    .icon {
-        margin-left: 4px;
-        position: relative;
-        top: 2px;
-    }
-
-    .icon-plus {
-        top: -1px;
-        font-size: 8px;
-    }
+    .icon {}
 
 }
 

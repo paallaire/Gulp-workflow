@@ -1,12 +1,7 @@
 /*
 Text
 
-All HTML texts, t1 through t6, are available. <br /><br />
-
-CSS class: .t1 ... .t6 <br />
-SASS: @include t1() ... ()t6; <br />
-
-Markup: ../../kss-styleguide/styleguide/markup/typo-text.html
+Markup: ../../kss-styleguide/markup/typo-text.twig
 
 Styleguide base.typograhy.text
 */
@@ -75,7 +70,7 @@ Styleguide base.typograhy.text
 /*
 wysiwyg
 
-Markup: ../../kss-styleguide/styleguide/markup/wysiwyg.html
+Markup: ../../kss-styleguide/markup/wysiwyg.twig
 
 Styleguide base.typograhy.wysiwyg
 */
@@ -115,15 +110,15 @@ Styleguide base.typograhy.wysiwyg
     }
 
     strong {
-        color: $lightning-yellow;
+        color: $black;
     }
 
     del {
-        color: $lightning-yellow;   
+        color: $black;   
     }
 
     p {
-        color: $tundora;
+        color: $black;
 
         &:not(:last-child) {
             margin-bottom: vr(1);
@@ -136,7 +131,3 @@ Styleguide base.typograhy.wysiwyg
     @include wysiwyg();
 }
 
-.wysiwyg--txt-center {
-    @include wysiwyg();
-    text-align: center;
-}
