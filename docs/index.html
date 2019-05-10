@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr" class="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vue-modal</title>
+    <link rel="stylesheet" href="dist/styles/main.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Vue Modal</h1>
+
+
+        <button href="#" @click.prevent="setModal('modal-text')">Trigger Modal "text"</button>
+        <button href="#" @click.prevent="setModal('modal-alert')">Trigger Modal "Alert"</button>
+
+        <modal name="modal-text" css-class="toto">
+            <div slot="body">
+                <h1>Modal "text"</h1>
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                    quam egestas semper.
+                    <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
+                    pharetra. Vestibulum erat wisi, condimentum sed,
+                    <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+                    tempus lacus enim ac dui.
+                    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+                <h2>Header Level 2</h2>
+
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                </ol>
+
+            </div>
+        </modal>
+
+        <modal name="modal-alert">
+            <div slot="body">
+                <h1>Modal "Alert"</h1>
+
+                <p>
+                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet!!!!!
+                </p>
+
+            </div>
+        </modal>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed viverra tellus in hac habitasse platea.
+            Bibendum ut tristique et egestas. Amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Volutpat blandit aliquam etiam erat velit scelerisque in dictum
+            non. Nec tincidunt praesent semper feugiat nibh sed. Elementum curabitur vitae nunc sed velit dignissim sodales. Elementum integer enim neque volutpat ac. Consectetur
+            adipiscing elit duis tristique sollicitudin nibh sit amet commodo. At lectus urna duis convallis. Ac felis donec et odio pellentesque diam. Neque laoreet suspendisse
+            interdum consectetur libero id faucibus nisl. Elementum sagittis vitae et leo. Congue mauris rhoncus aenean vel elit. Aliquam malesuada bibendum arcu vitae elementum
+            curabitur vitae nunc sed. Nisi lacus sed viverra tellus in hac. Lacinia quis vel eros donec ac odio tempor.
+
+            Lectus urna duis convallis convallis tellus id interdum velit laoreet. Facilisis leo vel fringilla est. Ultrices in iaculis nunc sed augue lacus. Mauris rhoncus aenean
+            vel elit scelerisque mauris pellentesque. Etiam erat velit scelerisque in dictum non consectetur a erat. Mi ipsum faucibus vitae aliquet nec. Nulla posuere sollicitudin
+            aliquam ultrices sagittis orci a scelerisque. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Id donec ultrices tincidunt arcu. Eu mi bibendum
+            neque egestas congue. Euismod in pellentesque massa placerat. Tellus id interdum velit laoreet id donec ultrices tincidunt. Duis tristique sollicitudin nibh sit amet
+            commodo nulla facilisi.
+
+            Dignissim convallis aenean et tortor. Sit amet nisl purus in mollis nunc sed. Dui accumsan sit amet nulla facilisi morbi. Enim sit amet venenatis urna cursus eget nunc
+            scelerisque viverra. Risus nec feugiat in fermentum posuere urna nec tincidunt. Platea dictumst quisque sagittis purus. Tellus integer feugiat scelerisque varius.
+            Interdum varius sit amet mattis vulputate enim nulla aliquet porttitor. Tortor vitae purus faucibus ornare suspendisse sed. At quis risus sed vulputate odio ut. Cum
+            sociis natoque penatibus et magnis. Lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci. Porta non pulvinar neque laoreet suspendisse interdum. Vel
+            eros donec ac odio tempor orci dapibus ultrices. Orci nulla pellentesque dignissim enim sit amet venenatis urna. Posuere sollicitudin aliquam ultrices sagittis orci a
+            scelerisque purus semper. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Gravida neque convallis a cras semper. Elit ut aliquam purus sit amet luctus
+            venenatis. Aliquet nibh praesent tristique magna sit amet purus gravida quis.
+
+            Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Ultrices mi tempus imperdiet nulla malesuada. Nisi est sit amet facilisis magna etiam tempor.
+            Ut tortor pretium viverra suspendisse. Urna cursus eget nunc scelerisque viverra mauris in aliquam. Tempus iaculis urna id volutpat lacus laoreet non curabitur.
+            Sagittis orci a scelerisque purus semper eget duis at. Dolor magna eget est lorem ipsum dolor. Sagittis purus sit amet volutpat. Id diam vel quam elementum pulvinar.
+            Tempus quam pellentesque nec nam aliquam sem et tortor consequat. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Vel orci porta non pulvinar
+            neque laoreet suspendisse interdum consectetur. Nec nam aliquam sem et tortor consequat. Auctor elit sed vulputate mi sit amet. Maecenas pharetra convallis posuere
+            morbi leo urna molestie. Pharetra convallis posuere morbi leo urna. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Odio tempor orci dapibus
+            ultrices in iaculis nunc.
+
+            Diam maecenas sed enim ut sem viverra aliquet eget sit. Aliquam sem et tortor consequat id porta nibh venenatis cras. Augue interdum velit euismod in pellentesque massa
+            placerat duis ultricies. Aliquet sagittis id consectetur purus ut faucibus. Convallis tellus id interdum velit laoreet id donec ultrices. Neque aliquam vestibulum morbi
+            blandit cursus. Non arcu risus quis varius quam. Aliquam eleifend mi in nulla posuere. Accumsan sit amet nulla facilisi morbi tempus. Amet facilisis magna etiam tempor
+            orci eu. Cras tincidunt lobortis feugiat vivamus at augue eget. Augue mauris augue neque gravida. Urna nunc id cursus metus aliquam. Tristique senectus et netus et
+            malesuada fames. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Dui sapien eget mi proin sed libero. Ornare lectus sit amet est placerat in.
+        </p>
+
+    </div>
+    <script src="dist/scripts/main.js"></script>
+</body>
+
+</html>
