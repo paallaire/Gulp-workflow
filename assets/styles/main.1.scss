@@ -91,6 +91,10 @@ Styleguide Components
 
 @tailwind components;
 
+body {
+    @apply -mx-5px;
+}
+
 /*
 Layout
 

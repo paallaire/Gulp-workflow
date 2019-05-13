@@ -1,9 +1,7 @@
 const mix = require('laravel-mix');
-const path = require('path');
+require('laravel-mix-purgecss');
 
 const assetsPath = './assets';
-const distPath = './public/dist';
-
 const WEBSITE_URL = 'http://example.localtest.me';
 
 /*
@@ -17,18 +15,22 @@ const WEBSITE_URL = 'http://example.localtest.me';
  |
  */
 
-mix
-    .setPublicPath(path.normalize('public/dist'))
-    .setResourceRoot('/dist/')
+mix.setPublicPath('public/dist')
     .js(`${assetsPath}/scripts/main.js`, 'scripts')
     .sass(`${assetsPath}/styles/main.scss`, 'styles')
     .options({
         processCssUrls: false,
         postCss: [
+            require('tailwindcss')('./tailwind.config.js'),
             require('postcss-pxtorem')({
                 rootValue: 16,
                 unitPrecision: 5,
-                propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+                propList: [
+                    'font',
+                    'font-size',
+                    'line-height',
+                    'letter-spacing',
+                ],
                 selectorBlackList: [],
                 replace: true,
                 mediaQuery: false,
@@ -37,31 +39,34 @@ mix
         ],
     });
 
-
 if (!mix.inProduction()) {
-    mix
-        .sourceMaps()
-        .browserSync({
-            // proxy: WEBSITE_URL,
-            proxy: false,
-            server: {
-                baseDir: './public/',
-            },
-            files: [
-                'public/**/*.html',
-                'public/dist/scripts/*.js',
-                'public/dist/styles/*.css',
-            ],
-            ghostMode: {
-                clicks: false,
-                links: false,
-                forms: false,
-                scroll: false,
-            },
-            reloadDelay: 1000,
-        });
+    mix.sourceMaps().browserSync({
+        // proxy: WEBSITE_URL,
+        proxy: false,
+        server: {
+            baseDir: './public/',
+        },
+        files: [
+            'public/**/*.html',
+            'public/dist/scripts/*.js',
+            'public/dist/styles/*.css',
+            'public/dist/fonts/**/*',
+            'public/dist/images/**/*',
+        ],
+        ghostMode: {
+            clicks: false,
+            links: false,
+            forms: false,
+            scroll: false,
+        },
+        reloadDelay: 1000,
+    });
+} else {
+    mix.purgeCss({
+        folders: ['assets', 'modules', 'templates'],
+        extensions: ['html', 'js', 'jsx', 'php', 'twig'],
+    });
 }
-
 
 // Full API
 // mix.js(src, output);

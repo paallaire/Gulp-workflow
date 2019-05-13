@@ -1,1 +1,5 @@
-/kss-styleguide
+/scripts
+/webpack.mix.js
+/public
+/dist
+/node_modules
