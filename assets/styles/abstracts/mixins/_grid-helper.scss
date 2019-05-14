@@ -56,19 +56,19 @@
     }
 
     .grid-row-px {
-        @apply -mx-5px;
+        @apply -mx-1;
     
         @screen sm {
-            @apply -mx-15px;
+            @apply -mx-3;
         }
     
     }
     
     .grid-column-px {
-        @apply px-5px;
+        @apply px-1;
     
         @screen sm {
-            @apply px-15px;
+            @apply px-3;
         }
     }
     

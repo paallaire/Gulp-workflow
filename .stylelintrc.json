@@ -346,7 +346,12 @@
             {
                 "ignoreAtRules": [
                     "@lost",
-                    "lost"
+                    "lost",
+                    "tailwind",
+                    "apply",
+                    "responsive",
+                    "variants",
+                    "screen"
                 ]
             }
         ],

@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-const paddingUnit = require('./tailwindcss/paddingUnit');
+const paddingUnit = require('./tailwindcss/generates/paddingUnit');
 
 module.exports = {
     prefix: '',
@@ -391,6 +391,12 @@ module.exports = {
             auto: 'auto',
         },
         container: {},
+        ratios: {
+            square: '100%',
+            '16/9': '56.25%',
+            '4/3': '75%',
+            '21/9': '42.86%',
+        },
     },
     variants: {
         appearance: ['responsive'],
@@ -462,5 +468,6 @@ module.exports = {
     plugins: [
         require('./tailwindcss/plugins/icon-size')(['responsive']),
         require('./tailwindcss/plugins/transition')(['responsive']),
+        require('./tailwindcss/plugins/aspect-ratio')(['responsive']),
     ],
 };
