@@ -43,7 +43,7 @@ const vm = new Vue({
     },
     mounted() {
         if (this.env === 'dev') {
-            ShowGridInit(16);
+            // ShowGridInit(16);
         }
     },
     destroyed() { },

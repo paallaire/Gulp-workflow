@@ -4,3 +4,4 @@
 /kss-styleguide
 /dist
 /public
+/assets/styles/_tailwind-theme-variables.scss
