@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-const paddingUnit = require('./tailwindcss/generates/paddingUnit');
+const paddingUnit = require('./tailwindcss/units/paddingUnit');
 
 module.exports = {
     prefix: '',

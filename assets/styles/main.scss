@@ -57,9 +57,6 @@ Styleguide Base
 @import 'base/reset-custom';
 @import 'base/global';
 @import 'base/fonts';
-@import 'base/typography/heading';
-@import 'base/typography/text';
-@import 'base/typography/wysiwyg';
 @import 'base/icons';
 @import 'base/animations';
 @import 'base/transitions';
@@ -75,6 +72,9 @@ Styleguide Elements
 
 */
 // @import 'elements/btn';
+@import 'elements/heading';
+@import 'elements/text';
+@import 'elements/wysiwyg';
 
 /*
 Components
@@ -117,9 +117,3 @@ Styleguide: pages
 // @import 'pages/404';
 
 @tailwind utilities;
-
-body.is-dev {
-    @include bp-helper();
-}
-
-@include grid-helper();
