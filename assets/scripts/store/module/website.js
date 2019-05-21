@@ -15,7 +15,7 @@ const getters = {
     bodyScrollDisabled: state => state.bodyScrollDisabled,
 };
 
-// Setter - set value asynchrone (async)
+// Setter - set value asynchrone (async) or business logic
 const actions = {};
 
 // Setter - set value synchrone (sync)
