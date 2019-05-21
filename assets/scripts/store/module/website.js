@@ -16,6 +16,7 @@ const getters = {
 };
 
 // Setter - set value asynchrone (async) or business logic
+// https://stackoverflow.com/questions/39299042/vuex-action-vs-mutations
 const actions = {};
 
 // Setter - set value synchrone (sync)
