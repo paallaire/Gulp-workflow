@@ -1,3 +1,47 @@
+$transitionProperty-none: none;
+$transitionProperty-all: all;
+$transitionProperty-color: color;
+$transitionProperty-bg: background-color;
+$transitionProperty-border: border-color;
+$transitionProperty-colors-0: color;
+$transitionProperty-colors-1: background-color;
+$transitionProperty-colors-2: border-color;
+$transitionProperty-opacity: opacity;
+$transitionProperty-transform: transform;
+
+$transitionDuration-0: 0ms;
+$transitionDuration-75: 75ms;
+$transitionDuration-100: 100ms;
+$transitionDuration-150: 105ms;
+$transitionDuration-200: 200ms;
+$transitionDuration-250: 250ms;
+$transitionDuration-300: 300ms;
+$transitionDuration-500: 500ms;
+
+$transitionTimingFunction-linear: linear;
+$transitionTimingFunction-ease: ease;
+$transitionTimingFunction-ease-in: ease-in;
+$transitionTimingFunction-ease-out: ease-out;
+$transitionTimingFunction-ease-in-out: ease-in-out;
+$transitionTimingFunction-material-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$transitionTimingFunction-material-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+$transitionTimingFunction-material-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+$transitionDelay-0: 0ms;
+$transitionDelay-75: 75ms;
+$transitionDelay-100: 100ms;
+$transitionDelay-150: 105ms;
+$transitionDelay-200: 200ms;
+$transitionDelay-250: 250ms;
+$transitionDelay-300: 300ms;
+$transitionDelay-500: 500ms;
+
+$willChange-auto: auto;
+$willChange-scroll: scroll-position;
+$willChange-contents: contents;
+$willChange-opacity: opacity;
+$willChange-transform: transform;
+
 $iconSize-xs: 10px;
 $iconSize-sm: 20px;
 $iconSize-md: 30px;
@@ -207,11 +251,11 @@ $screens-lg: 992px;
 $screens-xl: 1440px;
 
 $fontFamily-roboto-0: Roboto;
-$fontFamily-roboto-1: 'Helvetica Neue';
+$fontFamily-roboto-1: "Helvetica Neue";
 $fontFamily-roboto-2: Arial;
 $fontFamily-georgia-0: Georgia;
 $fontFamily-georgia-1: Cambria;
-$fontFamily-georgia-2: 'Times New Roman';
+$fontFamily-georgia-2: "Times New Roman";
 $fontFamily-georgia-3: Times;
 $fontFamily-georgia-4: serif;
 
