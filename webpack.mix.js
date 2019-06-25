@@ -1,23 +1,18 @@
 const mix = require('laravel-mix');
+const purgecssOptions = require('./purgecss');
+
 require('laravel-mix-purgecss');
+require('dotenv').config();
 
-const assetsPath = './assets';
+const ASSETS_SRC_PATH = './assets';
+const ASSETS_DIST_PATH = './public/dist';
 const WEBSITE_URL = 'http://example.localtest.me';
+const ENV = process.env.NODE_ENV;
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
- |
- */
-
+// default task
 mix.setPublicPath('public/dist')
-    .js(`${assetsPath}/scripts/main.js`, 'scripts')
-    .sass(`${assetsPath}/styles/main.scss`, 'styles')
+    .js(`${ASSETS_SRC_PATH}/scripts/main.js`, 'scripts')
+    .sass(`${ASSETS_SRC_PATH}/styles/main.scss`, 'styles')
     .options({
         processCssUrls: false,
         postCss: [
@@ -39,15 +34,23 @@ mix.setPublicPath('public/dist')
         ],
     });
 
-if (!mix.inProduction()) {
+
+if (ENV === 'development') {
     mix.sourceMaps().browserSync({
-        // proxy: WEBSITE_URL,
+        //proxy: WEBSITE_URL,
         proxy: false,
         server: {
             baseDir: './public/',
         },
         files: [
+            // Wordpress
+            "./templates/**/*.twig",
+            "./lib/**/*.php",
+            "./*.php",
+            "dist/scripts/*.js",
+            "dist/styles/*.css",
             'public/**/*.html',
+            // static
             'public/dist/scripts/*.js',
             'public/dist/styles/*.css',
             'public/dist/fonts/**/*',
@@ -61,12 +64,28 @@ if (!mix.inProduction()) {
         },
         reloadDelay: 1000,
     });
-} else {
+} else if (ENV === 'production') {
+
     mix.purgeCss({
         folders: ['assets', 'modules', 'templates'],
-        extensions: ['html', 'js', 'jsx', 'php', 'twig'],
+        extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
+        whitelist: purgecssOptions.whitelist,
+        whitelistPatterns: purgecssOptions.whitelistPatterns,
+        whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
+        keyframes: true
     });
 }
+
+// move assets to dist
+if (ENV === 'production' || ENV === 'assets') {
+    mix
+        .copyDirectory(`${ASSETS_SRC_PATH}/fonts`, `${ASSETS_DIST_PATH}/fonts`)
+        .copyDirectory(`${ASSETS_SRC_PATH}/images`, `${ASSETS_DIST_PATH}/images`)
+        .copyDirectory(`${ASSETS_SRC_PATH}/json`, `${ASSETS_DIST_PATH}/json`)
+        .copyDirectory(`${ASSETS_SRC_PATH}/svg`, `${ASSETS_DIST_PATH}/svg`)
+        .copyDirectory(`${ASSETS_SRC_PATH}/videos`, `${ASSETS_DIST_PATH}/videos`);
+}
+
 
 // Full API
 // mix.js(src, output);

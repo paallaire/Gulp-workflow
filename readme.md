@@ -31,8 +31,6 @@ npm run stylelint
 npm run eslint
 ```
 
-
-
 ## Guideline 
 
 ### Transitions
