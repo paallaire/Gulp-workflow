@@ -1,4 +1,4 @@
-export default function (numberColumns = 12) {
+export default function(numberColumns = 12) {
     const btn = document.createElement('button');
     const grid = document.createElement('div');
 
@@ -13,7 +13,7 @@ export default function (numberColumns = 12) {
     grid.setAttribute('id', 'show-grid');
     document.body.appendChild(grid);
 
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', e => {
         e.preventDefault();
         grid.classList.toggle('is-active');
 

@@ -15,7 +15,4 @@ function getLang() {
     return html.getAttribute('lang') !== null ? html.getAttribute('lang') : 'en';
 }
 
-export {
-    getEnv,
-    getLang,
-};
+export { getEnv, getLang };

@@ -10,7 +10,8 @@
     "moveFiles": "cross-env NODE_ENV=assets webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
     "eslint": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
-    "tailwind-scss-var": "node scripts/generate-scss-variables.js"
+    "tailwind-scss-var": "node tailwindcss/generate-scss-variables.js",
+    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write"
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,8 @@
-
 // polyfills
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'dom4';
 import 'whatwg-fetch';
-
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -25,26 +23,16 @@ const vm = new Vue({
     components: {},
     data: {},
     computed: {
-        ...mapGetters([
-            'lang',
-            'env',
-            'modal',
-            'hasMenuCanvas',
-            'hasBodyScroll',
-        ]),
+        ...mapGetters(['lang', 'env', 'modal', 'hasMenuCanvas', 'hasBodyScroll']),
     },
     watch: {},
     methods: {
-        ...mapMutations([
-            'setModal',
-            'setNavCanvas',
-            'setBodyScroll',
-        ]),
+        ...mapMutations(['setModal', 'setNavCanvas', 'setBodyScroll']),
     },
     mounted() {
         if (this.env === 'dev') {
             // ShowGridInit(16);
         }
     },
-    destroyed() { },
+    destroyed() {},
 });
