@@ -6,6 +6,8 @@ function getEnv() {
 
     body.classList.add(classEnv);
 
+    const test = 'tello';
+
     return isDev ? 'dev' : 'prod';
 }
 
