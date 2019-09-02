@@ -1,89 +1,157 @@
+
+
 const mix = require('laravel-mix');
+const path = require("path")
+const globby = require("globby");
+
 const purgecssOptions = require('./purgecss');
-
-require('laravel-mix-purgecss');
-require('dotenv').config();
-
-const ASSETS_SRC_PATH = './assets';
-const ASSETS_DIST_PATH = './public/dist';
 const WEBSITE_URL = 'http://example.localtest.me';
 const ENV = process.env.NODE_ENV;
 
-// default task
-mix.setPublicPath('public/dist')
-    .js(`${ASSETS_SRC_PATH}/scripts/main.js`, 'scripts')
-    .sass(`${ASSETS_SRC_PATH}/styles/main.scss`, 'styles')
-    .options({
-        processCssUrls: false,
-        postCss: [
-            require('tailwindcss')('./tailwind.config.js'),
-            require('postcss-pxtorem')({
-                rootValue: 16,
-                unitPrecision: 5,
-                propList: [
-                    'font',
-                    'font-size',
-                    'line-height',
-                    'letter-spacing',
-                ],
-                selectorBlackList: [],
-                replace: true,
-                mediaQuery: false,
-                minPixelValue: 0,
-            }),
-        ],
-    });
+require('laravel-mix-purgecss');
+require("laravel-mix-imagemin");
+require('dotenv').config();
 
-
-if (ENV === 'development') {
-    mix.sourceMaps().browserSync({
-        //proxy: WEBSITE_URL,
-        proxy: false,
-        server: {
-            baseDir: './public/',
-        },
-        files: [
-            // Wordpress
-            "./templates/**/*.twig",
-            "./lib/**/*.php",
-            "./*.php",
-            "dist/scripts/*.js",
-            "dist/styles/*.css",
-            'public/**/*.html',
-            // static
-            'public/dist/scripts/*.js',
-            'public/dist/styles/*.css',
-            'public/dist/fonts/**/*',
-            'public/dist/images/**/*',
-        ],
-        ghostMode: {
-            clicks: false,
-            links: false,
-            forms: false,
-            scroll: false,
-        },
-        reloadDelay: 1000,
-    });
-} else if (ENV === 'production') {
-
-    mix.purgeCss({
-        folders: ['assets', 'modules', 'templates'],
-        extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
-        whitelist: purgecssOptions.whitelist,
-        whitelistPatterns: purgecssOptions.whitelistPatterns,
-        whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
-        keyframes: true
-    });
+const source = {
+    assets: path.resolve("assets"),
+    dist: path.resolve("public/dist"),
+    fonts: path.resolve("assets/fonts"),
+    icons: path.resolve("assets/icons"),
+    images: path.resolve("assets/images"),
+    scripts: path.resolve("assets/scripts"),
+    styles: path.resolve("assets/styles"),
+    static: path.resolve("assets/static"),
+    templates: path.resolve("assets/templates"),
+    videos: path.resolve("assets/videos"),
 }
 
-// move assets to dist
-if (ENV === 'production' || ENV === 'assets') {
-    mix
-        .copyDirectory(`${ASSETS_SRC_PATH}/fonts`, `${ASSETS_DIST_PATH}/fonts`)
-        .copyDirectory(`${ASSETS_SRC_PATH}/images`, `${ASSETS_DIST_PATH}/images`)
-        .copyDirectory(`${ASSETS_SRC_PATH}/json`, `${ASSETS_DIST_PATH}/json`)
-        .copyDirectory(`${ASSETS_SRC_PATH}/svg`, `${ASSETS_DIST_PATH}/svg`)
-        .copyDirectory(`${ASSETS_SRC_PATH}/videos`, `${ASSETS_DIST_PATH}/videos`);
+// base
+//----------------------------------------------------------
+mix.setPublicPath('public/dist');
+
+// development or production
+//----------------------------------------------------------
+if (ENV === 'development' || ENV === 'production') {
+
+    console.log('=== development or production ');
+
+    mix.js(`${source.scripts}/main.js`, 'scripts')
+        .sass(`${source.styles}/main.scss`, 'styles')
+        .sass(`${source.styles}/tailwind.scss`, 'styles')
+        .options({
+            processCssUrls: false,
+            postCss: [
+                require("postcss-preset-env")({ stage: 2 }),
+                require('tailwindcss')('./tailwind.config.js'),
+                require('postcss-pxtorem')({
+                    rootValue: 16,
+                    unitPrecision: 5,
+                    propList: [
+                        'font',
+                        'font-size',
+                        'line-height',
+                        'letter-spacing',
+                    ],
+                    selectorBlackList: [],
+                    replace: true,
+                    mediaQuery: false,
+                    minPixelValue: 0,
+                }),
+            ],
+        }).purgeCss({
+            enabled: mix.inProduction(),
+            folders: ['assets', 'modules', 'templates'],
+            extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
+            whitelist: purgecssOptions.whitelist,
+            whitelistPatterns: purgecssOptions.whitelistPatterns,
+            whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
+            keyframes: true
+        });
+
+}
+
+
+// development
+//----------------------------------------------------------
+if (ENV === 'development') {
+
+    console.log('=== development');
+
+    mix.sourceMaps()
+        .browserSync({
+            //proxy: WEBSITE_URL,
+            proxy: false,
+            server: {
+                baseDir: './public/',
+            },
+            files: [
+                // Wordpress
+                "./templates/**/*.twig",
+                "./lib/**/*.php",
+                "./*.php",
+                "dist/scripts/*.js",
+                "dist/styles/*.css",
+                'public/**/*.html',
+                // static
+                'public/dist/scripts/*.js',
+                'public/dist/styles/*.css',
+                'public/dist/fonts/**/*',
+                'public/dist/images/**/*',
+            ],
+            ghostMode: {
+                clicks: false,
+                links: false,
+                forms: false,
+                scroll: false,
+            },
+            reloadDelay: 1000,
+        });
+
+}
+
+// production
+//----------------------------------------------------------
+if (ENV === 'production') {
+
+    console.log('=== production');
+
+    mix.imagemin(
+        {
+            from: path.join(source.images, "**/*"),
+            to: source.dist,
+            context: "assets/images",
+        },
+        {},
+        {
+            gifsicle: { interlaced: true },
+            mozjpeg: { progressive: true, arithmetic: false },
+            optipng: { optimizationLevel: 3 }, // Lower number = speedier/reduced compression
+            svgo: {
+                plugins: [
+                    { convertPathData: false },
+                    { convertColors: { currentColor: false } },
+                    { removeDimensions: true },
+                    { removeViewBox: false },
+                    { cleanupIDs: false },
+                ],
+            },
+        }
+    )
+
+}
+
+// Copies
+//----------------------------------------------------------
+if (ENV === 'copyFiles' || ENV === 'production') {
+
+    console.log('=== copyFiles');
+
+    mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
+        .copyDirectory(`${source.assets}/images`, `${source.dist}/images`)
+        .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
+        .copyDirectory(`${source.assets}/icons`, `${source.dist}/icons`)
+        .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`);
+
 }
 
 

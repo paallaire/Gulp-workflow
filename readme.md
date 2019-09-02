@@ -44,7 +44,9 @@ npm run eslint
 
 - https://codepen.io/hone/pen/jERzmd
 - https://codepen.io/search/pens?q=material&page=1&order=popularity&depth=everything
+- https://github.com/ben-rogerson/agency-webpack-mix-config
 
 ## TODO 
 
+- Work in progress : separate tailwind form main files ( se mix files "tailwind" )
 

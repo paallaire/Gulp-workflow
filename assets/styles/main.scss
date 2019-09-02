@@ -116,4 +116,9 @@ Styleguide: pages
 // @import 'pages/home';
 // @import 'pages/404';
 
-@tailwind utilities;
+// See tailwind.{css,scss}
+// @tailwind utilities;
+
+body {
+    background: yellow;
+}
