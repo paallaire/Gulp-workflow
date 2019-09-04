@@ -2,15 +2,11 @@
 
 Front-end boilerplate for projects
 
-
-
 ## Installation
 
 ```
 npm install 
 ```
-
-
 
 ## Usage
 

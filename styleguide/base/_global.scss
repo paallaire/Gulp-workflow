@@ -1,0 +1,50 @@
+/* ==========================================================================
+    #ALL
+========================================================================== */
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* ==========================================================================
+    #HTML
+========================================================================== */
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    // font-variant-ligatures: none;
+    // text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ==========================================================================
+    #BODY
+========================================================================== */
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: $colors-black;
+    font-size: $fontSize-t5;
+    font-family: $roboto;
+    line-height: $lineHeight-none;
+    background-color: $colors-white;
+
+    &.is-dev {
+        @include bp-helper();
+    }
+
+}
+
+/* ==========================================================================
+    #LINK
+========================================================================== */
+
+a {
+    color: $colors-black;
+    text-decoration: none;
+}
+

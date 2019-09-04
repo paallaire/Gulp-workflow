@@ -1,0 +1,47 @@
+$primary-color: #000;
+
+/*
+Colors and typography
+
+This section describes base colors and typography
+
+Styleguide 1.0
+*/
+
+/*
+Main colors
+
+$primary-color - Primary color
+$secondary-color - Secondary color
+$primary-action-color - Primary button color
+$default-action-color - Default button color and link color
+$tertiary-color - Used for input hovers and hilights
+
+markup:
+<div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
+
+Styleguide 1.1
+*/
+
+/*
+Objects
+
+This section describes base colors and typography
+
+Styleguide 2.0
+*/
+
+/*
+Buttons
+
+Button styles used in the styleguide
+
+default - Default button
+.sg-primary - Primary button
+:disabled - Disabled button
+
+markup:
+<button class="sg {$modifiers}">Button text</button>
+
+Styleguide 2.1
+ */
