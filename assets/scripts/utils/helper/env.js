@@ -1,14 +1,21 @@
-function getEnv() {
-    const body = document.querySelector('body');
+function getEnv(customSearchTerms) {
+    const searchTerms = customSearchTerms || ['local', 'dev', 'stage', 'test'];
     const { href } = window.location;
-    const isDev = !!(href.includes('local') || href.includes('dev') || href.includes('stage') || href.includes('test'));
-    const classEnv = isDev ? 'is-dev' : 'is-prod';
-
-    body.classList.add(classEnv);
-
-    const test = 'tello';
+    const isDev = searchTerms.some(el => href.includes(el));
 
     return isDev ? 'dev' : 'prod';
+}
+
+function setEnvOnBody() {
+    const $body = document.querySelector('body');
+    const env = getEnv();
+    let classEnv = 'is-prod';
+
+    if (env === 'dev') {
+        classEnv = 'is-dev';
+    }
+
+    $body.classList.add(classEnv);
 }
 
 function getLang() {
@@ -17,4 +24,4 @@ function getLang() {
     return html.getAttribute('lang') !== null ? html.getAttribute('lang') : 'en';
 }
 
-export { getEnv, getLang };
+export { getEnv, setEnvOnBody, getLang };
