@@ -1,4 +1,3 @@
-
 module.exports = {
     whitelist: [
         'rtl',

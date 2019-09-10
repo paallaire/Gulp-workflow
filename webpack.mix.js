@@ -1,33 +1,34 @@
 
 
 const mix = require('laravel-mix');
-const path = require("path")
-const globby = require("globby");
+const path = require('path')
+const globby = require('globby');
 
 const purgecssOptions = require('./purgecss');
-const WEBSITE_URL = 'http://example.localtest.me';
+const WEBSITE_URL = 'http://vicone.test';
 const ENV = process.env.NODE_ENV;
 
 require('laravel-mix-purgecss');
-require("laravel-mix-imagemin");
+require('laravel-mix-imagemin');
 require('dotenv').config();
 
 const source = {
-    assets: path.resolve("assets"),
-    dist: path.resolve("public/dist"),
-    fonts: path.resolve("assets/fonts"),
-    icons: path.resolve("assets/icons"),
-    images: path.resolve("assets/images"),
-    scripts: path.resolve("assets/scripts"),
-    styles: path.resolve("assets/styles"),
-    static: path.resolve("assets/static"),
-    templates: path.resolve("assets/templates"),
-    videos: path.resolve("assets/videos"),
+    assets: path.resolve('assets'),
+    dist: path.resolve('web'),
+    styleguide: path.resolve('styleguide'),
+    fonts: path.resolve('assets/fonts'),
+    icons: path.resolve('assets/svg'),
+    images: path.resolve('assets/images'),
+    scripts: path.resolve('assets/scripts'),
+    styles: path.resolve('assets/styles'),
+    static: path.resolve('assets/static'),
+    templates: path.resolve('assets/templates'),
+    videos: path.resolve('assets/videos'),
 }
 
 // base
 //----------------------------------------------------------
-mix.setPublicPath('public/dist');
+mix.setPublicPath('web');
 
 // development or production
 //----------------------------------------------------------
@@ -41,7 +42,7 @@ if (ENV === 'development' || ENV === 'production') {
         .options({
             processCssUrls: false,
             postCss: [
-                require("postcss-preset-env")({ stage: 2 }),
+                require('postcss-preset-env')({ stage: 2 }),
                 require('tailwindcss')('./tailwind.config.js'),
                 require('postcss-pxtorem')({
                     rootValue: 16,
@@ -79,24 +80,16 @@ if (ENV === 'development') {
 
     mix.sourceMaps()
         .browserSync({
-            //proxy: WEBSITE_URL,
-            proxy: false,
-            server: {
-                baseDir: './public/',
-            },
+            proxy: WEBSITE_URL,
             files: [
-                // Wordpress
-                "./templates/**/*.twig",
-                "./lib/**/*.php",
-                "./*.php",
-                "dist/scripts/*.js",
-                "dist/styles/*.css",
-                'public/**/*.html',
-                // static
-                'public/dist/scripts/*.js',
-                'public/dist/styles/*.css',
-                'public/dist/fonts/**/*',
-                'public/dist/images/**/*',
+                'modules/**/*.php',
+                'templates/**/*.twig',
+                'translations/**/*.php',
+                'web/fonts/**/*',
+                'web/images/**/*',
+                'web/scripts/**/*.js',
+                'web/styles/**/*.css',
+                'web/svg/**/*',
             ],
             ghostMode: {
                 clicks: false,
@@ -109,17 +102,36 @@ if (ENV === 'development') {
 
 }
 
+// Copies
+//----------------------------------------------------------
+if (ENV === 'copyFiles' || ENV === 'production') {
+
+    console.log('=== copyFiles');
+
+    mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
+        .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
+        .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
+        .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
+
+        // styleguide
+        .copyDirectory(`${source.assets}/images`, `${source.styleguide}/images`)
+        .copyDirectory(`${source.assets}/json`, `${source.styleguide}/json`)
+        .copyDirectory(`${source.assets}/svg`, `${source.styleguide}/svg`)
+        .copyDirectory(`${source.assets}/videos`, `${source.styleguide}/videos`);
+
+}
+
 // production
 //----------------------------------------------------------
 if (ENV === 'production') {
 
-    console.log('=== production');
+    console.log('=== imagemin');
 
     mix.imagemin(
         {
-            from: path.join(source.images, "**/*"),
-            to: source.dist,
-            context: "assets/images",
+            from: path.join(source.images, '**/*'),
+            to: `${source.dist}/images`,
+            context: 'assets/images',
         },
         {},
         {
@@ -139,21 +151,13 @@ if (ENV === 'production') {
     )
 
 }
+else {
 
-// Copies
-//----------------------------------------------------------
-if (ENV === 'copyFiles' || ENV === 'production') {
+    console.log('=== copyImages');
 
-    console.log('=== copyFiles');
-
-    mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
-        .copyDirectory(`${source.assets}/images`, `${source.dist}/images`)
-        .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
-        .copyDirectory(`${source.assets}/icons`, `${source.dist}/icons`)
-        .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`);
+    mix.copyDirectory(`${source.assets}/images`, `${source.dist}/images`)
 
 }
-
 
 // Full API
 // mix.js(src, output);

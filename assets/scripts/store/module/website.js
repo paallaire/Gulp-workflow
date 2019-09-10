@@ -1,10 +1,10 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { getEnv, getLang } from '../../utils/helper/env';
+import { getEnv, getLang } from '@paallaire/environment';
 
 // Data
 const data = {
-    lang: getLang(),
-    env: getEnv(),
+    lang: false,
+    env: false,
     bodyScrollDisabled: false,
 };
 

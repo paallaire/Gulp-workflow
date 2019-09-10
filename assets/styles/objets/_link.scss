@@ -1,0 +1,28 @@
+/*
+Links
+
+Link styles
+
+default - Default link
+
+markup:
+<a class="o-link {$modifiers}">Lorem link text</a>
+<button class="o-link {$modifiers}">Lorem link text</button>
+
+Styleguide 2.3
+*/
+
+$o-link: '.o-link';
+
+#{$o-link} {
+    color: $colors-blue-1;
+    font-weight: 500;
+    font-size: $fontSize-7;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+}

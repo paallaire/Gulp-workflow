@@ -1,0 +1,56 @@
+/*
+Buttons
+
+Button styles
+
+default - Default button
+.o-button-gray - Gray button
+.o-button--small - small button
+
+markup:
+<button class="o-button {$modifiers}">Button text</button>
+
+Styleguide 2.1
+*/
+
+$o-button: '.o-button';
+
+%button {
+    padding: 12px 30px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: $lineHeight-tight;
+    letter-spacing: 1.75px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background-color 200ms ease;
+}
+
+#{$o-button} {
+    @extend %button;
+    color: $colors-white;
+    background-color: $colors-white;
+
+    &:hover {
+        color: $colors-white;
+        background-color: $colors-white;  
+    }
+
+}
+
+#{$o-button}-gray {
+    @extend %button;
+    color: $colors-white;
+    background-color: $colors-gray-2;
+
+    &:hover {
+        color: $colors-gray-2;
+        background-color: $colors-white;  
+    }
+}
+
+#{$o-button}--small {
+    padding: 12px 16px;
+}

@@ -4,12 +4,15 @@ import 'regenerator-runtime/runtime';
 import 'dom4';
 import 'whatwg-fetch';
 
+import GridVisualizer from '@paallaire/gridvisualizer';
+import { getEnv, setEnvOnBody, getLang } from '@paallaire/environment';
+
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
 import Vue from 'vue';
 import { mapGetters, mapMutations } from 'vuex';
-import ShowGridInit from './utils/helper/showGrid';
+
 import store from './store/index';
 
 // Directives
@@ -30,8 +33,19 @@ const vm = new Vue({
         ...mapMutations(['setModal', 'setNavCanvas', 'setBodyScroll']),
     },
     mounted() {
-        if (this.env === 'dev') {
-            // ShowGridInit(16);
+        setEnvOnBody();
+        console.log('getEnv', getEnv());
+        console.log('getLang', getLang());
+
+        if (getEnv() === 'dev') {
+            let websiteGrid = new GridVisualizer({
+                numberColumns: 12,
+                containerCSsClass: 'mx-auto max-w-5xl',
+                rowCssClass: 'flex -mx-2',
+                columnsCssClass: 'w-1/12 px-2',
+                blockCssClass: 'bg-gray-400',
+            });
+            websiteGrid.init();
         }
     },
     destroyed() {},

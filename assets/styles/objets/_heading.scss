@@ -1,0 +1,32 @@
+/*
+Heading
+
+Heading styles
+
+default - Default heading
+
+markup:
+<button class="o-heading-1 {$modifiers}">Lorem heading text</button>
+
+Styleguide 2.2
+*/
+
+$o-heading: '.o-heading';
+
+#{$o-heading}-1 {
+    color: $colors-white;
+    font-weight: 300;
+    font-size: $fontSize-14;
+    line-height: $lineHeight-tight;
+    text-transform: uppercase;
+
+    @include media('>=md') {
+        font-size: $fontSize-20;
+    }
+
+    strong {
+        color: $colors-blue-1;
+        font-weight: 300;
+    }
+
+}

@@ -34,6 +34,6 @@
     #VR (rhythm-vertical)
 ========================================================================== */
 
-@function vr($number) {
-    @return $number * $base-heading-line-height + rem;
+@function vr($number, $line-height) {
+    @return $number * $line-height + rem;
 }
