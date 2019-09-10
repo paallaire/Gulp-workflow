@@ -32,11 +32,6 @@ body {
     font-family: $roboto;
     line-height: $lineHeight-none;
     background-color: $colors-white;
-
-    &.is-dev {
-        @include bp-helper();
-    }
-
 }
 
 /* ==========================================================================

@@ -1,8 +1,5 @@
-
-
 const mix = require('laravel-mix');
 const path = require('path')
-const globby = require('globby');
 
 const purgecssOptions = require('./purgecss');
 const WEBSITE_URL = 'http://vicone.test';
@@ -14,10 +11,10 @@ require('dotenv').config();
 
 const source = {
     assets: path.resolve('assets'),
-    dist: path.resolve('web'),
+    dist: path.resolve('public/dist'),
     styleguide: path.resolve('styleguide'),
     fonts: path.resolve('assets/fonts'),
-    icons: path.resolve('assets/svg'),
+    svg: path.resolve('assets/svg'),
     images: path.resolve('assets/images'),
     scripts: path.resolve('assets/scripts'),
     styles: path.resolve('assets/styles'),
@@ -28,7 +25,7 @@ const source = {
 
 // base
 //----------------------------------------------------------
-mix.setPublicPath('web');
+mix.setPublicPath('public/dist');
 
 // development or production
 //----------------------------------------------------------
@@ -104,7 +101,7 @@ if (ENV === 'development') {
 
 // Copies
 //----------------------------------------------------------
-if (ENV === 'copyFiles' || ENV === 'production') {
+if (ENV === 'copyFiles' || ENV === 'production' || ENV === 'dev') {
 
     console.log('=== copyFiles');
 

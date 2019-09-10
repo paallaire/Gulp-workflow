@@ -36,6 +36,7 @@ gulp.task('styleguide:generate', function () {
     .pipe(styleguide.generate({
         title: 'Mon Styleguide', // Titre du styleguide
         server: true,
+        port: 4000,
         rootPath: paths.styleguide, // Chemin du dossier de destination du styleguide
         overviewPath: 'styleguide.md', // Chemin du fichier markdown qui alimentera la première page de votre styleguide "Overview"
         disableEncapsulation: true,
