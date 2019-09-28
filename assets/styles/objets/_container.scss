@@ -74,4 +74,12 @@ $o-container: '.o-container';
 .o-release {
     margin-right: calc(-50vw + 50%);
     margin-left: calc(-50vw + 50%);
+
+    img {
+        @include center();
+    }
+
+
+    background: #0d6a58;
+    text-align: center;
 }

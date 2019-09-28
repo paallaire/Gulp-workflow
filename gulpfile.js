@@ -52,7 +52,7 @@ gulp.task('styleguide:generate', function () {
 
 // Tâche qui va générer les styles CSS a appliqué au styleguide
 gulp.task('styleguide:applystyles', function() {
-    return gulp.src(paths.src + '/styles/test.scss')
+    return gulp.src(paths.src + '/styles/main.scss')
     .pipe(sass({
         includePaths: ['node_modules'],
         errLogToConsole: true

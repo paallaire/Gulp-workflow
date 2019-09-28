@@ -1,13 +1,15 @@
 /*! wysiwyg.css v0.0.3 | MIT License | github.com/jgthms/wysiwyg.css */
 
-.wysiwyg {
-    line-height: $lineHeight-relaxed;
+.o-wysiwyg {
+    $vertical-rythm: $lineHeight-relaxed;
+
+    line-height: $vertical-rythm;
 
     /* spacing */
 
     > * + * {
-        margin-top: 1.4em;
-        margin-bottom: 1.4em;
+        margin-top: 20px * $vertical-rythm;
+        margin-bottom: 20px * $vertical-rythm;
     }
 
     > *:first-child {
@@ -22,6 +24,7 @@
     h4,
     h5,
     h6 {
+        @extend .o-heading;
         font-weight: 700;
         line-height: 1.2;
     }
@@ -78,15 +81,6 @@
         font-style: italic;
     }
 
-    hr {
-        margin-top: 1.4em;
-        margin-bottom: 1.4em;
-        display: block;
-        height: 1px;
-        background: #e6e6e6;
-        border: none;
-    }
-
     img {
         vertical-align: text-bottom;
     }
@@ -121,168 +115,18 @@
         vertical-align: super;
     }
 
-    dd {
-        margin-left: 1.4em;
-    }
-
     /* list */
 
-    ol,
-    ul {
-        margin-left: 1.4em;
-        list-style-position: outside;
-    }
-
     ol {
-        list-style-type: decimal;
-    }
-
-    ol ol {
-        list-style-type: lower-alpha;
-    }
-
-    ol ol ol {
-        list-style-type: lower-roman;
-    }
-
-    ol ol ol ol {
-        list-style-type: lower-greek;
-    }
-
-    ol ol ol ol ol {
-        list-style-type: decimal;
-    }
-
-    ol ol ol ol ol ol {
-        list-style-type: lower-alpha;
+        @extend %o-list-ordered;
     }
 
     ul {
-        list-style-type: disc;
+        @extend %o-list-unordered;
     }
-
-    ul ul {
-        list-style-type: circle;
-    }
-
-    ul ul ul {
-        list-style-type: square;
-    }
-
-    ul ul ul ul {
-        list-style-type: circle;
-    }
-
-    ul ul ul ul ul {
-        list-style-type: disc;
-    }
-
-    ul ul ul ul ul ul {
-        list-style-type: circle;
-    }
-
-    /* blockquote */
-
-    blockquote {
-        padding: 0.6em 1.2em;
-        border-left: 4px solid #e6e6e6;
-
-        p {
-            margin-bottom: 0;
-        }
-
-    }
-
-    code,
-    kbd,
-    samp,
-    pre {
-        color: #333;
-        font-size: 0.9em;
-        background-color: #f2f2f2;
-        -moz-osx-font-smoothing: auto;
-        -webkit-font-smoothing: auto;
-    }
-
-    code,
-    kbd,
-    samp {
-        padding: 0.1em 0.4em 0.2em;
-        line-height: 1.77778;
-        vertical-align: baseline;
-        border-radius: 3px;
-    }
-
-    pre {
-        padding: 1em 1.2em;
-        overflow: auto;
-
-        code {
-            font-size: 1em;
-            line-height: 1em;
-            background: none;
-        }
-
-    }
-
-    figure {
-        margin-bottom: 2.8em;
-        text-align: center;
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-    }
-
-    figcaption {
-        margin-top: 0.875em;
-        font-size: 0.8em;
-    }
-
-    /* table */
 
     table {
-        width: 100%;
+        @extend .o-table;
     }
 
-    table pre {
-        white-space: pre-wrap;
-    }
-
-    th,
-    td {
-        padding: 0.7em;
-        font-size: 1em;
-        line-height: 1.4;
-        border: 1px solid #e6e6e6;
-    }
-
-    thead tr,
-    tfoot tr {
-        background-color: #f5f5f5;
-    }
-
-    thead th,
-    thead td,
-    tfoot th,
-    tfoot td {
-        padding: 0.77778em;
-        font-size: 0.9em;
-    }
-
-    thead th code,
-    thead td code,
-    tfoot th code,
-    tfoot td code {
-        background-color: #fff;
-    }
-
-    tbody tr {
-        background-color: #fff;
-    }
 }

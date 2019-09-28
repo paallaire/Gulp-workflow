@@ -1,0 +1,762 @@
+/*
+Colors and typography
+
+This section describes base colors and typography
+
+Styleguide 1
+*/
+/*
+Main colors
+
+$primary-color - Primary color
+$secondary-color - Secondary color
+$primary-action-color - Primary button color
+$default-action-color - Default button color and link color
+$tertiary-color - Used for input hovers and hilights
+
+markup:
+<div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
+
+Styleguide 1.1
+*/
+/*
+Objets
+
+This section describes base colors and typography
+
+Styleguide 2
+*/
+/* ==========================================================================
+    #CONFIG
+==========================================================================  */
+/* ==========================================================================
+    #FOLDER
+==========================================================================  */
+/* ==========================================================================
+    #TYPOGRAPHY
+==========================================================================  */
+/* font-family */
+/* Text selection */
+/* ==========================================================================
+    #MEDIA-QUERIES
+==========================================================================  */
+/* ==========================================================================
+    #TRANISTION
+==========================================================================  */
+/* ==========================================================================
+    #VARIABLES MODAL
+========================================================================== */
+/* ==========================================================================
+    #REVERSE
+
+    Example:
+    $list: a, b, c d e, f, g, h;
+    $new-list: reverse($list);       // h, g, f, c d e, b, a
+    $new-list: reverse($list, true); // h, g, f, e d c, b, a
+========================================================================== */
+/* ==========================================================================
+    #STRIP-UNIT
+========================================================================== */
+/* ==========================================================================
+    #VR (rhythm-vertical)
+========================================================================== */
+/* ==========================================================================
+    #CENTER
+========================================================================== */
+/* ==========================================================================
+    #CENTER-BLOCK
+========================================================================== */
+/* ==========================================================================
+    #CLEARFIX
+    http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+========================================================================== */
+/* ==========================================================================
+    #INPUT-PLACEHOLDER
+
+    input,  
+    textarea {  
+        @include input-placeholder{
+            color: $grey;
+        }
+    }
+========================================================================== */
+.intrinsic {
+  padding-top: 100%;
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative; }
+  .intrinsic.intrinsic--square {
+    padding-top: 100%; }
+  .intrinsic.intrinsic--4x3 {
+    padding-top: 75%; }
+  .intrinsic.intrinsic--16x9 {
+    padding-top: 56.25%; }
+  .intrinsic .intrinsic-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+/* ==========================================================================
+    #last-row
+========================================================================== */
+/* ==========================================================================
+    #TEXT-TRUNCATE
+========================================================================== */
+@tailwind base;
+/* ==========================================================================
+    #BOX-SIZING
+========================================================================== */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  /* Set `background-repeat: no-repeat` to all elements and pseudo elements */ }
+
+/* ==========================================================================
+    #RESET-TAGS
+========================================================================== */
+a,
+abbr,
+acronym,
+address,
+applet,
+big,
+blockquote,
+body,
+caption,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+ul,
+var,
+figure,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0; }
+
+/* list*/
+ul,
+ol {
+  list-style: none; }
+
+/* link*/
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  /* Remove the gray background on active links in IE 10 */
+  outline: none;
+  text-decoration-skip: objects;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+ */ }
+  a:active, a:hover {
+    outline-width: 0;
+    /* Remove the outline when hovering in all browsers */ }
+
+/* images*/
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+  /* Remove border when inside `a` element in IE 8/9/10 */ }
+
+/* table*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* strong*/
+b,
+strong {
+  font-weight: bolder;
+  /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */ }
+
+/* ==========================================================================
+    #FROM
+========================================================================== */
+input {
+  border-radius: 0; }
+
+/* Apply cursor pointer to button elements */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'] {
+  cursor: pointer; }
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default; }
+
+[type='number'] {
+  width: auto;
+  /* Firefox 36+ */ }
+
+[type='search'] {
+  appearance: textfield;
+  /* Safari 8+ */ }
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  appearance: none;
+  /* Safari 8 */ }
+
+textarea {
+  overflow: auto;
+  /* Internet Explorer 11+ */
+  resize: vertical;
+  /* Specify textarea resizability */ }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* Specify font inheritance of form elements */ }
+
+optgroup {
+  font-weight: bold;
+  /* Restore the font weight unset by the previous rule. */ }
+
+button {
+  overflow: visible;
+  /* Address `overflow` set to `hidden` in IE 8/9/10/11 */ }
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: 0; }
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  outline: 1px dotted ButtonText; }
+
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: button;
+  /* Correct the inability to style clickable types in iOS */ }
+
+button,
+select {
+  text-transform: none;
+  /* Firefox 40+, Internet Explorer 11- */ }
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  background-color: transparent;
+  border-style: none; }
+
+/* Style select like a standard input */
+select {
+  appearance: none; }
+
+select::-ms-expand {
+  display: none;
+  /* Internet Explorer 11+ */ }
+
+select::-ms-value {
+  color: currentColor;
+  /* Internet Explorer 11+ */ }
+
+legend {
+  display: table;
+  /* Correct the text wrapping in Edge and IE */
+  max-width: 100%;
+  /* Correct the text wrapping in Edge and IE */
+  color: inherit;
+  /* Correct the color inheritance from `fieldset` elements in IE */
+  white-space: normal;
+  /* Correct the text wrapping in Edge and IE */
+  border: 0;
+  /* Correct `color` not being inherited in IE 8/9/10/11 */ }
+
+::-webkit-file-upload-button {
+  font: inherit;
+  /* Change font properties to `inherit` in Chrome and Safari */
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS and Safari */ }
+
+[type='search'] {
+  outline-offset: -2px;
+  /* Correct the outline style in Safari */
+  -webkit-appearance: textfield;
+  /* Correct the odd appearance in Chrome and Safari */ }
+
+/* ==========================================================================
+    #SELECTION
+========================================================================== */
+/* Specify text selection background color and omit drop shadow */
+::-moz-selection {
+  color: #000;
+  text-shadow: none;
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */ }
+
+::selection {
+  color: #000;
+  text-shadow: none;
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */ }
+
+/* ==========================================================================
+    #ALL
+========================================================================== */
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/* ==========================================================================
+    #HTML
+========================================================================== */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+/* ==========================================================================
+    #BODY
+========================================================================== */
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: #000;
+  font-size: 16px;
+  font-family: "Roboto Slab", serif;
+  line-height: 1;
+  background-color: #fff; }
+
+/* ==========================================================================
+    #LINK
+========================================================================== */
+a {
+  color: #000;
+  text-decoration: none; }
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0; }
+
+/*
+Buttons
+
+Button styles
+
+default - Default button
+.o-button-gray - Gray button
+.o-button--small - small button
+
+markup:
+<button class="o-button {$modifiers}">Button text</button>
+
+Styleguide 2.1
+*/
+.o-button, .o-button-gray {
+  padding: 12px 30px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: 1.75px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background-color 200ms ease; }
+
+.o-button {
+  color: #fff;
+  background-color: #fff; }
+  .o-button:hover {
+    color: #fff;
+    background-color: #fff; }
+
+.o-button-gray {
+  color: #fff;
+  background-color: #eaeaea; }
+  .o-button-gray:hover {
+    color: #eaeaea;
+    background-color: #fff; }
+
+.o-button--small {
+  padding: 12px 16px; }
+
+/*
+Container
+
+Container styles
+
+-large - large variant
+-xlarge - xlarge variant
+-wide - wide variant
+-site - site variant
+-xsite - xsite variant
+
+markup:
+<div class="o-container{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nulla eu fermentum varius. Sed tempor ut tellus vitae posuere. Praesent et tempor ipsum, eu laoreet nunc.</div>
+
+Styleguide 2.7
+*/
+.o-container-large {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1040px; }
+
+.o-container-xlarge {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160px; }
+
+.o-container-wide {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1240px; }
+
+.o-container-site {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1440px; }
+
+.o-container-xsite {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1920px; }
+
+.o-release {
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%); }
+
+/*
+Heading
+
+Heading styles
+
+default - Default heading
+
+markup:
+<button class="o-heading-1 {$modifiers}">Lorem heading text</button>
+
+Styleguide 2.2
+*/
+.o-heading-1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.25;
+  text-transform: uppercase; }
+
+/*
+Links
+
+Link styles
+
+default - Default link
+
+markup:
+<a class="o-link {$modifiers}">Lorem link text</a>
+<button class="o-link {$modifiers}">Lorem link text</button>
+
+Styleguide 2.3
+*/
+.o-link {
+  color: #0078c1;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+  .o-link:hover {
+    text-decoration: underline; }
+
+/*
+Text
+
+Text styles
+
+default - Default text
+o-text--light - Light text
+
+markup:
+<div class="o-text {$modifiers}">Nulla condimentum gravida efficitur. Nunc vel sagittis magna.</div>
+
+Styleguide 2.5
+*/
+.o-text {
+  color: #525254;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.375; }
+
+/*! wysiwyg.css v0.0.3 | MIT License | github.com/jgthms/wysiwyg.css */
+.o-wysiwyg {
+  line-height: 1.625;
+  /* spacing */
+  /* heading */
+  /* link */
+  /* paragraph */
+  /* list */
+  /* blockquote */
+  /* table */ }
+  .o-wysiwyg > * + * {
+    margin-top: 1.4em;
+    margin-bottom: 1.4em; }
+  .o-wysiwyg > *:first-child {
+    margin-top: 0; }
+  .o-wysiwyg h1,
+  .o-wysiwyg h2,
+  .o-wysiwyg h3,
+  .o-wysiwyg h4,
+  .o-wysiwyg h5,
+  .o-wysiwyg h6 {
+    font-weight: 700;
+    line-height: 1.2; }
+  .o-wysiwyg h1 {
+    font-size: 2.4em;
+    line-height: 1; }
+  .o-wysiwyg h2 {
+    font-size: 1.6em;
+    line-height: 1.1; }
+  .o-wysiwyg h3 {
+    font-size: 1.3em; }
+  .o-wysiwyg h4 {
+    font-size: 1.2em; }
+  .o-wysiwyg h5 {
+    font-size: 1.1em; }
+  .o-wysiwyg h6 {
+    font-size: 1em; }
+  .o-wysiwyg a {
+    text-decoration: none; }
+    .o-wysiwyg a:hover {
+      border-bottom: 1px solid; }
+  .o-wysiwyg p:empty {
+    display: none; }
+  .o-wysiwyg abbr {
+    border-bottom: 1px dotted;
+    cursor: help; }
+  .o-wysiwyg cite {
+    font-style: italic; }
+  .o-wysiwyg hr {
+    margin-top: 1.4em;
+    margin-bottom: 1.4em;
+    display: block;
+    height: 1px;
+    background: #e6e6e6;
+    border: none; }
+  .o-wysiwyg img {
+    vertical-align: text-bottom; }
+  .o-wysiwyg ins {
+    text-decoration: none;
+    background-color: lime; }
+  .o-wysiwyg mark {
+    background-color: #ff0; }
+  .o-wysiwyg small {
+    font-size: 0.8em; }
+  .o-wysiwyg strong {
+    font-weight: 700; }
+  .o-wysiwyg sub,
+  .o-wysiwyg sup {
+    font-size: 0.8em; }
+  .o-wysiwyg sub {
+    vertical-align: sub; }
+  .o-wysiwyg sup {
+    vertical-align: super; }
+  .o-wysiwyg dd {
+    margin-left: 1.4em; }
+  .o-wysiwyg ol,
+  .o-wysiwyg ul {
+    margin-left: 1.4em;
+    list-style-position: outside; }
+  .o-wysiwyg ol {
+    list-style-type: decimal; }
+  .o-wysiwyg ol ol {
+    list-style-type: lower-alpha; }
+  .o-wysiwyg ol ol ol {
+    list-style-type: lower-roman; }
+  .o-wysiwyg ol ol ol ol {
+    list-style-type: lower-greek; }
+  .o-wysiwyg ol ol ol ol ol {
+    list-style-type: decimal; }
+  .o-wysiwyg ol ol ol ol ol ol {
+    list-style-type: lower-alpha; }
+  .o-wysiwyg ul {
+    list-style-type: disc; }
+  .o-wysiwyg ul ul {
+    list-style-type: circle; }
+  .o-wysiwyg ul ul ul {
+    list-style-type: square; }
+  .o-wysiwyg ul ul ul ul {
+    list-style-type: circle; }
+  .o-wysiwyg ul ul ul ul ul {
+    list-style-type: disc; }
+  .o-wysiwyg ul ul ul ul ul ul {
+    list-style-type: circle; }
+  .o-wysiwyg blockquote {
+    padding: 0.6em 1.2em;
+    border-left: 4px solid #e6e6e6; }
+    .o-wysiwyg blockquote p {
+      margin-bottom: 0; }
+  .o-wysiwyg code,
+  .o-wysiwyg kbd,
+  .o-wysiwyg samp,
+  .o-wysiwyg pre {
+    color: #333;
+    font-size: 0.9em;
+    background-color: #f2f2f2;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto; }
+  .o-wysiwyg code,
+  .o-wysiwyg kbd,
+  .o-wysiwyg samp {
+    padding: 0.1em 0.4em 0.2em;
+    line-height: 1.77778;
+    vertical-align: baseline;
+    border-radius: 3px; }
+  .o-wysiwyg pre {
+    padding: 1em 1.2em;
+    overflow: auto; }
+    .o-wysiwyg pre code {
+      font-size: 1em;
+      line-height: 1em;
+      background: none; }
+  .o-wysiwyg figure {
+    margin-bottom: 2.8em;
+    text-align: center; }
+    .o-wysiwyg figure:first-child {
+      margin-top: 0; }
+    .o-wysiwyg figure:last-child {
+      margin-bottom: 0; }
+  .o-wysiwyg figcaption {
+    margin-top: 0.875em;
+    font-size: 0.8em; }
+  .o-wysiwyg table {
+    width: 100%; }
+  .o-wysiwyg table pre {
+    white-space: pre-wrap; }
+  .o-wysiwyg th,
+  .o-wysiwyg td {
+    padding: 0.7em;
+    font-size: 1em;
+    line-height: 1.4;
+    border: 1px solid #e6e6e6; }
+  .o-wysiwyg thead tr,
+  .o-wysiwyg tfoot tr {
+    background-color: #f5f5f5; }
+  .o-wysiwyg thead th,
+  .o-wysiwyg thead td,
+  .o-wysiwyg tfoot th,
+  .o-wysiwyg tfoot td {
+    padding: 0.77778em;
+    font-size: 0.9em; }
+  .o-wysiwyg thead th code,
+  .o-wysiwyg thead td code,
+  .o-wysiwyg tfoot th code,
+  .o-wysiwyg tfoot td code {
+    background-color: #fff; }
+  .o-wysiwyg tbody tr {
+    background-color: #fff; }
+
+/*
+List unordered styles
+
+default - Default
+
+markup:
+<ul class="o-list-unordered">
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>Vestibulum auctor dapibus neque.</li>
+</ul>
+     
+Styleguide 2.8
+*/
+.o-lost-unordered {
+  background: yellow; }
+
+/*
+List ordered styles
+
+default - Default
+
+markup:
+<ol class="o-list-ordered">
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>Vestibulum auctor dapibus neque.</li>
+</ol>
+     
+Styleguide 2.9
+*/
+@tailwind components;

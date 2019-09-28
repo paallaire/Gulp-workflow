@@ -77,16 +77,23 @@ if (ENV === 'development') {
 
     mix.sourceMaps()
         .browserSync({
-            proxy: WEBSITE_URL,
+            proxy: false,
+            server: {
+                baseDir: "./public/"
+            },
+            // proxy: WEBSITE_URL,
             files: [
-                'modules/**/*.php',
-                'templates/**/*.twig',
-                'translations/**/*.php',
-                'web/fonts/**/*',
-                'web/images/**/*',
-                'web/scripts/**/*.js',
-                'web/styles/**/*.css',
-                'web/svg/**/*',
+                'public/**/*.html',
+                'public/**/*.css',
+                'public/**/*.js',
+                // 'modules/**/*.php',
+                // 'templates/**/*.twig',
+                // 'translations/**/*.php',
+                // 'web/fonts/**/*',
+                // 'web/images/**/*',
+                // 'web/scripts/**/*.js',
+                // 'web/styles/**/*.css',
+                // 'web/svg/**/*',
             ],
             ghostMode: {
                 clicks: false,

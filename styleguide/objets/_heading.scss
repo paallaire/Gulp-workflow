@@ -19,14 +19,4 @@ $o-heading: '.o-heading';
     font-size: $fontSize-14;
     line-height: $lineHeight-tight;
     text-transform: uppercase;
-
-    @include media('>=md') {
-        font-size: $fontSize-20;
-    }
-
-    strong {
-        color: $colors-blue-1;
-        font-weight: 300;
-    }
-
 }

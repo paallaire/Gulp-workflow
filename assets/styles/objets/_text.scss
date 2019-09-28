@@ -19,30 +19,5 @@ $o-text: '.o-text';
     font-weight: 500;
     font-size: $fontSize-8;
     line-height: $lineHeight-snug;
-
-    @include media('>=md') {
-        font-size: $fontSize-10;
-    }
-
-    p {
-
-        &:not(:last-child) {
-            margin-bottom: $lineHeight-snug * 10px;
-        }
-    }
-
 }
 
-#{$o-text}--light {
-    font-weight: 300;
-    line-height: $lineHeight-snug;
-
-    p {
-
-        &:not(:last-child) {
-            margin-bottom: $lineHeight-snug * 10px;
-        }
-    }
-
-
-}

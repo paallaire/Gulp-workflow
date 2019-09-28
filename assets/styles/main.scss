@@ -1,4 +1,6 @@
 
+@import 'styleguide';
+
 // Variables
 @import 'tailwind-theme-variables';
 @import 'variables-custom';
@@ -35,12 +37,16 @@
 @import 'base/dev';
 
 // Objects
-// @import 'objets/button';
-// @import 'objets/container';
-// @import 'objets/heading';
-// @import 'objets/link';
-// @import 'objets/text';
-// @import 'objets/wysiwyg';
+@import 'objets/button';
+@import 'objets/container';
+@import 'objets/heading';
+@import 'objets/link';
+@import 'objets/list';
+@import 'objets/table';
+@import 'objets/text';
+@import 'objets/wysiwyg';
+
+
 
 // Components
 @tailwind components;
@@ -49,4 +55,6 @@
 // Templates
 // @import 'pages/home';
 // @import 'pages/404';
+
+
 

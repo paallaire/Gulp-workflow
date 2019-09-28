@@ -1,0 +1,47 @@
+/*
+List unordered styles
+
+default - Default
+
+markup:
+<ul class="o-list-unordered">
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>Vestibulum auctor dapibus neque.</li>
+</ul>
+     
+Styleguide 2.8
+*/
+
+%o-list-unordered {
+    padding-left: 1em;
+    list-style: disc;
+}
+
+.o-list-unordered {
+    @extend %o-list-unordered;
+}
+
+/*
+List ordered styles
+
+default - Default
+
+markup:
+<ol class="o-list-ordered">
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+   <li>Vestibulum auctor dapibus neque.</li>
+</ol>
+     
+Styleguide 2.9
+*/
+
+%o-list-ordered {
+    padding-left: 1em;
+    list-style-type: decimal;
+}
+
+.o-list-ordered {
+    @extend %o-list-ordered; 
+}
