@@ -1,5 +1,5 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { getEnv, getLang } from '@paallaire/environment';
+import { getEnv, setEnvOnBody, getLang } from '../../utils/environment';
 
 // Data
 const data = {

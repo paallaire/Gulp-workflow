@@ -4,8 +4,10 @@ import 'regenerator-runtime/runtime';
 import 'dom4';
 import 'whatwg-fetch';
 
-import GridVisualizer from '@paallaire/gridvisualizer';
-import { getEnv, setEnvOnBody, getLang } from '@paallaire/environment';
+import webFontLoad from './utils/webFonts';
+import polyfillsLoader from './utils/polyfillsLoader';
+import GridVisualizer from './utils/GridVisualizer';
+import { getEnv, setEnvOnBody, getLang } from './utils/environment';
 
 /* --------------------------------------------------------------------------------
 Vue
@@ -33,9 +35,12 @@ const vm = new Vue({
         ...mapMutations(['setModal', 'setNavCanvas', 'setBodyScroll']),
     },
     mounted() {
-        setEnvOnBody();
-        console.log('getEnv', getEnv());
-        console.log('getLang', getLang());
+        // setEnvOnBody();
+        // console.log('getEnv', getEnv());
+        // console.log('getLang', getLang());
+
+        webFontLoad();
+        polyfillsLoader();
 
         if (getEnv() === 'dev') {
             let websiteGrid = new GridVisualizer({

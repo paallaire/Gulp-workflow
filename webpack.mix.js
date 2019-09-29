@@ -68,7 +68,6 @@ if (ENV === 'development' || ENV === 'production') {
 
 }
 
-
 // development
 //----------------------------------------------------------
 if (ENV === 'development') {
@@ -84,8 +83,10 @@ if (ENV === 'development') {
             // proxy: WEBSITE_URL,
             files: [
                 'public/**/*.html',
-                'public/**/*.css',
-                'public/**/*.js',
+                'public/dist/scripts/*.js',
+                'public/dist/styles/*.css',
+                'public/dist/fonts/**/*',
+                'public/dist/images/**/*',
                 // 'modules/**/*.php',
                 // 'templates/**/*.twig',
                 // 'translations/**/*.php',

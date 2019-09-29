@@ -36,17 +36,19 @@
 @import 'base/transitions';
 @import 'base/dev';
 
+// Tailwind custom
+@import 'tailwind-custom/padding';
+
 // Objects
 @import 'objets/button';
 @import 'objets/container';
 @import 'objets/heading';
 @import 'objets/link';
 @import 'objets/list';
+@import 'objets/release';
 @import 'objets/table';
 @import 'objets/text';
 @import 'objets/wysiwyg';
-
-
 
 // Components
 @tailwind components;
@@ -56,5 +58,6 @@
 // @import 'pages/home';
 // @import 'pages/404';
 
-
-
+body {
+    background: yellow;
+}

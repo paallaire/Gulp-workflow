@@ -1,0 +1,16 @@
+$o-release: '.o-release';
+
+#{$o-release} {
+    margin-right: calc(-50vw + 50%);
+    margin-left: calc(-50vw + 50%);
+    text-align: center;
+
+    /* demo  */
+    background: #0d6a58;
+    background-color: #fff;
+
+    img {
+        @include center();
+    }
+
+}
