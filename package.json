@@ -37,13 +37,15 @@
     "rimraf": "^3.0.0",
     "sass": "^1.22.7",
     "sass-loader": "^7.1.0",
-    "sc5-styleguide": "^2.2.0",
     "stylelint": "^10.1.0",
     "stylelint-config-rational-order": "0.1.2",
-    "stylelint-config-sass-guidelines": "^6.0.0"
+    "stylelint-config-sass-guidelines": "^6.0.0",
+    "@frctl/fractal": "^1.2.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "@frctl/twig": "^1.0.0-beta.5",
+    "@paallaire/gridvisualizer": "0.0.1",
     "@swup/body-class-plugin": "^1.0.1",
     "@swup/scroll-plugin": "^1.0.6",
     "core-js": "^3.1.4",

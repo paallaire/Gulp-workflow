@@ -17,27 +17,58 @@ Styleguide 2.7
 
 $o-container: '.o-container';
 
+%container {
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: content-box;
+
+    @include media('>=sm') {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    @include media('>=md') {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    @include media('>=lg') {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    @include media('>=xl') {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
 #{$o-container}-large {
+    @extend %container;
     @include center();
     max-width: $maxWidth-large;
 }
 
 #{$o-container}-xlarge {
+    @extend %container;
     @include center();
     max-width: $maxWidth-xlarge;
 }
 
 #{$o-container}-wide {
+    @extend %container;
     @include center();
     max-width: $maxWidth-wide;
 }
 
 #{$o-container}-site {
+    @extend %container;
     @include center();
     max-width: $maxWidth-site;
 }
 
 #{$o-container}-xsite {
+    @extend %container;
     @include center();
     max-width: $maxWidth-xsite;
 }
