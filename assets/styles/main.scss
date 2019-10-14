@@ -11,7 +11,6 @@
 @import 'abstracts/mixins/clearfix';
 @import 'abstracts/mixins/focuspoint';
 @import 'abstracts/mixins/input-placeholder';
-@import 'abstracts/mixins/intrinsic';
 @import 'abstracts/mixins/last-row';
 @import 'abstracts/mixins/responsive';
 @import 'abstracts/mixins/text-truncate';
@@ -37,6 +36,7 @@
 @import 'tailwind-custom/padding';
 
 // Objects
+@import 'objets/intrinsic';
 @import 'objets/button';
 @import 'objets/container';
 @import 'objets/heading';
