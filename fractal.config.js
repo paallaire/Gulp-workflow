@@ -16,6 +16,8 @@ fractal.components.set('path', __dirname + '/styleguide/components');
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', __dirname + '/styleguide/docs');
 
+fractal.web.set('builder.dest', __dirname + '/docs');
+
 /* Hard-code a port number to start the server on. */
 fractal.web.set('server.port', 4000); 
 

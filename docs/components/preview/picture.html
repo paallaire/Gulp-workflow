@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/themes/mandelbrot/favicon.ico" type="image/ico">
+    <link media="all" rel="stylesheet" href="../../styles/main.css">
+    <link media="all" rel="stylesheet" href="../../styles/tailwind.css">
+    <title>Preview Layout</title>
+</head>
+<body>
+
+<picture>
+    <source 
+        media="(max-width: 911px)" 
+        data-srcset="https://via.placeholder.com/500x250?text=Mobile%201x, https://via.placeholder.com/1000x500?text=Mobile%202x 2x">
+    <source 
+        media="(min-width: 912px)" 
+        data-srcset="https://via.placeholder.com/500x500?text=Desktop%201x, https://via.placeholder.com/1000x1000?text=Desktop%202x 2x">
+    <img 
+        data-src="https://via.placeholder.com/500x250?text=Mobile%201x" 
+        class="lazy" 
+        alt="">
+</picture>
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.1.0/dist/lazyload.min.js"></script>
+<script>
+    var lazyLoadInstance = new LazyLoad({
+        elements_selector: ".lazy"
+        // ... more custom settings?
+    });
+</script>
+
+
+<style>
+    .lazy {
+        opacity: 0;
+    }
+
+	.lazy:not(.initial) {
+        transition: opacity 1s;
+    }
+    
+    .lazy.initial,
+    .lazy.loaded,
+    .lazy.error {
+        opacity: 1;
+    }
+
+    .lazy:not([src]) {
+        visibility: hidden;
+    }
+</style>
+
+
+
+</body>
+</html>
+
