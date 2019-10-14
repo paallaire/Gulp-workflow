@@ -1,0 +1,30 @@
+{
+    "title": "Base",
+    "status": "prototype",
+    "context": {
+        "value": "Lorem placeholder ipsum dolor sit ame",
+        "placeholder": ""
+    },
+	"variants": [
+		{
+			"name": "hover",
+            "context": {
+                "state": "is-hover"
+        	}
+        },
+		{
+            "name": "disabled",
+            "context": {
+                "state": "is-disabled"
+        	}
+		},
+		{
+			"name": "focus",
+            "context": {
+                "state": "is-focus"
+        	}
+        }
+	]
+}
+
+

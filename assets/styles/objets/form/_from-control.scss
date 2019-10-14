@@ -1,0 +1,40 @@
+$o-from-control: '.o-from-control';
+
+%from-control {
+
+    .o-input-label {
+        margin-bottom: 10px;
+    }
+
+    .o-input-note {
+        margin-top: 10px;
+    }
+
+}
+
+%input-error {
+
+    .o-input-note, 
+    .o-input-label, 
+    input,
+    select,
+    textarea {
+        color: $colors-red-1;
+    }
+
+    input,
+    select,
+    textarea {
+        border-color: currentColor;  
+    }
+
+}
+
+#{$o-from-control} {
+    @extend %from-control;
+
+    &.has-error {
+        @extend %input-error; 
+    }
+
+}

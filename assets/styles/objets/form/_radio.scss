@@ -1,0 +1,54 @@
+$o-radio: '.o-radio';
+
+#{$o-radio} {
+
+    &__input {
+        display: none;
+
+        + label {
+            font-weight: normal;
+            cursor: pointer;
+
+            span {
+                margin-right: 5px;
+                display: inline-block;
+                width: $radio-size-icon;
+                height: $radio-size-icon;
+                position: relative;
+                vertical-align: middle;
+                border: 1px solid $colors-blue-1;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    content: '';
+                    width: $radio-size-icon / 2;
+                    height: $radio-size-icon / 2;
+                    background-color: $colors-blue-1;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 100ms ease;
+                }
+            }
+        }
+
+        &:checked + label span:before {
+            opacity: 1;
+        }
+    
+        &:disabled + label {
+            opacity: 0.5;
+    
+            &,
+            span {
+                cursor: default;
+            }
+        }
+
+    }
+
+}

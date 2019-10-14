@@ -1,0 +1,15 @@
+{
+    "title": "Input text",
+    "status": "prototype",
+    "context": {},
+	"variants": [
+		{
+            "name": "error",
+            "context": {
+                "modifier": "has-error"
+        	}
+		}
+	]
+}
+
+

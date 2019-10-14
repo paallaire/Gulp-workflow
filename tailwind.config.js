@@ -3,7 +3,7 @@ const paddingUnit = require('./tailwindcss/units/paddingUnit');
 const fontSizeUnit = require('./tailwindcss/units/fontSizeUnit');
 
 module.exports = {
-    prefix: 'u-',
+    prefix: '',
     important: true,
     separator: ':',
     theme: {
@@ -53,13 +53,10 @@ module.exports = {
                 9: '#343434',
             },
             blue: {
-                1: '#0078c1',
-                2: '#3661b0',
-                3: '#278bc8',
+                1: '#0984e3',
             },
             red: {
                 1: '#ed1c24',
-                1: '#c10000',
             },
         },
         spacing: {

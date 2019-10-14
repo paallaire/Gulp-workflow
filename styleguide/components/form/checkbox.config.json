@@ -1,0 +1,16 @@
+{
+    "title": "Input text",
+    "status": "prototype",
+    "context": {},
+	"variants": [
+		{
+            "name": "disabled",
+            "context": {
+                "modifier": "is-disabled",
+                "disabled": "disabled"
+        	}
+		}
+	]
+}
+
+

@@ -1,0 +1,68 @@
+$o-toggle: '.o-toggle';
+
+#{$o-toggle} {
+    $chbx_size: 18px;
+    $orange: #FF9800;
+
+    &__input {
+        display: none;
+
+        + label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            width: 40px;
+            height: 20px;
+            background-color: #e4e4e4;
+            border-radius: 60px;
+            transition: background 0.4s;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+            }
+
+            &:before {
+                right: 1px;
+                left: 1px;
+                top: 1px;
+                bottom: 1px;
+                background-color: #F1F1F1;
+                border-radius: 60px;
+                transition: background 0.4s;
+            }
+
+            &:after {
+                top: -1px;
+                left: 0;
+                width: 22px;
+                height: 22px;
+                background-color: #fff;
+                border-radius: 100%;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+                transition: transform 0.4s;
+            }
+        }
+
+        &:checked + label {
+            background-color: darken($orange, 5%);
+
+            &:before {
+                background-color: $orange;
+            }
+        }
+
+        &:checked + label:after {
+            transform: translateX(20px);
+        }
+
+        &:disabled + label {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+}

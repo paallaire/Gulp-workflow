@@ -1,0 +1,12 @@
+$o-input-label: '.o-input-label';
+
+%input-label {
+    display: block;
+    font-weight: $fontWeight-medium;
+    font-size: $fontSize-10;
+    line-height: $lineHeight-tight;
+}
+
+#{$o-input-label} {
+    @extend %input-label;
+}

@@ -1,0 +1,25 @@
+{
+    "title": "Input text",
+    "status": "prototype",
+    "context": {
+        "value": "Lorem placeholder ipsum dolor sit ame",
+        "placeholder": "Lorem placeholder ipsum dolor sit ame"
+    },
+	"variants": [
+		{
+            "name": "disabled",
+            "context": {
+                "modifier": "is-disabled",
+                "disabled": "disabled"
+        	}
+		},
+		{
+			"name": "focus",
+            "context": {
+                "modifier": "is-focus"
+        	}
+		}
+	]
+}
+
+

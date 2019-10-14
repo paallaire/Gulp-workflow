@@ -47,6 +47,70 @@
 @import 'objets/text';
 @import 'objets/wysiwyg';
 
+// form
+$input-padding: 12px 20px;
+$input-select-size-icon: 40px;
+$radio-size-icon: 18px;
+$checkbox-size-icon: 18px;
+
+
+@import 'objets/form/input-label';
+@import 'objets/form/input-text';
+@import 'objets/form/textarea';
+@import 'objets/form/select';
+@import 'objets/form/radio';
+@import 'objets/form/checkbox';
+@import 'objets/form/toggle';
+@import 'objets/form/input-note';
+@import 'objets/form/from-control';
+
+
+%input-text {
+    padding: $input-padding;
+    display: block;
+    width: 100%;
+    font-weight: $fontWeight-medium;
+    font-size: $fontSize-10;
+    line-height: $lineHeight-tight;
+}
+
+%input-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+%input-focus {
+    color: $colors-blue-1;
+    border: 1px solid currentColor;
+}
+
+%input-placeholder {
+    
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $colors-blue-1 !important;
+        opacity: 1; /* Firefox */
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $colors-blue-1 !important;
+    }
+    
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: $colors-blue-1 !important;
+    }
+}
+
+
+
+%input-select {
+    display: block;
+    width: 100%;
+    font-weight: $fontWeight-medium;
+    font-size: $fontSize-10;
+    line-height: $lineHeight-tight;
+}
+
+
 // Components
 @tailwind components;
 //@import 'components/modal';
@@ -55,6 +119,3 @@
 // @import 'pages/home';
 // @import 'pages/404';
 
-body {
-    background: blue;
-}

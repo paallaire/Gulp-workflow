@@ -10,7 +10,11 @@
     "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
     "eslint": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
     "tailwind-scss-var": "node tailwindcss/generate-scss-variables.js",
-    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write"
+    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write",
+    "test": "fractal start --sync"
+  },
+  "fractal": {
+    "main": "fractal.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
