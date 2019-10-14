@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/default.css?cachebust=1.2.1" type="text/css">
 
 
-<title>Label | Website Component Library</title>
+<title>Picture Lazyload | Website Component Library</title>
 
 </head>
 <body>
@@ -52,14 +52,14 @@
     
     
 
-<div class="Pen" data-behaviour="pen" id="pen-7243457542257875c7453c8dacd14ed5">
+<div class="Pen" data-behaviour="pen" id="pen-ea31020b9dece600c804fc0f91b2c03a">
 
     
 
     <div class="Pen-panel Pen-header">
     <h1 class="Pen-title">
-        <a class="Pen-previewLink" href="../preview/label.html" title="Component preview">
-            Label
+        <a class="Pen-previewLink" href="../preview/picture-lazyload.html" title="Component preview">
+            Picture Lazyload
             <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
@@ -79,14 +79,14 @@
 </div>
 
 
-    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-7243457542257875c7453c8dacd14ed5">
+    <div class="Pen-panel Pen-preview Preview" data-behaviour="preview" id="preview-ea31020b9dece600c804fc0f91b2c03a">
     <div class="Preview-wrapper" data-role="resizer">
         <div class="Preview-resizer">
             
              <iframe
                 class="Preview-iframe"
                 data-role="window"
-                src="../preview/label.html"
+                src="../preview/picture-lazyload.html"
                 sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
                  style=""
                 marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
@@ -101,7 +101,7 @@
     <div class="Pen-handle Pen-handle--browser" data-role="resize-handle"></div>
 
     <div class="Pen-panel Pen-info" data-role="info">
-    <div class="Browser" data-behaviour="browser" id="browser-7243457542257875c7453c8dacd14ed5">
+    <div class="Browser" data-behaviour="browser" id="browser-ea31020b9dece600c804fc0f91b2c03a">
 
     
 
@@ -110,19 +110,19 @@
         
         
         <li class="Browser-tab Browser-tab--html is-active " data-role="tab">
-            <a href="#browser-7243457542257875c7453c8dacd14ed5-panel-html">HTML</a>
+            <a href="#browser-ea31020b9dece600c804fc0f91b2c03a-panel-html">HTML</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--view" data-role="tab">
-            <a href="#browser-7243457542257875c7453c8dacd14ed5-panel-view">View</a>
+            <a href="#browser-ea31020b9dece600c804fc0f91b2c03a-panel-view">View</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--context" data-role="tab">
-            <a href="#browser-7243457542257875c7453c8dacd14ed5-panel-context">Context</a>
+            <a href="#browser-ea31020b9dece600c804fc0f91b2c03a-panel-context">Context</a>
         </li>
         
         
@@ -134,13 +134,13 @@
         
         
         <li class="Browser-tab Browser-tab--info" data-role="tab">
-            <a href="#browser-7243457542257875c7453c8dacd14ed5-panel-info">Info</a>
+            <a href="#browser-ea31020b9dece600c804fc0f91b2c03a-panel-info">Info</a>
         </li>
         
         
         
         <li class="Browser-tab Browser-tab--notes" data-role="tab">
-            <a href="#browser-7243457542257875c7453c8dacd14ed5-panel-notes">Notes</a>
+            <a href="#browser-ea31020b9dece600c804fc0f91b2c03a-panel-notes">Notes</a>
         </li>
         
         
@@ -150,23 +150,95 @@
 
     
     
-<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-7243457542257875c7453c8dacd14ed5-panel-html">
+<div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-ea31020b9dece600c804fc0f91b2c03a-panel-html">
     <code class="Code Code--lang-html">
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-input-label"</span>&gt;</span>Duis ultricies diam eu arcu dictum<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></pre>
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 911px)"</span> <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://via.placeholder.com/500x250?text=Mobile%201x, https://via.placeholder.com/1000x500?text=Mobile%202x 2x"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 912px)"</span> <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://via.placeholder.com/500x500?text=Desktop%201x, https://via.placeholder.com/1000x1000?text=Desktop%202x 2x"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"https://via.placeholder.com/500x250?text=Mobile%201x"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"lazy"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.1.0/dist/lazyload.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> lazyLoadInstance = <span class="hljs-keyword">new</span> LazyLoad({
+        elements_selector: <span class="hljs-string">".lazy"</span>
+        <span class="hljs-comment">// ... more custom settings?</span>
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.lazy</span> {
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-pseudo">:not(.initial)</span> {
+        <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span>;
+    }
+
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.initial</span>,
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.loaded</span>,
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.error</span> {
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-attr">[src]</span>) {
+        <span class="hljs-attribute">visibility</span>: hidden;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></pre>
         
     </code>
 </div>
 
     
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-7243457542257875c7453c8dacd14ed5-panel-view">
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-ea31020b9dece600c804fc0f91b2c03a-panel-view">
     <code class="Code Code--lang-twig">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-input-label"</span>&gt;</span>Duis ultricies diam eu arcu dictum<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span></pre>
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> 
+        <span class="hljs-attr">media</span>=<span class="hljs-string">"(max-width: 911px)"</span> 
+        <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://via.placeholder.com/500x250?text=Mobile%201x, https://via.placeholder.com/1000x500?text=Mobile%202x 2x"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">source</span> 
+        <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 912px)"</span> 
+        <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://via.placeholder.com/500x500?text=Desktop%201x, https://via.placeholder.com/1000x1000?text=Desktop%202x 2x"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> 
+        <span class="hljs-attr">data-src</span>=<span class="hljs-string">"https://via.placeholder.com/500x250?text=Mobile%201x"</span> 
+        <span class="hljs-attr">class</span>=<span class="hljs-string">"lazy"</span> 
+        <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.1.0/dist/lazyload.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> lazyLoadInstance = <span class="hljs-keyword">new</span> LazyLoad({
+        elements_selector: <span class="hljs-string">".lazy"</span>
+        <span class="hljs-comment">// ... more custom settings?</span>
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.lazy</span> {
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    }
+
+	<span class="hljs-selector-class">.lazy</span><span class="hljs-selector-pseudo">:not(.initial)</span> {
+        <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">1s</span>;
+    }
+    
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.initial</span>,
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.loaded</span>,
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-class">.error</span> {
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-selector-class">.lazy</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-attr">[src]</span>) {
+        <span class="hljs-attribute">visibility</span>: hidden;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span></pre>
     </code>
 </div>
 
     
-    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-7243457542257875c7453c8dacd14ed5-panel-context">
+    <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-ea31020b9dece600c804fc0f91b2c03a-panel-context">
     <code class="Code Code--lang-json">
         
             
@@ -188,11 +260,11 @@
 
 
     
-    <div class="Browser-panel" data-role="tab-panel" id="browser-7243457542257875c7453c8dacd14ed5-panel-info">
+    <div class="Browser-panel" data-role="tab-panel" id="browser-ea31020b9dece600c804fc0f91b2c03a-panel-info">
     <ul class="Meta">
         <li class="Meta-item">
             <strong class="Meta-key">Handle:</strong>
-            <span class="Meta-value">@label</span>
+            <span class="Meta-value">@picture-lazyload</span>
         </li>
         
         
@@ -203,12 +275,12 @@
             <strong class="Meta-key">Preview:</strong>
             <span class="Meta-value">
                 <ul>
-                    <li><a data-no-pjax href="../preview/label.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+                    <li><a data-no-pjax href="../preview/picture-lazyload.html"><span>With layout</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
 </svg>
 </a></li>
-                    <li><a data-no-pjax href="../render/label.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+                    <li><a data-no-pjax href="../render/picture-lazyload.html"><span>Component only</span> <svg fill="#000000" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v-2H5V8h14v10h-4v2h4c1.1 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-7 6l-4 4h3v6h2v-6h3l-4-4z"/>
 </svg>
@@ -218,31 +290,24 @@
         </li>
         <li class="Meta-item">
             <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">styleguide\components\03-form\01-label.twig</span>
+            <span class="Meta-value">styleguide\components\01-best-practices\picture-lazyload\picture-lazyload.twig</span>
         </li>
         
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">Referenced by <em class="Meta-count">(3)</em>:</strong>
-            <span class="Meta-value Meta-value--linkList">
-            
-                <a href="control.html">@<span>control</span></a>, 
-            
-                <a href="control--error.html">@<span>control--error</span></a>, 
-            
-                <a href="example.html">@<span>example</span></a>
-            
-            </span>
-        </li>
         
     </ul>
 </div>
 
     
-    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-7243457542257875c7453c8dacd14ed5-panel-notes">
+    <div class="Browser-panel Browser-notes" data-role="tab-panel" id="browser-ea31020b9dece600c804fc0f91b2c03a-panel-notes">
     <div class="Prose Prose--condensed">
         
-        <p class="Browser-isEmptyNote">There are no notes for this item.</p>
+        <h1 id="picture-element">Picture Element</h1>
+<p><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture">https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture</a></p>
+<h2 id="polyfill">Polyfill</h2>
+<p><a href="https://www.npmjs.com/package/picturefill">https://www.npmjs.com/package/picturefill</a></p>
+<h1 id="lazyload">lazyload</h1>
+<p><a href="https://github.com/verlok/lazyload">https://github.com/verlok/lazyload</a></p>
+
         
     </div>
 </div>
@@ -312,8 +377,8 @@
     
         
         
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="picture-lazyload.html" data-pjax>
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
                 <span>Picture Lazyload</span>
                 
 
@@ -504,8 +569,8 @@
     
         
         
-        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
-            <a class="Tree-entityLink" href="" data-pjax>
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="label.html" data-pjax>
                 <span>Label</span>
                 
 

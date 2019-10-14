@@ -11,7 +11,8 @@
     "eslint": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
     "tailwind-scss-var": "node tailwindcss/generate-scss-variables.js",
     "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write",
-    "test": "fractal start --sync"
+    "fractal": "fractal start --sync",
+    "fractal:build": "fractal build"
   },
   "fractal": {
     "main": "fractal.config.js"

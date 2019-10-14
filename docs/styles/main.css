@@ -67,34 +67,6 @@
     }
 ========================================================================== */
 
-.intrinsic {
-  padding-top: 100%;
-  display: block;
-  width: 100%;
-  height: 0;
-  position: relative;
-}
-
-.intrinsic.intrinsic--square {
-  padding-top: 100%;
-}
-
-.intrinsic.intrinsic--4x3 {
-  padding-top: 75%;
-}
-
-.intrinsic.intrinsic--16x9 {
-  padding-top: 56.25%;
-}
-
-.intrinsic .intrinsic-item {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 /* ==========================================================================
     #last-row
 ========================================================================== */
@@ -1230,6 +1202,34 @@ body.is-dev:before {
   }
 }
 
+.o-intrinsic {
+  padding-top: 100%;
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative;
+}
+
+.o-intrinsic--square {
+  padding-top: 100%;
+}
+
+.o-intrinsic--4x3 {
+  padding-top: 75%;
+}
+
+.o-intrinsic--16x9 {
+  padding-top: 56.25%;
+}
+
+.o-intrinsic__item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .o-button {
   padding: 12px 30px;
   display: inline-block;
@@ -1344,19 +1344,6 @@ Styleguide 2.7
   max-width: 1920px;
 }
 
-/*
-Heading
-
-Heading styles
-
-default - Default heading
-
-markup:
-<button class="o-heading-1 {$modifiers}">Lorem heading text</button>
-
-Styleguide 2.2
-*/
-
 .o-heading, .o-wysiwyg h1,
 .o-wysiwyg h2,
 .o-wysiwyg h3,
@@ -1438,15 +1425,6 @@ Styleguide 2.9
 .o-release {
   margin-right: calc(-50vw + 50%);
   margin-left: calc(-50vw + 50%);
-  text-align: center;
-  /* demo  */
-  background: #0d6a58;
-  background-color: #fff;
-}
-
-.o-release img {
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .o-table, .o-wysiwyg table {
