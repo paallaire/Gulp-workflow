@@ -23,6 +23,9 @@ const source = {
     videos: path.resolve('assets/videos'),
 }
 
+console.log('ENV', ENV)
+console.log('process.env.TASK', process.env.TASK)
+
 // base
 //----------------------------------------------------------
 mix.setPublicPath('public/dist');
@@ -31,7 +34,7 @@ mix.setPublicPath('public/dist');
 //----------------------------------------------------------
 if (ENV === 'development' || ENV === 'production') {
 
-    console.log('=== development or production ');
+    console.log('=== Base');
 
     mix.js(`${source.scripts}/main.js`, 'scripts')
         .sass(`${source.styles}/main.scss`, 'styles')
@@ -68,11 +71,43 @@ if (ENV === 'development' || ENV === 'production') {
 
 }
 
+
+// tailwind
+//----------------------------------------------------------
+if (process.env.TASK === 'watch' || ENV === 'production') {
+
+    console.log('=== tailwind');
+
+    // mix.sass(`${source.styles}/tailwind.scss`, 'styles')
+    //     .options({
+    //         processCssUrls: false,
+    //         postCss: [
+    //             require('postcss-preset-env')({ stage: 2 }),
+    //             require('tailwindcss')('./tailwind.config.js'),
+    //             require('postcss-pxtorem')({
+    //                 rootValue: 16,
+    //                 unitPrecision: 5,
+    //                 propList: [
+    //                     'font',
+    //                     'font-size',
+    //                     'line-height',
+    //                     'letter-spacing',
+    //                 ],
+    //                 selectorBlackList: [],
+    //                 replace: true,
+    //                 mediaQuery: false,
+    //                 minPixelValue: 0,
+    //             }),
+    //         ],
+    //     });
+
+}
+
 // development
 //----------------------------------------------------------
 if (ENV === 'development') {
 
-    console.log('=== development');
+    console.log('=== watch');
 
     mix.sourceMaps()
         .browserSync({
@@ -109,22 +144,14 @@ if (ENV === 'development') {
 
 // Copies
 //----------------------------------------------------------
-if (ENV === 'copyFiles' || ENV === 'production' || ENV === 'dev') {
+console.log('=== copyFiles');
 
-    console.log('=== copyFiles');
+mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
+    .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
+    .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
+    .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`);
 
-    mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
-        .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
-        .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
-        .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
 
-        // styleguide
-        .copyDirectory(`${source.assets}/images`, `${source.styleguide}/images`)
-        .copyDirectory(`${source.assets}/json`, `${source.styleguide}/json`)
-        .copyDirectory(`${source.assets}/svg`, `${source.styleguide}/svg`)
-        .copyDirectory(`${source.assets}/videos`, `${source.styleguide}/videos`);
-
-}
 
 // production
 //----------------------------------------------------------

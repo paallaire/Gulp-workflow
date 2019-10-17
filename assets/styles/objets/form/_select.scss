@@ -4,12 +4,12 @@ $o-select: '.o-select';
     @extend %input-select;
     padding: 0;
     padding-right: 40px;
-    border: 1px solid $colors-black;
     position: relative;
+    border: 1px solid $colors-black;
     
     &:after {
         content: '';
-        width: $input-select-size-icon;
+        width: $form-input-select-size-icon;
         position: absolute;
         top: 0;
         right: 0;
@@ -28,7 +28,7 @@ $o-select: '.o-select';
     }
 
     select {
-        padding: $input-padding;
+        padding: $form-input-padding;
         display: block;
         width: 100%;
     }

@@ -1,28 +1,44 @@
-// Variables
+
+/* ==========================================================================
+    #variables
+========================================================================== */
 @import 'tailwind-theme-variables';
 @import 'variables-custom';
 
-// Functions
-@import 'abstracts/functions';
-
-// Mixins
-@import 'abstracts/mixins/breakpoint-helper';
-@import 'abstracts/mixins/center';
-@import 'abstracts/mixins/clearfix';
-@import 'abstracts/mixins/focuspoint';
-@import 'abstracts/mixins/input-placeholder';
-@import 'abstracts/mixins/last-row';
-@import 'abstracts/mixins/responsive';
-@import 'abstracts/mixins/text-truncate';
-
-// Vendors
+/* ==========================================================================
+    #vendors
+========================================================================== */
 @import '~include-media/dist/_include-media';
 @import '~include-media-export';
 @import '~@paallaire/gridvisualizer/assets/styles/main';
 // @import '~aos/src/sass/aos';
 // @import '~hamburgers/_sass/hamburgers/hamburgers';
 
-// Base
+/* ==========================================================================
+    #functions
+========================================================================== */
+@import 'abstracts/functions';
+
+/* ==========================================================================
+    #mixins
+========================================================================== */
+@import 'abstracts/mixins/breakpoint-helper';
+@import 'abstracts/mixins/center';
+@import 'abstracts/mixins/focuspoint';
+@import 'abstracts/mixins/input-placeholder';
+@import 'abstracts/mixins/last-row';
+@import 'abstracts/mixins/responsive';
+@import 'abstracts/mixins/text-truncate';
+
+/* ==========================================================================
+    #placeholder
+========================================================================== */
+@import 'abstracts/placeholder/container';
+@import 'abstracts/placeholder/form';
+
+/* ==========================================================================
+    #base
+========================================================================== */
 @tailwind base;
 @import 'base/reset-custom';
 @import 'base/global';
@@ -35,7 +51,9 @@
 // Tailwind custom
 @import 'tailwind-custom/padding';
 
-// Objects
+/* ==========================================================================
+    #objects
+========================================================================== */
 @import 'objets/intrinsic';
 @import 'objets/button';
 @import 'objets/container';
@@ -46,13 +64,6 @@
 @import 'objets/table';
 @import 'objets/text';
 @import 'objets/wysiwyg';
-
-// form
-$input-padding: 12px 20px;
-$input-select-size-icon: 40px;
-$radio-size-icon: 18px;
-$checkbox-size-icon: 18px;
-
 
 @import 'objets/form/input-label';
 @import 'objets/form/input-text';
@@ -65,57 +76,14 @@ $checkbox-size-icon: 18px;
 @import 'objets/form/from-control';
 
 
-%input-text {
-    padding: $input-padding;
-    display: block;
-    width: 100%;
-    font-weight: $fontWeight-medium;
-    font-size: $fontSize-10;
-    line-height: $lineHeight-tight;
-}
-
-%input-disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-
-%input-focus {
-    color: $colors-blue-1;
-    border: 1px solid currentColor;
-}
-
-%input-placeholder {
-    
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $colors-blue-1 !important;
-        opacity: 1; /* Firefox */
-    }
-    
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: $colors-blue-1 !important;
-    }
-    
-    &::-ms-input-placeholder { /* Microsoft Edge */
-        color: $colors-blue-1 !important;
-    }
-}
-
-
-
-%input-select {
-    display: block;
-    width: 100%;
-    font-weight: $fontWeight-medium;
-    font-size: $fontSize-10;
-    line-height: $lineHeight-tight;
-}
-
-
-// Components
-@tailwind components;
+/* ==========================================================================
+    #components
+========================================================================== */
+//@tailwind components;
 //@import 'components/modal';
 
-// Templates
+/* ==========================================================================
+    #pages
+========================================================================== */
 // @import 'pages/home';
 // @import 'pages/404';
-

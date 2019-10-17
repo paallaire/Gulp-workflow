@@ -11,11 +11,16 @@
 
 @mixin input-placeholder {
 
-    &.placeholder {
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        @content;
+        opacity: 1; /* Firefox */
+    }
+    
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
         @content;
     }
-
-    &:placeholder {
+    
+    &::-ms-input-placeholder { /* Microsoft Edge */
         @content;
     }
 

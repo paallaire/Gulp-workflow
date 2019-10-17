@@ -12,8 +12,8 @@ $o-radio: '.o-radio';
             span {
                 margin-right: 5px;
                 display: inline-block;
-                width: $radio-size-icon;
-                height: $radio-size-icon;
+                width: $form-radio-size-icon;
+                height: $form-radio-size-icon;
                 position: relative;
                 vertical-align: middle;
                 border: 1px solid $colors-blue-1;
@@ -21,15 +21,15 @@ $o-radio: '.o-radio';
                 cursor: pointer;
 
                 &:before {
+                    content: '';
+                    width: $form-radio-size-icon / 2;
+                    height: $form-radio-size-icon / 2;
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
-                    content: '';
-                    width: $radio-size-icon / 2;
-                    height: $radio-size-icon / 2;
                     background-color: $colors-blue-1;
                     border-radius: 50%;
+                    transform: translate(-50%, -50%);
                     opacity: 0;
                     transition: opacity 100ms ease;
                 }

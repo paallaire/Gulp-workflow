@@ -3,7 +3,6 @@ $o-input-text: '.o-input-text';
 #{$o-input-text} {
     @extend %input-text;
     @extend %input-placeholder;
-    border: 1px solid $colors-black;
 
     &--is-disabled,
     &:disabled {

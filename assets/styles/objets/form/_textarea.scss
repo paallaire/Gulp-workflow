@@ -1,10 +1,8 @@
 $o-input-textarea: '.o-input-textarea';
 
 #{$o-input-textarea} {
-    @extend %input-text;
+    @extend %input-textarea;
     @extend %input-placeholder;
-    border: 1px solid $colors-black;
-    resize: none;
 
     &--is-disabled,
     &:disabled {

@@ -1,47 +1,4 @@
-/*
-Container
-
-Container styles
-
--large - large variant
--xlarge - xlarge variant
--wide - wide variant
--site - site variant
--xsite - xsite variant
-
-markup:
-<div class="o-container{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat nulla eu fermentum varius. Sed tempor ut tellus vitae posuere. Praesent et tempor ipsum, eu laoreet nunc.</div>
-
-Styleguide 2.7
-*/
-
 $o-container: '.o-container';
-
-%container {
-    padding-right: 20px;
-    padding-left: 20px;
-    box-sizing: content-box;
-
-    @include media('>=sm') {
-        padding-right: 25px;
-        padding-left: 25px;
-    }
-
-    @include media('>=md') {
-        padding-right: 25px;
-        padding-left: 25px;
-    }
-
-    @include media('>=lg') {
-        padding-right: 30px;
-        padding-left: 30px;
-    }
-
-    @include media('>=xl') {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
-}
 
 #{$o-container}-large {
     @extend %container;

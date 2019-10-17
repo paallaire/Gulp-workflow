@@ -12,22 +12,22 @@ $o-checkbox: '.o-checkbox';
             span {
                 margin-right: 5px;
                 display: inline-block;
-                width: $checkbox-size-icon;
-                height: $checkbox-size-icon;
+                width: $form-checkbox-size-icon;
+                height: $form-checkbox-size-icon;
                 position: relative;
                 vertical-align: middle;
                 border: 1px solid $colors-blue-1;
                 cursor: pointer;
 
                 &:before {
+                    content: '';
+                    width: $form-checkbox-size-icon / 2;
+                    height: $form-checkbox-size-icon / 2;
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
-                    content: '';
-                    width: $checkbox-size-icon / 2;
-                    height: $checkbox-size-icon / 2;
                     background-color: $colors-blue-1;
+                    transform: translate(-50%, -50%);
                     opacity: 0;
                     transition: opacity 100ms ease;
                 }
