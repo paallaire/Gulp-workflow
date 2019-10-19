@@ -1,0 +1,23 @@
+{
+    "title": "Base",
+    "status": "prototype",
+    "context": {
+        "type": "o-wysiwyg"
+    },
+	"variants": [
+		{
+			"name": "small",
+            "context": {
+                "type": "o-wysiwyg-small"
+        	}
+        },
+		{
+			"name": "large",
+            "context": {
+                "type": "o-wysiwyg-large"
+        	}
+        }
+	]
+}
+
+

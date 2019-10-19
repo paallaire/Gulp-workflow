@@ -4,9 +4,9 @@ const path = require('path')
 const purgecssOptions = require('./purgecss');
 const WEBSITE_URL = 'http://vicone.test';
 const ENV = process.env.NODE_ENV;
-const TASK = process.env.TASK;
 
 require('laravel-mix-purgecss');
+require('laravel-mix-imagemin');
 require('dotenv').config();
 
 const source = {
@@ -24,7 +24,7 @@ const source = {
 }
 
 console.log('ENV', ENV)
-console.log('process.env.TASK', TASK)
+console.log('process.env.TASK', process.env.TASK)
 
 // base
 //----------------------------------------------------------
@@ -71,9 +71,41 @@ if (ENV === 'development' || ENV === 'production') {
 
 }
 
+
+// tailwind
+//----------------------------------------------------------
+// if (process.env.TASK === 'tailwind' || ENV === 'production' ||  process.env.TASK === 'build-dev') {
+
+//     console.log('=== tailwind');
+
+//     mix.sass(`${source.styles}/tailwind.scss`, 'styles')
+//         .options({
+//             processCssUrls: false,
+//             postCss: [
+//                 require('postcss-preset-env')({ stage: 2 }),
+//                 require('tailwindcss')('./tailwind.config.js'),
+//                 require('postcss-pxtorem')({
+//                     rootValue: 16,
+//                     unitPrecision: 5,
+//                     propList: [
+//                         'font',
+//                         'font-size',
+//                         'line-height',
+//                         'letter-spacing',
+//                     ],
+//                     selectorBlackList: [],
+//                     replace: true,
+//                     mediaQuery: false,
+//                     minPixelValue: 0,
+//                 }),
+//             ],
+//         });
+
+// }
+
 // development
 //----------------------------------------------------------
-if (TASK === 'watch') {
+if (ENV === 'development') {
 
     console.log('=== watch');
 
@@ -117,9 +149,48 @@ console.log('=== copyFiles');
 mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
     .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
     .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
-    .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
-    .copyDirectory(`${source.assets}/images`, `${source.dist}/images`);
-    
+    .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`);
+
+
+
+// production
+//----------------------------------------------------------
+if (ENV === 'production') {
+
+    console.log('=== imagemin');
+
+    mix.imagemin(
+        {
+            from: path.join(source.images, '**/*'),
+            to: `${source.dist}/images`,
+            context: 'assets/images',
+        },
+        {},
+        {
+            gifsicle: { interlaced: true },
+            mozjpeg: { progressive: true, arithmetic: false },
+            optipng: { optimizationLevel: 3 }, // Lower number = speedier/reduced compression
+            svgo: {
+                plugins: [
+                    { convertPathData: false },
+                    { convertColors: { currentColor: false } },
+                    { removeDimensions: true },
+                    { removeViewBox: false },
+                    { cleanupIDs: false },
+                ],
+            },
+        }
+    )
+
+}
+else {
+
+    console.log('=== copyImages');
+
+    mix.copyDirectory(`${source.assets}/images`, `${source.dist}/images`)
+
+}
+
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

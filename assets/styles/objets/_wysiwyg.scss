@@ -1,6 +1,7 @@
 $o-wysiwyg: '.o-wysiwyg';
 
-#{$o-wysiwyg} {
+
+%wysiwyg-base {
     $vertical-rythm: $lineHeight-relaxed;
 
     line-height: $vertical-rythm;
@@ -8,8 +9,7 @@ $o-wysiwyg: '.o-wysiwyg';
     /* spacing */
 
     > * + * {
-        margin-top: 20px * $vertical-rythm;
-        margin-bottom: 20px * $vertical-rythm;
+        margin-bottom: 1em * $vertical-rythm;
     }
 
     > *:first-child {
@@ -24,41 +24,38 @@ $o-wysiwyg: '.o-wysiwyg';
     h4,
     h5,
     h6 {
-        @extend .o-heading;
-        font-weight: 700;
-        line-height: 1.2;
+        margin-top: 0.5em * $vertical-rythm;
+        margin-bottom: 0.25em * $vertical-rythm;
     }
 
     h1 {
-        font-size: 2.4em;
-        line-height: 1;
+        @extend .o-heading-1;
     }
 
     h2 {
-        font-size: 1.6em;
-        line-height: 1.1;
+        @extend .o-heading-2;
     }
 
     h3 {
-        font-size: 1.3em;
+        @extend .o-heading-3;
     }
 
     h4 {
-        font-size: 1.2em;
+        @extend .o-heading-4;
     }
 
     h5 {
-        font-size: 1.1em;
+        @extend .o-heading-5;
     }
 
     h6 {
-        font-size: 1em;
+        @extend .o-heading-6;
     }
 
     /* link */
 
     a {
-        text-decoration: none;
+        text-decoration: underline;
 
         &:hover {
             border-bottom: 1px solid;
@@ -115,18 +112,60 @@ $o-wysiwyg: '.o-wysiwyg';
         vertical-align: super;
     }
 
+    em {
+        font-style: italic;
+    }
+
+    del {
+        text-decoration: line-through;
+    }
+
+    code {
+        padding: 0.25em;
+        padding-bottom: 0.2em;
+        position: relative;
+        top: -1px;
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 87.5%;
+        font-family: Consolas,Menlo,Monaco,'Courier New',monospace;
+        line-height: 1;
+        background-color: #eff1f2;
+        border-radius: 2px;
+    }
+
     /* list */
 
     ol {
-        @extend %o-list-ordered;
+        @extend %o-ordered-list;
     }
 
     ul {
-        @extend %o-list-unordered;
+        @extend %o-unordered-list;
     }
 
     table {
         @extend .o-table;
     }
 
+    /* image */ 
+    
+    img {
+        display: inline;
+    }
+
 }
+
+#{$o-wysiwyg} {
+    @extend %wysiwyg-base;
+}
+
+#{$o-wysiwyg}-small {
+    @extend %wysiwyg-base;
+    font-size: $fontSize-6;
+}
+
+#{$o-wysiwyg}-large {
+    @extend %wysiwyg-base;
+    font-size: $fontSize-10;
+}
+

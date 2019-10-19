@@ -1,0 +1,28 @@
+{
+    "title": "Base",
+    "status": "prototype",
+    "context": {
+        "catColors": {
+            "transparent": "transparent",
+            "black": "#000",
+            "white": "#fff",
+            "gray": {
+                "1": "#373535",
+                "2": "#eaeaea",
+                "3": "#231f20",
+                "4": "#525254",
+                "5": "#f2f2f2",
+                "6": "#979797",
+                "7": "#e7e9e8",
+                "8": "#a2a2a2",
+                "9": "#343434"
+            },
+            "blue": {
+                "1": "#0984e3"
+            },
+            "red": {
+                "1": "#ed1c24"
+            }
+        }
+    }
+}

@@ -1,8 +1,39 @@
 $o-heading: '.o-heading';
 
-#{$o-heading} {
+%heading-base {
     color: $colors-black;
     font-weight: 300;
     line-height: $lineHeight-tight;
     text-transform: uppercase;
 }
+
+#{$o-heading}-1 {
+    @extend %heading-base;
+    font-size: $fontSize-30;
+}
+
+#{$o-heading}-2 {
+    @extend %heading-base;
+    font-size: $fontSize-24;
+}
+
+#{$o-heading}-3 {
+    @extend %heading-base;
+    font-size: $fontSize-20;
+}
+
+#{$o-heading}-4 {
+    @extend %heading-base;
+    font-size: $fontSize-18;
+}
+
+#{$o-heading}-5 {
+    @extend %heading-base;
+    font-size: $fontSize-12;
+}
+
+#{$o-heading}-6 {
+    @extend %heading-base;
+    font-size: $fontSize-10;
+}
+

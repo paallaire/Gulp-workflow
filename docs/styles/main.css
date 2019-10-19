@@ -1408,7 +1408,7 @@ List ordered styles
 default - Default
 
 markup:
-<ol class="o-list-ordered">
+<ol class="o-unordered-list">
    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
    <li>Aliquam tincidunt mauris eu risus.</li>
    <li>Vestibulum auctor dapibus neque.</li>
@@ -1417,7 +1417,7 @@ markup:
 Styleguide 2.9
 */
 
-.o-list-ordered, .o-wysiwyg ol {
+.o-unordered-list, .o-wysiwyg ol {
   padding-left: 1em;
   list-style-type: decimal;
 }

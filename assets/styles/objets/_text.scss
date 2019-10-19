@@ -1,23 +1,47 @@
-/*
-Text
-
-Text styles
-
-default - Default text
-o-text--light - Light text
-
-markup:
-<div class="o-text {$modifiers}">Nulla condimentum gravida efficitur. Nunc vel sagittis magna.</div>
-
-Styleguide 2.5
-*/
-
 $o-text: '.o-text';
 
-#{$o-text} {
+%text-base {
+    $vertical-rythm: $lineHeight-relaxed;
+
     color: $colors-gray-4;
     font-weight: 500;
-    font-size: $fontSize-8;
     line-height: $lineHeight-snug;
+
+    /* spacing */
+
+    > * + * {
+        margin-top: 0.5em * $vertical-rythm;
+    }
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    /* link */
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            border-bottom: 1px solid;
+        }
+
+    }
+
+}
+
+#{$o-text} {
+    @extend %text-base;
+    font-size: $fontSize-8;
+}
+
+#{$o-text}-small {
+    @extend %text-base;
+    font-size: $fontSize-6;
+}
+
+#{$o-text}-large {
+    @extend %text-base;
+    font-size: $fontSize-10;
 }
 
