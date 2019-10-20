@@ -7,33 +7,62 @@ $o-heading: '.o-heading';
     text-transform: uppercase;
 }
 
-#{$o-heading}-1 {
+%heading-1 {
     @extend %heading-base;
     font-size: $fontSize-30;
 }
 
-#{$o-heading}-2 {
+%heading-2 {
     @extend %heading-base;
     font-size: $fontSize-24;
 }
 
-#{$o-heading}-3 {
+%heading-3 {
     @extend %heading-base;
     font-size: $fontSize-20;
 }
 
-#{$o-heading}-4 {
+%heading-4 {
     @extend %heading-base;
     font-size: $fontSize-18;
 }
 
-#{$o-heading}-5 {
+%heading-5 {
     @extend %heading-base;
     font-size: $fontSize-12;
 }
 
-#{$o-heading}-6 {
+%heading-5 {
+    @extend %heading-base;
+    font-size: $fontSize-12;
+}
+
+%heading-6 {
     @extend %heading-base;
     font-size: $fontSize-10;
+}
+
+#{$o-heading}-1 {
+    @extend %heading-1;
+}
+
+#{$o-heading}-2 {
+    @extend %heading-2;
+}
+
+#{$o-heading}-3 {
+    @extend %heading-3;
+}
+
+#{$o-heading}-4 {
+    @extend %heading-4;
+}
+
+#{$o-heading}-5 {
+    @extend %heading-5;
+}
+
+#{$o-heading}-6 {
+    @extend %heading-6;
 }
 

@@ -9,9 +9,7 @@ export default class GridVisualizer {
         };
 
         this.options = options || defaultOptions;
-        console.log('options', this.options);
-
-        this.options.namespace = 'c-grid-visualer';
+        this.options.namespace = 'c-grid-visualizer';
     }
 
     init() {
@@ -19,12 +17,12 @@ export default class GridVisualizer {
         const $GridVisualizer = document.createElement('div');
         const $container = document.createElement('div');
         const $row = document.createElement('div');
-        const $block = document.createElement('div');
 
         // buttonToggle
-        $buttonToggle.setAttribute('class', 'c-grid-visualer-toggle');
+        $buttonToggle.setAttribute('class', 'c-grid-visualizer-toggle');
         $buttonToggle.innerHTML = 'Show Grid';
         document.body.appendChild($buttonToggle);
+
         // bind event
         $buttonToggle.addEventListener('click', e => {
             e.preventDefault();
@@ -38,25 +36,25 @@ export default class GridVisualizer {
         });
 
         // GridVisualizer
-        $GridVisualizer.setAttribute('class', 'c-grid-visualer');
+        $GridVisualizer.setAttribute('class', 'c-grid-visualizer');
         document.body.appendChild($GridVisualizer);
 
         // container
-        $container.setAttribute('class', `c-grid-visualer__container ${this.options.containerCSsClass}`);
+        $container.setAttribute('class', `c-grid-visualizer__container ${this.options.containerCSsClass}`);
         $GridVisualizer.appendChild($container);
 
         // row
-        $row.setAttribute('class', `c-grid-visualer__row ${this.options.rowCssClass}`);
+        $row.setAttribute('class', `c-grid-visualizer__row ${this.options.rowCssClass}`);
         $container.appendChild($row);
 
         for (let i = 0; i < this.options.numberColumns; i += 1) {
             const column = document.createElement('div');
             const $block = document.createElement('div');
 
-            column.setAttribute('class', `c-grid-visualer__column ${this.options.columnsCssClass}`);
+            column.setAttribute('class', `c-grid-visualizer__column ${this.options.columnsCssClass}`);
             $row.appendChild(column);
 
-            $block.setAttribute('class', `c-grid-visualer__block ${this.options.blockCssClass}`);
+            $block.setAttribute('class', `c-grid-visualizer__block ${this.options.blockCssClass}`);
             column.appendChild($block);
         }
     }

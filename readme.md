@@ -42,7 +42,34 @@ npm run eslint
 - https://codepen.io/search/pens?q=material&page=1&order=popularity&depth=everything
 - https://github.com/ben-rogerson/agency-webpack-mix-config
 
-## TODO 
+## Modules
 
-- Work in progress : separate tailwind form main files ( se mix files "tailwind" )
+**SWUP**
 
+Complete, flexible, extensible and easy to use page transition library for your web.
+
+https://github.com/swup/swup#readme
+
+**Swiper** 
+
+Swiper - is the free and most modern mobile touch slider with hardware accelerated transitions and amazing native behavior.
+
+https://swiperjs.com/
+
+**gsap (greensock)**
+
+Think of GSAP as the Swiss Army Knife of javascript animation...but better. It animates anything JavaScript can touch (CSS properties, canvas library objects, SVG, React, Vue, generic objects, whatever) and it solves countless browser inconsistencies, all with blazing speed (up to 20x faster than jQuery), including automatic GPU-acceleration of transforms.
+
+https://greensock.com/gsap/
+
+**simpleparallax**
+
+simpleParallax is a simple and tiny JavaScript library which adds parallax animations on any images.
+
+https://simpleparallax.com/
+
+**rellax**
+
+Rellax is a buttery smooth, super lightweight, vanilla javascript parallax library.
+
+https://dixonandmoe.com/rellax/

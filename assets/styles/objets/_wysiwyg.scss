@@ -1,6 +1,5 @@
 $o-wysiwyg: '.o-wysiwyg';
 
-
 %wysiwyg-base {
     $vertical-rythm: $lineHeight-relaxed;
 
@@ -29,27 +28,27 @@ $o-wysiwyg: '.o-wysiwyg';
     }
 
     h1 {
-        @extend .o-heading-1;
+        @extend %heading-1;
     }
 
     h2 {
-        @extend .o-heading-2;
+        @extend %heading-2;
     }
 
     h3 {
-        @extend .o-heading-3;
+        @extend %heading-3;
     }
 
     h4 {
-        @extend .o-heading-4;
+        @extend %heading-4;
     }
 
     h5 {
-        @extend .o-heading-5;
+        @extend %heading-5;
     }
 
     h6 {
-        @extend .o-heading-6;
+        @extend %heading-6;
     }
 
     /* link */
@@ -144,7 +143,7 @@ $o-wysiwyg: '.o-wysiwyg';
     }
 
     table {
-        @extend .o-table;
+        //@extend .o-table;
     }
 
     /* image */ 
@@ -168,4 +167,3 @@ $o-wysiwyg: '.o-wysiwyg';
     @extend %wysiwyg-base;
     font-size: $fontSize-10;
 }
-

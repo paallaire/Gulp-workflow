@@ -3,18 +3,20 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'dom4';
 import 'whatwg-fetch';
+import 'picturefill';
 
+// import custom components here
 import webFontLoad from './utils/webFonts';
 import polyfillsLoader from './utils/polyfillsLoader';
 import GridVisualizer from './utils/GridVisualizer';
 import { getEnv, setEnvOnBody, getLang } from './utils/environment';
+import lazyLoadInit from './utils/lazyLoad';
 
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
 import Vue from 'vue';
 import { mapGetters, mapMutations } from 'vuex';
-
 import store from './store/index';
 
 // Directives
@@ -38,6 +40,8 @@ const vm = new Vue({
         // setEnvOnBody();
         // console.log('getEnv', getEnv());
         // console.log('getLang', getLang());
+
+        lazyLoadInit();
 
         webFontLoad();
         polyfillsLoader();

@@ -7,7 +7,6 @@ const ENV = process.env.NODE_ENV;
 const TASK = process.env.TASK;
 
 require('laravel-mix-purgecss');
-require('dotenv').config();
 
 const source = {
     assets: path.resolve('assets'),
