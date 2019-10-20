@@ -27,9 +27,7 @@ npm run stylelint
 npm run eslint
 ```
 
-## Guideline 
-
-### Transitions
+## Animtions
 
 - https://material.io/design/motion/
 - https://material.io/design/motion/speed.html
@@ -42,7 +40,48 @@ npm run eslint
 - https://codepen.io/search/pens?q=material&page=1&order=popularity&depth=everything
 - https://github.com/ben-rogerson/agency-webpack-mix-config
 
-## Modules
+
+
+# CSS
+
+https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+
+### BEM
+
+- **Block:** The sole root of the component.
+- **Element:** A component part of the Block.
+- **Modifier:** A variant or extension of the Block.
+
+```css
+.block {}
+.block__element {}
+.block--modifier {}
+```
+
+### Namespaces
+
+- **Layout (l-)** :
+  Il regroupe tous les éléments faisant partie de la mise en page. C'est l'une des parties générales et structurelles de votre UI, utilisée généralement sur tous les écrans de votre site.
+  Exemple : `l-header` `l-main` `l-sidebar` `l-footer` `...`
+- **Object (o-)** :
+  Il signifie que cet élément est un objet. C'est une partie d'UI déterminée et identifiable (*"Ceci est un bouton", "Ceci est une modale"...*) qui peut être utilisée de manière répétée dans votre projet.
+  Exemple : `o-buttons` `o-cards` `o-panels` `o-breadcrumbs` `...`
+- **Component (c-)** :
+  Il signifie que cet élément est un composant. C'est un élément spécifique (parfois même abstrait), qui peut être utilisé de manière ciblée, sans discernement de sa position dans le code.
+  Exemple : `c-media` `c-input-slider` `c-checkbox` `c-avatar` `...`
+- **Utility (tailwindcss)** :
+  C'est une classe utilitaire. Elle est utilisée pour écraser et modifier le comportement des éléments ciblés.  [tailwindcss](https://tailwindcss.com) est utilisé pour cette partie.
+  Exemple : mt-1 `px-1 ` `flex` `...`
+- **State (is-) / (has-)** :
+  C'est une classe d'état.
+  Elle sert à indiquer un changement visuel lié à une action effectuée sur la page. Exemple : `is-loading` `is-collapsed` `has-error` `has-result` `...`
+- **JavaScript (js-)** :
+  Cette dernière classe indique la présence d'une interaction JavaScript.
+  Exemple : `js-map` `js-slider` `...`
+
+
+
+## Suggestions modules
 
 **SWUP**
 
