@@ -1,13 +1,13 @@
-<div class="o-radio">
-    <input class="o-radio__input" type="radio" id="radio_1" name="my-radio" value="1" {{ disabled }} checked>
-    <label for="radio_1">
-        <span></span> Yes
-    </label>
+<div class="flex flex-col">
+
+    {% for i in 1..5 %}
+    <div class="o-radio mb-2">
+        <input class="o-radio__input" type="radio" id="radio_{{ loop.index }}" name="my-radio" value="{{ loop.index }}" {{ disabled }}>
+        <label for="radio_{{ loop.index }}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis tincidunt magna, et gravida enim. 
+        </label>
+    </div>
+    {% endfor %}
+    
 </div>
 
-<div class="o-radio">
-    <input class="o-radio__input" type="radio" id="radio_2" name="my-radio" value="2" {{ disabled }}>
-    <label for="radio_2">
-        <span></span> No
-    </label>
-</div>

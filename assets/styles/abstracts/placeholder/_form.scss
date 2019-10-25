@@ -68,3 +68,16 @@
     }
 
 }
+
+/* ==========================================================================
+    #autocomplete
+    https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+==========================================================================  */
+
+%autocomplete-style {
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus {}
+
+}

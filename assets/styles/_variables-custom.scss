@@ -38,7 +38,7 @@ $breakpoints: (
 ) !default;
 
 /* ==========================================================================
-    #Fform
+    #form
 ==========================================================================  */
 
 $form-input-padding: 12px 20px;
@@ -46,16 +46,5 @@ $form-input-select-size-icon: 40px;
 $form-radio-size-icon: 18px;
 $form-checkbox-size-icon: 18px;
 
-/* ==========================================================================
-    #modal
-========================================================================== */
 
-$modal-selector: '.c-modal';
-$modal-zindex: 1000 !default;
-$modal-max-width: 1100px !default;
-$modal-max-height: calc(100vh - 20px) !default;
-$modal-overlay-bg-color: #000 !default;
-$modal-overlay-opacity: 0.8 !default;
-$modal-content-bg-color: transparent !default;
-$modal-content-padding: 30px 0 0 0 !default;
-$modal-transition: opacity 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+

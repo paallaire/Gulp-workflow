@@ -113,11 +113,11 @@ if (TASK === 'watch') {
 //----------------------------------------------------------
 console.log('=== copyFiles');
 
-mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
-    .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
-    .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
-    .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
-    .copyDirectory(`${source.assets}/images`, `${source.dist}/images`);
+// mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
+//     .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
+//     .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
+//     .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
+//     .copyDirectory(`${source.assets}/images`, `${source.dist}/images`);
     
 // Full API
 // mix.js(src, output);

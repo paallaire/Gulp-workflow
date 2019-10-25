@@ -65,10 +65,10 @@ https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-fu
   Exemple : `l-header` `l-main` `l-sidebar` `l-footer` `...`
 - **Object (o-)** :
   Il signifie que cet élément est un objet. C'est une partie d'UI déterminée et identifiable (*"Ceci est un bouton", "Ceci est une modale"...*) qui peut être utilisée de manière répétée dans votre projet.
-  Exemple : `o-buttons` `o-cards` `o-panels` `o-breadcrumbs` `...`
+  Exemple : `o-button` `o-text` `o-tag` `o-heading` `...`
 - **Component (c-)** :
   Il signifie que cet élément est un composant. C'est un élément spécifique (parfois même abstrait), qui peut être utilisé de manière ciblée, sans discernement de sa position dans le code.
-  Exemple : `c-media` `c-input-slider` `c-checkbox` `c-avatar` `...`
+  Exemple : `c-banner` `c-slider` `c-hero` `c-block-alert` `...`
 - **Utility (tailwindcss)** :
   C'est une classe utilitaire. Elle est utilisée pour écraser et modifier le comportement des éléments ciblés.  [tailwindcss](https://tailwindcss.com) est utilisé pour cette partie.
   Exemple : mt-1 `px-1 ` `flex` `...`
@@ -78,8 +78,6 @@ https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-fu
 - **JavaScript (js-)** :
   Cette dernière classe indique la présence d'une interaction JavaScript.
   Exemple : `js-map` `js-slider` `...`
-
-
 
 ## Suggestions modules
 

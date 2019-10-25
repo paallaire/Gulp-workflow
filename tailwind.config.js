@@ -7,7 +7,8 @@ module.exports = {
     important: true,
     separator: ':',
     theme: {
-        transitionDuration: { // defaults to these values
+        transitionDuration: {
+            // defaults to these values
             0: '0ms',
             75: '75ms',
             100: '100ms',
@@ -17,7 +18,8 @@ module.exports = {
             300: '300ms',
             500: '500ms',
         },
-        transitionTimingFunction: { // defaults to these values
+        transitionTimingFunction: {
+            // defaults to these values
 
             linear: 'linear',
             ease: 'ease',
@@ -73,11 +75,7 @@ module.exports = {
             xxl: '1920px',
         },
         fontFamily: {
-            futura: [
-                'futura-pt',
-                'sans-serif',
-                'Arial',
-            ],
+            futura: ['futura-pt', 'sans-serif', 'Arial'],
         },
         fontSize: {
             0: '0',
@@ -165,13 +163,13 @@ module.exports = {
         }),
         maxWidth: {
             none: '0',
-            screen: '100vw',               
+            screen: '100vw',
             full: '100%',
-            'large': '1040px',
-            'xlarge': '1160px',
-            'wide': '1240px',
+            large: '1040px',
+            xlarge: '1160px',
+            wide: '1240px',
             site: '1440px',
-            'xsite': '1920px',
+            xsite: '1920px',
         },
         maxHeight: {
             full: '100%',
