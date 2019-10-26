@@ -2,6 +2,9 @@
 /* eslint-disable no-console */
 // https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
 // https://stackoverflow.com/questions/44467909/animating-max-height-with-pure-js
+
+import getHeightElement from '../utils/getHeightElement';
+
 export default class Toggle {
     constructor(selector) {
         this.selector = selector;
@@ -18,8 +21,27 @@ export default class Toggle {
         this.element.forEach(item => {
             const $header = item.querySelector('.c-toggle__header');
 
-            $header.addEventListener('click', this.onClick);
+            if (item.dataset.open === 'true') {
+                this.toggle(item);
+            }
+
+            $header.addEventListener('click', this.onClick.bind(this));
         });
+    }
+
+    toggle($element) {
+        const $content = $element.querySelector('.c-toggle__content');
+
+        let contentHeight = getHeightElement($content);
+
+        $content.style.height = contentHeight;
+
+        if ($element.classList.contains('is-active')) {
+            contentHeight = 0;
+        }
+
+        $content.style.height = contentHeight;
+        $element.classList.toggle('is-active');
     }
 
     destroy() {
@@ -32,9 +54,7 @@ export default class Toggle {
     }
 
     onClick(item) {
-        const $root = item.target.closest('.c-toggle');
-        const $content = $root.querySelector('.c-toggle__content');
-
-        $content.classList.toggle('hidden');
+        const $element = item.target.closest('.c-toggle');
+        this.toggle($element);
     }
 }

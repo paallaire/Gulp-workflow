@@ -1,6 +1,6 @@
 {% for i in 0..5 %}
-<div class="c-toggle" data-module="toggle">
-    <div class="c-toggle__header">Pellentesque habitant mo</div>
+<div class="c-toggle" {{ loop.index == '1' ? 'data-open="true"' : '' }}>
+    <a class="c-toggle__header">Pellentesque habitant mo</a>
     <div class="c-toggle__content">
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
     </div>

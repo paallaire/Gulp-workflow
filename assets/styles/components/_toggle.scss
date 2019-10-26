@@ -1,0 +1,21 @@
+$c-toggle: '.c-toggle';
+
+#{$c-toggle} {
+
+    &__header {
+        border: 1px solid black;
+        padding: 10px;
+        display: block;
+    }
+
+    &__content {
+        overflow: hidden;
+        background-color: #4f88ff;
+        width: 200px;
+        transition: height 250ms ease;
+        //display: none;
+        height: 0;
+    }
+
+}
+
