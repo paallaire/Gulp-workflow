@@ -5,6 +5,7 @@ export default class Tabs {
     constructor(selector) {
         this.selector = selector;
         this.$elements = document.querySelectorAll(this.selector);
+        this.buttonHandlerClick = [];
 
         if (this.$elements) {
             this.init();
@@ -16,11 +17,13 @@ export default class Tabs {
     init() {
         const hash = window.location.hash.substr(1);
 
-        this.$elements.forEach($tab => {
+        this.$elements.forEach(($tab, indexElement) => {
             const $buttons = $tab.querySelectorAll('.c-tabs__header-button');
             const $contents = $tab.querySelectorAll('.c-tabs__content');
 
             $tab.dataset.module = 'tabs';
+
+            this.buttonHandlerClick[indexElement] = [];
 
             // Active first item
             if ($buttons && $contents) {
@@ -30,12 +33,15 @@ export default class Tabs {
                 console.log('Module Tabs - Missing button or content!');
             }
 
-            $buttons.forEach(item => {
-                if (item.hash.substr(1) === hash) {
-                    this.tabs(hash, item);
+            $buttons.forEach($item => {
+                if ($item.hash.substr(1) === hash) {
+                    this.tabs(hash, $item);
                 }
 
-                item.addEventListener('click', this.onClick.bind(this));
+                const handlerClick = this.onClick.bind(this);
+
+                this.buttonHandlerClick[indexElement].push(handlerClick);
+                $item.addEventListener('click', handlerClick);
             });
         });
     }
@@ -45,8 +51,8 @@ export default class Tabs {
         const $buttons = $tab.querySelectorAll('.c-tabs__header-button');
         const $contents = $tab.querySelectorAll('.c-tabs__content');
 
-        $contents.forEach(item => {
-            if (item.id === hash) {
+        $contents.forEach($block => {
+            if ($block.id === hash) {
                 // buttons
                 $buttons.forEach(button => {
                     button.classList.remove('is-active');
@@ -57,19 +63,18 @@ export default class Tabs {
                 $contents.forEach(content => {
                     content.classList.remove('is-active');
                 });
-                item.classList.add('is-active');
+                $block.classList.add('is-active');
             }
         });
     }
 
     destroy() {
-        console.log('Module Tabs - destroy!');
+        console.log('Module Tabs - destroy!', this);
 
-        this.$elements.forEach($tab => {
+        this.$elements.forEach(($tab, indexElement) => {
             const $buttons = $tab.querySelectorAll('.c-tabs__header-button');
-            $buttons.forEach(item => {
-                console.log('item', item)
-                item.removeEventListener('click', this.onClick);
+            $buttons.forEach(($link, indexButton) => {
+                $link.removeEventListener('click', this.buttonHandlerClick[indexElement][indexButton]);
             });
         });
     }

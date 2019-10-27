@@ -6,11 +6,12 @@ document.addEventListener(
     'DOMContentLoaded',
     () => {
         const toggle = new Toggle('.c-toggle');
+        //toggle.destroy();
         const stickyNav = new StickyNav('#header', {
             style: 'up-and-down',
         });
         const tabs = new Tabs('.c-tabs');
-        tabs.destroy();
+        //tabs.destroy();
     },
     false,
 );

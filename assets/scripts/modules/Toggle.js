@@ -9,6 +9,7 @@ export default class Toggle {
     constructor(selector) {
         this.selector = selector;
         this.element = document.querySelectorAll(this.selector);
+        this.buttonHandlerClick = [];
 
         if (this.element) {
             this.init();
@@ -20,22 +21,23 @@ export default class Toggle {
     init() {
         const hash = window.location.hash.substr(1);
 
-        this.element.forEach(item => {
-            const $header = item.querySelector('.c-toggle__header');
+        this.element.forEach($item => {
+            const $header = $item.querySelector('.c-toggle__header');
+            const handlerClick = this.onClick.bind(this);
 
-            item.dataset.module = 'toggle';
+            $item.dataset.module = 'toggle';
 
-            if (item.dataset.open === 'true' || item.id === hash) {
-                this.toggle(item);
+            if ($item.dataset.open === 'true' || $item.id === hash) {
+                this.toggle($item);
             }
 
-            $header.addEventListener('click', this.onClick.bind(this));
+            this.buttonHandlerClick.push(handlerClick);
+            $header.addEventListener('click', handlerClick);
         });
     }
 
     toggle($element) {
         const $content = $element.querySelector('.c-toggle__content');
-
         let contentHeight = getHeightElement($content);
 
         $content.style.height = contentHeight;
@@ -50,10 +52,8 @@ export default class Toggle {
 
     destroy() {
         console.log('Module Toggle - destroy!');
-        this.element.forEach(item => {
-            const $header = item.querySelector('.c-toggle__header');
-
-            $header.removeEventListener('click', this.onClick);
+        this.element.forEach(($item, index) => {
+            $item.querySelector('.c-toggle__header').removeEventListener('click', this.buttonHandlerClick[index]);
         });
     }
 
