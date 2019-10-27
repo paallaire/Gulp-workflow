@@ -78,6 +78,7 @@
 ========================================================================== */
 //@tailwind components;
 @import 'components/toggle';
+@import 'components/tabs';
 
 /* ==========================================================================
     #pages
@@ -90,4 +91,12 @@
     padding-top: 100%;
     border: 2px solid white;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.sticky-nav--is-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: $zIndex-nav-sticky;
 }

@@ -18,10 +18,14 @@ export default class Toggle {
     }
 
     init() {
+        const hash = window.location.hash.substr(1);
+
         this.element.forEach(item => {
             const $header = item.querySelector('.c-toggle__header');
 
-            if (item.dataset.open === 'true') {
+            item.dataset.module = 'toggle';
+
+            if (item.dataset.open === 'true' || item.id === hash) {
                 this.toggle(item);
             }
 

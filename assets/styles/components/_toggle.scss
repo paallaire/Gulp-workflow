@@ -10,10 +10,7 @@ $c-toggle: '.c-toggle';
 
     &__content {
         overflow: hidden;
-        background-color: #4f88ff;
-        width: 200px;
         transition: height 250ms ease;
-        //display: none;
         height: 0;
     }
 
