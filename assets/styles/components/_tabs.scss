@@ -20,8 +20,8 @@ $c-tabs: '.c-tabs';
 
     &__content {
         padding: 10px;
-        border: 1px solid $colors-black;
         display: none;
+        border: 1px solid $colors-black;
 
         &.is-active {
             display: block;

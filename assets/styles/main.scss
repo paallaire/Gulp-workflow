@@ -79,6 +79,7 @@
 //@tailwind components;
 @import 'components/toggle';
 @import 'components/tabs';
+@import 'components/nav-canvas';
 
 /* ==========================================================================
     #pages
@@ -94,8 +95,8 @@
 }
 
 .sticky-nav--is-fixed {
-    position: fixed;
     width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: $zIndex-nav-sticky;
