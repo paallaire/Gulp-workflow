@@ -5,7 +5,6 @@ export default class NavCanvas {
     constructor(selector, config) {
         this.selector = selector;
         this.$element = document.querySelector(this.selector);
-        this.$buttonNav = document.querySelector('[data-module="navButton"]');
         this.isActive = false;
         this.$body = document.querySelector('body');
 
@@ -22,25 +21,19 @@ export default class NavCanvas {
         }
     }
 
-    init() {
-        this.$buttonNav.addEventListener('click', this.onClick.bind(this));
-    }
+    init() {}
 
     open() {
         console.log('open');
         this.$body.classList.add('c-nav-canvas--is-active');
-        this.$buttonNav.classList.add('is-active');
     }
 
     close() {
         console.log('close');
         this.$body.classList.remove('c-nav-canvas--is-active');
-        this.$buttonNav.classList.remove('is-active');
     }
 
-    onClick(e) {
-        e.preventDefault();
-
+    toggle() {
         if (this.$body.classList.contains('c-nav-canvas--is-active')) {
             this.close();
         } else {

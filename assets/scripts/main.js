@@ -17,6 +17,13 @@ document.addEventListener(
         // tabs.destroy();
 
         const navCanvas = new NavCanvas('.c-nav-canvas');
+
+        const $navCanvasButton = document.querySelector('#nav-canvas-button');
+
+        $navCanvasButton.addEventListener('click', e => {
+            e.preventDefault();
+            navCanvas.toggle();
+        });
     },
     false,
 );
