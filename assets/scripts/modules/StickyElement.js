@@ -54,7 +54,6 @@ export default class StickyElement {
     }
 
     update() {
-
         this.offsetTop = this.$wrapper.offsetTop;
         this.$wrapper.style.height = `${this.$element.clientHeight}px`;
     }
