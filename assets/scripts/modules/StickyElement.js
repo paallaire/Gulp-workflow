@@ -95,9 +95,9 @@ export default class StickyElement {
     }
 
     destroy() {
+        console.log('Module StickyElement - destroy!');
         window.cancelAnimationFrame(this.requestAnimationFrameID);
         window.removeEventListener('scroll', this.onScroll.bind(this));
         window.removeEventListener('resize', this.onResize.bind(this));
-        console.log('Module StickyElement - destroy!');
     }
 }

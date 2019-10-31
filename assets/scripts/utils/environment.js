@@ -1,27 +1,10 @@
-function getEnv(customSearchTerms) {
-    const searchTerms = customSearchTerms || ['local', 'dev', 'stage', 'test'];
-    const { href } = window.location;
-    const isDev = searchTerms.some(el => href.includes(el));
+const APP_NAME = 'Boilerplate';
 
-    return isDev ? 'dev' : 'prod';
-}
+const $html = document.documentElement;
+const $body = document.body;
 
-function setEnvOnBody() {
-    const $body = document.querySelector('body');
-    const env = getEnv();
-    let classEnv = 'is-prod';
+const searchTerms = ['local', 'dev', 'stage', 'test'];
+const lang = $html.getAttribute('lang') !== null ? $html.getAttribute('lang') : 'en';
+const isDebug = searchTerms.some(el => window.location.href.includes(el));
 
-    if (env === 'dev') {
-        classEnv = 'is-dev';
-    }
-
-    $body.classList.add(classEnv);
-}
-
-function getLang() {
-    const html = document.querySelector('html');
-
-    return html.getAttribute('lang') !== null ? html.getAttribute('lang') : 'en';
-}
-
-export { getEnv, setEnvOnBody, getLang };
+export { APP_NAME, $html, $body, lang, isDebug };

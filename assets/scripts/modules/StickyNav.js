@@ -4,6 +4,9 @@
 /*
 Example
 
+// Show on scroll Up and hide on scroll Down
+// https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+
 const stickyNav = new StickyNav('#header', {
     style: 'up-and-down ou default',
 });
@@ -61,8 +64,6 @@ export default class StickyNav {
         if (this.WindowScrollY > this.offsetTop) {
             this.$element.classList.add('sticky-nav--is-fixed');
 
-            // Show on scroll Up and hide on scroll Down
-            // https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
             if (this.config.style === 'up-and-down') {
                 if (this.WindowScrollY > this.lastPositionY) {
                     this.$element.classList.add('sticky-nav--is-hidden');

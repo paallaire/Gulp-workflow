@@ -8,16 +8,16 @@ import 'picturefill';
 // import custom components here
 import Vue from 'vue';
 import { mapGetters, mapMutations } from 'vuex';
-import webFontLoad from './utils/webFonts';
+import webFontLoad from '../utils/webFonts';
 import polyfillsLoader from './utils/polyfillsLoader';
 import GridVisualizer from './utils/GridVisualizer';
-import { getEnv, setEnvOnBody, getLang } from './utils/environment';
-import lazyLoadInit from './utils/lazyLoad';
+import { getEnv, setEnvOnBody, getLang } from '../utils/environment';
+import lazyLoadInit from '../utils/lazyLoad';
 
 /* --------------------------------------------------------------------------------
 Vue
 -------------------------------------------------------------------------------- */
-import store from './store/index';
+import store from '../store/index';
 
 // Directives
 

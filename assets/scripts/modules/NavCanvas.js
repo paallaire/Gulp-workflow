@@ -1,11 +1,7 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-console */
-
 export default class NavCanvas {
     constructor(selector, config) {
         this.selector = selector;
         this.$element = document.querySelector(this.selector);
-        this.isActive = false;
         this.$body = document.querySelector('body');
 
         const defautConfig = {
@@ -21,15 +17,15 @@ export default class NavCanvas {
         }
     }
 
-    init() {}
+    init() {
+        this.$body.classList.add('c-nav-canvas--loaded');
+    }
 
     open() {
-        console.log('open');
         this.$body.classList.add('c-nav-canvas--is-active');
     }
 
     close() {
-        console.log('close');
         this.$body.classList.remove('c-nav-canvas--is-active');
     }
 
@@ -39,9 +35,5 @@ export default class NavCanvas {
         } else {
             this.open();
         }
-    }
-
-    destroy() {
-        console.log('Module NavCanvas - destroy!');
     }
 }
