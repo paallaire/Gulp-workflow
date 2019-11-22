@@ -27,7 +27,6 @@
     "copy-webpack-plugin": "^5.0.4",
     "cross-env": "^6.0.3",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",

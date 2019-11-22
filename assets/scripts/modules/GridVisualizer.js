@@ -4,11 +4,11 @@ export default class GridVisualizer {
             numberColumns: 12,
             containerCSsClass: 'mx-auto max-w-5xl',
             rowCssClass: 'flex -mx-2',
-            columnsCssClass: 'w-1/12 px-2',
+            columnsCssClass: 'px-2',
+            columnsCssClassCustom: null,
             blockCssClass: 'bg-gray-400',
         };
-
-        this.options = options || defaultOptions;
+        this.options = Object.assign(defaultOptions, options);
         this.options.namespace = 'c-grid-visualizer';
     }
 
@@ -51,7 +51,15 @@ export default class GridVisualizer {
             const column = document.createElement('div');
             const $block = document.createElement('div');
 
-            column.setAttribute('class', `c-grid-visualizer__column ${this.options.columnsCssClass}`);
+            if (this.options.columnsCssClassCustom) {
+                column.setAttribute(
+                    'class',
+                    `c-grid-visualizer__column ${this.options.columnsCssClass} ${this.options.columnsCssClassCustom[i]}`,
+                );
+            } else {
+                column.setAttribute('class', `c-grid-visualizer__column ${this.options.columnsCssClass}`);
+            }
+
             $row.appendChild(column);
 
             $block.setAttribute('class', `c-grid-visualizer__block ${this.options.blockCssClass}`);
