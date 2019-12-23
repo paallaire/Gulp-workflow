@@ -4,7 +4,7 @@ import Tabs from './modules/Tabs';
 import NavCanvas from './modules/NavCanvas';
 import StickyElement from './modules/StickyElement';
 
-export default function() {
+export default function () {
     const toggle = new Toggle('.c-toggle');
     // toggle.destroy();
 
@@ -20,7 +20,7 @@ export default function() {
     const $navCanvasButton = document.querySelector('#nav-canvas-button');
 
     if ($navCanvasButton) {
-        $navCanvasButton.addEventListener('click', e => {
+        $navCanvasButton.addEventListener('click', (e) => {
             e.preventDefault();
             navCanvas.toggle();
         });

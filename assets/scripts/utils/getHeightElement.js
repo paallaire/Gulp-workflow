@@ -1,4 +1,4 @@
-export default function($element) {
+export default function ($element) {
     let height = 0;
 
     $element.style.display = 'block'; // Make it visible

@@ -1,6 +1,6 @@
 import LazyLoad from 'vanilla-lazyload';
 
-export default function() {
+export default function () {
     window.lazyLoadInstance = new LazyLoad({
         elements_selector: '.lazy',
     });

@@ -1,4 +1,4 @@
-export default function(src) {
+export default function (src) {
     const js = document.createElement('script');
     js.src = src;
     js.onload = () => {

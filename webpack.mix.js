@@ -1,124 +1,70 @@
 const mix = require('laravel-mix');
-const path = require('path')
-
+const config = require('./config');
 const purgecssOptions = require('./purgecss');
-const WEBSITE_URL = 'http://vicone.test';
-const ENV = process.env.NODE_ENV;
-const TASK = process.env.TASK;
 
+// plugins
 require('laravel-mix-purgecss');
-
-const source = {
-    assets: path.resolve('assets'),
-    dist: path.resolve('public/dist'),
-    styleguide: path.resolve('styleguide'),
-    fonts: path.resolve('assets/fonts'),
-    svg: path.resolve('assets/svg'),
-    images: path.resolve('assets/images'),
-    scripts: path.resolve('assets/scripts'),
-    styles: path.resolve('assets/styles'),
-    static: path.resolve('assets/static'),
-    templates: path.resolve('assets/templates'),
-    videos: path.resolve('assets/videos'),
-}
-
-console.log('ENV', ENV)
-console.log('process.env.TASK', TASK)
 
 // base
 //----------------------------------------------------------
-mix.setPublicPath('public/dist');
+mix.setPublicPath('public/dist')
+    .js(`${config.path.assets}/scripts/main.js`, 'scripts')
+    .sass(`${config.path.assets}/styles/main.scss`, 'styles')
+    .sass(`${config.path.assets}/styles/tailwind.scss`, 'styles')
+    .options({
+        processCssUrls: false,
+        postCss: [
+            require('postcss-preset-env')({ stage: 2 }),
+            require('tailwindcss')('./tailwind.config.js'),
+            require('postcss-pxtorem')({
+                rootValue: 16,
+                unitPrecision: 5,
+                propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+                selectorBlackList: [],
+                replace: true,
+                mediaQuery: false,
+                minPixelValue: 0,
+            }),
+        ],
+    })
+    .purgeCss({
+        enabled: mix.inProduction(),
+        folders: ['assets', 'modules', 'templates'],
+        extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
+        whitelist: purgecssOptions.whitelist,
+        whitelistPatterns: purgecssOptions.whitelistPatterns,
+        whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
+        keyframes: true,
+    })
+    .extract()
+    .version();
 
-// development or production
+// Watch
 //----------------------------------------------------------
-if (ENV === 'development' || ENV === 'production') {
-
-    console.log('=== Base');
-
-    mix.js(`${source.scripts}/main.js`, 'scripts')
-        .sass(`${source.styles}/main.scss`, 'styles')
-        .sass(`${source.styles}/tailwind.scss`, 'styles')
-        .options({
-            processCssUrls: false,
-            postCss: [
-                require('postcss-preset-env')({ stage: 2 }),
-                require('tailwindcss')('./tailwind.config.js'),
-                require('postcss-pxtorem')({
-                    rootValue: 16,
-                    unitPrecision: 5,
-                    propList: [
-                        'font',
-                        'font-size',
-                        'line-height',
-                        'letter-spacing',
-                    ],
-                    selectorBlackList: [],
-                    replace: true,
-                    mediaQuery: false,
-                    minPixelValue: 0,
-                }),
-            ],
-        }).purgeCss({
-            enabled: mix.inProduction(),
-            folders: ['assets', 'modules', 'templates'],
-            extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
-            whitelist: purgecssOptions.whitelist,
-            whitelistPatterns: purgecssOptions.whitelistPatterns,
-            whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
-            keyframes: true
-        });
-
+if (!mix.inProduction()) {
+    mix.sourceMaps().browserSync({
+        proxy: false,
+        server: {
+            baseDir: './public/',
+        },
+        // proxy: WEBSITE_URL,
+        files: [
+            `${config.path.public}/**/*.html`,
+            `${config.path.dist}/scripts/*.js`,
+            `${config.path.dist}/styles/*.css`,
+            `${config.path.dist}/fonts/**/*`,
+            `${config.path.dist}/images/**/`,
+        ],
+        ghostMode: {
+            clicks: false,
+            links: false,
+            forms: false,
+            scroll: false,
+        },
+        reloadDelay: 1000,
+    });
 }
 
-// development
-//----------------------------------------------------------
-if (TASK === 'watch') {
-
-    console.log('=== watch');
-
-    mix.sourceMaps()
-        .browserSync({
-            proxy: false,
-            server: {
-                baseDir: "./public/"
-            },
-            // proxy: WEBSITE_URL,
-            files: [
-                'public/**/*.html',
-                'public/dist/scripts/*.js',
-                'public/dist/styles/*.css',
-                'public/dist/fonts/**/*',
-                'public/dist/images/**/*',
-                // 'modules/**/*.php',
-                // 'templates/**/*.twig',
-                // 'translations/**/*.php',
-                // 'web/fonts/**/*',
-                // 'web/images/**/*',
-                // 'web/scripts/**/*.js',
-                // 'web/styles/**/*.css',
-                // 'web/svg/**/*',
-            ],
-            ghostMode: {
-                clicks: false,
-                links: false,
-                forms: false,
-                scroll: false,
-            },
-            reloadDelay: 1000,
-        });
-
-}
-
-// Copies
-//----------------------------------------------------------
-console.log('=== copyFiles');
-
-// mix.copyDirectory(`${source.assets}/fonts`, `${source.dist}/fonts`)
-//     .copyDirectory(`${source.assets}/json`, `${source.dist}/json`)
-//     .copyDirectory(`${source.assets}/svg`, `${source.dist}/svg`)
-//     .copyDirectory(`${source.assets}/videos`, `${source.dist}/videos`)
-//     .copyDirectory(`${source.assets}/images`, `${source.dist}/images`);
-    
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

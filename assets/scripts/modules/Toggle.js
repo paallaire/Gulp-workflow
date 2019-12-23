@@ -21,7 +21,7 @@ export default class Toggle {
     init() {
         const hash = window.location.hash.substr(1);
 
-        this.element.forEach($item => {
+        this.element.forEach(($item) => {
             const $header = $item.querySelector('.c-toggle__header');
             const handlerClick = this.onClick.bind(this);
 

@@ -42,23 +42,20 @@ module.exports = {
             transparent: 'transparent',
             black: '#000',
             white: '#fff',
+            green: {
+                1: '#2ecc71',
+                2: '#27ae60',
+            },
             gray: {
-                1: '#373535',
-                2: '#eaeaea',
-                3: '#d8d8d8',
-                4: '#525254',
-                5: '#f2f2f2',
-                6: '#979797',
-                7: '#e7e9e8',
-                8: '#a2a2a2',
-                9: '#343434',
+                1: '#2c3e50',
+                2: '#bdc3c7',
             },
             blue: {
-                1: '#0984e3',
-                2: '#0984e3',
+                1: '#3498db',
+                2: '#2980b9',
             },
             red: {
-                1: '#ed1c24',
+                1: '#e74c3c',
             },
         },
         spacing: {
@@ -113,8 +110,8 @@ module.exports = {
             wider: '0.05em',
             widest: '0.1em',
         },
-        textColor: theme => theme('colors'),
-        backgroundColor: theme => theme('colors'),
+        textColor: (theme) => theme('colors'),
+        backgroundColor: (theme) => theme('colors'),
         cursor: {
             auto: 'auto',
             default: 'default',
@@ -124,7 +121,7 @@ module.exports = {
             move: 'move',
             'not-allowed': 'not-allowed',
         },
-        width: theme => ({
+        width: (theme) => ({
             auto: 'auto',
             ...theme('spacing'),
             ...theme('maxWidth'),
@@ -163,7 +160,7 @@ module.exports = {
             '7/8': '87.50%',
             '8/8': '100.00%',
         }),
-        height: theme => ({
+        height: (theme) => ({
             auto: 'auto',
             ...theme('spacing'),
             full: '100%',
@@ -183,7 +180,7 @@ module.exports = {
             full: '100%',
             screen: '100vh',
         },
-        padding: theme => theme('spacing'),
+        padding: (theme) => theme('spacing'),
         margin: (theme, { negative }) => ({
             auto: 'auto',
             ...theme('spacing'),

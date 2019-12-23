@@ -10,9 +10,9 @@ const data = {
 
 // Getters - get value
 const getters = {
-    lang: state => state.lang,
-    env: state => state.env,
-    bodyScrollDisabled: state => state.bodyScrollDisabled,
+    lang: (state) => state.lang,
+    env: (state) => state.env,
+    bodyScrollDisabled: (state) => state.bodyScrollDisabled,
 };
 
 // Setter - set value asynchrone (async) or business logic

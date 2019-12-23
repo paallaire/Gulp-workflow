@@ -33,7 +33,7 @@ export default class Tabs {
                 console.log('Module Tabs - Missing button or content!');
             }
 
-            $buttons.forEach($item => {
+            $buttons.forEach(($item) => {
                 if ($item.hash.substr(1) === hash) {
                     this.tabs(hash, $item);
                 }
@@ -51,16 +51,16 @@ export default class Tabs {
         const $buttons = $tab.querySelectorAll('.c-tabs__header-button');
         const $contents = $tab.querySelectorAll('.c-tabs__content');
 
-        $contents.forEach($block => {
+        $contents.forEach(($block) => {
             if ($block.id === hash) {
                 // buttons
-                $buttons.forEach(button => {
+                $buttons.forEach((button) => {
                     button.classList.remove('is-active');
                 });
                 target.classList.add('is-active');
 
                 // content
-                $contents.forEach(content => {
+                $contents.forEach((content) => {
                     content.classList.remove('is-active');
                 });
                 $block.classList.add('is-active');

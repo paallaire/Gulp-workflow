@@ -24,7 +24,7 @@ export default class GridVisualizer {
         document.body.appendChild($buttonToggle);
 
         // bind event
-        $buttonToggle.addEventListener('click', e => {
+        $buttonToggle.addEventListener('click', (e) => {
             e.preventDefault();
             $GridVisualizer.classList.toggle('is-active');
 
@@ -40,17 +40,11 @@ export default class GridVisualizer {
         document.body.appendChild($GridVisualizer);
 
         // container
-        $container.setAttribute(
-            'class',
-            `c-grid-visualizer__container ${this.options.containerCSsClass}`,
-        );
+        $container.setAttribute('class', `c-grid-visualizer__container ${this.options.containerCSsClass}`);
         $GridVisualizer.appendChild($container);
 
         // row
-        $row.setAttribute(
-            'class',
-            `c-grid-visualizer__row ${this.options.rowCssClass}`,
-        );
+        $row.setAttribute('class', `c-grid-visualizer__row ${this.options.rowCssClass}`);
         $container.appendChild($row);
 
         for (let i = 0; i < this.options.numberColumns; i += 1) {
@@ -60,21 +54,15 @@ export default class GridVisualizer {
             if (this.options.columnsCssClassCustom) {
                 column.setAttribute(
                     'class',
-                    `c-grid-visualizer__column ${this.options.columnsCssClass}  ${this.options.columnsCssClassCustom[i]}`,
+                    `c-grid-visualizer__column ${this.options.columnsCssClass} ${this.options.columnsCssClassCustom[i]}`,
                 );
             } else {
-                column.setAttribute(
-                    'class',
-                    `c-grid-visualizer__column ${this.options.columnsCssClass}`,
-                );
+                column.setAttribute('class', `c-grid-visualizer__column ${this.options.columnsCssClass}`);
             }
 
             $row.appendChild(column);
 
-            $block.setAttribute(
-                'class',
-                `c-grid-visualizer__block ${this.options.blockCssClass}`,
-            );
+            $block.setAttribute('class', `c-grid-visualizer__block ${this.options.blockCssClass}`);
             column.appendChild($block);
         }
     }
