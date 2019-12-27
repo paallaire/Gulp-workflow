@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const TailwindConfig = require('../tailwind.config');
 
-const outPath = path.join(__dirname, '../assets/styles/_tailwind-theme-variables.scss');
+const outPath = path.join(__dirname, '../assets/styles/01.settings/_tailwind-theme-variables.scss');
 const resolveConfig = require('tailwindcss/lib/util/resolveConfig');
 
 // If the file exists, delete it.

@@ -12,10 +12,10 @@ $transitionTimingFunction-ease: ease;
 $transitionTimingFunction-ease-in: ease-in;
 $transitionTimingFunction-ease-out: ease-out;
 $transitionTimingFunction-ease-in-out: ease-in-out;
-$transitionTimingFunction-material-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
-$transitionTimingFunction-material-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
-$transitionTimingFunction-material-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
-$transitionTimingFunction-slow-bounce: cubic-bezier(.6,.01,0,1.38);
+$transitionTimingFunction-material-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$transitionTimingFunction-material-decelerate: cubic-bezier(0, 0, 0.2, 1);
+$transitionTimingFunction-material-accelerate: cubic-bezier(0.4, 0, 1, 1);
+$transitionTimingFunction-slow-bounce: cubic-bezier(0.6, 0.01, 0, 1.38);
 
 $iconSize-xs: 10px;
 $iconSize-sm: 20px;
@@ -29,7 +29,7 @@ $colors-white: #fff;
 $colors-gray-1: #373535;
 $colors-gray-2: #eaeaea;
 $colors-gray-3: #231f20;
-$colors-gray-4: #525254;
+$colors-gray-1: #525254;
 $colors-gray-5: #f2f2f2;
 $colors-gray-6: #979797;
 $colors-gray-7: #e7e9e8;
@@ -952,4 +952,3 @@ $ratios-square: 100%;
 $ratios-16_9: 56.25%;
 $ratios-4_3: 75%;
 $ratios-21_9: 42.86%;
-

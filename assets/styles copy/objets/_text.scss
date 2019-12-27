@@ -3,7 +3,7 @@ $o-text: '.o-text';
 %text-base {
     $vertical-rythm: $lineHeight-relaxed;
 
-    color: $colors-gray-4;
+    color: $colors-gray-1;
     font-weight: 500;
     line-height: $lineHeight-snug;
 
@@ -25,9 +25,7 @@ $o-text: '.o-text';
         &:hover {
             border-bottom: 1px solid;
         }
-
     }
-
 }
 
 #{$o-text} {
@@ -44,4 +42,3 @@ $o-text: '.o-text';
     @extend %text-base;
     font-size: $fontSize-10;
 }
-

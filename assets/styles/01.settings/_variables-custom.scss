@@ -31,10 +31,10 @@ $text-selection-bg: #b3d4fc !default;
 ==========================================================================  */
 
 $breakpoints: (
-'sm': $screens-sm,
-'md': $screens-md,
-'lg': $screens-lg,
-'xl': $screens-xl,
+    'sm': $screens-sm,
+    'md': $screens-md,
+    'lg': $screens-lg,
+    'xl': $screens-xl,
 ) !default;
 
 /* ==========================================================================
@@ -45,6 +45,3 @@ $form-input-padding: 12px 20px;
 $form-input-select-size-icon: 40px;
 $form-radio-size-icon: 18px;
 $form-checkbox-size-icon: 18px;
-
-
-
