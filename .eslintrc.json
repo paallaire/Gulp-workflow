@@ -15,6 +15,7 @@
     "plugins": ["prettier"],
     "rules": {
         "func-names": "warn",
+        "consistent-return": "warn",
         "linebreak-style": ["error", "unix"],
         "indent": ["error", 4],
         "no-unused-vars": "warn",
