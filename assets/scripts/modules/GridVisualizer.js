@@ -2,9 +2,9 @@ export default class GridVisualizer {
     constructor(options) {
         const defaultOptions = {
             numberColumns: 12,
-            containerCSsClass: 'mx-auto max-w-5xl',
-            rowCssClass: 'flex -mx-2',
-            columnsCssClass: 'px-2',
+            containerCSsClass: 'o-grid-container',
+            rowCssClass: 'flex o-grid-row',
+            columnsCssClass: 'o-grid-column w-1/12',
             columnsCssClassCustom: null,
             blockCssClass: 'bg-gray-400',
         };

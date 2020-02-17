@@ -46,6 +46,7 @@
 05.objets
 ========================================================================== */
 @import '05.objets/intrinsic';
+@import '05.objets/grid';
 @import '05.objets/lazy';
 @import '05.objets/button';
 @import '05.objets/container';
@@ -112,3 +113,9 @@
 // body {
 //     background: red !important;
 // }
+
+.o-grid-container-demo {
+    .o-grid-column {
+        background: yellow;
+    }
+}

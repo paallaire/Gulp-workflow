@@ -259,6 +259,7 @@ module.exports = {
         borderRadius: [],
         borderStyle: [],
         borderWidth: [],
+        boxSizing: ['responsive', 'hover', 'focus'],
         cursor: ['responsive'],
         display: ['responsive'],
         flexDirection: ['responsive'],
