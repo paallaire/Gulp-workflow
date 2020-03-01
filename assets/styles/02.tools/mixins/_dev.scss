@@ -1,8 +1,7 @@
 /* ==========================================================================
-    #debug-breakpoin
+#mq-debugger
 ========================================================================== */
-
-body.is-dev {
+@mixin mq-debugger {
 
     &:before {
         content: 'xs';
@@ -11,42 +10,35 @@ body.is-dev {
         position: fixed;
         right: 0;
         bottom: 0;
-        z-index: $zIndex-debug-bp;
+        z-index: $zIndex-debug;
         font-weight: 700;
         text-transform: uppercase;
         background: #ccc;
-        
-        @each $name, $value in $breakpoints {
 
+        @each $name, $value in $breakpoints {
             @include media('>=#{$name}') {
                 content: '#{$name}';
             }
-
         }
-
     }
-    
 }
 
 /* ==========================================================================
-    #grid-visualizer
+#grid-debugger
 ========================================================================== */
-
-body.is-dev {
+@mixin grid-debugger {
 
     .c-grid-visualizer {
+        display: none;
         width: 100%;
         height: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
 
         &.is-active {
-            visibility: visible;
-            opacity: 1;
+            display: block;
         }
 
         &__wrapper,
@@ -54,18 +46,15 @@ body.is-dev {
         &__container {
             height: 100%;
         }
-        
+
         &__wrapper,
         &__container {
             margin: 0 auto;
         }
 
         &__container {
-            max-width: 1160px;
         }
 
-        &__row {}
-        
         &__column {
             height: 100%;
         }
@@ -89,9 +78,5 @@ body.is-dev {
         &:hover {
             background: #aaa;
         }
-
     }
-
 }
-
-

@@ -1,5 +1,5 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import { getEnv, setEnvOnBody, getLang } from '../../utils/environment';
+import { getEnv, setEnvOnBody, getLang } from '../../utils/env';
 
 // Data
 const data = {

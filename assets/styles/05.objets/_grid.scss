@@ -4,7 +4,7 @@
 $o-grid: '.o-grid';
 
 #{$o-grid}-container {
-    @apply mx-auto box-content max-w-large px-3;
+    @apply mx-auto box-content max-w-grid px-3;
 }
 
 #{$o-grid}-row {

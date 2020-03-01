@@ -3,7 +3,7 @@
 // https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
 // https://stackoverflow.com/questions/44467909/animating-max-height-with-pure-js
 
-import getHeightElement from '../utils/getHeightElement';
+import { getHeightElement } from '../utils/misc';
 
 export default class Toggle {
     constructor(selector) {

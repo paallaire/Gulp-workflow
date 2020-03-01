@@ -18,7 +18,7 @@
 @import '02.tools/functions';
 
 // mixins
-@import '02.tools/mixins/center';
+@import '02.tools/mixins/dev';
 @import '02.tools/mixins/input-placeholder';
 @import '02.tools/mixins/last-row';
 @import '02.tools/mixins/responsive';
@@ -31,7 +31,8 @@
 /* ==========================================================================
 03.Generic
 ========================================================================== */
-@import '03.generic/normalize-preflight';
+/* Preflight will be injected here */
+@tailwind base;
 @import '03.generic/tags';
 @import '03.generic/fonts';
 @import '03.generic/form';
@@ -40,7 +41,7 @@
 /* ==========================================================================
 04.elements
 ========================================================================== */
-@import '04.elements/base';
+// @import '04.elements/base';
 
 /* ==========================================================================
 05.objets
@@ -63,15 +64,15 @@
 @import '05.objets/loading/line';
 
 // form
-@import '05.objets/form/input-label';
-@import '05.objets/form/input-text';
-@import '05.objets/form/textarea';
-@import '05.objets/form/select';
-@import '05.objets/form/radio';
-@import '05.objets/form/checkbox';
-@import '05.objets/form/toggle';
-@import '05.objets/form/input-note';
-@import '05.objets/form/from-control';
+// @import '05.objets/form/input-label';
+// @import '05.objets/form/input-text';
+// @import '05.objets/form/textarea';
+// @import '05.objets/form/select';
+// @import '05.objets/form/radio';
+// @import '05.objets/form/checkbox';
+// @import '05.objets/form/toggle';
+// @import '05.objets/form/input-note';
+// @import '05.objets/form/from-control';
 
 /* ==========================================================================
 06.components
@@ -115,6 +116,7 @@
 // }
 
 .o-grid-container-demo {
+
     .o-grid-column {
         background: yellow;
     }

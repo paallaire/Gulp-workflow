@@ -31,10 +31,12 @@ $text-selection-bg: #b3d4fc !default;
 ==========================================================================  */
 
 $breakpoints: (
-    'sm': $screens-sm,
-    'md': $screens-md,
-    'lg': $screens-lg,
-    'xl': $screens-xl,
+'sm': $screens-sm,
+'md': $screens-md,
+'lg': $screens-lg,
+'l': $screens-l,
+'xl': $screens-xl,
+'xxl': $screens-xl,
 ) !default;
 
 /* ==========================================================================
