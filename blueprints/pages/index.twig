@@ -1,0 +1,25 @@
+{# index.twig #}
+{% extends "../_layout/base.twig" %}
+
+{% block page %}
+
+{% set content = {
+    key: 'Classe',
+    value: 'Propriétés'
+} %}
+
+{# include "../_includes/sidebar.twig" #}
+
+{% include "../_includes/blocks/header-simple.twig" %}
+{% include "../_includes/blocks/hero-simple.twig" %}
+{% include "../_includes/blocks/col-2-text-image.twig" %}
+
+<!-- 
+<h2 class="text-30 tracking-tight leading-none font-extrabold text-gray-1">
+    Data to enrich your
+    <br />
+    <span class="text-purple-1">online business</span>
+</h2> 
+-->
+
+{% endblock %}

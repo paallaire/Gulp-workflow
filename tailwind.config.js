@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
-const paddingUnit = require('./tailwindcss/units/paddingUnit');
-const fontSizeUnit = require('./tailwindcss/units/fontSizeUnit');
+const paddingUnit = require('./assets/tailwindcss/units/paddingUnit');
+const fontSizeUnit = require('./assets/tailwindcss/units/fontSizeUnit');
 
 module.exports = {
     prefix: '',
@@ -23,19 +23,11 @@ module.exports = {
             green: {
                 1: '#2ecc71',
                 2: '#27ae60',
+                3: '#252f3f',
             },
             gray: {
-                1: '#2c3e50',
-                2: '#bdc3c7',
-                100: '#f7fafc',
-                200: '#edf2f7',
-                300: '#e2e8f0',
-                400: '#cbd5e0',
-                500: '#a0aec0',
-                600: '#718096',
-                700: '#4a5568',
-                800: '#2d3748',
-                900: '#1a202c',
+                1: '#161e2e',
+                2: '#6b7280',
             },
             blue: {
                 1: '#3498db',
@@ -43,6 +35,13 @@ module.exports = {
             },
             red: {
                 1: '#e74c3c',
+            },
+            purple: {
+                1: '#5850ec',
+                2: '#e5edff',
+            },
+            teal: {
+                1: '#16bdca',
             },
         },
         spacing: {
@@ -127,6 +126,7 @@ module.exports = {
         },
         fontFamily: {
             sans: [
+                'Inter var',
                 'system-ui',
                 '-apple-system',
                 'BlinkMacSystemFont',
@@ -213,6 +213,7 @@ module.exports = {
             none: 'none',
             full: '100%',
             ...breakpoints(theme('screens')),
+            site: '1440px',
             grid: '1440px',
         }),
         minHeight: {

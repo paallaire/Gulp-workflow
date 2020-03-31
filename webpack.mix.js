@@ -4,13 +4,22 @@ const purgecssOptions = require('./purgecss');
 
 // plugins
 require('laravel-mix-purgecss');
+require('laravel-mix-twig-to-html');
+
+
+const files = [
+    {
+        template: 'blueprints/pages/*.{twig,html}',
+        inject: false, // disable asset tag injection
+    }
+]
 
 // base
 //----------------------------------------------------------
-mix.setPublicPath('public/dist')
-    .js(`${config.path.assets}/scripts/main.js`, 'scripts')
-    .sass(`${config.path.assets}/styles/main.scss`, 'styles')
-    .sass(`${config.path.assets}/styles/tailwind.scss`, 'styles')
+mix.setPublicPath('public')
+    .js(`${config.path.assets}/scripts/main.js`, './dist/scripts')
+    .sass(`${config.path.assets}/styles/main.scss`, './dist/styles')
+    .sass(`${config.path.assets}/styles/tailwind.scss`, './dist/styles')
     .options({
         processCssUrls: false,
         postCss: [
@@ -35,6 +44,11 @@ mix.setPublicPath('public/dist')
         whitelistPatterns: purgecssOptions.whitelistPatterns,
         whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
         keyframes: true,
+    })
+    .twigToHtml({
+        files: files,
+        fileBase: 'blueprints/pages',
+        twigOptions: { data: {} },
     })
     .extract()
     .version();

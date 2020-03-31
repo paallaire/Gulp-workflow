@@ -5,8 +5,6 @@
 html {
     box-sizing: border-box;
     font-size: 100%;
-    // font-variant-ligatures: none;
-    // text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -15,13 +13,7 @@ html {
 ========================================================================== */
 
 body {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    color: $colors-black;
-    font-size: $fontSize-8;
-    font-family: $roboto;
-    line-height: $lineHeight-none;
-    background-color: $colors-white;
+    @apply text-black text-8 font-sans leading-none overflow-x-hidden overflow-y-scroll bg-white;
 }
 
 /* ==========================================================================
