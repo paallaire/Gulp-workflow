@@ -16,11 +16,11 @@ import lazyLoadInit from './utils/lazyLoad';
 
 document.addEventListener('DOMContentLoaded', () => {
     // load webfonts
-    loadWebfonts();
+    // loadWebfonts();
 
-    // init
-    demoInit();
-    lazyLoadInit();
+    // // init
+    // demoInit();
+    // lazyLoadInit();
 
-    devMode();
+    // devMode();
 });

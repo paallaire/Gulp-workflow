@@ -1,25 +1,24 @@
 {
-    "extends": ["airbnb-base"],
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 2020
-    },
     "env": {
         "browser": true,
-        "jquery": true
+        "es6": true
     },
+    "extends": ["airbnb-base"],
     "globals": {
-        "window": true,
-        "document": true
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
     },
-    "plugins": ["prettier"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
     "rules": {
-        "func-names": "warn",
         "consistent-return": "warn",
-        "linebreak-style": ["error", "unix"],
+        "func-names": "warn",
         "indent": ["error", 4],
-        "no-unused-vars": "warn",
+        "linebreak-style": ["error", "unix"],
+        "max-len": 0,
         "no-console": 0,
-        "max-len": 0
+        "no-unused-vars": "warn"
     }
 }

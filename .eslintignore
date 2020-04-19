@@ -1,8 +1,4 @@
-/scripts
-/webpack.mix.js
 /public
-/dist
 /node_modules
 /gulpfile.js
-/bin
 /tailwindcss/generate-scss-variables.js

@@ -6,17 +6,17 @@ import StickyElement from './modules/StickyElement';
 
 export default function () {
     const toggle = new Toggle('.c-toggle');
-    // toggle.destroy();
+    toggle();
 
     const stickyNav = new StickyNav('#header', {
         style: 'up-and-down',
     });
+    stickyNav();
 
     const tabs = new Tabs('.c-tabs');
-    // tabs.destroy();
+    tabs();
 
     const navCanvas = new NavCanvas('.c-nav-canvas');
-
     const $navCanvasButton = document.querySelector('#nav-canvas-button');
 
     if ($navCanvasButton) {
@@ -29,4 +29,5 @@ export default function () {
     const stickyElement = new StickyElement('#sticky-element', {
         style: 'up-and-down ou default',
     });
+    stickyElement();
 }
