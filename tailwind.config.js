@@ -42,6 +42,7 @@ module.exports = {
             },
             teal: {
                 1: '#16bdca',
+                2: '#2a9ba3',
             },
         },
         spacing: {
@@ -569,7 +570,7 @@ module.exports = {
         strokeWidth: ['responsive'],
         tableLayout: ['responsive'],
         textAlign: ['responsive'],
-        textColor: ['responsive', 'hover', 'focus'],
+        textColor: ['responsive', 'hover', 'focus', 'group-hover'],
         textDecoration: ['responsive', 'hover', 'focus'],
         textTransform: ['responsive'],
         userSelect: ['responsive'],

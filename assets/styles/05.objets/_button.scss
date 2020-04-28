@@ -6,28 +6,122 @@ $o-button: '.o-button';
 // placeholder
 
 %button {
-    @apply inline-block py-3 px-6;
-    transition: background-color 200ms ease;
+    @apply inline-block py-3 px-6 font-normal leading-none duration-200 transition-all ease-in;
+
+    &.is-disabled,
+    &:disabled {
+        @apply opacity-50 cursor-not-allowed pointer-events-none;
+    }
+
+    &.with-icon {
+        @apply inline-flex items-center;
+
+        svg {
+            @apply fill-current w-4 h-4;
+        }
+
+        *:nth-child(2) {
+            @apply ml-2;
+        }
+
+        &:hover {
+            @apply text-teal-1;
+        }
+    }
 }
 
 // class
 
 #{$o-button} {
     @extend %button;
-    @apply bg-purple-1 text-white uppercase font-normal leading-none;
 
-    &.is-hover,
-    &:hover {
-        @apply bg-gray-1;
+    &.purple {
+        @apply bg-purple-1 text-white;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-gray-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-gray-2;
+        }
     }
 
-    &.is-disabled,
-    &:disabled {
-        @apply bg-purple-2;
+    &.teal {
+        @apply bg-teal-1 text-white;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-gray-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-gray-2;
+        }
+    }
+}
+
+#{$o-button}-outline {
+    @extend %button;
+    @apply border bg-transparent text-white;
+
+    &.purple {
+        &.is-hover,
+        &:hover {
+            @apply bg-purple-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-purple-2;
+        }
     }
 
-    &.is-focus,
-    &:focus {
-        @apply bg-gray-2;
+    &.teal {
+        &.is-hover,
+        &:hover {
+            @apply bg-teal-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-teal-2;
+        }
+    }
+}
+
+#{$o-button}-bordered {
+    @extend %button;
+    @apply border bg-transparent;
+
+    &.purple {
+        @apply border-purple-1 text-white;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-purple-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-purple-2;
+        }
+    }
+
+    &.teal {
+        @apply border-teal-1 text-white;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-teal-1;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-teal-1;
+        }
     }
 }
