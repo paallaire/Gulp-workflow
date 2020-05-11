@@ -3,31 +3,31 @@
 // https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
 // https://stackoverflow.com/questions/44467909/animating-max-height-with-pure-js
 
-import { getHeightElement } from '../utils/misc';
+// https://github.com/edenspiekermann/a11y-toggle/blob/master/a11y-toggle.js
 
 export default class Toggle {
     constructor(selector) {
         this.selector = selector;
-        this.element = document.querySelectorAll(this.selector);
+        this.elements = document.querySelectorAll(this.selector);
         this.buttonHandlerClick = [];
 
-        if (this.element) {
+        console.log('toggle');
+
+        if (this.el) {
             this.init();
-        } else {
-            console.log('Module Toggle - Selector not found!');
         }
     }
 
     init() {
-        const hash = window.location.hash.substr(1);
+        this.getHash();
 
-        this.element.forEach(($item) => {
+        this.elements.forEach(($item) => {
             const $header = $item.querySelector('.c-toggle__header');
             const handlerClick = this.onClick.bind(this);
 
             $item.dataset.module = 'toggle';
 
-            if ($item.dataset.open === 'true' || $item.id === hash) {
+            if ($item.dataset.open === 'true' || $item.id === this.hash) {
                 this.toggle($item);
             }
 
@@ -36,29 +36,33 @@ export default class Toggle {
         });
     }
 
-    toggle($element) {
-        const $content = $element.querySelector('.c-toggle__content');
-        let contentHeight = getHeightElement($content);
+    getHash() {
+        this.hash = window.location.hash.substr(1);
+    }
 
-        $content.style.height = contentHeight;
+    toggle() {
+        // const $content = elements.querySelector('.c-toggle__content');
+        // let contentHeight = getHeightel($content);
 
-        if ($element.classList.contains('is-active')) {
-            contentHeight = 0;
-        }
+        // $content.style.height = contentHeight;
 
-        $content.style.height = contentHeight;
-        $element.classList.toggle('is-active');
+        // if (elements.classList.contains('is-active')) {
+        //     contentHeight = 0;
+        // }
+
+        // $content.style.height = contentHeight;
+        // elements.classList.toggle('is-active');
     }
 
     destroy() {
         console.log('Module Toggle - destroy!');
-        this.element.forEach(($item, index) => {
+        this.el.forEach(($item, index) => {
             $item.querySelector('.c-toggle__header').removeEventListener('click', this.buttonHandlerClick[index]);
         });
     }
 
     onClick(item) {
-        const $element = item.target.closest('.c-toggle');
-        this.toggle($element);
+        // const elements = item.target.closest('.c-toggle');
+        // this.toggle(elements);
     }
 }

@@ -1,4 +1,6 @@
-/public
-/node_modules
-/gulpfile.js
-/tailwindcss/generate-scss-variables.js
+public
+node_modules
+gulpfile.js
+tailwindcss/generate-scss-variables.js
+fractal.config.js
+webpack.mix.js

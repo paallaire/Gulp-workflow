@@ -15,9 +15,12 @@
  
 </head>
 <body>
-<section>
+    {% include "../_includes/blocks/header.twig" %}
+
     {% block page %}{% endblock %}
-</section>
+
+    {% include "../_includes/blocks/footer.twig" %}
+
     <script src="/dist/scripts/manifest.js"></script>
     <script src="/dist/scripts/vendor.js"></script>
     <script src="/dist/scripts/main.js"></script>

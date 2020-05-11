@@ -1,6 +1,4 @@
-/node_modules
-/public
-/output
-/.sonarlint
-/kss-styleguide/styles
-/kss-styleguide/styleguide
+node_modules
+public
+styleguide-docs
+

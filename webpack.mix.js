@@ -5,7 +5,7 @@ const purgecssOptions = require('./purgecss');
 // plugins
 require('laravel-mix-purgecss');
 require('laravel-mix-twig-to-html');
-
+require('laravel-mix-postcss-config');
 
 const files = [
     {
@@ -17,9 +17,9 @@ const files = [
 // base
 //----------------------------------------------------------
 mix.setPublicPath('public')
-    .js(`${config.path.assets}/scripts/main.js`, './dist/scripts')
-    .sass(`${config.path.assets}/styles/main.scss`, './dist/styles')
-    .sass(`${config.path.assets}/styles/tailwind.scss`, './dist/styles')
+    .js(`assets/scripts/main.js`, './dist/scripts')
+    .sass(`assets/styles/main.scss`, './dist/styles')
+    .sass(`assets/styles/tailwind.scss`, './dist/styles')
     .options({
         processCssUrls: false,
         postCss: [
@@ -36,18 +36,14 @@ mix.setPublicPath('public')
             }),
         ],
     })
-    .purgeCss({
-        enabled: mix.inProduction(),
-        folders: ['assets', 'modules', 'templates'],
-        extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
-        whitelist: purgecssOptions.whitelist,
-        whitelistPatterns: purgecssOptions.whitelistPatterns,
-        whitelistPatternsChildren: purgecssOptions.whitelistPatterns,
-        keyframes: true,
-    })
+    // .purgeCss({
+    //     enabled: mix.inProduction(),
+    //     folders: ['assets', 'modules', 'templates', 'blueprints'],
+    //     extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
+    // })
     .twigToHtml({
         files: files,
-        fileBase: 'blueprints/pages',
+        fileBase: 'templates/pages',
         twigOptions: { data: {} },
     })
     .extract()
@@ -63,11 +59,12 @@ if (!mix.inProduction()) {
         },
         // proxy: WEBSITE_URL,
         files: [
-            `${config.path.public}/**/*.html`,
-            `${config.path.dist}/scripts/*.js`,
-            `${config.path.dist}/styles/*.css`,
-            `${config.path.dist}/fonts/**/*`,
-            `${config.path.dist}/images/**/`,
+            'public/**/*.html',
+            'public/dist/fonts/**/*',
+            'public/dist/images/**/*',
+            'public/dist/scripts/**/*.js',
+            'public/dist/styles/**/*.css',
+            'public/dist/svg/**/*',
         ],
         ghostMode: {
             clicks: false,

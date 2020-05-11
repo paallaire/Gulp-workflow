@@ -1,6 +1,7 @@
 const { series, src, dest, watch } = require('gulp');
 const imagemin = require('gulp-imagemin');
 const svgSprite = require('gulp-svg-sprite');
+const colorGroups = require('color-groups');
 
 const config = require('./config');
 

@@ -13,4 +13,10 @@ function toto() {
     console.log('toto !');
 }
 
-export { getHeightElement, toto };
+function $(selector, context) {
+    return Array.prototype.slice.call(
+        (context || document).querySelectorAll(selector),
+    );
+}
+
+export { getHeightElement, toto, $ };

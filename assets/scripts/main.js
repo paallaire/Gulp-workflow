@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // loadWebfonts();
 
     // // init
-    // demoInit();
+    demoInit();
     // lazyLoadInit();
 
     // devMode();
