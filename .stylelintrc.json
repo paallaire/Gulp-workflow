@@ -339,7 +339,12 @@
         "severity": "warning"
       }
     ],
-    "rule-empty-line-before": "always-multi-line",
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+          "except": ["after-single-line-comment"]
+      }
+    ],
     "scss/at-rule-no-unknown": [
       true,
       {
