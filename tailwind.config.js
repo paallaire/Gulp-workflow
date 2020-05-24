@@ -1,29 +1,27 @@
 /* eslint-disable global-require */
-const paddingUnit = require('./assets/tailwindcss/units/paddingUnit');
-const fontSizeUnit = require('./assets/tailwindcss/units/fontSizeUnit');
+const spacingUnits = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(5, 100);
+const fontSizeUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
+const borderRadiusUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
+const borderWidthUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 20);
 
 module.exports = {
-    purge: {
-        enabled: true,
-        content: [
-            './blueprints/**/*.twig',
-            './styleguide/**/*.twig',
-            './assets/**/*.js',
-            './assets/**/*.vue',
-        ],
-    },
+    purge: ['./blueprints/**/*.twig', './styleguide/**/*.twig', './assets/**/*.js', './assets/**/*.vue'],
     target: 'relaxed',
     prefix: '',
     important: false,
     separator: ':',
     theme: {
         screens: {
-            sm: '640px',
+            xs: '400px',
+            sm: '576px',
             md: '768px',
             lg: '1024px',
-            xl: '1280px',
+            xl: '1240px',
+            hg: '1440px',
+            cl: '1920px',
         },
         colors: {
+            current: 'currentColor',
             transparent: 'transparent',
             black: '#000',
             white: '#fff',
@@ -37,6 +35,7 @@ module.exports = {
                 2: '#6b7280',
             },
             blue: {
+                focus: '#63b3ed',
                 1: '#3498db',
                 2: '#2980b9',
             },
@@ -53,9 +52,16 @@ module.exports = {
             },
         },
         spacing: {
-            px: '1px',
             0: '0',
-            ...paddingUnit,
+            '1px': '1px',
+            '2px': '2px',
+            '3px': '3px',
+            '4px': '4px',
+            '6px': '6px',
+            '7px': '7px',
+            '8px': '8px',
+            '9px': '9px',
+            ...spacingUnits,
         },
         backgroundColor: (theme) => theme('colors'),
         backgroundOpacity: (theme) => theme('opacity'),
@@ -82,7 +88,7 @@ module.exports = {
         borderRadius: {
             none: '0',
             sm: '0.125rem',
-            default: '0.25rem',
+            default: '4px',
             md: '0.375rem',
             lg: '0.5rem',
             full: '9999px',
@@ -95,15 +101,8 @@ module.exports = {
             8: '8px',
         },
         boxShadow: {
-            xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-            sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
             default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-            md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-            lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-            xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-            '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-            outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+            focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
             none: 'none',
         },
         container: {},
@@ -137,30 +136,15 @@ module.exports = {
             default: '1',
         },
         fontFamily: {
-            sans: [
-                'system-ui',
-                '-apple-system',
-                'BlinkMacSystemFont',
-                '"Segoe UI"',
-                'Roboto',
-                '"Helvetica Neue"',
-                'Arial',
-                '"Noto Sans"',
-                'sans-serif',
-                '"Apple Color Emoji"',
-                '"Segoe UI Emoji"',
-                '"Segoe UI Symbol"',
-                '"Noto Color Emoji"',
-            ],
-            serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-            mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+            title: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            body: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
         },
         fontSize: {
-            xs: '0.75rem',
-            sm: '0.875rem',
-            base: '1rem',
-            lg: '1.125rem',
-            xl: '1.25rem',
+            xs: '12px',
+            sm: '14px',
+            base: '16px',
+            lg: '18px',
+            xl: '20px',
             ...fontSizeUnit,
         },
         fontWeight: {
@@ -175,6 +159,7 @@ module.exports = {
             black: '900',
         },
         height: (theme) => ({
+            0: '0',
             auto: 'auto',
             ...theme('spacing'),
             full: '100%',
@@ -199,14 +184,6 @@ module.exports = {
             normal: '1.5',
             relaxed: '1.625',
             loose: '2',
-            3: '.75rem',
-            4: '1rem',
-            5: '1.25rem',
-            6: '1.5rem',
-            7: '1.75rem',
-            8: '2rem',
-            9: '2.25rem',
-            10: '2.5rem',
         },
         listStyleType: {
             none: 'none',
@@ -220,26 +197,18 @@ module.exports = {
             ...theme('width'),
             ...negative(theme('width')),
         }),
-        maxHeight: {
-            full: '100%',
-            screen: '100vh',
-        },
-        maxWidth: (theme, { breakpoints }) => ({
-            none: 'none',
-            site: '1920px',
-            grid: '1440px',
-            full: '100%',
-            ...breakpoints(theme('screens')),
+        maxHeight: (theme) => ({
+            ...theme('height'),
         }),
-        minHeight: {
-            0: '0',
-            full: '100%',
-            screen: '100vh',
-        },
-        minWidth: {
-            0: '0',
-            full: '100%',
-        },
+        maxWidth: (theme) => ({
+            ...theme('width'),
+        }),
+        minHeight: (theme) => ({
+            ...theme('height'),
+        }),
+        minWidth: (theme) => ({
+            ...theme('width'),
+        }),
         objectPosition: {
             bottom: 'bottom',
             center: 'center',
@@ -294,6 +263,7 @@ module.exports = {
         textOpacity: (theme) => theme('opacity'),
         width: (theme) => ({
             auto: 'auto',
+            0: '0',
             ...theme('spacing'),
             '1/2': '50%',
             '1/3': '33.333333%',
@@ -321,6 +291,7 @@ module.exports = {
             '9/12': '75%',
             '10/12': '83.333333%',
             '11/12': '91.666667%',
+            grid: '1200px',
             full: '100%',
             screen: '100vw',
         }),
@@ -332,6 +303,12 @@ module.exports = {
             30: '30',
             40: '40',
             50: '50',
+            60: '60',
+            70: '70',
+            80: '80',
+            90: '90',
+            100: '100',
+            max: '9999',
         },
         gap: (theme) => theme('spacing'),
         gridTemplateColumns: {
@@ -618,6 +595,8 @@ module.exports = {
         transitionDuration: ['responsive'],
         transitionDelay: ['responsive'],
     },
-    corePlugins: {},
+    corePlugins: {
+        container: false,
+    },
     plugins: [],
 };

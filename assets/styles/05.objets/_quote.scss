@@ -1,0 +1,14 @@
+/* ==========================================================================
+#quote
+========================================================================== */
+$o-quote: '.o-quote';
+
+// placeholder
+%o-quote {
+    @apply block py-3 px-6 border-l-8 border-purple-1 border-solid;
+}
+
+// class
+#{$o-quote} {
+    @extend %o-quote;
+}

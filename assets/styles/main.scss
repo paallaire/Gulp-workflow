@@ -18,14 +18,9 @@
 @import '02.tools/functions';
 
 // mixins
-@import '02.tools/mixins/dev';
 @import '02.tools/mixins/input-placeholder';
-@import '02.tools/mixins/last-row';
-@import '02.tools/mixins/responsive';
-@import '02.tools/mixins/text-truncate';
 
 // placeholder
-@import '02.tools/placeholder/container';
 @import '02.tools/placeholder/form';
 
 /* ==========================================================================
@@ -46,18 +41,26 @@
 /* ==========================================================================
 05.objets
 ========================================================================== */
-@import '05.objets/intrinsic';
-@import '05.objets/grid';
-@import '05.objets/lazy';
-@import '05.objets/button';
+
+// core
 @import '05.objets/container';
+@import '05.objets/intrinsic';
+@import '05.objets/icon';
+@import '05.objets/button';
+@import '05.objets/button-outline';
+@import '05.objets/button-bordered';
 @import '05.objets/heading';
 @import '05.objets/link';
 @import '05.objets/list';
-@import '05.objets/release';
 @import '05.objets/table';
-@import '05.objets/text';
+@import '05.objets/quote';
 @import '05.objets/wysiwyg';
+
+// custom
+@import '05.objets/release';
+@import '05.objets/lazy';
+@import '05.objets/intrinsic';
+@import '05.objets/grid';
 
 // loading
 @import '05.objets/loading/circle';
@@ -87,52 +90,87 @@
 ========================================================================== */
 // @import 'pages/home';
 // @import 'pages/404';
-
-// .sg-block-color {
-//     padding-top: 100%;
-//     border: 2px solid white;
-//     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
-// }
-
-// .sticky-nav--is-fixed {
-//     width: 100%;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: $zIndex-nav-sticky;
-// }
-
-// .sticky-element--is-fixed {
-//     width: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: $zIndex-nav-sticky;
-// }
-
-// body {
-//     background: red !important;
-// }
-
-.o-grid-container-demo {
-    .o-grid-column {
-        background: yellow;
-    }
+.form-label {
+    @apply text-base text-gray-1;
 }
 
-// .channel-bar::-webkit-scrollbar-track {
-//     border-radius: 0;
-//     background-color: #1f2225;
-// }
+.form-input-error {
+    @apply text-red-1;
 
-// .channel-bar::-webkit-scrollbar {
-//     width: 10px;
-//     background-color: #1f2225;
-// }
+    .form-label,
+    .form-input,
+    .form-checkbox,
+    .form-radio {
+        @apply text-red-1 border-red-1;
+    }
 
-// .channel-bar::-webkit-scrollbar-thumb {
-//     border-radius: 10px;
-//     background-color: #3f495a;
-// }
+}
 
-@import './_hold/toggle';
+.form-input {
+    @apply px-2 py-1 text-base leading-normal bg-white border border-gray-1 border-solid rounded appearance-none;
+
+    &:focus {
+        @apply outline-none border-blue-focus shadow-focus;
+    }
+
+    &:disabled {
+        @apply .opacity-50 cursor-not-allowed;
+    }
+
+}
+
+.form-textarea {
+    @extend .form-input; }
+
+.form-select {
+    @extend .form-input;
+    @apply appearance-none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+}
+
+.form-multiselect {
+    @extend .form-input;
+}
+
+.form-radio,
+.form-checkbox {
+    @apply rounded bg-white text-blue-1 border border-gray-1 border-solid inline-block flex-shrink-0 appearance-none align-middle select-none;
+    width: 1em;
+    height: 1em;
+    color-adjust: exact;
+    background-origin: border-box;
+
+    &:checked {
+        @apply bg-current bg-no-repeat bg-center border-transparent;
+        background-size: 100% 100%;
+    }
+    
+    &:focus {
+        @apply outline-none border-blue-focus shadow-focus;
+    }
+
+    &:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+}
+
+.form-checkbox {
+
+    &:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+        background-size: 100% 100%;
+    }
+
+}
+
+.form-radio {
+    @apply rounded-full;
+
+    &:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    }
+    
+}

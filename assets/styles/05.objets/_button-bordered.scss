@@ -1,10 +1,10 @@
 /* ==========================================================================
-#button
+#button-bordered
 ========================================================================== */
-$o-button: '.o-button';
+$o-button-bordered: '.o-button-bordered';
 
 // placeholder
-%button {
+%button-bordered {
     @apply inline-block py-3 px-6 font-normal leading-none duration-200 transition-all ease-in;
 
     &.is-disabled,
@@ -30,34 +30,35 @@ $o-button: '.o-button';
 }
 
 // class
-#{$o-button} {
-    @extend %button;
+#{$o-button-bordered} {
+    @extend %button-bordered;
+    @apply border bg-transparent;
 
     &.purple {
-        @apply bg-purple-1 text-white;
+        @apply border-purple-1 text-white;
 
         &.is-hover,
         &:hover {
-            @apply bg-gray-1;
+            @apply bg-purple-1;
         }
 
         &.is-focus,
         &:focus {
-            @apply bg-gray-2;
+            @apply bg-purple-2;
         }
     }
 
     &.teal {
-        @apply bg-teal-1 text-white;
+        @apply border-teal-1 text-white;
 
         &.is-hover,
         &:hover {
-            @apply bg-gray-1;
+            @apply bg-teal-1;
         }
 
         &.is-focus,
         &:focus {
-            @apply bg-gray-2;
+            @apply bg-teal-1;
         }
     }
 }

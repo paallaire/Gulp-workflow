@@ -4,14 +4,12 @@
 $o-unordered-list: '.o-unordered-list';
 
 // placeholder
-
 %o-unordered-list {
     padding-left: 1em;
     list-style: disc;
 }
 
 // class
-
 #{$o-unordered-list} {
     @extend %o-unordered-list;
 }
@@ -19,17 +17,26 @@ $o-unordered-list: '.o-unordered-list';
 /* ==========================================================================
 #ordered-list
 ========================================================================== */
-$o-ordered-list: '.o-ordered-lis';
+$o-ordered-list: '.o-ordered-list';
 
 // placeholder
-
 %o-ordered-list {
-    padding-left: 1em;
-    list-style-type: decimal;
+    padding-left: 0;
+    list-style-type: none;
+    counter-reset: number;
+
+    li {
+
+        &:before {
+            content: counter(number)'. ';
+            counter-increment: number;
+        }
+    }
+
+
 }
 
 // class
-
 #{$o-ordered-list} {
     @extend %o-ordered-list;
 }

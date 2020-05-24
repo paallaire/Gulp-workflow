@@ -1,11 +1,8 @@
 const mix = require('laravel-mix');
 const config = require('./config');
-const purgecssOptions = require('./purgecss');
 
 // plugins
-require('laravel-mix-purgecss');
 require('laravel-mix-twig-to-html');
-require('laravel-mix-postcss-config');
 
 const files = [
     {

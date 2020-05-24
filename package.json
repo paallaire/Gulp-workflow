@@ -2,10 +2,10 @@
     "name": "base",
     "version": "0.0.1",
     "scripts": {
-        "dev": "cross-env NODE_ENV=development TASK=dev webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development TASK=watch webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "production": "cross-env NODE_ENV=production TASK=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
         "eslint:styleguide": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
         "eslint": "eslint assets/scripts/**/*.js tailwind.config.js",
