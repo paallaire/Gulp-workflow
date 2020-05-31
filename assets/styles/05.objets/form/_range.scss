@@ -1,0 +1,24 @@
+/* ==========================================================================
+range
+========================================================================== */
+$form-input-range: '.form-input-range';
+
+#{$form-input-range} {
+    @apply w-full h-5 bg-gray-2 shadow rounded appearance-none;
+
+    &:disabled {
+        @extend %form-input-disabled;
+    }
+
+    &:focus {
+        @extend %form-input-focus;
+    }
+
+    &::-webkit-slider-thumb {
+        @apply w-5 h-5 rounded-full bg-purple-1 cursor-pointer appearance-none; 
+    }
+      
+    &::-moz-range-thumb {
+        @apply w-5 h-5 rounded-full bg-purple-1 cursor-pointer appearance-none; 
+    }
+}

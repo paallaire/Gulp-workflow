@@ -1,9 +1,10 @@
 /* ==========================================================================
-textarea
+label
 ========================================================================== */
-$form-textarea: '.form-textarea';
+$form-label: '.form-label ';
 
-#{$form-textarea} {
-    @extend %form-input;
+#{$form-label } {
+    @apply text-base text-gray-1;
 }
+
 

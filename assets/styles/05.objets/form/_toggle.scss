@@ -1,68 +1,46 @@
-$o-toggle: '.o-toggle';
+/* ==========================================================================
+toggle
+========================================================================== */
+$form-toggle: '.form-toggle';
 
-#{$o-toggle} {
-    $chbx_size: 18px;
-    $orange: #ff9800;
+#{$form-toggle} {
+    @apply flex items-center cursor-pointer;
+
+    &__input:focus + #{$form-toggle}__line {
+        @extend %form-input-focus;
+    }
+
+    &.is-disabled {
+        @extend %form-input-disabled;
+    }
+
+    &__container-input {
+        @apply relative;
+    }
 
     &__input {
-        display: none;
+        @apply sr-only;
 
-        + label {
-            display: block;
-            width: 40px;
-            height: 20px;
-            position: relative;
-            background-color: #e4e4e4;
-            border-radius: 60px;
-            outline: none;
-            cursor: pointer;
-            transition: background 0.4s;
-            user-select: none;
-
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-            }
-
-            &:before {
-                top: 1px;
-                right: 1px;
-                bottom: 1px;
-                left: 1px;
-                background-color: #f1f1f1;
-                border-radius: 60px;
-                transition: background 0.4s;
-            }
-
-            &:after {
-                width: 22px;
-                height: 22px;
-                top: -1px;
-                left: 0;
-                background-color: #fff;
-                border-radius: 100%;
-                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-                transition: transform 0.4s;
-            }
+        &:checked ~ #{$form-toggle}__dot {
+            @apply bg-green-1;
+            transform: translateX(100%);
         }
 
-        &:checked + label {
-            background-color: darken($orange, 5%);
+    }
 
-            &:before {
-                background-color: $orange;
-            }
-        }
+    &__line {
+        @apply w-8 h-3 bg-gray-2 rounded-full shadow;
+    }
 
-        &:checked + label:after {
-            transform: translateX(20px);
-        }
-
-        &:disabled + label {
-            cursor: default;
-            opacity: 0.5;
-        }
+    &__dot {
+        @apply absolute w-5 h-5 bg-purple-1 rounded-full shadow inset-y-0 left-0;
+        top: -0.25rem;
+        left: -0.25rem;
+        transition: all 0.3s ease-in-out;
+    }
+      
+    &__label {
+        @extend .form-label;
+        @apply ml-3;
     }
 }

@@ -1,0 +1,47 @@
+/* ==========================================================================
+states
+========================================================================== */
+
+// error
+.form-input-error {
+    @apply text-red-1;
+
+    .form-label,
+    .form-input,
+    .form-checkbox,
+    .form-radio {
+        @apply text-red-1 border-red-1;
+    }
+
+    .form-input-range {
+        @apply bg-red-1;
+
+        &::-webkit-slider-thumb {
+            @apply bg-white; 
+        }
+          
+        &::-moz-range-thumb {
+            @apply bg-white; 
+        }
+
+    }
+
+    .form-toggle {
+
+        &__dot {
+            @apply bg-red-1;
+        }
+
+    }
+      
+}
+
+// disabled
+%form-input-disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+// focus
+%form-input-focus {
+    @apply outline-none border-blue-focus shadow-focus;
+}
