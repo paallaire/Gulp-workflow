@@ -2,26 +2,35 @@
     "title": "Base",
     "status": "prototype",
     "context": {
-        "catColors": {
+        "colors": {
+            "current": "currentColor",
             "transparent": "transparent",
             "black": "#000",
             "white": "#fff",
+            "green": {
+                "1": "#2ecc71",
+                "2": "#27ae60",
+                "3": "#252f3f"
+            },
             "gray": {
-                "1": "#373535",
-                "2": "#eaeaea",
-                "3": "#231f20",
-                "4": "#525254",
-                "5": "#f2f2f2",
-                "6": "#979797",
-                "7": "#e7e9e8",
-                "8": "#a2a2a2",
-                "9": "#343434"
+                "1": "#161e2e",
+                "2": "#6b7280"
             },
             "blue": {
-                "1": "#0984e3"
+                "1": "#3498db",
+                "2": "#2980b9",
+                "focus": "#63b3ed"
             },
             "red": {
-                "1": "#ed1c24"
+                "1": "#e74c3c"
+            },
+            "purple": {
+                "1": "#5850ec",
+                "2": "#e5edff"
+            },
+            "teal": {
+                "1": "#16bdca",
+                "2": "#2a9ba3"
             }
         }
     }

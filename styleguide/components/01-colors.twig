@@ -2,18 +2,18 @@
 
     <div class=" mb-4 mt-4">
         <h1 class="o-heading-4 uppercase">Colors</h1>
-        <p>Link: <a href="http://www.fixjson.com/">fix json</a></p>
+        <p><a href="http://www.fixjson.com/" class="underline">Convert tailwwinds objects in Json with fixjson.com</a></p>
     </div>
 
     <div class="mx-auto flex flex-wrap -mx-2 mt-2">
-    {% for catKey, catCode in catColors %}
+    {% for catKey, catCode in colors %}
 
         {% if catCode is iterable %}
     
                 {% for colorKey, colorCode in catCode %}
 
                     <div class="w-1/12 px-2 mb-4">
-                        <div class="sg-block-color bg-{{ catKey }}-{{ colorKey }} mb-2"></div>
+                        <div class="h-10 p-2 shadow bg-{{ catKey }}-{{ colorKey }} mb-2"></div>
                         <div class="mb-2">{{ catKey }}-{{ colorKey }}</div>
                         <div class="">{{ colorCode }}</div>
                     </div>
@@ -23,9 +23,8 @@
         {% else %}
 
             <div class="w-1/12 px-2 mb-4">
-                <div class="sg-block-color bg-{{ catKey }} mb-2"></div>
+                <div class="h-10 shadow bg-{{ catKey }} mb-2"></div>
                 <div class="mb-2">{{ catKey }}</div>
-                <div class="">{{ catCode }}</div>
             </div>
 
         {% endif %}

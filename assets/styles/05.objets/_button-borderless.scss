@@ -1,0 +1,43 @@
+/* ==========================================================================
+#button-borderless
+========================================================================== */
+$o-button-borderless: '.o-button-borderless';
+
+// placeholder
+%button-borderless {
+    @extend %button;
+}
+
+// class
+#{$o-button-borderless} {
+    @extend %button-borderless;
+    @apply bg-transparent;
+
+    &.purple {
+        @apply text-black;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-gray-1 text-white;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-gray-2;
+        }
+    }
+
+    &.teal {
+        @apply text-black;
+
+        &.is-hover,
+        &:hover {
+            @apply bg-gray-1 text-white;
+        }
+
+        &.is-focus,
+        &:focus {
+            @apply bg-gray-2;
+        }
+    }
+}

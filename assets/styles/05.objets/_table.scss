@@ -3,7 +3,7 @@
 ========================================================================== */
 $o-table: '.o-table';
 
-#{$o-table} {
+%o-table {
     width: 100%;
 
     pre {
@@ -34,4 +34,8 @@ $o-table: '.o-table';
     tbody tr {
         background-color: #fff;
     }
+}
+
+#{$o-table} {
+    @extend %o-table;
 }

@@ -1,11 +1,11 @@
 /* ==========================================================================
-    #config
+#config
 ==========================================================================  */
 
 $is-dev: '.is-dev' !default;
 
 /* ==========================================================================
-    #folder
+#folder
 ==========================================================================  */
 
 $folder-fonts: '../fonts/' !default;
@@ -15,7 +15,7 @@ $icomoon-font-path: $folder-fonts !default;
 $folder-node-modules: '../../node_modules/' !default;
 
 /* ==========================================================================
-    #typography
+#typography
 ==========================================================================  */
 
 /* Text selection */
@@ -23,7 +23,7 @@ $text-selection-color: $colors-black !default;
 $text-selection-bg: #b3d4fc !default;
 
 /* ==========================================================================
-    #include-media (plugin)
+#include-media (plugin)
 ==========================================================================  */
 
 $breakpoints: (
@@ -37,10 +37,6 @@ $breakpoints: (
 ) !default;
 
 /* ==========================================================================
-    #form
+#misc
 ==========================================================================  */
-
-$form-input-padding: 12px 20px;
-$form-input-select-size-icon: 40px;
-$form-radio-size-icon: 18px;
-$form-checkbox-size-icon: 18px;
+$vertical-rythm: $lineHeight-normal;

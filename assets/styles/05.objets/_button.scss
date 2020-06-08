@@ -5,28 +5,27 @@ $o-button: '.o-button';
 
 // placeholder
 %button {
-    @apply inline-block py-3 px-6 font-normal leading-none duration-200 transition-all ease-in;
+    @apply inline-flex items-center py-3 px-6 font-normal leading-none duration-200 transition ease-in;
 
     &.is-disabled,
     &:disabled {
         @apply opacity-50 cursor-not-allowed pointer-events-none;
     }
 
-    &.with-icon {
-        @apply inline-flex items-center;
+    svg + span,
+    span + svg {
+        @apply ml-2;
+    }
 
-        svg {
-            @apply fill-current w-4 h-4;
-        }
-
-        *:nth-child(2) {
-            @apply ml-2;
-        }
+    svg {
+        @apply fill-current w-3 h-3;
 
         &:hover {
             @apply text-teal-1;
         }
+
     }
+
 }
 
 // class

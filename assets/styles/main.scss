@@ -21,7 +21,6 @@
 @import '02.tools/mixins/input-placeholder';
 
 // placeholder
-@import '02.tools/placeholder/form';
 
 /* ==========================================================================
 03.Generic
@@ -47,7 +46,7 @@
 @import '05.objets/intrinsic';
 @import '05.objets/icon';
 @import '05.objets/button';
-@import '05.objets/button-outline';
+@import '05.objets/button-borderless';
 @import '05.objets/button-bordered';
 @import '05.objets/heading';
 @import '05.objets/link';
@@ -68,7 +67,6 @@
 
 // form
 @import '05.objets/form/states';
-@import '05.objets/form/focus';
 @import '05.objets/form/label';
 @import '05.objets/form/input-text';
 @import '05.objets/form/textarea';

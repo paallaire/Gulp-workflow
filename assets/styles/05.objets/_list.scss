@@ -5,13 +5,42 @@ $o-unordered-list: '.o-unordered-list';
 
 // placeholder
 %o-unordered-list {
-    padding-left: 1em;
-    list-style: disc;
+    @apply pl-0 leading-snug;
+    list-style-type: none;
+
+    li {
+        @apply relative;
+        padding-left: 1.5em;
+
+        &:before {
+            @apply absolute left-0 w-1 h-1 rounded-full bg-black;
+            content: '';
+            top: 8px;
+           
+        }
+    }
+
+}
+
+%o-unordered-list-spacing {
+    @extend %o-unordered-list;
+
+    li {
+
+        &:not(:last-child) {
+            margin-bottom: 0.75em * $vertical-rythm;
+        }
+    }
+    
 }
 
 // class
 #{$o-unordered-list} {
     @extend %o-unordered-list;
+}
+
+#{$o-unordered-list}-spacing {
+    @extend %o-unordered-list-spacing;
 }
 
 /* ==========================================================================
@@ -21,22 +50,40 @@ $o-ordered-list: '.o-ordered-list';
 
 // placeholder
 %o-ordered-list {
-    padding-left: 0;
+    @apply pl-0 leading-snug;
     list-style-type: none;
     counter-reset: number;
 
     li {
+        @apply relative;
+        padding-left: 1.5em;
 
         &:before {
+            @apply absolute top-0 left-0;
             content: counter(number)'. ';
             counter-increment: number;
         }
     }
 
+}
 
+%o-ordered-list-spacing {
+    @extend %o-ordered-list;
+
+    li {
+
+        &:not(:last-child) {
+            margin-bottom: 0.75em * $vertical-rythm;
+        }
+    }
+    
 }
 
 // class
 #{$o-ordered-list} {
     @extend %o-ordered-list;
+}
+
+#{$o-ordered-list}-spacing {
+    @extend %o-ordered-list-spacing;
 }

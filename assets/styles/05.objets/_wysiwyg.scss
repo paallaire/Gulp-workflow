@@ -136,10 +136,6 @@ $o-wysiwyg: '.o-wysiwyg';
         @extend %o-unordered-list;
     }
 
-    table {
-        //@extend .o-table;
-    }
-
     /* image */
     img {
         display: inline;
@@ -148,6 +144,11 @@ $o-wysiwyg: '.o-wysiwyg';
     /* blockquote */
     blockquote {
         @extend %o-quote;
+    }
+
+    /* table */
+    table {
+        @extend %o-table;
     }
 }
 

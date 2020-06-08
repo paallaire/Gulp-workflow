@@ -5,28 +5,7 @@ $o-button-bordered: '.o-button-bordered';
 
 // placeholder
 %button-bordered {
-    @apply inline-block py-3 px-6 font-normal leading-none duration-200 transition-all ease-in;
-
-    &.is-disabled,
-    &:disabled {
-        @apply opacity-50 cursor-not-allowed pointer-events-none;
-    }
-
-    &.with-icon {
-        @apply inline-flex items-center;
-
-        svg {
-            @apply fill-current w-4 h-4;
-        }
-
-        *:nth-child(2) {
-            @apply ml-2;
-        }
-
-        &:hover {
-            @apply text-teal-1;
-        }
-    }
+    @extend %button;
 }
 
 // class
@@ -35,30 +14,30 @@ $o-button-bordered: '.o-button-bordered';
     @apply border bg-transparent;
 
     &.purple {
-        @apply border-purple-1 text-white;
+        @apply border-purple-1 text-black;
 
         &.is-hover,
         &:hover {
-            @apply bg-purple-1;
+            @apply bg-purple-1 text-white;
         }
 
         &.is-focus,
         &:focus {
-            @apply bg-purple-2;
+            @apply bg-gray-2 text-white border-purple-1;
         }
     }
 
     &.teal {
-        @apply border-teal-1 text-white;
+        @apply border-teal-1 text-black;
 
         &.is-hover,
         &:hover {
-            @apply bg-teal-1;
+            @apply bg-teal-1 text-white;
         }
 
         &.is-focus,
         &:focus {
-            @apply bg-teal-1;
+            @apply bg-gray-2 text-white border-gray-2;
         }
     }
 }
