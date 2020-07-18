@@ -26,29 +26,32 @@ module.exports = {
             black: '#000',
             white: '#fff',
             green: {
-                1: '#2ecc71',
-                2: '#27ae60',
-                3: '#252f3f',
+                1: '#00b894',
+                2: '#55efc4',
             },
             gray: {
-                1: '#161e2e',
-                2: '#6b7280',
+                1: '#f7fafc',
+                2: '#edf2f7',
+                3: '#e2e8f0',
+                4: '#cbd5e0',
+                5: '#a0aec0',
+                6: '#718096',
+                7: '#4a5568',
+                8: '#2d3748',
+                9: '#1a202c',
             },
             blue: {
+                1: '#0984e3',
+                2: '#74b9ff',
                 focus: '#63b3ed',
-                1: '#3498db',
-                2: '#2980b9',
             },
             red: {
                 1: '#e74c3c',
+                2: "#ff7675"
             },
             purple: {
-                1: '#5850ec',
-                2: '#e5edff',
-            },
-            teal: {
-                1: '#16bdca',
-                2: '#2a9ba3',
+                1: '#6c5ce7',
+                2: '#a29bfe',
             },
         },
         spacing: {
@@ -101,9 +104,18 @@ module.exports = {
             8: '8px',
         },
         boxShadow: {
+            xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+            sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
             default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-            focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+            md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+            outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
             none: 'none',
+            focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+            "outline-blue": '0 0 0 3px rgba(66, 153, 225, 0.5)',
         },
         container: {},
         cursor: {
@@ -136,8 +148,8 @@ module.exports = {
             default: '1',
         },
         fontFamily: {
-            title: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-            body: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+            title: ['inter', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            body: ['inter', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
         },
         fontSize: {
             xs: '12px',
@@ -165,10 +177,11 @@ module.exports = {
             full: '100%',
             screen: '100vh',
         }),
-        inset: {
+        inset: (theme) => ({
             0: '0',
             auto: 'auto',
-        },
+            ...theme('spacing'),
+        }),
         letterSpacing: {
             tighter: '-0.05em',
             tight: '-0.025em',
@@ -291,7 +304,6 @@ module.exports = {
             '9/12': '75%',
             '10/12': '83.333333%',
             '11/12': '91.666667%',
-            grid: '1200px',
             full: '100%',
             screen: '100vw',
         }),
@@ -597,6 +609,19 @@ module.exports = {
     },
     corePlugins: {
         container: false,
+        gap: false,
+        gridAutoFlow: false,
+        gridTemplateColumns: false,
+        gridColumn: false,
+        gridColumnStart: false,
+        gridColumnEnd: false,
+        gridTemplateRows: false,
+        gridRow: false,
+        gridRowStart: false,
+        gridRowEnd: false,
     },
-    plugins: [],
+    plugins: [
+        require('./assets/tailwindcss/plugins/rotate.js'),
+        require('./assets/tailwindcss/plugins/container.js'),
+    ],
 };

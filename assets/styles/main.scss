@@ -12,7 +12,7 @@
 @import '~include-media/dist/_include-media';
 @import '~include-media-export';
 // @import '~aos/src/sass/aos';
-// @import '~hamburgers/_sass/hamburgers/hamburgers';
+@import '~hamburgers/_sass/hamburgers/hamburgers';
 
 // functions
 @import '02.tools/functions';
@@ -83,6 +83,7 @@
 06.components
 ========================================================================== */
 
+
 /* ==========================================================================
 07.utilities (tailwidnd.scss)
 ========================================================================== */
@@ -99,8 +100,15 @@
 
 
 
+.test {
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+}
 
 
 
 
-
+.menu-mobile  {
+    height: calc(100vh - 50px);
+}

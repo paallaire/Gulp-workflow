@@ -1,0 +1,58 @@
+
+
+<div class="p-10">
+    <div class="tabs" x-data="tab()" x-init="init()">
+        <div class="flex -mx-2" role="tablist" aria-label="Sample Tabs">
+
+            {% for i in 0..3 %}
+            <div class="px-2">
+                <button
+                    class="o-button green"
+                    id="tab-{{ loop.index }}"
+                    role="tab"
+                    aria-controls="panel-{{ loop.index }}"
+                    tabindex="0"
+                    :aria-selected="isActiveAria({{ loop.index }})"
+                    @click.debounce="open( {{ loop.index }},  $refs.panelHeading{{loop.index }} )"
+                >
+                    Tab #{{ loop.index }}
+                </button>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="relative">
+
+            {% for i in 0..3 %}
+            <div
+                class="pt-2"
+                id="panel-{{ loop.index }}"
+                role="tabpanel"
+                aria-labelledby="tab-{{ loop.index }}"
+                tabindex="0"
+                :aria-hidden="isActiveAria({{ loop.index }})"
+                x-show="isActive({{ loop.index }})"
+            >
+                <div class="o-wysiwyg">
+                    <h6 tabindex="0" x-ref="panelHeading{{loop.index }}">Content #{{ loop.index }}</h6>
+                    {% if loop.index == 1 %}
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis numquam, voluptates quia libero
+                        odit ducimus sint. Accusantium mollitia inventore, possimus nam ipsum accusamus numquam a vitae
+                        reiciendis similique officia itaque?
+                    </p>
+                    {% endif %}
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis numquam, voluptates quia libero
+                        odit ducimus sint. Accusantium mollitia inventore, possimus nam ipsum accusamus numquam a vitae
+                        reiciendis similique officia itaque?
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>

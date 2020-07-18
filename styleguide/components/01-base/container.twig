@@ -1,0 +1,17 @@
+{% set contentCssClass = 'min-h-10 bg-purple-1 text-white py-4' %} 
+{% set containers = [ 'xs', 'sm', 'md', 'lg', 'xl', 'hg', 'cl' ] %}
+
+<div class="py-5 -mt-5">
+
+    {% for type in containers %}
+    <div class="container-{{ type }} | mt-4">
+        <div class="{{ contentCssClass }}">
+            <div class="text-10 text-center mb-4">{{ type }}</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime reiciendis inventore iusto possimus obcaecati harum esse repudiandae, minus eum nobis perspiciatis sequi saepe impedit praesentium? Optio perspiciatis voluptatem quam deserunt!</p>
+        </div>
+    </div>
+    {% endfor %}
+ 
+</div>
+
+

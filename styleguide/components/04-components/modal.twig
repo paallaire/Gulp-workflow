@@ -1,0 +1,14 @@
+<div x-data="{ }" class="p-4">
+    <button class="o-button purple" @click="$dispatch('showModal', { id : '1'})">
+        Toggle #1
+    </button>
+
+    <button class="o-button green" @click="$dispatch('showModal', { id : '2'})">
+        Toggle #2
+    </button>
+
+    {% include "_includes/block-modal.twig" with {'id' : '1'} %}
+    {% include "_includes/block-modal.twig" with {'id' : '2'} %}
+
+</div>
+

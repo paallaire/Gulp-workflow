@@ -21,23 +21,15 @@ $o-button-bordered: '.o-button-bordered';
             @apply bg-purple-1 text-white;
         }
 
-        &.is-focus,
-        &:focus {
-            @apply bg-gray-2 text-white border-purple-1;
-        }
     }
 
-    &.teal {
-        @apply border-teal-1 text-black;
+    &.green {
+        @apply border-green-1 text-black;
 
         &.is-hover,
         &:hover {
-            @apply bg-teal-1 text-white;
+            @apply bg-green-1 text-white;
         }
 
-        &.is-focus,
-        &:focus {
-            @apply bg-gray-2 text-white border-gray-2;
-        }
     }
 }

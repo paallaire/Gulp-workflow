@@ -16,14 +16,11 @@ body {
     @apply text-black text-8 font-body leading-none overflow-x-hidden bg-white;
 }
 
-
 /* ==========================================================================
 #selection
 ========================================================================== */
 
 ::-moz-selection,
 ::selection {
-    color: $text-selection-color;
-    text-shadow: none;
-    background-color: $text-selection-bg; /* Required when declaring ::selection */
+    @apply text-white bg-blue-1;
 }

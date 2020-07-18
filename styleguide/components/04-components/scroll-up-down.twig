@@ -1,0 +1,33 @@
+<header class x-data="menuState()" x-init="init()">
+    <div class="flex h-12 px-5 bg-black text-white fixed top-0 left-0 z-100 w-full">
+        <h1 class="flex items-center mr-6">
+            <img src="https://via.placeholder.com/140x50" alt="My Logo" />
+        </h1>
+        <ul class="flex items-center -mx-2 hidden | lg:flex">
+            {% for i in 0..4 %}
+            <li class="px-2">
+                <a href="">Menu {{ loop.index }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</header>
+
+<button
+    class="fixed bottom-5 right-5 w-50 h-30 bg-purple-1 p-1 shadow z-100 test"
+    x-data="revealOnScroll()"
+    x-init="init()"
+    x-show="isActive"
+    x-transition:enter="transition ease-in-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in-out duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+>
+isActive = <span class="" x-text="isActive"></span><br />
+top = <span class="" x-text="top - 50"></span><br />
+lastTop = <span class="" x-text="lastTop"></span>
+</button>
+
+{% render "@wysiwyg" with {some: 'values'} %}

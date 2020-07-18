@@ -1,0 +1,40 @@
+{
+    "title": "Base",
+    "status": "prototype",
+    "context": {
+        "colors": {
+            "current": "currentColor",
+            "transparent": "transparent",
+            "black": "#000",
+            "white": "#fff",
+            "green": {
+                "1": "#00b894",
+                "2": "#55efc4"
+            },
+            "gray": {
+                "1": "#f7fafc",
+                "2": "#edf2f7",
+                "3": "#e2e8f0",
+                "4": "#cbd5e0",
+                "5": "#a0aec0",
+                "6": "#718096",
+                "7": "#4a5568",
+                "8": "#2d3748",
+                "9": "#1a202c"
+            },
+            "blue": {
+                "1": "#0984e3",
+                "2": "#74b9ff",
+                "focus": "#63b3ed"
+            },
+            "red": {
+                "1": "#d63031",
+                "2": "#ff7675"
+            },
+            "purple": {
+                "1": "#6c5ce7",
+                "2": "#a29bfe"
+            }
+        }
+    }
+}

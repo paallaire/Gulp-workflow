@@ -1,20 +1,34 @@
 // polyfills
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import 'dom4';
+import 'element-closest/browser';
+
+// import 'dom4'; // broke alpine ie 11
 // import 'whatwg-fetch';
 import 'picturefill';
 import 'svgxuse';
 
-// modules
-// import demoInit from './demo';
-// import { $body } from './utils/env';
-// import devMode from './utils/dev';
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfigFile from '../../tailwind.config.js'
+
+window.tailwindConfig = resolveConfig(tailwindConfigFile)
+
+import { initScrollPage }  from './utils/scrollPage'
+
+import './alpine/accordion';
+import './alpine/dropdown';
+import './alpine/tab';
+import './alpine/modal';
+import './alpine/menuPanel';
+import './alpine/menuMobile';
+import './alpine/revealOnScroll';
 
 // import loadWebfonts from './utils/webFonts';
 // import lazyLoadInit from './utils/lazyLoad';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    initScrollPage();
     // load webfonts
     // loadWebfonts();
     // // init
@@ -22,3 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // lazyLoadInit();
     // devMode();
 });
+
+

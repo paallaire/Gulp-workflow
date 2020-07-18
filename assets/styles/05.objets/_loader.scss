@@ -1,0 +1,17 @@
+.o-loader {
+
+}
+
+.o-loader {
+    width: 2rem;
+    height: 2rem;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 0.3rem solid rgba($bluebell, 0.3);
+    border-top-color: $bluebell;
+    animation: 1.5s spin infinite linear;
+  
+    &.multi {
+      border-bottom-color: $bluebell;
+    }
+}

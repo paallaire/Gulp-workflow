@@ -1,0 +1,71 @@
+<div class="p-10">
+    <ul role="tablist" aria-label="Sample Accordion">
+        {% for i in 0..3 %}
+        <li class="relative text-white mt-2" x-data="accordion()" x-init="init()" data-allow-multiple>
+            <button
+                class="w-full p-6 text-left bg-purple-1"
+                id="accordion-button-{{ loop.index }}"
+                type="button"
+                role="tab"
+                aria-controls="accordion-panel-{{ loop.index }}"
+                tabindex="0"
+                :aria-selected="isSelectedAria()"
+                @click="toggle()"
+                @keydown.escape="close()"
+            >
+                <div class="flex items-center justify-between">
+                    <span>Heading {{ loop.index }}</span>
+                    <span class="ico-plus"></span>
+                </div>
+            </button>
+
+            <div
+                class="relative overflow-hidden transition-all max-h-0 duration-300 bg-purple-2"
+                id="accordion-panel-{{ loop.index }}"
+                role="tabpanel"
+                aria-labelledby="accordion-button-{{ loop.index }}"
+                tabindex="0"
+                x-ref="container{{ loop.index }}"
+                :aria-hidden="isSelectedAria()"
+                :style="updateHeight($refs.container{{ loop.index }})"
+            >
+                <div class="o-wysiwyg | p-6">
+                    {% if loop.index == 1 %}
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel in voluptatum repellendus tempore
+                        doloremque ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto
+                        earum ipsum minima voluptas explicabo?
+                    </p>
+                    <p>
+                        Que ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto earum
+                        ipsum minima voluptas explicabo?
+                    </p>
+                    {% else %}
+                    <p>
+                        Que ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto earum
+                        ipsum minima voluptas explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel in
+                        voluptatum repellendus tempore Que ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati
+                        laboriosam architecto earum ipsum minima voluptas explicabo? Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Vel in voluptatum repellendus tempore doloremque ea rem assumenda
+                        molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto earum ipsum minima voluptas
+                        explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel in voluptatum
+                        repellendus tempore doloremque ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati
+                        laboriosam architecto earum ipsum minima voluptas explicabo? Que ea rem assumenda molestias sit!
+                        Amet incidunt ipsa obcaecati laboriosam architecto earum ipsum minima voluptas explicabo? Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Vel in voluptatum repellendus tempore
+                        doloremque ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto
+                        earum ipsum minima voluptas explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vel in voluptatum repellendus tempore doloremque ea rem assumenda molestias sit! Amet incidunt
+                        ipsa obcaecati laboriosam architecto earum ipsum minima voluptas explicabo? doloremque ea rem
+                        assumenda molestias sit! Amet incidunt ipsa obcaecati laboriosam architecto earum ipsum minima
+                        voluptas explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel in voluptatum
+                        repellendus tempore doloremque ea rem assumenda molestias sit! Amet incidunt ipsa obcaecati
+                        laboriosam architecto earum ipsum minima voluptas explicabo?
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

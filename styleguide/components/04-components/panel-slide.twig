@@ -1,0 +1,74 @@
+<header class x-data="{ }">
+    <div class="flex h-12 px-5 bg-black text-white fixed top-0 left-0 z-100 w-full">
+        <h1 class="flex items-center mr-6">
+            <img src="https://via.placeholder.com/140x50" alt="My Logo" />
+        </h1>
+        <ul class="flex items-center -mx-2 hidden | lg:flex">
+            {% for i in 0..4 %}
+            <li class="px-2">
+                <a href="">Menu {{ loop.index }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <button
+            class="hamburger hamburger--slider | bg-green-1 ml-auto"
+            type="button"
+            aria-controls="menu-mobile"
+            aria-label="Open the menu"
+            @click.prevent="$dispatch('showPanel', { id : 'sidePanel'})"
+        >
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+
+    <section x-data="menuPanel()" x-init="init('sidePanel', '.hamburger')" class="fixed inset-y-0 right-0 pl-10 max-w-100 flex z-max">
+        <div
+            class="relative w-screen max-w-md"
+            x-description="Slide-over panel, show/hide based on slide-over state."
+            x-show="isOpen()"
+            x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
+            x-transition:enter-end="translate-x-0"
+            x-transition:enter-start="translate-x-full"
+            x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+            x-transition:leave-end="translate-x-full"
+            x-transition:leave-start="translate-x-0"
+        >
+            <div class="h-full flex flex-col space-y-6 py-6 bg-white shadow-xl overflow-y-scroll">
+                <header class="px-4 sm:px-6">
+                    <button
+                        class="text-black hover:text-blue-1 transition ease-in-out duration-150"
+                        aria-label="Close panel"
+                        @click="close()"
+                    >
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"
+                            ></path>
+                        </svg>
+                    </button>
+                </header>
+                <div class="relative flex-1 px-4 sm:px-6">
+                    <div class="o-wysiwyg">
+                        {% for i in 0..10 %}
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus esse aliquam corporis ad!
+                            Magni possimus iusto magnam, nobis fugiat dolore modi debitis labore? Fuga autem minus
+                            asperiores sed vitae facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
+                            esse aliquam corporis ad! Magni possimus iusto magnam, nobis fugiat dolore modi debitis
+                            labore? Fuga autem minus asperiores sed vitae facere!
+                        </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+{% render "@wysiwyg" with {some: 'values'} %}

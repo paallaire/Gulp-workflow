@@ -18,26 +18,18 @@ $o-button-borderless: '.o-button-borderless';
 
         &.is-hover,
         &:hover {
-            @apply bg-gray-1 text-white;
+            @apply bg-purple-1 text-white;
         }
 
-        &.is-focus,
-        &:focus {
-            @apply bg-gray-2;
-        }
     }
 
-    &.teal {
+    &.green {
         @apply text-black;
 
         &.is-hover,
         &:hover {
-            @apply bg-gray-1 text-white;
+            @apply bg-green-1 text-white;
         }
 
-        &.is-focus,
-        &:focus {
-            @apply bg-gray-2;
-        }
     }
 }

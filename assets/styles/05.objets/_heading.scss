@@ -6,10 +6,7 @@ $o-heading: '.o-heading';
 // placeholder
 
 %heading-base {
-    color: $colors-black;
-    font-weight: 300;
-    line-height: $lineHeight-tight;
-    text-transform: uppercase;
+    @apply text-gray-9 font-medium .leading-tight;
 }
 
 %heading-1 {
@@ -48,6 +45,9 @@ $o-heading: '.o-heading';
 }
 
 // class
+#{$o-heading} {
+    @extend %heading-base;
+}
 
 #{$o-heading}-1 {
     @extend %heading-1;

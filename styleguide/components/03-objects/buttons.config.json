@@ -9,21 +9,21 @@
                 "name": "button",
                 "styles": [
                     "purple",
-                    "teal"
+                    "green"
                 ]
             },
             {
                 "name": "button-bordered",
                 "styles": [
                     "purple",
-                    "teal"
+                    "green"
                 ]
             },
             {
                 "name": "button-borderless",
                 "styles": [
                     "purple",
-                    "teal"
+                    "green"
                 ]
             }
         ],
