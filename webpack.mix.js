@@ -1,22 +1,14 @@
 const mix = require('laravel-mix');
-const config = require('./config');
 
 // plugins
 require('laravel-mix-twig-to-html');
 
-const files = [
-    {
-        template: 'blueprints/pages/*.{twig,html}',
-        inject: false, // disable asset tag injection
-    }
-]
-
 // base
 //----------------------------------------------------------
 mix.setPublicPath('public')
-    .js(`assets/scripts/main.js`, './dist/scripts')
-    .sass(`assets/styles/main.scss`, './dist/styles')
-    .sass(`assets/styles/tailwind.scss`, './dist/styles')
+    //.js('./assets/scripts/main.js', './dist/scripts')
+    .sass('./assets/styles/main.scss', './dist/styles')
+    .sass('./assets/styles/tailwind.scss', './dist/styles')
     .options({
         processCssUrls: false,
         postCss: [
@@ -33,13 +25,13 @@ mix.setPublicPath('public')
             }),
         ],
     })
-    // .purgeCss({
-    //     enabled: mix.inProduction(),
-    //     folders: ['assets', 'modules', 'templates', 'blueprints'],
-    //     extensions: ['html', 'js', 'jsx', 'php', 'twig', 'vue'],
-    // })
     .twigToHtml({
-        files: files,
+        files: [
+            {
+                template: 'templates/pages/*.{twig,html}',
+                inject: false, // disable asset tag injection
+            },
+        ],
         fileBase: 'templates/pages',
         twigOptions: { data: {} },
     })
@@ -56,12 +48,12 @@ if (!mix.inProduction()) {
         },
         // proxy: WEBSITE_URL,
         files: [
-            'public/**/*.html',
-            'public/dist/fonts/**/*',
-            'public/dist/images/**/*',
-            'public/dist/scripts/**/*.js',
-            'public/dist/styles/**/*.css',
-            'public/dist/svg/**/*',
+            './public/**/*.html',
+            './public/dist/fonts/**/*',
+            './public/dist/images/**/*',
+            './public/dist/scripts/**/*.js',
+            './public/dist/styles/**/*.css',
+            './public/dist/svg/**/*',
         ],
         ghostMode: {
             clicks: false,

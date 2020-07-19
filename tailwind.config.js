@@ -1,11 +1,19 @@
-/* eslint-disable global-require */
 const spacingUnits = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(5, 100);
 const fontSizeUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
 const borderRadiusUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
 const borderWidthUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 20);
 
 module.exports = {
-    purge: ['./blueprints/**/*.twig', './styleguide/**/*.twig', './assets/**/*.js', './assets/**/*.vue'],
+    purge: {
+        mode: 'all',
+        content: [
+          './assets/**/*.js',
+          './assets/**/*.vue',
+          './templates/**/*.html',
+          './templates/**/*.twig',
+          './styleguide/**/*.twig',
+        ],
+      },
     target: 'relaxed',
     prefix: '',
     important: false,
