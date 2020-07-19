@@ -1,0 +1,28 @@
+<ul
+    class="flex fixed top-0 right-0 z-100 bg-purple-1 text-white"
+    x-data="scrollspy()"
+    x-init="init('#blocks div')"
+    x-ref="navScrollspy"
+>
+    {% for i in 0..5 %}
+        <li class="p-4">Block {{ loop.index0 }}</li>
+    {% endfor %} 
+    
+    Active = <span x-text="active"></span>
+</ul>
+
+<div class="h-100 w-full bg-green-1"></div>
+<div class="h-100 w-full bg-red-1"></div>
+
+<div class id="blocks">
+    {% for i in 0..5 %}
+    <div class="bg-gray-{{ loop.index }} text-black text-30 h-100 p-10">Block {{ loop.index0 }}</div>
+    {% endfor %}
+</div>
+
+<div class="h-100 bg-red-1"></div>
+<div class="h-100 w-full bg-green-1"></div>
+
+
+
+

@@ -24,9 +24,3 @@ module.exports = function ({ addUtilities, e, theme, variants }) {
     addUtilities(utilities, ['responsive']);
 };
 
-
-
-
-
-
-

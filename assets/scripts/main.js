@@ -10,8 +10,8 @@ import 'svgxuse';
 
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfigFile from '../../tailwind.config.js'
-
 window.tailwindConfig = resolveConfig(tailwindConfigFile)
+console.log('window.tailwindConfig:', window.tailwindConfig)
 
 import { initScrollPage }  from './utils/scrollPage'
 
@@ -22,6 +22,8 @@ import './alpine/modal';
 import './alpine/menuPanel';
 import './alpine/menuMobile';
 import './alpine/revealOnScroll';
+import './alpine/scrollspy';
+
 
 // import loadWebfonts from './utils/webFonts';
 // import lazyLoadInit from './utils/lazyLoad';
