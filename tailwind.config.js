@@ -1,5 +1,5 @@
 const spacingUnits = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(5, 100);
-const fontSizeUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
+const fontSizeUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 75);
 const borderRadiusUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
 const borderWidthUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 20);
 

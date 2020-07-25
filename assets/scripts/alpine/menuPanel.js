@@ -1,18 +1,18 @@
 import { manageScrollPage } from '../utils/scrollPage';
 
-window.menuPanel = function () {
+window.menuPanel = function menuPanel() {
     return {
         id: '',
         active: false,
         elButtonTrigger: null,
-        init: function (id, selectorButtonTrigger) {
+        init(id, selectorButtonTrigger) {
             this.id = id;
             this.elButtonTrigger = document.querySelector(selectorButtonTrigger);
 
             window.addEventListener(
                 'showPanel',
                 (e) => {
-                    let id = e.detail.id;
+                    const { id } = e.detail;
 
                     if (this.id === id) {
                         this.toggle();
@@ -21,34 +21,34 @@ window.menuPanel = function () {
                 false,
             );
 
-            console.log('menuPanel loaded' , this.id);
+            console.log('menuPanel loaded', this.id);
         },
-        toggle: function () {
+        toggle() {
             this.active = !this.active;
             this.updateButtonTrigger();
             manageScrollPage(this.active);
         },
-        updateButtonTrigger: function () {
+        updateButtonTrigger() {
             if (this.active) {
                 this.elButtonTrigger.classList.add('is-active');
             } else {
                 this.elButtonTrigger.classList.remove('is-active');
             }
         },
-        open: function () {
+        open() {
             this.active = true;
             this.updateButtonTrigger();
             manageScrollPage(true);
         },
-        close: function () {
+        close() {
             this.active = false;
             this.updateButtonTrigger();
             manageScrollPage(false);
         },
-        isOpen: function () {
+        isOpen() {
             return this.active === true;
         },
-        isClose: function () {
+        isClose() {
             return this.active === false;
         },
     };

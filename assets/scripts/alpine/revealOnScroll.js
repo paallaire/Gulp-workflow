@@ -1,18 +1,17 @@
-import { debounce } from '../utils/misc'
+import { debounce } from '../utils/misc';
 
-window.revealOnScroll = function () {
+window.revealOnScroll = function revealOnScroll() {
     return {
         isActive: false,
         lastTop: 9999,
         top: 0,
         ticking: false,
-        init: function () {
+        init() {
             console.log('revealOnScroll loaded');
 
             window.addEventListener(
                 'scroll',
                 debounce((e) => {
-        
                     if (!this.ticking) {
                         window.requestAnimationFrame(() => {
                             this.top = window.pageYOffset;
@@ -25,9 +24,8 @@ window.revealOnScroll = function () {
                     this.ticking = true;
                 }, 100),
             );
-
         },
-        updateState: function () {
+        updateState() {
             if (this.top < this.lastTop) {
                 this.isActive = true;
             } else {

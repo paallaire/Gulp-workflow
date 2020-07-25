@@ -21,7 +21,7 @@
     "rules": {
         "prettier/prettier": "error",
         "consistent-return": "warn",
-        "func-names": "warn",
+        "func-names": ["error", "as-needed"],
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "max-len": 0,

@@ -10,7 +10,7 @@ $o-unordered-list: '.o-unordered-list';
 
     li {
         @apply relative;
-        padding-left: 1.5em;
+        padding-left: 1em;
 
         &:before {
             @apply absolute left-0 w-1 h-1 rounded-full bg-black;
@@ -54,9 +54,9 @@ $o-ordered-list: '.o-ordered-list';
     list-style-type: none;
     counter-reset: number;
 
-    li {
+    > li {
         @apply relative;
-        padding-left: 1.5em;
+        padding-left: 1em;
 
         &:before {
             @apply absolute top-0 left-0;

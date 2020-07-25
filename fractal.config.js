@@ -1,7 +1,6 @@
 
 /* Create a new Fractal instance and export it for use elsewhere if required */
 const fractal = module.exports = require('@frctl/fractal').create();
-
 const twigAdapter = require('@frctl/twig')();
 
 fractal.components.engine(twigAdapter);

@@ -7,21 +7,21 @@ function initScrollPage() {
 }
 
 function disableScrollBar() {
-    const body = document.body;
-    const scrollY = document.documentElement.dataset.scrollY
+    const { body } = document;
+    const { scrollY } = document.documentElement.dataset;
 
-    //body.style.paddingRight = '17px';
+    // body.style.paddingRight = '17px';
     body.style.position = 'fixed';
     body.style.top = `-${scrollY}`;
 }
 
 function restoreScrollBar() {
-    const body = document.body;
+    const { body } = document;
     const scrollY = body.style.top;
 
     body.style.position = '';
     body.style.top = '';
-    //body.style.paddingRight = '0px';
+    // body.style.paddingRight = '0px';
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
 }
 

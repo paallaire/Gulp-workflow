@@ -1,7 +1,7 @@
 *.twig
 *.php
 *.html
-/kss-styleguide
+/styleguide
 /dist
 /public
 /docs

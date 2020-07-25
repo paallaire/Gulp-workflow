@@ -1,23 +1,23 @@
-window.accordion = function () {
+window.accordion = function accordion() {
     return {
         isActive: false,
-        init: function() {
+        init() {
             console.log('accordion loaded');
         },
-        toggle: function () {
+        toggle() {
             this.isActive = !this.isActive;
         },
-        open: function() {
+        open() {
             this.isActive = true;
         },
-        close: function() {
+        close() {
             this.isActive = false;
         },
-        isSelectedAria: function() {
-            return this.isActive ? 'true' : 'false'
+        isSelectedAria() {
+            return this.isActive ? 'true' : 'false';
         },
-        updateHeight: function(el) {
-            return this.isActive == true ? 'max-height: ' + el.scrollHeight + 'px' : '';
-        }
+        updateHeight(el) {
+            return this.isActive == true ? `max-height: ${el.scrollHeight}px` : '';
+        },
     };
-}
+};

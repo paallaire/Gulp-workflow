@@ -1,29 +1,108 @@
 <div class="p-5">
 
-    {% for itemType in types %}
-        <h2 class="o-heading-4 | mb-3">{{ itemType.name }}</h2>
+	{% for itemType in types %}
+		<h2 class="o-heading-4 | mb-3">{{ itemType.name }}</h2>
 
-        {% for style in itemType.styles %}
+		{% for style in itemType.styles %}
 
-        <h3 class="o-heading-5 | mb-3">{{ style }}</h3>
+			<h3 class="o-heading-5 | mb-3">{{ style }}</h3>
 
-        <div class="mb-4 flex flex-wrap">
-            {% for item in status %}
-            <a href="" class="o-{{ itemType.name }} {{ style }} {{ item.state }} | mb-3 mr-3">
-                {% if item.name == "icon right" or item.name == "icon only" %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/></svg>
-                {% endif %}
-                {% if item.name != "icon only" %}
-                <span>{{ item.name }}</span>
-                {% endif %}
-                {% if item.name == "icon left" %}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/></svg>
-                {% endif %}
-            </a>
-            {% endfor %}
-        </div>
-        {% endfor %}
+			<div class="mb-4 flex flex-wrap">
+				{% for item in status %}
+					<a href="" class="o-{{ itemType.name }} {{ style }} {{ item.state }} | mb-3 mr-3">
+						{% if item.name == "icon right" or item.name == "icon only" %}
+							<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/></svg>
+						{% endif %}
+						{% if item.name != "icon only" %}
+							<span>{{ item.name }}</span>
+						{% endif %}
+						{% if item.name == "icon left" %}
+							<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/></svg>
+						{% endif %}
+					</a>
+				{% endfor %}
+			</div>
+		{% endfor %}
 
-    {% endfor %}
-    
+	{% endfor %}
+
 </div>
+
+{# ============================================================================
+    CSS class
+============================================================================ #}
+{% set mainNavLiCSS = "u-px-3 u-h-full" %}
+{% set mainNavACSS = "u-font-akaura-bold u-uppercase u-leading-none u-text-6" %}
+{% set navCssClass = 'u-h-12' %}
+
+{# ============================================================================
+    Languages
+============================================================================ #}
+{% set labelCurrentLang = craft.app.language|slice(0, 2) %}
+{% set otherSites = craft.app.sites.allSites | without(craft.app.sites.currentSite) %}
+
+{# ============================================================================
+    Languages
+============================================================================ #}
+{% set idParam = 'and, not ' ~ craft.entries.section("pages").type("productsSolutions").type("productsSolutionsLanding").level(1).ids()|join(', not ') %}
+{% set entryType = entry.type|default("") %}
+
+{% set menuMobileBuSelectedValue = entry.getAncestors().one().type|default == 'productsSolutionsLanding' and entry.type('not productsSolutionsLanding') ? entry.getAncestors().type('productsSolutions').one().id|default(entry.id) : "null" %}
+
+{% if entryType == "careers" or entryType == "procurement" %}
+	{% set contactParam = "?industry=OFFAC" %}
+{% else %}
+	{% set contactParam = (businessUnitCode|default ? "?industry=" ~ (businessUnitCode == "DB" ? "DTS" : businessUnitCode) : "") %}
+{% endif %}
+
+{# ============================================================================
+    Pages/Entries
+============================================================================ #}
+{% set pageHomeCurrentBu = null %}
+{% set pageFindADealer = craft.entries.section("findADealer").one() %}
+{% set pageAbout = craft.entries.section("pages").type("pages").level(1).one() %}
+{% set pagePowerSport = craft.entries.section("pages").type("productsSolutionsLanding").level(1).one() %}
+{% set pageContact = craft.entries.section("pages").type("contactUs").one() %}
+{% set pagesBu = craft.entries.section("pages").id("not " ~ pageAbout.id).level(1).all() %}
+
+{% set menuMobileBuSelectedValue = entry.getAncestors().one().type|default == 'productsSolutionsLanding' and entry.type('not productsSolutionsLanding') ? entry.getAncestors().type('productsSolutions').one().id|default(entry.id) : "null" %}
+
+{# ============================================================================
+    Condition Pages/Entries
+============================================================================ #}
+{% set isBu = entry.type.handle|default == "productsSolutions" or entry.parent.type.handle|default == "productsSolutions" or entry.getAncestors().one.type.handle|default == "productsSolutions"  %}
+{% set isProductionSolutionLanding = entry.type|default == 'productsSolutionsLanding' %}
+{% set isInsideSectionAbout = entry.getAncestors().one().id|default == pageAbout.id|default %}
+{% set isInsideProductionSolutionLanding = entry.getAncestors().one().type|default == 'productsSolutionsLanding' and entry.type|default != 'productsSolutionsLanding' %}
+
+{% if entry.type|default == 'productsSolutionsLanding' %}
+
+	{% set pageHomeCurrentBu = entry %}
+	{% set pagesBuLanding = pageHomeCurrentBu.children.type("productsSolutions").all()|default %}
+
+{% elseif entry.getAncestors().one().type|default == 'productsSolutionsLanding' %}
+
+	{% set pageHomeCurrentBu = entry.getAncestors().type("productsSolutions").one()|default(entry) %}
+
+{% elseif isBu %}
+
+	{% set pageHomeCurrentBu = entry.getAncestors().one()|default(entry) %}
+
+{% endif %}
+
+{# ============================================================================
+    Condition navCssClass
+============================================================================ #}
+{% if isInsideProductionSolutionLanding %}
+
+	{% set navCssClass = 'u-h-24' %}
+
+{% elseif entry.type|default == 'productsSolutionsLanding' or isBu %}
+
+	{% set navCssClass = 'u-h-24 | xl:u-h-12' %}
+
+{% elseif isInsideSectionAbout %}
+
+	{% set navCssClass = 'xl:u-h-22' %}
+
+{% endif %}

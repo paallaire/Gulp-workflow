@@ -6,7 +6,7 @@ require('laravel-mix-twig-to-html');
 // base
 //----------------------------------------------------------
 mix.setPublicPath('public')
-    //.js('./assets/scripts/main.js', './dist/scripts')
+    .js('./assets/scripts/main.js', './dist/scripts')
     .sass('./assets/styles/main.scss', './dist/styles')
     .sass('./assets/styles/tailwind.scss', './dist/styles')
     .options({

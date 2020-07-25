@@ -1,20 +1,20 @@
-window.modal = function () {
+window.modal = function modal() {
     return {
         id: '',
         active: false,
-        isActive: function() {
+        isActive() {
             return this.active;
         },
-        close: function() {
+        close() {
             this.active = false;
         },
-        init: function (id) {
+        init(id) {
             this.id = id;
-    
+
             window.addEventListener(
                 'showModal',
                 (e) => {
-                    let id = e.detail.id;
+                    const { id } = e.detail;
 
                     if (this.id === id) {
                         this.active = true;

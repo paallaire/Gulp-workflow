@@ -1,23 +1,23 @@
-window.tab = function () {
+window.tab = function tab() {
     return {
         active: 1,
-        init: function () {
+        init() {
             console.log('tab loaded', this.active);
         },
-        open: function (id, el) {
+        open(id, el) {
             this.active = id;
 
-            setTimeout(function () {
+            setTimeout(() => {
                 el.focus();
             }, 1);
         },
-        close: function () {
+        close() {
             this.active = false;
         },
-        isActive: function (id) {
+        isActive(id) {
             return this.active === id;
         },
-        isActiveAria: function (id) {
+        isActiveAria(id) {
             return this.active === id ? 'true' : 'false';
         },
     };

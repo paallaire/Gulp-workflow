@@ -1,20 +1,20 @@
 {
     "name": "base",
     "version": "0.0.1",
-    
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
-        "eslint:styleguide": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
         "eslint": "eslint assets/scripts/**/*.js tailwind.config.js",
         "eslint:fix": "eslint --fix",
-        "tailwind-scss-var": "node assets/tailwindcss/generate-scss-variables.js",
+        "eslint:styleguide": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
         "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write",
-        "fractal": "fractal start --sync",
-        "fractal:build": "fractal build"
+        "fractal:build": "fractal build",
+        "fractal:watch": "fractal start --sync",
+        "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
+        "tailwind:scss-var": "node assets/tailwindcss/generate-scss-variables.js",
+        "tailwind:sg": "tailwind-config-viewer --port 5000 --open true"
     },
     "fractal": {
         "main": "fractal.config.js"
@@ -49,6 +49,7 @@
         "stylelint": "^13.3.3",
         "stylelint-config-rational-order": "0.1.2",
         "stylelint-config-sass-guidelines": "^7.0.0",
+        "tailwind-config-viewer": "^1.0.0",
         "twig-html-loader": "^0.1.7"
     },
     "dependencies": {

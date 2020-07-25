@@ -1,0 +1,31 @@
+<div
+    x-data="alertBrowser()"
+    x-init="init"
+    x-show="isActive"
+    x-transition:enter="ease-out duration-500"
+    x-transition:enter-start="opacity-0 scale-98 translate-y-2"
+    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+    x-transition:leave="ease-in duration-500"
+    x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+    x-transition:leave-end="opacity-0 scale-100 translate-y-2"
+    x-cloak
+    class="transition transform fixed bottom-0 inset-x-0 px-2 pb-10 sm:px-0 sm:pb-6"
+>
+    <a
+        href="https://bestvpn.org/outdatedbrowser/en"
+        class="flex items-center justify-between rounded-lg shadow-lg pl-6 pr-4 py-3 bg-purple-1 mx-10"
+    >
+        <p class="text-gray-1">
+            <strong class="font-bold text-white">
+                OUTDATED BROWSER
+            </strong>
+            FOR A BETTER EXPERIENCE, KEEP YOUR BROWSER UP TO DATE. CHECK HERE FOR LATEST VERSIONS.
+        </p>
+        <span
+            class="flex items-center justify-center px-3 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-gray-600 focus:outline-none focus:shadow-outline transition ease-in-out duration-150"
+        >
+            →
+        </span>
+    </a>
+</div>
+

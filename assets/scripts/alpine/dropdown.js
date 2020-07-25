@@ -1,23 +1,23 @@
-window.dropdown = function () {
+window.dropdown = function dropdown() {
     return {
         active: false,
-        init: function() {
-            console.log('dropdown loaded')
+        init() {
+            console.log('dropdown loaded');
         },
-        toggle: function () {
+        toggle() {
             this.active = !this.active;
         },
-        open: function() {
+        open() {
             this.active = true;
         },
-        close: function() {
+        close() {
             this.active = false;
         },
-        isOpen: function() {
+        isOpen() {
             return this.active;
         },
-        activeAria: function() {
-            return this.active ? 'true' : 'false'
+        activeAria() {
+            return this.active ? 'true' : 'false';
         },
     };
-}
+};
