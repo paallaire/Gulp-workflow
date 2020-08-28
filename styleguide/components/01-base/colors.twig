@@ -1,35 +1,39 @@
 <div class="px-10 py-3">
 
-    <div class=" mb-4 mt-4">
-        <h1 class="o-heading-4 uppercase">Colors</h1>
-        <p><a href="https://flatuicolors.com/palette/us" class="underline">Palette</a></p>
-        <p><a href="http://www.fixjson.com/" class="underline">Convert tailwind data in JSON</a></p>
-    </div>
+	<div class=" mb-4 mt-4">
+		<h1 class="o-heading-4 uppercase">Colors</h1>
+		<p>
+			<a href="https://flatuicolors.com/palette/us" class="underline">Palette</a>
+		</p>
+		<p>
+			<a href="http://www.fixjson.com/" class="underline">Convert tailwind data in JSON 123</a>
+		</p>
+	</div>
 
-    <div class="mx-auto flex flex-wrap -mx-2 mt-2">
-    {% for catKey, catCode in colors %}
+	<div class="flex flex-wrap -mx-2 mt-2">
+		{% for catKey, catCode in colors %}
 
-        {% if catCode is iterable %}
-    
-                {% for colorKey, colorCode in catCode %}
+			{% if catCode is iterable %}
 
-                    <div class="px-2 mb-4">
-                        <div class="w-20 h-20 p-2 shadow bg-{{ catKey }}-{{ colorKey }} mb-2"></div>
-                        <div class="mb-2">{{ catKey }}-{{ colorKey }}</div>
-                        <div class="">{{ colorCode }}</div>
-                    </div>
+				{% for colorKey, colorCode in catCode %}
 
-                {% endfor %}
+					<div class="px-2 mb-4">
+						<div class="w-20 h-20 p-2 shadow bg-{{ catKey }}-{{ colorKey }} mb-2"></div>
+						<div class="mb-2">{{ catKey }}-{{ colorKey }}</div>
+						<div class="">{{ colorCode }}</div>
+					</div>
 
-        {% else %}
+				{% endfor %}
 
-            <div class="px-2 mb-4">
-                <div class="w-20 h-20 shadow bg-{{ catKey }} mb-2"></div>
-                <div class="mb-2">{{ catKey }}</div>
-            </div>
+			{% else %}
 
-        {% endif %}
+				<div class="px-2 mb-4">
+					<div class="w-20 h-20 shadow bg-{{ catKey }} mb-2"></div>
+					<div class="mb-2">{{ catKey }}</div>
+				</div>
 
-    {% endfor %}
-    </div>  
+			{% endif %}
+
+		{% endfor %}
+	</div>
 </div>

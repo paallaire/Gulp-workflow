@@ -7,13 +7,13 @@ module.exports = {
     purge: {
         mode: 'all',
         content: [
-          './assets/**/*.js',
-          './assets/**/*.vue',
-          './templates/**/*.html',
-          './templates/**/*.twig',
-          './styleguide/**/*.twig',
+            './assets/**/*.js',
+            './assets/**/*.vue',
+            './templates/**/*.html',
+            './templates/**/*.twig',
+            './styleguide/**/*.twig',
         ],
-      },
+    },
     target: 'relaxed',
     prefix: '',
     important: false,
@@ -24,7 +24,16 @@ module.exports = {
             sm: '576px',
             md: '768px',
             lg: '1024px',
-            xl: '1240px',
+            xl: '1280px',
+            hg: '1440px',
+            cl: '1920px',
+        },
+        container: {
+            xs: '375px',
+            sm: '576px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
             hg: '1440px',
             cl: '1920px',
         },
@@ -55,7 +64,7 @@ module.exports = {
             },
             red: {
                 1: '#e74c3c',
-                2: "#ff7675"
+                2: '#ff7675',
             },
             purple: {
                 1: '#6c5ce7',
@@ -123,9 +132,8 @@ module.exports = {
             outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
             none: 'none',
             focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-            "outline-blue": '0 0 0 3px rgba(66, 153, 225, 0.5)',
+            'outline-blue': '0 0 0 3px rgba(66, 153, 225, 0.5)',
         },
-        container: {},
         cursor: {
             auto: 'auto',
             default: 'default',
@@ -628,8 +636,5 @@ module.exports = {
         gridRowStart: false,
         gridRowEnd: false,
     },
-    plugins: [
-        require('./assets/tailwindcss/plugins/rotate.js'),
-        require('./assets/tailwindcss/plugins/container.js'),
-    ],
+    plugins: [require('./assets/tailwindcss/plugins/rotate.js'), require('./assets/tailwindcss/plugins/container.js')],
 };

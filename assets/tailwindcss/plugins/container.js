@@ -2,25 +2,24 @@
 const _ = require('lodash');
 
 module.exports = function ({ addUtilities, e, theme, variants }) {
-    const screens = theme('screens', {});
-    const paddingX = 40;
-    const scrollBarWidth = 17;
-    const utilities = _.map(screens, (value, name) => ({
-        [`.${e(`container-${name}`)}`]: {
-            paddingLeft: `${paddingX / 2}px`,
-            paddingRight: `${paddingX / 2}px`,
-
-            [`@media (min-width: ${`${(parseInt(value) + paddingX + scrollBarWidth)}px)`}`]: {
+    const container = theme('container', {});
+    const utilities = _.map(container, (value, name) => {
+        return {
+            [`.${e(`container-${name}`)}`]: {
                 maxWidth: `${value}`,
+                boxSizing: 'content-box',
                 marginLeft: 'auto',
                 marginRight: 'auto',
-                paddingLeft: theme('spacing.0'),
-                paddingRight: theme('spacing.0'),
-            },
+                paddingLeft: theme('spacing.4'),
+                paddingRight: theme('spacing.4'),
 
-        },
-    }));
+                [`@media (min-width: ${theme('screens.lg')})`]: {
+                    paddingLeft: theme('spacing.6'),
+                    paddingRight: theme('spacing.6'),
+                },
+            },
+        };
+    });
 
     addUtilities(utilities, ['responsive']);
 };
-
