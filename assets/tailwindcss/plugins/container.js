@@ -18,6 +18,12 @@ module.exports = function ({ addUtilities, e, theme, variants }) {
                     paddingRight: theme('spacing.6'),
                 },
             },
+            [`.${e(`container-${name}-px-none`)}`]: {
+                maxWidth: `${value}`,
+                boxSizing: 'content-box',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            },
         };
     });
 

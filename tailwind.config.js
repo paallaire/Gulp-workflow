@@ -1,6 +1,6 @@
-const spacingUnits = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(5, 100);
+const spacingUnits = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(5, 200);
 const fontSizeUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 75);
-const borderRadiusUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 100);
+const borderRadiusUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 20);
 const borderWidthUnit = require('./assets/tailwindcss/units/generateUnitByMultiplicator')(2, 20);
 
 module.exports = {
@@ -20,13 +20,11 @@ module.exports = {
     separator: ':',
     theme: {
         screens: {
-            xs: '400px',
-            sm: '576px',
+            xs: '500px',
             md: '768px',
             lg: '1024px',
-            xl: '1280px',
-            hg: '1440px',
-            cl: '1920px',
+            xl: '1440px',
+            hg: '1920px',
         },
         container: {
             xs: '375px',
