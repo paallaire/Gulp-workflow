@@ -1,7 +1,6 @@
 const { series, src, dest, watch } = require('gulp');
 const imagemin = require('gulp-imagemin');
 const svgSprite = require('gulp-svg-sprite');
-const colorGroups = require('color-groups');
 
 const config = require('./config');
 
@@ -34,7 +33,7 @@ function images() {
 exports.fonts = fonts;
 exports.icons = icons;
 exports.images = images;
-exports.watch = function() {
+exports.watch = function () {
     watch(`${config.path.assets}/fonts/**`, fonts);
     watch(`${config.path.assets}/icons/**`, icons);
     watch(`${config.path.assets}/images/**`, images);

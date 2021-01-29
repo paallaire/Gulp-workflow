@@ -17,7 +17,7 @@ window.accordion = function accordion() {
             return this.isActive ? 'true' : 'false';
         },
         updateHeight(el) {
-            return this.isActive == true ? `max-height: ${el.scrollHeight}px` : '';
+            return this.isActive === true ? `max-height: ${el.scrollHeight}px` : '';
         },
     };
 };

@@ -1,39 +1,36 @@
 // polyfills
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-import 'element-closest/browser';
-
-// import 'dom4'; // broke alpine ie 11
-// import 'whatwg-fetch';
-import 'picturefill';
 import 'svgxuse';
 
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfigFile from '../../tailwind.config.js'
-// window.tailwindConfig = resolveConfig(tailwindConfigFile)
-// console.log('window.tailwindConfig:', window.tailwindConfig)
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfigFile from '../../tailwind.config';
 
 import { initScrollPage } from './utils/scrollPage';
+import GridVisualizer from './modules/GridVisualizer';
 
-import './alpine/accordion';
-import './alpine/dropdown';
-import './alpine/tab';
-import './alpine/modal';
-import './alpine/menuPanel';
-import './alpine/menuMobile';
-import './alpine/revealOnScroll';
-import './alpine/scrollspy';
-import './alpine/alertBrowser';
-
-// import loadWebfonts from './utils/webFonts';
-// import lazyLoadInit from './utils/lazyLoad';
+window.tailwindConfig = resolveConfig(tailwindConfigFile);
+console.log('window.tailwindConfig:', window.tailwindConfig);
 
 document.addEventListener('DOMContentLoaded', () => {
     initScrollPage();
-    // load webfonts
-    // loadWebfonts();
-    // // init
-    // demoInit();
-    // lazyLoadInit();
-    // devMode();
+    const websiteGrid = new GridVisualizer({
+        numberColumns: 12,
+        containerCSsClass: 'mx-auto box-content w-full max-w-6xl',
+        rowCssClass: 'flex -mx-2',
+        columnsCssClass: 'px-2',
+        columnsCssClassCustom: [
+            'lg:w-1/12 w-1/4',
+            'lg:w-1/12 w-1/4',
+            'lg:w-1/12 w-1/4',
+            'lg:w-1/12 w-1/4',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+            'lg:w-1/12 hidden | lg:block',
+        ],
+    });
+    websiteGrid.init();
 });

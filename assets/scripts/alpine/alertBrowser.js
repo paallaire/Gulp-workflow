@@ -10,12 +10,6 @@ window.alertBrowser = function alertBrowser() {
             setTimeout(() => {
                 this.isActive = true;
             }, 1000);
-
-            // if (isIE) {
-            //     setTimeout(() => {
-            //         this.isActive = true;
-            //     }, 1000);
-            // }
         },
         toggle() {
             this.isActive = !this.isActive;

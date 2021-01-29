@@ -14,10 +14,12 @@
     <title>{{ title }}</title>
  
 </head>
-<body>
+<body class="is-dev">
     {% include "../_includes/blocks/header.twig" %}
 
     {% block page %}{% endblock %}
+
+    <div class="c-grid-visualizer"></div>
 
     {% include "../_includes/blocks/footer.twig" %}
 

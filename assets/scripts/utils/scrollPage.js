@@ -4,6 +4,7 @@ function initScrollPage() {
     window.addEventListener('scroll', () => {
         document.documentElement.dataset.scrollY = `${window.scrollY}px`;
     });
+    document.documentElement.dataset.scrollY = `${window.scrollY}px`;
 }
 
 function disableScrollBar() {
@@ -22,7 +23,7 @@ function restoreScrollBar() {
     body.style.position = '';
     body.style.top = '';
     // body.style.paddingRight = '0px';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
 }
 
 function manageScrollPage(state) {

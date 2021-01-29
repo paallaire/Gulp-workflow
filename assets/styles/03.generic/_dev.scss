@@ -6,8 +6,8 @@ body.is-dev {
   
     // breakpoint debugger
     &:before {
-        @apply p-2 block fixed right-0 bottom-0 z-max font-bold uppercase bg-gray-1;
-        content: 'xs';
+        @apply p-2 block fixed right-0 bottom-0 z-max font-bold uppercase bg-gray-3;
+        content: 'none';
 
         @each $name, $value in $breakpoints {
             @include media('>=#{$name}') {

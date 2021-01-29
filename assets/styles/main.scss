@@ -1,3 +1,15 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+ @tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
 /* ==========================================================================
 01.Settings
 ========================================================================== */
@@ -15,20 +27,15 @@
 @import '~hamburgers/_sass/hamburgers/hamburgers';
 
 // functions
-@import '02.tools/functions';
 
 // mixins
-@import '02.tools/mixins/input-placeholder';
-
-// placeholder
 
 /* ==========================================================================
 03.Generic
 ========================================================================== */
-/* Preflight will be injected here */
-@tailwind base;
-@import '03.generic/tags';
-@import '03.generic/fonts';
+
+// @import '03.generic/tags';
+// @import '03.generic/fonts';
 @import '03.generic/form';
 @import '03.generic/dev';
 
@@ -94,20 +101,10 @@
 // @import 'pages/home';
 // @import 'pages/404';
 
-
-
-
-
-
-
 .test {
     transform: translate3d(0,0,0);
     -webkit-backface-visibility: hidden;
-
 }
-
-
-
 
 .menu-mobile  {
     height: calc(100vh - 50px);
