@@ -1,36 +1,61 @@
-// polyfills
-import 'svgxuse';
+console.log('hello');
 
-import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfigFile from '../../tailwind.config';
+let lastTop = document.documentElement.scrollTop;
+let top = document.documentElement.scrollTop;
 
-import { initScrollPage } from './utils/scrollPage';
-import GridVisualizer from './modules/GridVisualizer';
+let elNav = document.querySelector('.c-nav-sticky');
 
-window.tailwindConfig = resolveConfig(tailwindConfigFile);
-console.log('window.tailwindConfig:', window.tailwindConfig);
+let onScroll = function () {
+    top = document.documentElement.scrollTop;
 
-document.addEventListener('DOMContentLoaded', () => {
-    initScrollPage();
-    const websiteGrid = new GridVisualizer({
-        numberColumns: 12,
-        containerCSsClass: 'mx-auto box-content w-full max-w-6xl',
-        rowCssClass: 'flex -mx-2',
-        columnsCssClass: 'px-2',
-        columnsCssClassCustom: [
-            'lg:w-1/12 w-1/4',
-            'lg:w-1/12 w-1/4',
-            'lg:w-1/12 w-1/4',
-            'lg:w-1/12 w-1/4',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-            'lg:w-1/12 hidden | lg:block',
-        ],
-    });
-    websiteGrid.init();
-});
+    if (top !== lastTop) {
+        console.log('top:', top);
+
+        if (top <= 0) {
+            console.log('top');
+            elNav.classList.add('is-top');
+        } else {
+            elNav.classList.remove('is-top');
+        }
+
+        if (top > lastTop) {
+            console.log('down');
+            elNav.classList.add('is-hide');
+        } else if (top < lastTop) {
+            console.log('up');
+            elNav.classList.remove('is-hide');
+        }
+    }
+
+    lastTop = document.documentElement.scrollTop;
+    requestAnimationFrame(onScroll);
+};
+
+let navSicktyInit = function () {
+    console.log('navSicktyInit:');
+    onScroll();
+};
+
+navSicktyInit();
+
+// var scroll = function () {
+//     console.log('scroll:');
+//     // do the onscroll stuff you want here
+// };
+// var raf =
+//     window.requestAnimationFrame ||
+//     window.webkitRequestAnimationFrame ||
+//     window.mozRequestAnimationFrame ||
+//     window.msRequestAnimationFrame ||
+//     window.oRequestAnimationFrame;
+// // var $window = $(window);
+// // var lastScrollTop = $window.scrollTop();
+
+// if (raf) {
+//     loop();
+// }
+
+// function loop() {
+//     scroll();
+//     raf(loop);
+// }

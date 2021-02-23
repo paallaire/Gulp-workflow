@@ -1,80 +1,43 @@
 {
-    "name": "base",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "eslint": "eslint assets/scripts/**/*.js tailwind.config.js",
-        "eslint:fix": "eslint --fix",
-        "eslint:styleguide": "eslint --fix assets/scripts/**/*.js tailwind.config.js",
-        "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"assets/**/*.{ts,css,less,js}\" --write",
-        "fractal:build": "fractal build",
-        "fractal:watch": "fractal start --sync",
-        "stylelint": "stylelint assets/styles/**/*.scss --syntax scss --fix",
-        "tailwind:scss-var": "node assets/tailwindcss/generate-scss-variables.js",
-        "tailwind:sg": "tailwind-config-viewer --port 5000 --open true"
-    },
-    "fractal": {
-        "main": "fractal.config.js"
-    },
-    "devDependencies": {
-        "@frctl/fractal": "^1.4.1",
-        "@frctl/twig": "^1.2.2",
-        "babel-eslint": "^10.1.0",
-        "browser-sync-webpack-plugin": "^2.2.2",
-        "browser-sync": "^2.26.13",
-        "copy-webpack-plugin": "^6.2.1",
-        "cross-env": "^7.0.2",
-        "eslint-config-airbnb-base": "^14.2.0",
-        "eslint-config-prettier": "^6.15.0",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-prettier": "^3.1.4",
-        "eslint": "^7.12.1",
-        "gulp-imagemin": "^7.1.0",
-        "gulp-svg-sprite": "^1.5.0",
-        "gulp": "^4.0.2",
-        "html-webpack-plugin": "^4.5.0",
-        "laravel-mix-postcss-config": "^1.0.4",
-        "laravel-mix-purgecss": "^5.0.0",
-        "laravel-mix-twig-to-html": "^1.3.0",
-        "laravel-mix": "^5.0.7",
-        "postcss-preset-env": "^6.7.0",
-        "prettier": "^2.1.2",
-        "resolve-url-loader": "^3.1.2",
-        "sass-loader": "^10.0.4",
-        "sass": "^1.27.0",
-        "stylelint-config-rational-order": "0.1.2",
-        "stylelint-config-sass-guidelines": "^7.1.0",
-        "stylelint": "^13.7.2",
-        "twig-html-loader": "^0.1.8"
-    },
-    "dependencies": {
-        "@babel/core": "^7.11.4",
-        "@babel/polyfill": "^7.12.1",
-        "core-js": "^3.6.5",
-        "hamburgers": "^1.1.3",
-        "include-media": "^1.4.9",
-        "include-media-export": "^1.0.3",
-        "postcss-pxtorem": "^5.1.1",
-        "svgxuse": "^1.2.6",
-        "tailwind-config-viewer": "^1.2.3",
-        "tailwindcss": "^1.9.6",
-        "vue": "^2.6.12",
-        "vue-template-compiler": "^2.6.12",
-        "vuex": "^3.5.1"
-    },
-    "_plugins": {
-        "lodash": "^4.17.15",
-        "vanilla-lazyload": "^15.2.0",
-        "webfontloader": "^1.6.28",
-        "axios": "^0.19.2",
-        "swiper": "^6.1.2",
-        "validate.js": "^0.13.1",
-        "element-closest": "^3.0.2",
-        "picturefill": "^3.0.3"
-    },
-    "_dependencies": {},
-    "_devDependencies": {}
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Front-end boilerplate for projects",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.4",
+    "gulp-twig": "^1.2.0",
+    "postcss": "^8.2.6",
+    "postcss-pxtorem": "^5.1.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "tailwindcss": "^2.0.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "laravel-mix": "^6.0.11"
+  },
+  "scripts": {
+    "dev": "gulp && mix",
+    "watch": "gulp && mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "gulp && npm run production",
+    "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paallaire/Base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paallaire/Base/issues"
+  },
+  "homepage": "https://github.com/paallaire/Base#readme"
 }

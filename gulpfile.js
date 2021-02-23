@@ -1,41 +1,86 @@
-const { series, src, dest, watch } = require('gulp');
+/* Gulp
+-------------------------------------------- */
+const { series, parallel, src, dest, watch } = require('gulp');
+const del = require('del');
+
+/* Plugins
+-------------------------------------------- */
 const imagemin = require('gulp-imagemin');
+const twig = require('gulp-twig');
 const svgSprite = require('gulp-svg-sprite');
 
-const config = require('./config');
+/* del
+-------------------------------------------- */
+function cleanTask(cb) {
+    del(['./public/dist']);
+    cb();
+}
 
-const svgConfig = {
+/* imagemin
+-------------------------------------------- */
+const imageminOptions =
+    ([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 75, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+            plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+        }),
+    ],
+    {
+        verbose: true,
+    });
+
+function imagesTask() {
+    return src('assets/images/**/*').pipe(imagemin(imageminOptions)).pipe(dest('./public/dist/images'));
+}
+
+/* twig
+-------------------------------------------- */
+function twigTask() {
+    return src('./templates/pages/index.twig').pipe(twig()).pipe(dest('./public/'));
+}
+
+/* fonts
+-------------------------------------------- */
+function fontsTask() {
+    return src('**/*', { cwd: './assets/fonts' }).pipe(dest('./public/dist/fonts'));
+}
+
+/* icons
+-------------------------------------------- */
+const config = {
     mode: {
-        symbol: {
-            inline: true,
+        defs: {
             dest: '',
             sprite: 'sprite.svg',
         },
     },
 };
 
-function fonts() {
-    return src('**/*', { cwd: `${config.path.assets}/fonts` }).pipe(dest(`${config.path.dist}/fonts`));
+function iconsTask() {
+    return src('**/*.svg', { cwd: './assets/icons' }).pipe(svgSprite(config)).pipe(dest('./public/dist/icons'));
 }
 
-function icons() {
-    return src('**/*.svg', { cwd: `${config.path.assets}/icons` })
-        .pipe(svgSprite(svgConfig))
-        .pipe(dest(`${config.path.dist}/icons`));
+/* env
+-------------------------------------------- */
+if (process.env.NODE_ENV === 'production') {
+    //exports.build = series(transpile, minify);
+} else {
+    //exports.build = series(transpile, livereload);
 }
 
-function images() {
-    return src(`${config.path.assets}/images/**`)
-        .pipe(imagemin())
-        .pipe(dest(`${config.path.dist}/images`));
-}
+/* tasks
+-------------------------------------------- */
+exports.default = series(cleanTask, parallel(imagesTask, fontsTask, iconsTask), twigTask);
+exports.clean = cleanTask;
+exports.images = imagesTask;
+exports.twig = twigTask;
+exports.fonts = fontsTask;
+exports.icons = iconsTask;
 
-exports.fonts = fonts;
-exports.icons = icons;
-exports.images = images;
+/* watch
+-------------------------------------------- */
 exports.watch = function () {
-    watch(`${config.path.assets}/fonts/**`, fonts);
-    watch(`${config.path.assets}/icons/**`, icons);
-    watch(`${config.path.assets}/images/**`, images);
+    watch('assets/images/**/*', images);
 };
-exports.default = series(fonts, icons, images);
