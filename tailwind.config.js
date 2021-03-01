@@ -10,7 +10,7 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1440px',
-      hg: '1920px'
+      hg: '1920px',
     },
     spacing: {
       0: '0',
@@ -22,7 +22,7 @@ module.exports = {
       '7px': '7px',
       '8px': '8px',
       '9px': '9px',
-      ...spacingUnits
+      ...spacingUnits,
     },
     fontSize: {
       xs: ['12px', '20px'],
@@ -30,15 +30,15 @@ module.exports = {
       base: ['16px', '24px'],
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],
-      ...fontSizeUnit
-    }
+      ...fontSizeUnit,
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('./assets/tailwindcss/plugins/debug-screens')],
   corePlugins: {
     backgroundImage: false,
-    container: false
-  }
+    container: false,
+  },
 };

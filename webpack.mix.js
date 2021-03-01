@@ -19,11 +19,11 @@ mix
         selectorBlackList: [],
         replace: true,
         mediaQuery: false,
-        minPixelValue: 0
-      })
-    ]
+        minPixelValue: 0,
+      }),
+    ],
   })
-  // .extract()
+  .extract()
   .version();
 
 // Watch
@@ -32,7 +32,7 @@ if (!mix.inProduction()) {
   mix.sourceMaps().browserSync({
     proxy: false,
     server: {
-      baseDir: './public/'
+      baseDir: './public/',
     },
     // proxy: WEBSITE_URL,
     files: [
@@ -41,14 +41,14 @@ if (!mix.inProduction()) {
       './public/dist/images/**/*',
       './public/dist/scripts/**/*.js',
       './public/dist/styles/**/*.css',
-      './public/dist/svg/**/*'
+      './public/dist/svg/**/*',
     ],
     ghostMode: {
       clicks: false,
       links: false,
       forms: false,
-      scroll: false
+      scroll: false,
     },
-    reloadDelay: 100
+    reloadDelay: 100,
   });
 }

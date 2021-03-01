@@ -56,6 +56,10 @@
 // @import 'pages/home';
 // @import 'pages/404';
 
+/* ==========================================================================
+09.dev
+========================================================================== */
+@import './dev/grid-visualizer';
 
 .c-nav-sticky {
     @apply bg-gray-200 fixed top-0 z-10 w-full transition ease-out duration-500;

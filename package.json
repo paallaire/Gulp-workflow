@@ -24,6 +24,7 @@
   },
   "scripts": {
     "dev": "gulp && mix",
+    "dev2": "mix",
     "watch": "gulp && mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
