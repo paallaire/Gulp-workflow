@@ -19,7 +19,8 @@
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-svg-sprite": "^1.5.0",
-    "laravel-mix": "^6.0.11"
+    "laravel-mix": "^6.0.11",
+    "semistandard": "^16.0.0"
   },
   "scripts": {
     "dev": "gulp && mix",
@@ -27,7 +28,8 @@
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
     "prod": "gulp && npm run production",
-    "production": "mix --production"
+    "production": "mix --production",
+    "semistandard": "semistandard --fix"
   },
   "repository": {
     "type": "git",

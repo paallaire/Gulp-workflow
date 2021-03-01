@@ -11,63 +11,63 @@ const svgSprite = require('gulp-svg-sprite');
 
 /* del
 -------------------------------------------- */
-function cleanTask(cb) {
-    del(['./public/dist']);
-    cb();
+function cleanTask (cb) {
+  del(['./public/dist']);
+  cb();
 }
 
 /* imagemin
 -------------------------------------------- */
 const imageminOptions =
-    ([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-            plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
-    ],
-    {
-        verbose: true,
-    });
+  ([
+    imagemin.gifsicle({ interlaced: true }),
+    imagemin.mozjpeg({ quality: 75, progressive: true }),
+    imagemin.optipng({ optimizationLevel: 5 }),
+    imagemin.svgo({
+      plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
+    })
+  ],
+  {
+    verbose: true
+  });
 
-function imagesTask() {
-    return src('assets/images/**/*').pipe(imagemin(imageminOptions)).pipe(dest('./public/dist/images'));
+function imagesTask () {
+  return src('assets/images/**/*').pipe(imagemin(imageminOptions)).pipe(dest('./public/dist/images'));
 }
 
 /* twig
 -------------------------------------------- */
-function twigTask() {
-    return src('./templates/pages/index.twig').pipe(twig()).pipe(dest('./public/'));
+function twigTask () {
+  return src('./templates/pages/index.twig').pipe(twig()).pipe(dest('./public/'));
 }
 
 /* fonts
 -------------------------------------------- */
-function fontsTask() {
-    return src('**/*', { cwd: './assets/fonts' }).pipe(dest('./public/dist/fonts'));
+function fontsTask () {
+  return src('**/*', { cwd: './assets/fonts' }).pipe(dest('./public/dist/fonts'));
 }
 
 /* icons
 -------------------------------------------- */
 const config = {
-    mode: {
-        defs: {
-            dest: '',
-            sprite: 'sprite.svg',
-        },
-    },
+  mode: {
+    defs: {
+      dest: '',
+      sprite: 'sprite.svg'
+    }
+  }
 };
 
-function iconsTask() {
-    return src('**/*.svg', { cwd: './assets/icons' }).pipe(svgSprite(config)).pipe(dest('./public/dist/icons'));
+function iconsTask () {
+  return src('**/*.svg', { cwd: './assets/icons' }).pipe(svgSprite(config)).pipe(dest('./public/dist/icons'));
 }
 
 /* env
 -------------------------------------------- */
 if (process.env.NODE_ENV === 'production') {
-    //exports.build = series(transpile, minify);
+  // exports.build = series(transpile, minify);
 } else {
-    //exports.build = series(transpile, livereload);
+  // exports.build = series(transpile, livereload);
 }
 
 /* tasks
@@ -82,5 +82,5 @@ exports.icons = iconsTask;
 /* watch
 -------------------------------------------- */
 exports.watch = function () {
-    watch('assets/images/**/*', images);
+  watch('assets/images/**/*', imagesTask);
 };
