@@ -1,0 +1,12 @@
+.c-nav-sticky {
+    @apply bg-gray-200 fixed top-0 z-10 w-full transition ease-out duration-500;
+
+    &.is-hide {
+        @apply transform -translate-y-full;
+    }
+
+    &.is-top {
+        @apply bg-red-500;
+    }
+
+}

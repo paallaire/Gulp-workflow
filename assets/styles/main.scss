@@ -4,21 +4,11 @@
  */
  @tailwind base;
 
-/**
- * This injects Tailwind's component classes and any component classes
- * registered by plugins.
- */
- @tailwind components;
-
 /* ==========================================================================
-01.Settings
+01.settings
+Global variables, site-wide settings, config switches, etc.
 ========================================================================== */
-// @import '01.settings/_tailwind-theme-variables';
-// @import '01.settings/variables-custom';
-
-/* ==========================================================================
-02.Tools
-========================================================================== */
+@import '01.settings/variables';
 
 // vendors
 // @import '~include-media/dist/_include-media';
@@ -26,28 +16,40 @@
 // @import '~aos/src/sass/aos';
 // @import '~hamburgers/_sass/hamburgers/hamburgers';
 
+/* ==========================================================================
+02.tools
+Site-wide mixins and functions.
+========================================================================== */
+
 // functions
 
 // mixins
 
 /* ==========================================================================
-03.Generic
+03.generic
+Low-specificity, far-reaching rulesets (e.g. resets).
 ========================================================================== */
 
 /* ==========================================================================
 04.elements
+Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
 ========================================================================== */
 
 /* ==========================================================================
 05.objets
+Objects, abstractions, and design patterns (e.g. .o-layout {}).
 ========================================================================== */
 
 /* ==========================================================================
 06.components
+Discrete, complete chunks of UI (e.g. .c-carousel {}).
 ========================================================================== */
+@import './06.components/nav-sticky';
 
 /* ==========================================================================
-07.utilities (tailwidnd.scss)
+07.utilities
+High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {})
+See https://tailwindcss.com/
 ========================================================================== */
 
 /* ==========================================================================
@@ -59,17 +61,5 @@
 /* ==========================================================================
 09.dev
 ========================================================================== */
-@import './dev/grid-visualizer';
+@import './09.dev/grid-visualizer';
 
-.c-nav-sticky {
-    @apply bg-gray-200 fixed top-0 z-10 w-full transition ease-out duration-500;
-
-    &.is-hide {
-        @apply transform -translate-y-full;
-    }
-
-    &.is-top {
-        @apply bg-red-500;
-    }
-
-}

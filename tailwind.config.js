@@ -36,7 +36,12 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms'), require('./assets/tailwindcss/plugins/debug-screens')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('./assets/tailwindcss/plugins/debug-screens'),
+  ],
   corePlugins: {
     backgroundImage: false,
     container: false,

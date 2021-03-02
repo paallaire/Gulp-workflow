@@ -11,7 +11,7 @@ const svgSprite = require('gulp-svg-sprite');
 
 /* del
 -------------------------------------------- */
-function cleanTask (cb) {
+function cleanTask(cb) {
   del(['./public/dist']);
   cb();
 }
@@ -24,26 +24,26 @@ const imageminOptions =
     imagemin.mozjpeg({ quality: 75, progressive: true }),
     imagemin.optipng({ optimizationLevel: 5 }),
     imagemin.svgo({
-      plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
-    })
+      plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+    }),
   ],
   {
-    verbose: true
+    verbose: true,
   });
 
-function imagesTask () {
+function imagesTask() {
   return src('assets/images/**/*').pipe(imagemin(imageminOptions)).pipe(dest('./public/dist/images'));
 }
 
 /* twig
 -------------------------------------------- */
-function twigTask () {
-  return src('./templates/pages/index.twig').pipe(twig()).pipe(dest('./public/'));
+function twigTask() {
+  return src('./templates/pages/*.twig').pipe(twig()).pipe(dest('./public/'));
 }
 
 /* fonts
 -------------------------------------------- */
-function fontsTask () {
+function fontsTask() {
   return src('**/*', { cwd: './assets/fonts' }).pipe(dest('./public/dist/fonts'));
 }
 
@@ -53,34 +53,37 @@ const config = {
   mode: {
     defs: {
       dest: '',
-      sprite: 'sprite.svg'
-    }
-  }
+      sprite: 'sprite.svg',
+    },
+  },
 };
 
-function iconsTask () {
+function iconsTask() {
   return src('**/*.svg', { cwd: './assets/icons' }).pipe(svgSprite(config)).pipe(dest('./public/dist/icons'));
+}
+
+/* watch
+-------------------------------------------- */
+function watchTask(cb) {
+  watch('assets/images/**/*', imagesTask);
+  watch('./templates/pages/*.twig', twigTask);
+  cb();
 }
 
 /* env
 -------------------------------------------- */
-if (process.env.NODE_ENV === 'production') {
-  // exports.build = series(transpile, minify);
-} else {
-  // exports.build = series(transpile, livereload);
-}
+// if (process.env.NODE_ENV === 'production') {
+//   exports.build = series(transpile, minify);
+// } else {
+//   exports.build = series(transpile, livereload);
+// }
 
 /* tasks
 -------------------------------------------- */
 exports.default = series(cleanTask, parallel(imagesTask, fontsTask, iconsTask), twigTask);
+exports.watch = series(cleanTask, parallel(imagesTask, fontsTask, iconsTask), twigTask, watchTask);
 exports.clean = cleanTask;
 exports.images = imagesTask;
 exports.twig = twigTask;
 exports.fonts = fontsTask;
 exports.icons = iconsTask;
-
-/* watch
--------------------------------------------- */
-exports.watch = function () {
-  watch('assets/images/**/*', imagesTask);
-};

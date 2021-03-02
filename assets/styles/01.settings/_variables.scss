@@ -1,0 +1,24 @@
+/* ==========================================================================
+#typo
+==========================================================================  */
+$vertical-rythm: $lineHeight-normal;
+
+/* ==========================================================================
+#hamburger (plugin)
+==========================================================================  */
+
+$hamburger-padding-x           : 20px;
+$hamburger-padding-y           : 20px;
+$hamburger-layer-width         : 18px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 4px;
+$hamburger-layer-color         : #fff;
+$hamburger-layer-border-radius : 0px;
+$hamburger-hover-opacity       : 1;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+$hamburger-types: (
+  slider,
+);
+
