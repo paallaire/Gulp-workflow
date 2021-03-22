@@ -1,0 +1,22 @@
+/* html
+-------------------------------------------- */
+html {
+    @apply antialiased bg-white text-black overflow-x-hidden;
+    scroll-behavior: smooth;
+
+    &.no-scroll {
+        @apply overflow-hidden;
+    }
+
+}
+
+/* body
+-------------------------------------------- */
+body {
+    @apply m-0 p-0 leading-none overflow-x-hidden;
+
+    @screen lg {
+        @apply pt-0;
+    }
+
+}

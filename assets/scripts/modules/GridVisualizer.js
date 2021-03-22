@@ -52,10 +52,7 @@ export default class GridVisualizer {
       const $block = document.createElement('div');
 
       if (this.options.columnsCssClassCustom) {
-        column.setAttribute(
-          'class',
-          `dev-grid-visualizer__column ${this.options.columnsCssClass} ${this.options.columnsCssClassCustom[i]}`,
-        );
+        column.setAttribute('class', `dev-grid-visualizer__column ${this.options.columnsCssClass} ${this.options.columnsCssClassCustom[i]}`);
       } else {
         column.setAttribute('class', `dev-grid-visualizer__column ${this.options.columnsCssClass}`);
       }

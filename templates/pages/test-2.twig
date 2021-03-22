@@ -1,0 +1,34 @@
+{# index.twig #}
+{% extends '../_layout/base.twig' %}
+
+{% block blockname %}
+  {# comment #}
+  <section>
+    <ul>
+      <li>{{ var }}</li>
+    </ul>
+  </section>
+  {% for foo in bar %}
+    {% if condition %}
+      {% macro wrapped_input(name, value, type, size) %}
+        {% import _self as forms %}
+        {# comment #}
+        <div class="field">
+          {{ forms.input(name, value, type, size) }}
+        </div>
+      {% endmacro %}
+    {% elseif kenny.dead %}
+      to soon
+    {% else %}
+      <div class="test2">
+        TestText3
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+{% set fruits = ['apple', 'orange', 'citrus'] %}
+
+{% for i in 0..10 %}
+  {{ cycle(fruits, i) }}
+{% endfor %}

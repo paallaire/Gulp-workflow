@@ -10,7 +10,7 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1440px',
-      hg: '1920px',
+      '2xl': '1920px',
     },
     spacing: {
       0: '0',
@@ -36,12 +36,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
-    require('./assets/tailwindcss/plugins/debug-screens'),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms'), require('./assets/tailwindcss/plugins/debug-screens')],
   corePlugins: {
     backgroundImage: false,
     container: false,

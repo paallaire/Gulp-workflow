@@ -8,7 +8,7 @@
 01.settings
 Global variables, site-wide settings, config switches, etc.
 ========================================================================== */
-@import '01.settings/variables';
+@import 'settings/variables';
 
 // vendors
 // @import '~include-media/dist/_include-media';
@@ -17,49 +17,49 @@ Global variables, site-wide settings, config switches, etc.
 // @import '~hamburgers/_sass/hamburgers/hamburgers';
 
 /* ==========================================================================
-02.tools
-Site-wide mixins and functions.
-========================================================================== */
-
-// functions
-
-// mixins
-
-/* ==========================================================================
-03.generic
-Low-specificity, far-reaching rulesets (e.g. resets).
-========================================================================== */
-
-/* ==========================================================================
-04.elements
-Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
-========================================================================== */
-
-/* ==========================================================================
-05.objets
+objets
 Objects, abstractions, and design patterns (e.g. .o-layout {}).
 ========================================================================== */
+@import './objets/buttons';
 
 /* ==========================================================================
-06.components
+components
 Discrete, complete chunks of UI (e.g. .c-carousel {}).
 ========================================================================== */
-@import './06.components/nav-sticky';
+@import './components/nav-sticky';
 
 /* ==========================================================================
-07.utilities
-High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {})
-See https://tailwindcss.com/
+dev
 ========================================================================== */
+@import './dev/grid-visualizer';
 
-/* ==========================================================================
-08.pages
-========================================================================== */
-// @import 'pages/home';
-// @import 'pages/404';
 
-/* ==========================================================================
-09.dev
-========================================================================== */
-@import './09.dev/grid-visualizer';
 
+.content {
+	display: grid;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10vh 25px;
+	max-width: 1300px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-auto-rows: 200px;
+	grid-gap: 4rem;
+	grid-row-gap: 6rem;
+	justify-content: center;
+	list-style: none;
+}
+
+.content__item {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	counter-increment: itemcounter;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+	pointer-events: none;
+}

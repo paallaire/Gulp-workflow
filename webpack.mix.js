@@ -1,4 +1,7 @@
 const mix = require('laravel-mix');
+const tailwindJit = require('@tailwindcss/jit');
+const pxtorem = require('postcss-pxtorem');
+const autoprefixer = require('autoprefixer');
 
 // Build
 // ----------------------------------------------------------
@@ -10,9 +13,9 @@ mix
   .options({
     processCssUrls: false,
     postCss: [
-      require('tailwindcss')('./tailwind.config.js'),
-      require('autoprefixer'),
-      require('postcss-pxtorem')({
+      tailwindJit,
+      autoprefixer,
+      pxtorem({
         rootValue: 16,
         unitPrecision: 5,
         propList: ['font', 'font-size', 'line-height', 'letter-spacing'],

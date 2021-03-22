@@ -1,0 +1,198 @@
+{
+    "attrsSorter.order": [
+        "class", 
+        "id", 
+        "name",
+        "data-.+", 
+        "ng-.+", 
+        "src",
+        "for", 
+        "type", 
+        "href",
+        "values", 
+        "title", 
+        "alt",
+        "role", 
+        "aria-.+",
+        "role",
+        "tabindex",
+        "x-transition:enter",
+        "x-transition:enter-start",
+        "x-transition:enter-end",
+        "x-transition:leave",
+        "x-transition:leave-start",
+        "x-transition:leave-end",
+        "x-.+",
+        ":.+",
+        "v-.+",
+        "@.+",
+        "$unknown$"
+    ],
+    "workbench.colorTheme": "Flat UI (+GUI)",
+    "workbench.iconTheme": "vscode-great-icons",
+    "files.associations": {
+        "*.twig": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "twig": "html",
+    },
+    "editor.renderWhitespace": "none",
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "javascript.validate.enable": false,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "editor.formatOnSave": false,
+    //"standard.autoFixOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": false,
+        // "editor.codeActionsOnSave": {
+        //     "source.fixAll": true
+        // },
+        //"editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[sass]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        }
+    },
+    "[scss]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        }
+    },
+    "[html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[twig]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur",
+        "editor.formatOnSave": true,
+    },
+    "git.enableSmartCommit": true,
+    "breadcrumbs.enabled": true,
+    "git.confirmSync": false,
+    "typescript.tsserver.log": "verbose",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.validate.enable": false,
+    "tailwindCSS.emmetCompletions": true,
+    "prettier.configPath": ".prettierrc",
+    "eslint.alwaysShowStatus": true,
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "prettier.requireConfig": true,
+    "prettier.printWidth": 120,
+    "editor.rulers": [
+        120
+    ],
+    "editor.wordWrap": "on",
+
+
+
+
+    
+    // "css.validate": false,
+    // "diffEditor.ignoreTrimWhitespace": false,
+    // "editor.accessibilitySupport": "off",
+    // "editor.formatOnSave": true,
+    // "editor.wordWrapColumn": 200,
+    // "emmet.includeLanguages": {
+    //     "twig": "html"
+    // },
+    // "emmet.syntaxProfiles": {
+    //     "vue": "vue",
+    //     "vue-html": "html",
+    //     "twig": "html"
+    // },
+    // "files.associations": {
+    //     "*.dali": "handlebars",
+    //     "*.js.liquid": "javascript",
+    //     "*.scss.liquid": "scss",
+    //     "*.theme": "php",
+    //     "*.twig": "html"
+    // },
+    // "files.eol": "\n",
+    // "files.insertFinalNewline": true,
+    // "git.autofetch": true,
+    // "git.confirmSync": false,
+    // "git.enableSmartCommit": true,
+    // "html.format.contentUnformatted": "pre,code,textarea,sup,strong,a,em",
+    // "html.format.wrapLineLength": 0,
+    // "javascript.updateImportsOnFileMove.enabled": "always",
+    // "less.validate": false,
+    // "php.suggest.basic": false,
+    // "scss.scannerExclude": [
+    //     "**/.git",
+    //     "**/node_modules",
+    //     "**/bower_components",
+    //     "**/vendor"
+    // ],
+    // "scss.validate": false,
+    // "sync.askGistName": false,
+    // "sync.autoDownload": false,
+    // "sync.autoUpload": false,
+    // "sync.forceDownload": false,
+    // "sync.gist": "a734e40cb48f6e412f8e54ab6455aa48",
+    // "sync.host": "",
+    // "sync.lastDownload": "",
+    // "sync.lastUpload": "2018-08-28T16:40:17.734Z",
+    // "sync.pathPrefix": "",
+    // "sync.quietSync": false,
+    // "sync.removeExtensions": true,
+    // "sync.syncExtensions": true,
+    // "window.menuBarVisibility": "default",
+    // "window.zoomLevel": 0,
+    // "workbench.colorTheme": "Flat UI (+GUI)",
+    // "workbench.iconTheme": "vscode-great-icons",
+    // "workbench.statusBar.visible": true,
+    // "[html]": {
+    //     "editor.defaultFormatter": "mblode.twig-language-2",
+    //     "editor.formatOnSave": true,
+    // },
+    // "[twig]": {
+    //     "editor.defaultFormatter": "mblode.twig-language-2",
+    //     "editor.formatOnSave": false,
+    // },
+    // "[less]": {
+    //     "editor.formatOnSave": false,
+    // },
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //     "editor.codeActionsOnSave": {
+    //         "source.fixAll.eslint": true
+    //     },
+    // },
+    // "[jsonc]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[scss]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[css]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[json]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[yaml]": {
+    //     "editor.formatOnSave": false,
+    // },
+    // "intelephense.files.maxSize": 3000000,
+    // "colorize.languages": [
+    //     "javascript",
+    //     "css",
+    //     "sass",
+    //     "less",
+    //     "scss",
+    // ],
+    // "[vue]": {
+    //     "editor.defaultFormatter": "octref.vetur"
+    // }
+}

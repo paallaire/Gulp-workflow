@@ -8,6 +8,7 @@ const del = require('del');
 const imagemin = require('gulp-imagemin');
 const twig = require('gulp-twig');
 const svgSprite = require('gulp-svg-sprite');
+const rename = require('gulp-rename');
 
 /* del
 -------------------------------------------- */
@@ -32,13 +33,17 @@ const imageminOptions =
   });
 
 function imagesTask() {
-  return src('assets/images/**/*').pipe(imagemin(imageminOptions)).pipe(dest('./public/dist/images'));
+  return src('assets/images/**/*')
+    .pipe(imagemin(imageminOptions))
+    .pipe(dest('./public/dist/images'));
 }
 
 /* twig
 -------------------------------------------- */
 function twigTask() {
-  return src('./templates/pages/*.twig').pipe(twig()).pipe(dest('./public/'));
+  return src('./templates/pages/*.twig')
+    .pipe(twig())
+    .pipe(dest('./public/'));
 }
 
 /* fonts
@@ -59,14 +64,36 @@ const config = {
 };
 
 function iconsTask() {
-  return src('**/*.svg', { cwd: './assets/icons' }).pipe(svgSprite(config)).pipe(dest('./public/dist/icons'));
+  return src('**/*.svg', { cwd: './assets/icons' })
+    .pipe(svgSprite(config))
+    .pipe(dest('./public/dist/icons'));
+}
+
+/* favicons
+-------------------------------------------- */
+function faviconsTask() {
+  return src('**/*', { cwd: './assets/favicons' }).pipe(dest('./dist/favicons'));
+}
+
+/* icomoonSvgTask
+-------------------------------------------- */
+function icomoonSvgTask() {
+  return src('symbol-defs.svg', { cwd: './assets/icomoon' }).pipe(dest('./dist/svg'));
+}
+
+/* icomoonCssTask
+-------------------------------------------- */
+function icomoonCssTask() {
+  return src('style.css', { cwd: './assets/icomoon' })
+    .pipe(rename('icomoon.scss'))
+    .pipe(dest('./assets/styles/02.base'));
 }
 
 /* watch
 -------------------------------------------- */
 function watchTask(cb) {
   watch('assets/images/**/*', imagesTask);
-  watch('./templates/pages/*.twig', twigTask);
+  watch('./templates/**/*.twig', twigTask);
   cb();
 }
 
@@ -80,10 +107,22 @@ function watchTask(cb) {
 
 /* tasks
 -------------------------------------------- */
-exports.default = series(cleanTask, parallel(imagesTask, fontsTask, iconsTask), twigTask);
-exports.watch = series(cleanTask, parallel(imagesTask, fontsTask, iconsTask), twigTask, watchTask);
+exports.default = series(cleanTask, imagesTask, fontsTask, icomoonSvgTask, icomoonCssTask, faviconsTask, twigTask);
+exports.watch = series(
+  cleanTask,
+  imagesTask,
+  fontsTask,
+  icomoonSvgTask,
+  icomoonCssTask,
+  watchTask,
+  faviconsTask,
+  twigTask,
+);
 exports.clean = cleanTask;
 exports.images = imagesTask;
 exports.twig = twigTask;
 exports.fonts = fontsTask;
 exports.icons = iconsTask;
+exports.icomoonSvg = icomoonSvgTask;
+exports.icomoonCss = icomoonCssTask;
+exports.favicons = faviconsTask;

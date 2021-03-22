@@ -1,0 +1,30 @@
+{
+    "extends": ["airbnb-base", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": "error",
+      // "func-names": "warn",
+      // "linebreak-style": ["error", "unix"],
+      // "no-param-reassign": 0,
+      // "no-unused-vars": "warn",
+      // "max-len": [
+      //   "warn",
+      //   {
+      //     "code": 120,
+      //     "ignoreComments": true
+      //   }
+      // ]
+    },
+    "globals": {
+      "window": true,
+      "document": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  }
+  

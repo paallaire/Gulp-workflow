@@ -7,5 +7,12 @@
     "trailingComma": "all",
     "bracketSpacing": true,
     "arrowParens": "always",
-    "endOfLine": "lf"
+    "endOfLine": "lf",
+    "plugins": ["./node_modules/prettier-plugin-twig-melody"],
+    "twigMultiTags": [
+        "nav,endnav",
+        "switch,case,default,endswitch",
+        "ifchildren,endifchildren",
+        "cache,endcache"
+    ]
 }

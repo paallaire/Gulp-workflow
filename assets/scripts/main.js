@@ -3,9 +3,15 @@ import { isDev } from './utils/env';
 import StickyNav from './modules/StickyNav';
 import GridVisualizer from './modules/GridVisualizer';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const nav = new StickyNav('.c-nav-sticky', { data: '123' });
-  nav.init();
+import siteLoader from './modules/siteLoader';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // const nav = new StickyNav('.c-nav-sticky', { data: '123' });
+  // nav.init();
+
+  siteLoader();
+
+  const test = 'rer';
 
   if (isDev) {
     console.log('isDev:', isDev);
@@ -19,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'lg:w-1/12 w-1/4',
         'lg:w-1/12 w-1/4',
         'lg:w-1/12 w-1/4',
+        'lg:w-1/12 hidden | lg:block',
         'lg:w-1/12 hidden | lg:block',
         'lg:w-1/12 hidden | lg:block',
         'lg:w-1/12 hidden | lg:block',

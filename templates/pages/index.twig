@@ -1,20 +1,44 @@
 {# index.twig #}
-{% extends "../_layout/base.twig" %}
+{% extends '../_layout/base.twig' %}
 
 {% block page %}
+  {% if condition %}{% endif %}
 
-<div class="c-nav-sticky">sticky 123</div>
+  <div class="c-nav-sticky">
+    sticky 123
+  </div>
 
-<h2>@tailwindcss/aspect-ratio</h2>
-<a href="https://github.com/tailwindlabs/tailwindcss-aspect-ratio">Link</a>
+  <h2>
+    @tailwindcss/aspect-ratio
+  </h2>
+  <a href="https://github.com/tailwindlabs/tailwindcss-aspect-ratio">Link</a>
 
-<div class="aspect-w-16 aspect-h-9">
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+  <div class="aspect-w-16 aspect-h-9">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
 
-<div style="height: 200px" class="md:text-red-1 text-red text-b">dsadsadas</div>
+  <div style="height: 200px"
+    class="md:text-red-1 text-red text-b text-gray-400">
+    dsadsadas
+  </div>
 
-<div class="h-24 bg-gradient-to-r from-red-1 to-gray-1"></div>
+  <div class="h-24 bg-gradient-to-r from-red-1 to-gray-1"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"
+    integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU="
+    crossorigin="anonymous"></script>
+  <script>
+    // Wordpress Posts Endpoint var postsUrl =
+    "http://hera.pascalandreallaire.com/l/wp-json/wp/v2/news/"; // Returned
+    Posts in an Array var posts = []; var queryOptions = { per_page: 3, // Only
+    retrieve the 3 most recent blog posts. page: 1, // Current page of the
+    collection. _embed: true, // Response should include embedded resources. };
+    // Get Recent Posts From WordPress Site function getRecentBlogPosts() {
+    axios.get(postsUrl, {params: queryOptions}).then(response => { posts =
+    response.data; console.log('posts:', posts) }).catch(error => {
+    console.log(error); }); }; getRecentBlogPosts();
+  </script>
 {% endblock %}
-
