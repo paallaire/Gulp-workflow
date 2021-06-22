@@ -1,8 +1,12 @@
+/* utils
+-------------------------------------------- */
 import { isDev } from './utils/env';
+import browserDetection from './utils/bowser';
 
+/* modules
+-------------------------------------------- */
 import StickyNav from './modules/StickyNav';
 import GridVisualizer from './modules/GridVisualizer';
-
 import siteLoader from './modules/siteLoader';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // nav.init();
 
   siteLoader();
+  browserDetection();
 
-  const test = 'rer';
+  var test = 'rer';
 
   if (isDev) {
     console.log('isDev:', isDev);
